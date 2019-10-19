@@ -1,0 +1,58 @@
+= render partial: "layouts/main-header"
+
+%body
+  %header
+  %nav
+    %ul#meru-path
+      %a{:href => ""} メルカリ
+      %a マイページ
+  .mypage-side
+    .mypage-side-nav
+      %section
+        %ul.header_lists
+          %li
+            %img{:src => "yu40ta-avatar.png"}>/
+            マイページ
+          %li お知らせ
+          %li やることリスト
+          %li いいね！一覧
+          %li 出品する
+          %li 出品した商品-出品中
+          %li 出品した商品-取引中
+          %li 出品した商品-売却済み
+          %li 購入した商品-取引中
+          %li 購入した商品-過去の取引
+          %li ニュース一覧
+          %li 評価一覧
+          %li ガイド
+          %li お問い合わせ
+      %h4
+        メルペイ
+      %ul.header_merpay
+        %li 売上・申込申請
+        %li ポイント
+      %h4
+        設定
+      %ul.header_set
+        %li プロフィール
+        %li 発送元・お届け先住所変更
+        %li 支払い方法
+        %li メール/パスワード
+        %li 本人情報
+        %li 電話番号の確認
+        %li ログアウト
+    .main
+      .upper
+        .mypage_name
+        .notice お知らせ
+        .todo やることリスト
+        .messager
+        .all 一覧をみる
+      .lower
+        .bought 購入した商品
+        .transaction 取引中
+        .past_transaction 過去の取引
+
+= render partial: "layouts/side_bar"
+
+= render partial: "layouts/main-footer"
