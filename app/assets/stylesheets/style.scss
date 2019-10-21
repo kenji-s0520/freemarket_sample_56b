@@ -250,8 +250,9 @@ h2{
 }
 
 h4{
+  font-weight: bold;
   margin-top: 40px;;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 figure{
@@ -392,9 +393,9 @@ li:hover .fa-chevron-right{
   float: left;
   text-align: center;
   font-weight: bold;
-  :hover{
-    color: rgb(115, 115, 115);
-  }
+}
+.tab_item1:hover{
+  color: rgb(115, 115, 115);
 }
 
 input[name="tab_item1"]{
@@ -442,11 +443,10 @@ input[name="tab_item2"]{
   float: left;
   text-align: center;
   font-weight: bold;
-  :hover{
-    color: rgb(115, 115, 115);
-  }
 }
-
+.tab_item2:hover{
+  color: rgb(115, 115, 115);
+}
 .tab_contents{
   text-align: center;
   display: none;
@@ -508,15 +508,14 @@ input[name="tab_item2"]{
   right: 30px;
   text-align: center;
   text-decoration: none;
+  line-height: 4;
 }
-
-.footer_sell_btn div{
-  margin: 30px 0 0;
-}
-
+ 
 .fa-camera{
-  font-size: 2.7em;
-  display: inline-block;
+  font-size: 2.8em;
+  position: absolute;
+  top: 60px;
+  left: 48px;
 }
 
 aside{
@@ -700,12 +699,20 @@ path {
   color: #FFFFFF;
 }
 
-svg {
-  width: 28px;
+.fa-twitter{
+  font-size: 2.5em;
+  width: 26px;
   height: 26px;
-  margin-top: 28.84px;
   color: #FFFFFF;
-  float: left;
+  margin: 30px 25px 0 0;
+}
+
+.fa-facebook-square{
+  font-size: 2.5em;
+  width: 26px;
+  height: 26px;
+  color: #FFFFFF;
+  margin: 30px 0px 0 0;
 }
 
 .second {
