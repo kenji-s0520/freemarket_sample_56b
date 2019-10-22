@@ -3,7 +3,7 @@
   .main
     .upper
       .mypage_name
-        = image_tag "/assets/member_photo_noimage.png", class: "border_radius"
+        = image_tag "/images/member_photo_noimage.png", class: "border_radius"
         = link_to "ユーザーネーム", "evaluation.html"
         %ul
           評価
@@ -17,10 +17,10 @@
         %input#todo{name: "tab_item1", type: "radio"}/
         %label.tab_item1{for: "todo"} やることリスト
         #notice_contents.tab_contents
-          = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+          = image_tag "/images/mercari_icon.png", class: "mercari_icon"
           %p 実際の通知
         #todo_contents.tab_contents
-          = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+          = image_tag "/images/mercari_icon.png", class: "mercari_icon"
           %p 現在、やることリストはありません
         .list
           %ul 一覧をみる
@@ -32,10 +32,10 @@
           %input#past_transaction{name: "tab_item2", type: "radio"}/
           %label.tab_item2{for: "past_transaction"} 過去の取引
           #transaction_contents.tab_contents
-            = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+            = image_tag "/images/mercari_icon.png", class: "mercari_icon"
             %p 取引中の商品がありません
           #past_transaction_contents.tab_contents
-            = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+            = image_tag "/images/mercari_icon.png", class: "mercari_icon"
             %p 過去に取引した商品がありません
   = render :partial => "sidebar"
 = render :partial => "footer"
