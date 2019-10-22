@@ -327,7 +327,7 @@ li:hover .fa-chevron-right{
 .mypage_name{
   text-align: center;
   display: block;
-  background-image: url(user_bg.jpg);
+  background-image: image-url("user_bg.jpg");
   background-size: cover;
   height: 200px;
   line-height: 1.5em
@@ -515,7 +515,7 @@ aside{
 
 .bottom_banner{
   display: flex;
-  background: url(download_bg_pc.jpg);
+  background-image: image-url("download_bg_pc.jpg");
   background-position: center;
   background-size: cover;
   height: 260px;
