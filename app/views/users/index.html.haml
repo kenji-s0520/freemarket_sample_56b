@@ -1,247 +1,243 @@
-!!!
-%html
-  %head
-  %body
-    %header.header
-      .menu_bar
-        .headup
-          .mercarilogo 
-            =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"
-          %form.form{action: ""}
-            %input.search_form{name: "keyword", placeholder:  "何かお探しですか？", type: "text", value: ""}/
-            %button.search_button
-              %svg.button_a{"aria-hidden" =>"true", height: "16", viewbox: "0 0 16 16", width: "16"}
-                %path{d: "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", fill:  "currentColor", "fill-rule"=>"nonzero"}
-        .headdown
-          .search
-            .search_category
-              = link_to "/jp/category/", class: "category_icon_link" do
-                %i.fas.fa-list-ul
-                  %p カテゴリーから探す
-            .search_brand
-              = link_to "/jp/bland/", class: "brand_icon_link" do
-                %i.fas.fa-tag
-                  %p ブランドから探す
-          .user_page_links
-            %ul.user_links
-              %li.like
-              = link_to "/jp/like/", class: "like" do
-                %i.far.fa-heart
-                いいね！一覧
-              %li.notice
-              = link_to "/jp/notification/", class: "notification" do
-                %i.far.fa-bell
-                お知らせ
-              %li.todo
-              = link_to "/jp/todo/", class: "todoing" do
-                %i.fas.fa-check
-                やることリスト
-              %li.mypage
-              = link_to "/jp/mypage/", class: "mypage_font" do
-                = image_tag("/assets/member_photo_noimage.png", class: "mypage_img")
-                = "マイページ"
-    %main.main_contents
-      .main
-        .upper
-          .mypage_name
-            = image_tag "/assets/member_photo_noimage.png", class: "border_radius"
-            = link_to "ユーザーネーム", "evaluation.html"
-            %ul
-              評価
-              %span.math 0
-            %ul
-              出品数
-              %span.math 0
-          .mypage_tabs
-            %input#notice{checked: "checked", name: "tab_item1", type: "radio"}/
-            %label.tab_item1{for: "notice"} お知らせ
-            %input#todo{name: "tab_item1", type: "radio"}/
-            %label.tab_item1{for: "todo"} やることリスト
-            #notice_contents.tab_contents
-              = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
-              %p 実際の通知
-            #todo_contents.tab_contents
-              = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
-              %p 現在、やることリストはありません
-            .list
-              %ul 一覧をみる
-          .lower
-            %ul 購入した商品
-            .lower_tabs
-              %input#transaction{checked: "checked", name: "tab_item2", type: "radio"}/
-              %label.tab_item2{:for => "transaction"} 取引中
-              %input#past_transaction{name: "tab_item2", type: "radio"}/
-              %label.tab_item2{for: "past_transaction"} 過去の取引
-              #transaction_contents.tab_contents
-                = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
-                %p 取引中の商品がありません
-              #past_transaction_contents.tab_contents
-                = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
-                %p 過去に取引した商品がありません
-      .side_bar
-        .side_bar_name
-          %ul.header_lists
-            %li
-              マイページ
-              %i.fas.fa-chevron-right
-            %li
-              お知らせ
-              %i.fas.fa-chevron-right
-            %li
-              やることリスト
-              %i.fas.fa-chevron-right
-            %li
-              いいね！一覧
-              %i.fas.fa-chevron-right
-            %li
-              出品する
-              %i.fas.fa-chevron-right
-            %li
-              出品した商品-出品中
-              %i.fas.fa-chevron-right
-            %li
-              出品した商品-取引中
-              %i.fas.fa-chevron-right
-            %li
-              出品した商品-売却済み
-              %i.fas.fa-chevron-right
-            %li
-              購入した商品-取引中
-              %i.fas.fa-chevron-right
-            %li
-              購入した商品-過去の取引
-              %i.fas.fa-chevron-right
-            %li
-              ニュース一覧
-              %i.fas.fa-chevron-right
-            %li
-              評価一覧
-              %i.fas.fa-chevron-right
-            %li
-              ガイド
-              %i.fas.fa-chevron-right
-            %li
-              お問い合わせ
-              %i.fas.fa-chevron-right
-          %h4
-            メルペイ
-          %ul.header_merpay
-            %li
-              売上・申込申請
-              %i.fas.fa-chevron-right
-            %li
-              ポイント
-              %i.fas.fa-chevron-right
-          %h4
-            設定
-          %ul.header_set
-            %li
-              プロフィール
-              %i.fas.fa-chevron-right
-            %li
-              発送元・お届け先住所変更
-              %i.fas.fa-chevron-right
-            %li
-              支払い方法
-              %i.fas.fa-chevron-right
-            %li
-              メール/パスワード
-              %i.fas.fa-chevron-right
-            %li
-              本人情報
-              %i.fas.fa-chevron-right
-            %li
-              電話番号の確認
-              %i.fas.fa-chevron-right
-            %li
-              ログアウト
-              %i.fas.fa-chevron-right
-    %aside.bottom_banner
-      .bottom_banner_pc
-        .bottom_banner_pc_block
-          %h2 スマホでかんたんフリマアプリ
-          %p 今すぐ無料ダウンロード！
-          .bottom_banner_pc_icon
-            %figure
-              = image_tag "/assets/mercari_icon.png", class: "marcari_icon_pc"
-            %ul.app_icon
-              %li
-              = link_to image_tag("/assets/AppStore.png",  class: "AppStore"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
-              %li
-              = link_to image_tag("/assets/google-play-badge.png", class: "google-play-badge"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+%header.header
+  .menu_bar
+    .headup
+      .mercarilogo 
+        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"
+      %form.form{action: ""}
+        %input.search_form{name: "keyword", placeholder:  "何かお探しですか？", type: "text", value: ""}/
+        %button.search_button
+          %svg.button_a{"aria-hidden" =>"true", height: "16", viewbox: "0 0 16 16", width: "16"}
+            %path{d: "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", fill:  "currentColor", "fill-rule"=>"nonzero"}
+    .headdown
+      .search
+        .search_category
+          = link_to "/jp/category/", class: "category_icon_link" do
+            %i.fas.fa-list-ul
+              %p カテゴリーから探す
+        .search_brand
+          = link_to "/jp/bland/", class: "brand_icon_link" do
+            %i.fas.fa-tag
+              %p ブランドから探す
+      .user_page_links
+        %ul.user_links
+          %li.like
+          = link_to "/jp/like/", class: "like" do
+            %i.far.fa-heart
+            いいね！一覧
+          %li.notice
+          = link_to "/jp/notification/", class: "notification" do
+            %i.far.fa-bell
+            お知らせ
+          %li.todo
+          = link_to "/jp/todo/", class: "todoing" do
+            %i.fas.fa-check
+            やることリスト
+          %li.mypage
+          = link_to "/jp/mypage/", class: "mypage_font" do
+            = image_tag("/assets/member_photo_noimage.png", class: "mypage_img")
+            = "マイページ"
+%main.main_contents
+  .main
+    .upper
+      .mypage_name
+        = image_tag "/assets/member_photo_noimage.png", class: "border_radius"
+        = link_to "ユーザーネーム", "evaluation.html"
+        %ul
+          評価
+          %span.math 0
+        %ul
+          出品数
+          %span.math 0
+      .mypage_tabs
+        %input#notice{checked: "checked", name: "tab_item1", type: "radio"}/
+        %label.tab_item1{for: "notice"} お知らせ
+        %input#todo{name: "tab_item1", type: "radio"}/
+        %label.tab_item1{for: "todo"} やることリスト
+        #notice_contents.tab_contents
+          = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+          %p 実際の通知
+        #todo_contents.tab_contents
+          = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+          %p 現在、やることリストはありません
+        .list
+          %ul 一覧をみる
+      .lower
+        %ul 購入した商品
+        .lower_tabs
+          %input#transaction{checked: "checked", name: "tab_item2", type: "radio"}/
+          %label.tab_item2{:for => "transaction"} 取引中
+          %input#past_transaction{name: "tab_item2", type: "radio"}/
+          %label.tab_item2{for: "past_transaction"} 過去の取引
+          #transaction_contents.tab_contents
+            = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+            %p 取引中の商品がありません
+          #past_transaction_contents.tab_contents
+            = image_tag "/assets/mercari_icon.png", class: "mercari_icon"
+            %p 過去に取引した商品がありません
+  .side_bar
+    .side_bar_name
+      %ul.header_lists
+        %li
+          マイページ
+          %i.fas.fa-chevron-right
+        %li
+          お知らせ
+          %i.fas.fa-chevron-right
+        %li
+          やることリスト
+          %i.fas.fa-chevron-right
+        %li
+          いいね！一覧
+          %i.fas.fa-chevron-right
+        %li
+          出品する
+          %i.fas.fa-chevron-right
+        %li
+          出品した商品-出品中
+          %i.fas.fa-chevron-right
+        %li
+          出品した商品-取引中
+          %i.fas.fa-chevron-right
+        %li
+          出品した商品-売却済み
+          %i.fas.fa-chevron-right
+        %li
+          購入した商品-取引中
+          %i.fas.fa-chevron-right
+        %li
+          購入した商品-過去の取引
+          %i.fas.fa-chevron-right
+        %li
+          ニュース一覧
+          %i.fas.fa-chevron-right
+        %li
+          評価一覧
+          %i.fas.fa-chevron-right
+        %li
+          ガイド
+          %i.fas.fa-chevron-right
+        %li
+          お問い合わせ
+          %i.fas.fa-chevron-right
+      %h4
+        メルペイ
+      %ul.header_merpay
+        %li
+          売上・申込申請
+          %i.fas.fa-chevron-right
+        %li
+          ポイント
+          %i.fas.fa-chevron-right
+      %h4
+        設定
+      %ul.header_set
+        %li
+          プロフィール
+          %i.fas.fa-chevron-right
+        %li
+          発送元・お届け先住所変更
+          %i.fas.fa-chevron-right
+        %li
+          支払い方法
+          %i.fas.fa-chevron-right
+        %li
+          メール/パスワード
+          %i.fas.fa-chevron-right
+        %li
+          本人情報
+          %i.fas.fa-chevron-right
+        %li
+          電話番号の確認
+          %i.fas.fa-chevron-right
+        %li
+          ログアウト
+          %i.fas.fa-chevron-right
+%aside.bottom_banner
+  .bottom_banner_pc
+    .bottom_banner_pc_block
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .bottom_banner_pc_icon
         %figure
-          = image_tag "/assets/download_content_pc.png"
-    %footer
-      .footer
-        .top
-          .first
-            %h2.title メルカリについて
-            %ul.content
-              %li.companyProfile
-                = link_to "会社概要（運営会社）", "https://about.mercari.com/", class: "mercari"
-              %li.employmentInformation
-                = link_to "採用情報", "/jobs/", class: "jobs"
-              %li.pre-release
-                = link_to "プレリリース", "https://about.mercari.com/press/news/", class: "press"
-              %li.officialBlog
-                = link_to "公式ブログ", "https://jp-news.mercari.com/", class: "blog"
-              %li.logo-usage-guidelines
-                = link_to "メルカリロゴ利用ガイドライン", "/logo-guidelines/", class: "guidelines"
-              = link_to "https://twitter.com/mercari_jp", class: "twitter" do
-                %i.fab.fa-twitter
-              = link_to "https://www.facebook.com/mercarijp", class: "facebook" do
-                %i.fab.fa-facebook-square
-          .second
-            %h2.titleH ヘルプ&amp;ガイド
-            %ul.contentS
-              %li.liS
-                = link_to "メルカリガイド", "/help_center/", class: "mercari"
-              %li.liS
-                = link_to "らくらくメルカリ便", "rakuraku-mercari", class: "jobs"
-              %li.liS
-                = link_to "ゆうゆうメルカリ便", "/yuyu-mercari/", class: "press"
-              %li.liS
-                = link_to "大型メルカリ便", "/rakuraku-ogata/", class: "blogs"
-              %li.liS
-                = link_to "車体取引ガイド", "/guide/car/", class: "guidelines"
-              %li.liS
-                = link_to "メルカリあんしん・あんぜん宣言！", "/safe/description/", class: "press"
-              %li.liS
-                = link_to "偽ブランド品撲滅への取り組み", "/authenticity/", class: "blog"
-              %li.liSmeri
-                = link_to "メルカリボックス", "/box/", class: "guidelines"
-          .third
-            %h2.titleP プライバシーと利用規約
-            .hidari
-              %ul.contentT
-                %li.liT
-                  = link_to "プライバシーポリシー", "/privacy/", class: "mercari"
-                %li.liT
-                  = link_to "メルカリ利用規約", "/tos/", class: "jobs"
-                %li.liT
-                  = link_to "あんしんスマホサポート制度に関する利用規約", "/tos_smartphone_support/", class: "press"
-                %li.liT
-                  = link_to "コンプライアンスポリシー", "/compliance/", class: "blog"
-            .migi
-              %ul.contentT
-                %li.liT
-                  = link_to "個人データの安全管理に係る基本方針", "/data_security/", class: "mercari"
-                %li.liT
-                  = link_to "特定商取引に関する表記", "/tokutei/", class: "jobs"
-                %li.liT
-                  = link_to "資本決済法に基づく表示", "/shikin_kessai/", class: "press"
-                %li.liT
-                  = link_to "法令遵守と犯罪防止のために", "https://about.mercari.com/csr/safety/", class: "blog"
-          .fourth
-            %h2.country 国
-            %ul.c
-              %li.nippon
-                = link_to "日本", "/", class: "n"
-              %li.nip
-                = link_to "United States", "/", class: "n"
-        .bottom
-          = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg", class: "sc-kNBZmU.igKrOd", alt: "Mercari"), "/", class: "logo"
-          %span.trademark © 2019 Mercari
-    = link_to "/sell/", class: "sell_btn" do
-      = "出品"
-      %i.fas.fa-camera
+          = image_tag "/assets/mercari_icon.png", class: "marcari_icon_pc"
+        %ul.app_icon
+          %li
+          = link_to image_tag("/assets/AppStore.png",  class: "AppStore"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+          %li
+          = link_to image_tag("/assets/google-play-badge.png", class: "google-play-badge"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+    %figure
+      = image_tag "/assets/download_content_pc.png"
+%footer
+  .footer
+    .top
+      .first
+        %h2.title メルカリについて
+        %ul.content
+          %li.companyProfile
+            = link_to "会社概要（運営会社）", "https://about.mercari.com/", class: "mercari"
+          %li.employmentInformation
+            = link_to "採用情報", "/jobs/", class: "jobs"
+          %li.pre-release
+            = link_to "プレリリース", "https://about.mercari.com/press/news/", class: "press"
+          %li.officialBlog
+            = link_to "公式ブログ", "https://jp-news.mercari.com/", class: "blog"
+          %li.logo-usage-guidelines
+            = link_to "メルカリロゴ利用ガイドライン", "/logo-guidelines/", class: "guidelines"
+          = link_to "https://twitter.com/mercari_jp", class: "twitter" do
+            %i.fab.fa-twitter
+          = link_to "https://www.facebook.com/mercarijp", class: "facebook" do
+            %i.fab.fa-facebook-square
+      .second
+        %h2.titleH ヘルプ&amp;ガイド
+        %ul.contentS
+          %li.liS
+            = link_to "メルカリガイド", "/help_center/", class: "mercari"
+          %li.liS
+            = link_to "らくらくメルカリ便", "rakuraku-mercari", class: "jobs"
+          %li.liS
+            = link_to "ゆうゆうメルカリ便", "/yuyu-mercari/", class: "press"
+          %li.liS
+            = link_to "大型メルカリ便", "/rakuraku-ogata/", class: "blogs"
+          %li.liS
+            = link_to "車体取引ガイド", "/guide/car/", class: "guidelines"
+          %li.liS
+            = link_to "メルカリあんしん・あんぜん宣言！", "/safe/description/", class: "press"
+          %li.liS
+            = link_to "偽ブランド品撲滅への取り組み", "/authenticity/", class: "blog"
+          %li.liSmeri
+            = link_to "メルカリボックス", "/box/", class: "guidelines"
+      .third
+        %h2.titleP プライバシーと利用規約
+        .hidari
+          %ul.contentT
+            %li.liT
+              = link_to "プライバシーポリシー", "/privacy/", class: "mercari"
+            %li.liT
+              = link_to "メルカリ利用規約", "/tos/", class: "jobs"
+            %li.liT
+              = link_to "あんしんスマホサポート制度に関する利用規約", "/tos_smartphone_support/", class: "press"
+            %li.liT
+              = link_to "コンプライアンスポリシー", "/compliance/", class: "blog"
+        .migi
+          %ul.contentT
+            %li.liT
+              = link_to "個人データの安全管理に係る基本方針", "/data_security/", class: "mercari"
+            %li.liT
+              = link_to "特定商取引に関する表記", "/tokutei/", class: "jobs"
+            %li.liT
+              = link_to "資本決済法に基づく表示", "/shikin_kessai/", class: "press"
+            %li.liT
+              = link_to "法令遵守と犯罪防止のために", "https://about.mercari.com/csr/safety/", class: "blog"
+      .fourth
+        %h2.country 国
+        %ul.c
+          %li.nippon
+            = link_to "日本", "/", class: "n"
+          %li.nip
+            = link_to "United States", "/", class: "n"
+    .bottom
+      = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg", class: "sc-kNBZmU.igKrOd", alt: "Mercari"), "/", class: "logo"
+      %span.trademark © 2019 Mercari
+= link_to "/sell/", class: "sell_btn" do
+  = "出品"
+  %i.fas.fa-camera
