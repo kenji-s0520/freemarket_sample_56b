@@ -3,6 +3,27 @@ body{
   width: 100%;
   background: #f1f1f1;
 }
+ul{
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+h2{
+  line-height: 1.4;
+}
+
+h4{
+  font-weight: bold;
+  margin-top: 40px;;
+  margin-bottom: 10px;
+}
+// 
+figure{
+  margin: 0 0;
+}
 
 .header{
   background-color: rgb(255, 255, 255);
@@ -26,26 +47,6 @@ body{
   vertical-align: middle;
 }
 
-.like{
-  padding: 0 11px 0 0;
-  text-decoration: none;
-  a{
-    padding-right: 0px;
-    margin: 10px 0 10px 0;
-  }
-}
-.notice{
-  padding: 0 14px;
-}
-.notification{
-  text-decoration: none;
-}
-.todo{
-  padding: 0 14px;
-}
-.todoing{
-  text-decoration: none;
-}
 .mypage{
   padding: 0 0 0 14px;
   &_font{
@@ -56,10 +57,6 @@ body{
     height: 32px;
     width: 32px;
     float: left;
-  }
-  span{
-    text-align: center;
-    margin: 8px 0 0 10px;
   }
 }
 
@@ -183,45 +180,66 @@ body{
     }
   }
 }
-.category_icon{
-  max-width: 100%;
-  max-height: 100%;
+.fa-list-ul{
+  font-size: 0.9em;
   color: rgb(234, 53, 45);
-  height: 12px;
-  margin-top: 12px;
-  margin-right: 4px;
-  box-sizing: border-box;
+  display: flex;
+  margin: 11px 0 0 10px; 
 }
-.search_brand{
-  cursor: pointer;
-  height: 44px;
-  position: relative;
-  padding-right: 0px;
-  z-index: 3;
-  padding: 0px 15px;
-  &_link{
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 36px;
-    white-space: nowrap;
-    color: inherit;
-    text-decoration: none;
-    box-sizing: border-box;
-  }
-  &_link:hover{
-    color: #3a89ff
-  }
+.fa-list-ul p{
+  color: #080808;
+  display: inline-flex;
 }
-
-.brand_icon{
-  max-width: 100%;
-  max-height: 100%;
+.fa-list-ul p:hover{
+  color: #3a89ff;
+}
+.brand_icon_link{
+  text-decoration: none;
+  font-size: 0.9em;
   color: rgb(234, 53, 45);
-  height: 12px;
-  margin-top: 12px;
-  margin-right: 4px;
-  box-sizing: border-box;
+  display: flex;
+  margin: 11px 5px 0 20px; 
+}
+.brand_icon_link p{
+  color: #080808;
+  display: inline-flex;
+}
+.brand_icon_link p:hover{
+  color: #3a89ff;
+}
+.like{
+  color: #565656;
+  text-decoration: none;
+  margin: 0 30px 0 0;
+}
+.like:hover{
+  color: #4eb4f8;
+}
+.notification{
+  color: #565656;
+  text-decoration: none;
+  margin: 0 30px 0 0;
+}
+.notification:hover{
+  color: #4eb4f8;
+}
+.todoing{
+  color: #565656;
+  text-decoration: none;
+  margin: 0 15px 0 0;
+}
+.todoing:hover{
+  color: #4eb4f8;
+}
+.mypage_img{
+  margin-right: 10px;
+}
+.mypage_font{
+  color: #565656;
+  line-height: 2.6;
+}
+.mypage_font:hover{
+  color: #4eb4f8;
 }
 .user_links{
   display: flex;
@@ -229,36 +247,8 @@ body{
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  span:hover{
-    color: rgb(74, 146, 228);
-  }
-  svg:hover{
-    color: rgb(74, 146, 228);
-  }
 }
 
-ul{
-  padding: 0;
-}
-
-li{
-  list-style: none;
-}
-
-h2{
-  line-height: 1.4;
-}
-
-h4{
-  font-weight: bold;
-  margin-top: 40px;;
-  margin-bottom: 10px;
-}
-
-figure{
-  margin: 0 0;
-
-}
 .main_contents{
   margin: 20px auto 0;
   width: 1020px;
