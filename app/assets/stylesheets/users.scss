@@ -1,0 +1,233 @@
+body{
+  height: 100%;
+  width: 100%;
+  background: #f1f1f1;
+}
+ul{
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+h2{
+  line-height: 1.4;
+}
+
+h4{
+  font-weight: bold;
+  margin-top: 40px;;
+  margin-bottom: 10px;
+}
+
+figure{
+  margin: 0 0;
+}
+
+.main_contents{
+  margin: 20px auto 0;
+  width: 1020px;
+}
+
+.main{
+  width: 700px;
+  float: right;
+  clear: both;
+}
+
+.upper{
+  margin-top: 15px;
+}
+
+.border_radius{
+  border-radius: 60px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.mypage_name{
+  text-align: center;
+  display: block;
+  background-image: image-url("user_bg.jpg");
+  background-size: cover;
+  height: 200px;
+  line-height: 1.5em
+}
+
+.mypage_name a{
+  display: block;
+  text-decoration: none;
+}
+
+.upper ul{
+  font-size: 14px;
+  display: inline-flex;
+  padding: 0 20px;
+}
+
+.math{
+  color: #222222;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.mypage_tabs{
+  margin-top: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  margin: 0 auto;
+  cursor: pointer;
+  padding-bottom: 1px;
+}
+
+.lower_tabs{
+  margin-top: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  margin: 0 auto;
+  cursor: pointer;
+  padding-bottom: 1px;
+}
+
+.tab_item1{
+  cursor: pointer;
+  font-size: 16px;
+  height: 80px;
+  width: calc(100%/2);
+  background-color: #ececec;
+  line-height: 75px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+}
+.tab_item1:hover{
+  color: rgb(115, 115, 115);
+}
+
+input[name="tab_item1"]{
+  display: none;
+}
+
+input[name="tab_item2"]{
+  display: none;
+}
+
+.list ul{
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+
+#notice:checked ~ #notice_contents,
+#todo:checked ~ #todo_contents{
+  display: block;
+}
+
+#transaction:checked ~ #transaction_contents,
+#past_transaction:checked ~ #past_transaction_contents{
+  display: block;
+}
+
+.mercari_icon{
+  height: 110px;
+  width: 110px;
+  opacity: 0.1;
+  -webkit-filter: grayscale(100%);
+}
+
+.tab_item2{
+  cursor: pointer;
+  height: 80px;
+  width: calc(100%/2);
+  background-color: #ececec;
+  line-height: 75px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+}
+.tab_item2:hover{
+  color: rgb(115, 115, 115);
+}
+.tab_contents{
+  text-align: center;
+  display: none;
+  padding: 40px 40px 60px;
+  clear: both;
+  overflow: hidden;
+  color: #9F99A3;
+}
+
+.mypage_tabs input:checked + .tab_item1 {
+  background-color: #ffffff;
+  color: #333;
+  border-top: 2px solid #cc4b4b;
+}
+
+.lower_tabs input:checked + .tab_item2 {
+  background-color: #ffffff;
+  color: #333;
+  border-top: 2px solid #cc4b4b;
+}
+
+.list ul{
+  display: block;
+  background: #eee;
+  height: 56px;
+  font-size: 14px;
+  color: #333;
+  margin: 15px;
+  line-height: 56px;
+  text-align: center;
+}
+
+.list ul:hover{
+  background: rgb(250, 250, 250);
+}
+
+.lower{
+  margin: 40px 0 40px;
+  background: #fafafa;
+  ul{
+    height: 52px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 52px;
+    padding: 20px;
+  }
+}
+
+.sell_btn{
+  position: fixed;
+  font-size: 22px;
+  bottom: 32px;
+  width: 160px;
+  height: 160px;
+  background-color: #ea352d;
+  color: #fff;
+  border-radius: 50%;
+  z-index: 1000;
+  right: 30px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 4;
+}
+ 
+.fa-camera{
+  font-size: 2.8em;
+  position: absolute;
+  top: 60px;
+  left: 48px;
+}
