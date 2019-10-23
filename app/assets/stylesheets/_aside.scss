@@ -1,0 +1,70 @@
+aside{
+  height: 260px;
+  width: 100%;
+}
+
+.bottom_banner{
+  display: flex;
+  background-image: image-url("download_bg_pc.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 260px;
+  width: 100%;
+  position: relative;
+  &_pc {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+    &_pc_block{
+      color: #ffffff;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      left: 330px;
+      top: 50px;
+  }
+    &_pc_icon{
+      margin: 20px 0;
+      display: flex;
+    }
+    &_pc_block h2{
+      font-size: 24px;
+      margin: 0;
+    }
+    &_pc_block p{
+      font-size: 35px;
+      margin: 10px 0 0;
+    }
+}
+
+.bottom_banner_pc>figure img{
+  position: absolute;
+  height: 260px;;
+  width: 300px;
+  right: 350px;
+}
+
+.marcari_icon_pc{
+  height: 68px;
+  width: 68px;
+}
+
+.AppStore{
+  height: 45px;
+  width: 133px;
+}
+
+.google-play-badge{
+  height: 45px;
+  width: 133px;
+}
+
+.app_icon {
+  padding: 0 0;
+  display: flex;
+  margin: 15px;
+  li{
+    margin: 0 8px;
+  }
+}

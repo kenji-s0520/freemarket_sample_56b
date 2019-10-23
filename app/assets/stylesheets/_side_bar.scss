@@ -1,0 +1,51 @@
+.side_bar{
+  float: left;
+  width: 280px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  &_name li{
+    font-size: 14px;
+    display: block;
+    border-top:  #9F99A3;
+    border-left:  #9F99A3;
+    border-right: #9F99A3;
+    border-bottom:  #9F99A3;
+    background-color: #FFFFFF;
+    padding: 3px 10px;
+    color: #333;
+    height: 40px;
+    width: 230px; 
+    margin: 0px;
+    line-height: 40px;
+    margin: 1px;
+  }
+  &_name li:hover{
+    border-top: #BABABA;
+    border-left: #BABABA;
+    border-right: #BABABA;
+    border-bottom: #BABABA;
+    background-color: rgb(247, 247, 247);
+    margin: 1px;
+  }
+}
+
+.fa-chevron-right {
+  float: right;
+  margin-right: 5px;
+  margin-top: 12px;
+  color: #dddddd;
+}
+
+li:hover .fa-chevron-right{
+  color: #333;
+  transform: translate(5px);
+  transition: all 0.4s;
+}
+
+.header_merpay{
+  margin-top: 0px;
+  &_set{
+    margin-top: 0px;
+  }
+}
