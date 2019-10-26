@@ -6,4 +6,8 @@ class UsersController < ApplicationController
   def info
   end
   
+
+  def card
+  end
+
 end
