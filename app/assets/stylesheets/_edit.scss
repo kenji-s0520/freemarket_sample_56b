@@ -1,12 +1,8 @@
 .profile-edit{
-  // a:link {color:white; text-decoration:none }
-  // a:visited { color:white; text-decoration:none }
   background-color:white;
-  // display:block;
   text-align: center;
   width:700px;
   position:relative;
-  // top:189px;
   &__header {
     box-sizing: border-box;
     height:50px;
@@ -32,10 +28,6 @@
       width:60px;
       border:none;
       border-radius: 50%;
-      // -moz-border-radius: 55%;
-      // -webkit-border-radius: 55%;
-      
-      // background-image: url("D7yHQBFU8AAeGrU.jpg");
     }
     input {
       border:none;
@@ -51,14 +43,9 @@
       font-size:16px;
       color:#333333;
     }
-  }
-  // &__text {
-  //   height:216px;
-  
+  }  
   &__footer {
     margin-top:16px;
-    // width:668px;
-    // height:50px;
     background-color: red;
 
   }
