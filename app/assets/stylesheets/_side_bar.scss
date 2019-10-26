@@ -4,6 +4,10 @@
   cursor: pointer;
   margin-top: 15px;
   margin-bottom: 40px;
+  &_name{
+    text-decoration: none;
+    display: block;
+  }
   &_name li{
     font-size: 14px;
     display: block;
@@ -12,10 +16,10 @@
     border-right: #9F99A3;
     border-bottom:  #9F99A3;
     background-color: #FFFFFF;
-    padding: 3px 10px;
+    padding: 3px 16px;
     color: #333;
     height: 40px;
-    width: 230px; 
+    width: 260px; 
     margin: 0px;
     line-height: 40px;
     margin: 1px;
@@ -43,9 +47,13 @@ li:hover .fa-chevron-right{
   transition: all 0.4s;
 }
 
-.header_merpay{
+.header_merpay {
   margin-top: 0px;
   &_set{
-    margin-top: 0px;
+   margin-top: 0px;
   }
+}
+
+a{
+  color: #333;
 }

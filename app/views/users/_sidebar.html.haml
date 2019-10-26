@@ -68,8 +68,9 @@
         メール/パスワード
         %i.fas.fa-chevron-right
       %li
-        本人情報
-        %i.fas.fa-chevron-right
+        = link_to "/users/info/", class: "side_bar_name" do
+          = "本人情報"
+          %i.fas.fa-chevron-right
       %li
         電話番号の確認
         %i.fas.fa-chevron-right

@@ -1,0 +1,126 @@
+body{
+  height: 100%;
+  width: 100%;
+  background: #f1f1f1;
+}
+a{
+  text-decoration: none;
+}
+.main_contents{
+  margin: 20px auto 0;
+  width: 1020px;
+  height: auto;
+}
+.main{
+  width: 700px;
+  float: right;
+  clear: both;
+  padding: 0 0 40px;
+}
+.upper{
+  margin-top: 15px;
+  background: #ffffff;
+}
+.infomation{
+  color: #333;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 8px 24px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.user_info{
+  color: #333;
+  padding: 60px;
+  border-top: 1px solid #f5f5f5;
+  p{
+    margin: 8px 0 0;
+    font-size: 14px;
+  }
+}
+
+.text_right1{
+  margin: 0 0 0 320px;
+  font-size: 14px;
+  color: #0098e8;
+}
+.text_right2{
+  margin: 0 0 0 410px;
+  font-size: 14px;
+  color: #0098e8;
+}
+.form_group{
+  width: 100%;
+  margin: 40px 0 0;
+  
+}
+label{
+  font-size: 14px;
+  color: #313131;
+  display: inline-block;
+  font-weight: 600;
+}
+.any{
+  background: #ccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+.input-default{
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 8px 0 0;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 14px;
+  outline-width: 1px;
+}
+select{
+  -webkit-appearance: none;
+  outline-width: 1px;
+}
+.select-default{
+  background: #fff;
+  margin: 8px 0 0;;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.fa-chevron-down{
+  position: relative;
+  top: 55px;
+  left: 430px;
+  z-index: 3;
+  color: #888;
+  font-size: 20px;
+  transform: translate(0, -50%);
+}
+.register_button{
+  margin: 40px 0 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+}
