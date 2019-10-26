@@ -1,6 +1,17 @@
 = render :partial => "header"
 %main.main_contents
   .main
-    
+    .upper
+      .card
+        .card__header
+          %h2
+            支払い方法
+        .card__main
+          %h3
+            クレジットカード一覧
+          %button.card-add
+            クレジットカードを追加する
+          =link_to "https://www.mercari.com/jp/help_center/category/6/", class:"card-information" do
+            支払い方法について
   = render :partial => "sidebar"
 = render :partial => "footer"
