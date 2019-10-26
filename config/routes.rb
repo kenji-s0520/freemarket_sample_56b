@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get '/users/:id/card/create' => 'users#card_create'
   get '/users/user_reg4'
 
+  root to: "groups#user-login"
+
   resources :items, only: [:show]
 end
