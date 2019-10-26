@@ -1,0 +1,99 @@
+%html
+  %head
+  -#   %meta{:content => "text/html; charset=utf-8", "http-eqiv" => "Content-Type"}/
+  -#   %title 会員情報入力 -メルカリ スマホで
+  -#   %script src='https://www.google.com/recaptcha/api.js'
+  -#   <!-- recaptchaの記載 -->
+  %script{src: 'https://www.google.com/recaptcha/api.js'}
+  %body
+  .user-information
+    .header 
+      %a{ href: 'https://www.mercari.com/jp/'}
+        %img{src: 'assets/logo.svg', alt: 'mercari-logo'}
+      .progress-bar
+        .progress 
+          会員情報
+        %hr 
+        .progress-status
+          電話番号認証
+        %hr 
+        .progress-status
+          お届け先住所入力
+        %hr   
+        .progress-status
+          支払い方法
+        %hr 
+        .progress-status
+          完了
+        %hr   
+        .progress-status
+
+    .main
+      .section
+      .head 
+        %h1 会員情報入力
+      %form{:action => "/", :method => "post"}
+      %div{class:"form"}
+      %label.nickname ニックネーム
+      %span.form-necessary 必須
+      %br
+      %input{name:"nickname" ,placeholder:"例) メルカリ太郎"}
+      %div{class:"form"}
+      %label.email メールアドレス
+      %span.form-necessary 必須
+      %br
+      %input{name:"email", placeholder:"PC・携帯どちらでも可"}
+      %div{class:"form"}
+      %label.password パスワード
+      %span.form-necessary 必須
+      %br
+      %input{type:"password" ,placeholder:"7文字以上"}
+      %div{class:"form"}
+      %label.password パスワード(確認)
+      %span.form-necessary 必須
+      %br
+      %input{type:"password" ,placeholder:"7文字以上"}
+      %div{class:"form"}
+      %h3.text-left-sub-head 本人確認      
+      %p.sub-head-text
+        安心・安全にご利用いただために、お客さまの本人情報の登録にご協力ください。
+        他のお客さまに公開されることはありません。
+      %div{class:"form"}
+        %label お名前(全角)
+        %span.form-necessary 必須
+      %input{name:"family-name" ,placeholder:"例)山田"}
+      %input{name:"first-name" ,placeholder:"例)彩"}
+      %br
+      %div{class:"form"}
+        %label お名前(カナ)
+        %span.form-necessary 必須
+      %input{name:"family-name" ,placeholder:"例)ヤマダ"}
+      %input{name:"first-name" ,placeholder:"例)アヤ"}
+      %br
+      %div{class:"form"}
+        %label お名前(カナ)
+        %span.form-necessary 必須
+      %input{name:"family-name" ,placeholder:"例)ヤマダ"}
+      %input{name:"first-name" ,placeholder:"例)アヤ"}
+      %br
+      %div{class:"form"}
+        %label 生年月日
+        %span.form-necessary 必須
+        %br
+        %select{name:"year"} 
+          %option{value:""}-
+          %option{value:""}-
+          
+      %br
+      ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      %br
+      %a{ href: 'https://www.mercari.com/jp/'}次へ進む
+      -# 次の画面に遷移
+    .footer
+      %a{ href: 'https://www.mercari.com/jp/privacy/'}プライバシーポリシー
+      %a{ href: 'https://www.mercari.com/jp/tos/'}メルカリ利用規約
+      %a{ href: 'https://www.mercari.com/jp/tokutei/'}特定商取引に関する表記
+      %br
+      %img{src: 'assets/logo-gray.svg', alt: 'mercari-logo'}
+      %br
+      %p © 2019 Mercari
