@@ -1,0 +1,14 @@
+= render :partial => "header"
+.profile-edit
+  .profile-edit__header
+    %h2
+      プロフィール
+  .profile-edit__user
+    = image_tag "/assets/CVOtsJ8UsAAXlxq.jpg"
+    %input{type:"text",value:"川谷絵音",placeholder:"例)AYA☆セール中"}
+  .profile_edit__text
+    %textarea{name:"introduction",placeholder:"例)こんにちは☆ご覧いただきありがとうございます！",cols:"50",rows:"5"}
+  .profile_edit__footer
+    %submit{class:"change",value:"変更する"}
+  = render :partial => "sidebar"
+= render :partial => "footer"

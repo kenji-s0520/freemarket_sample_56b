@@ -1,0 +1,83 @@
+.profile-edit{
+  // a:link {color:white; text-decoration:none }
+  // a:visited { color:white; text-decoration:none }
+  background-color:white;
+  // display:block;
+  text-align: center;
+  width:700px;
+  position:relative;
+  // top:189px;
+  &__header {
+    box-sizing: border-box;
+    height:50px;
+    width:100%;
+    padding:8px 24px;
+    h2 {
+      font-size:24px;
+      font-weight: bold;
+      color:#333333;
+    }
+  }
+  &__user {
+    box-sizing: border-box;
+    height:156px;
+    background-image: url("IMG_1843.jpg");
+    background-size: cover;
+    padding: 72px 16px 24px;
+    margin-bottom:40px;
+    img {
+      height:60px;
+      width:60px;
+      border:none;
+      border-radius: 50%;
+      // -moz-border-radius: 55%;
+      // -webkit-border-radius: 55%;
+      
+      // background-image: url("D7yHQBFU8AAeGrU.jpg");
+    }
+    input {
+      border:none;
+      outline:none;
+      border-radius: 3px; 
+      box-sizing: border-box;
+      width:220px;
+      height:48px;
+      padding: 10px 16px 8px;
+      // margin: 0px 0px 0px 8px;
+      position:relative;
+      bottom:23px;
+      font-size:16px;
+      color:#333333;
+    }
+  }
+  // &__text {
+  //   height:216px;
+  
+  &__footer {
+    margin-top:16px;
+    // width:668px;
+    // height:50px;
+    background-color: red;
+
+  }
+}
+
+input.change {
+  outline:none;
+  box-sizing: border-box;
+  background-color: red;
+  color:white;
+  margin-top:16px;
+  width:668px;
+  height:50px;
+  font-size:14px;
+}
+
+textarea{
+    outline:none;
+    box-sizing: border-box;
+    resize: none;
+    width:668px;
+    height:216px;
+    padding:10px;
+  }
