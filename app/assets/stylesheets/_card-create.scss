@@ -1,7 +1,7 @@
-.card{
+.create{
   background-color:white;
   width:700px;
-  height:358.9px;
+  height:512px;
   position:relative;
   &__header {
     box-sizing: border-box;
@@ -19,43 +19,33 @@
     box-sizing: border-box;
     padding:64px;
     height:308.9px;
+    // text-align: center;
     &__message {
       height:16px;
       width:320px;
       margin:auto;
-      h3 {
+      label {
       color:#333333;
-      font-size:16px;    
+      font-size:14px;    
       font-weight:bold;  
       }}
+      span.formrequire {
+        box-sizing: border-box;
+        font-size:12px;
+        background-color:#ea352d;
+        width:32px;
+        height:19px;
+        padding:3.5px;
+        border-radius: 2px;
+      }
   &__button {
+      text-align: center;
     padding:24px 0px;
-    border-bottom: solid 1px #f1f1f1;
+    // border-bottom: solid 1px #f1f1f1;
   }}}
-a.card-information {
-  position:relative;
-  top:50px;
-  float:right;
-  color:#0099E8;
-  font-size:14px;
-}
-.yajirushi {
-  float:right;
-  position:relative;
-  bottom:11px;
-  color:#0099E8;
-  left:6px;
-}
-a.card-add {
-  text-align: center;
-  line-height:14px;
-  height:50px;
-  box-sizing: border-box;
-  margin:auto;
-  padding:18px 0px;
-  border-bottom: solid 1px #f1f1f1;
-  display:block;
+button.create-add {
   width:320px;
+  height:50px;
   background-color:#ea352d;
   color:white;
   font-size:14px;

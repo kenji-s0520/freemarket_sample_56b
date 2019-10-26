@@ -11,7 +11,7 @@
             %h3
               クレジットカード一覧
           .card__main__button
-            %button.card-add
+            =link_to "/users/:id/card/create", class:"card-add" do
               %i.far.fa-credit-card
               クレジットカードを追加する
           .card-main__inf
