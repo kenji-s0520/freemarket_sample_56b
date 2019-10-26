@@ -1,0 +1,56 @@
+.card{
+  background-color:white;
+  width:700px;
+  height:358.9px;
+  position:relative;
+  &__header {
+    box-sizing: border-box;
+    height:50px;
+    width:100%;
+    padding:8px 24px;
+    border-bottom: solid 1px #f1f1f1;
+    h2 {
+      text-align: center;
+      font-size:24px;
+      font-weight: bold;
+      color:#333333;
+    }}
+  &__main {
+    box-sizing: border-box;
+    padding:64px;
+    height:308.9px;
+    text-align: center;
+    &__message {
+      height:16px;
+      width:320px;
+      margin:auto;
+      h3 {
+      color:#333333;
+      font-size:16px;    
+      font-weight:bold;  
+      }}
+  &__button {
+    padding:24px 0px;
+    border-bottom: solid 1px #f1f1f1;
+  }}}
+a.card-information {
+  position:relative;
+  top:50px;
+  float:right;
+  color:#0099E8;
+  font-size:14px;
+}
+.yajirushi {
+  float:right;
+  position:relative;
+  bottom:11px;
+  color:#0099E8;
+  left:6px;
+}
+button.card-add {
+  width:320px;
+  height:50px;
+  background-color:#ea352d;
+  color:white;
+  font-size:14px;
+}
