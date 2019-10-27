@@ -1,7 +1,7 @@
 .create{
   background-color:white;
   width:700px;
-  height:512px;
+  height:562px;
   position:relative;
   &__header {
     box-sizing: border-box;
@@ -17,18 +17,74 @@
     }}
   &__main {
     box-sizing: border-box;
-    padding:64px;
-    height:308.9px;
-    // text-align: center;
+    padding:0px 40px 64px;
+    height:512px;
+    margin:auto;
+    text-align: center;
     &__message {
       height:16px;
-      width:320px;
+      width:347px;
+      margin:32px auto 0px;
+      text-align: left;
+    }
+    &__image {
+      font-size:16px;
+      margin:8px 0px 0px;
+    }
+    label {
+    color:#333333;
+    font-size:14px;    
+    font-weight:bold;
+    }
+    &__form {
+      box-sizing:border-box;
       margin:auto;
-      label {
-      color:#333333;
-      font-size:14px;    
-      font-weight:bold;  
-      }}
+      text-align: center;
+      input {
+        box-sizing: border-box;
+        margin:8px 0px 8px;
+        padding:10px 16px 8px;
+        // margin:auto;
+        width:343px;
+        height:48px;
+        border-radius: 2px;          
+        border-style:solid;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        outline: none;
+        border-width: 1px;
+      }
+    }
+    &__year-month {
+      box-sizing:border-box;
+      margin:auto;
+      width:347px;
+      text-align: left;
+      padding:10px 0px 8px;
+      input {
+        
+        width:131.5px;
+        height:48px;
+        border-radius: 2px;
+        border-style:solid;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        outline: none;
+        border-width: 1px;
+      }
+    }
+    &__card-backside {
+      width:347px;
+      text-align: right;
+      margin:auto;
+      font-size:14px;
+      color:#0099E8;
+    }
+    &__image {
+      margin:auto;
+      width:343px;
+      text-align: left;
+    }
       span.formrequire {
         box-sizing: border-box;
         font-size:12px;
@@ -36,15 +92,15 @@
         width:32px;
         height:19px;
         padding:3.5px;
+        margin-left:8px;
         border-radius: 2px;
       }
-  &__button {
-      text-align: center;
+    &__button {
+    text-align: center;
     padding:24px 0px;
-    // border-bottom: solid 1px #f1f1f1;
   }}}
 button.create-add {
-  width:320px;
+  width:343px;
   height:50px;
   background-color:#ea352d;
   color:white;

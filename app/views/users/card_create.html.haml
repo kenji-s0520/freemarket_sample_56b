@@ -12,16 +12,36 @@
               カード番号
             %span.formrequire
               必須
+          .create__main__form
+            %input{type:"text",value:"",placeholder:"半角数字のみ"}
+          .create__main__image
+            = image_tag "cards/visa.svg",width:"49",height:"20"
+            = image_tag "cards/master-card.svg",width:"34",height:"20"
+            = image_tag "cards/saison-card.svg",width:"30",height:"20"
+            = image_tag "cards/jcb.svg",width:"32",height:"20"
+            = image_tag "cards/american_express.svg",width:"21",height:"20"
+            = image_tag "cards/dinersclub.svg",width:"32",height:"20"
+            = image_tag "cards/discover.svg",width:"32",height:"20"
           .create__main__message
             %label
               有効期限
             %span.formrequire
               必須
+          .create__main__year-month
+            %input{type:"month",value:"",placeholder:"半角数字のみ"}
+            月
+            %input{type:"year",value:"",placeholder:"半角数字のみ"}
+            年
           .create__main__message
             %label
               セキュリティコード
             %span.formrequire
               必須
+          .create__main__form
+            %input{type:"text",value:"",placeholder:"カード背面4桁もしくは3桁の番号"}
+          .create__main__card-backside
+            %i.fas.fa-question-circle
+            カード裏面の番号とは
           .create__main__button
             %button.create-add
               追加する
