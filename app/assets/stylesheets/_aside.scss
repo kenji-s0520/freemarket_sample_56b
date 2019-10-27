@@ -9,7 +9,7 @@ aside{
   background-position: center;
   background-size: cover;
   height: 260px;
-  width: 100%;
+  width: auto;
   position: relative;
   &_pc {
     display: block;
@@ -39,10 +39,10 @@ aside{
 }
 
 .bottom_banner_pc>figure img{
-  position: absolute;
+  position: relative;
   height: 260px;;
   width: 300px;
-  right: 350px;
+  left: 790px;
 }
 
 .marcari_icon_pc{

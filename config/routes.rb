@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   root to: "groups#index"
-  resources :users, only: []
-  root to: "items#index"
+  get 'index' => 'items#toppage'
 
 end

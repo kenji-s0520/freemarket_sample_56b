@@ -1,6 +1,6 @@
 .footer {
   clear: both;
-  width: 1440px;
+  width: auto;
   height: 389px;
   background-color: #222222;
   h2{
@@ -133,6 +133,15 @@ path {
 }
 
 .liS {
+  width: 190.33px;
+  height: 14px;
+  margin-top: 16px;
+  list-style: none;
+  font-size: 10px;
+  text-align: left;
+  text-decoration: none;
+}
+.liSmeri {
   width: 190.33px;
   height: 14px;
   margin-top: 16px;
