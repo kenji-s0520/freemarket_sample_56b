@@ -125,9 +125,13 @@ img {
   margin:8px 0px 0px;
 }
 
-i.fas.fa-caret-up::before {
+i.fas.fa-caret-up.fa-2x::before {
   color:#EEEEEE;
   position:relative;
-  right:18px;
+  left:145px;
   bottom:3px;
+}
+
+.hidden {
+  display:none;
 }
