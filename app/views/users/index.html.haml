@@ -25,7 +25,7 @@
         .list
           %ul 一覧をみる
       .lower
-        %ul 購入した商品
+        %h2 購入した商品
         .lower_tabs
           %input#transaction{checked: "checked", name: "tab_item2", type: "radio"}/
           %label.tab_item2{for: "transaction"} 取引中
@@ -39,3 +39,4 @@
             %p 過去に取引した商品がありません
   = render :partial => "sidebar"
 = render :partial => "footer"
+= render :partial => "users/sell_btn"

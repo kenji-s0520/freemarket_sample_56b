@@ -33,19 +33,21 @@
     background-color: rgb(247, 247, 247);
     margin: 1px;
   }
+  .fa-chevron-right {
+    float: right;
+    margin-right: 5px;
+    margin-top: 12px;
+    color: #dddddd;
+  }
 }
 
-.fa-chevron-right {
-  float: right;
-  margin-right: 5px;
-  margin-top: 12px;
-  color: #dddddd;
-}
 
-li:hover .fa-chevron-right{
-  color: #333;
-  transform: translate(5px);
-  transition: all 0.4s;
+.side_bar{
+  li:hover .fa-chevron-right{
+    color: #333;
+    transform: translate(5px);
+    transition: all 0.4s;
+  }
 }
 
 .header_merpay {

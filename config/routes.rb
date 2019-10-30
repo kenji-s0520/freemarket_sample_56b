@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   get '/users/info' => 'users#info'
+  get '/users/items' => 'users#items'
 
 end
