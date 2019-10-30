@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 
   def info
   end
-  
+ 
   def items
   end
 
+  def edit
+  end
 end
