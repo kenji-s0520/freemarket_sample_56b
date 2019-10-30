@@ -4,7 +4,9 @@
     %header.header
     .slider
       .campgoods_img
-        -# = image_tag "/images/top-banner-camp.jpg"
+        %ul
+          %li
+          =link_to image_tag("/images/top-banner-camp.jpg",class: "CampCampain"),""
       .smartphone_img
         .smartphone_img_text
           %h2 

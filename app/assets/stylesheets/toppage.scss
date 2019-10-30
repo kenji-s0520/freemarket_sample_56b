@@ -219,40 +219,65 @@
   display: flex;
   align-items: center;
   position: relative;
-  height: 390px;
-  width: 1280px;
+  max-width: 1280px;
+  max-height: 390px;
+  .slick-dots {
+    text-align: center;
+    bottom: 15px;
+    li {
+      display: inline-block;
+      font-size: 20px !important;
+      button{
+        position: relative;
+        &:before{
+          content: '●';
+          font-size: 8px !important;
+          color: #fff !important;
+          z-index: 2;
+          position: absolute;
+        }
+      }
+    }
+  }
+  .slideArrow{
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    .prev{
+      margin-left: 60px;
+      width: 0;
+      height: 0;
+      border-left: 0 solid;
+    }
+    .next{
+      margin-right: 60px;
+      width: 0;
+      height: 0;
+      border-right: 0 solid;
+    }
+  }
 }
-
 .campgoods_img{
-  display: table-cell;
-  box-sizing: border-box;
-  background-image: image-url("/images/top-banner-camp.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  // width: 1280px; 
-  // height: auto;
-  position: relative;
+  ul{
+    .CampCampain{
+      width: 100%; 
+      height: 390px;
+      object-fit: cover;
+    }
+  }
 }
 
 .smartphone_img{
-  display: table-cell;
-  // box-sizing: border-box;
-  -webkit-box-align: center;
-  align-items: center;
   background-image: image-url("top-banner-main.jpg");
-  // background-position: center;
-  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 390px;
-  width: 1280px;
-  position: relative;
+  background-size: cover;
   &_text{
     position: absolute;
-    height: 360px;
+    height: 330px;
     width: 860px;
     padding: 20px 40px;
-    margin-left: 230px;
+    margin-left: 180px;
     margin-top: 20px;
     color: #383c3c;
     z-index: 2;
@@ -271,21 +296,18 @@
       width: 780px;
       height: 67px;
     }
-    .ul{
-      box-sizing: border-box;
-      // padding: 0 0;
+    ul.app_icon{
       width: 780px;
       height: 50px;
       display: flex;
-      margin: 15px;
       .AppStore{
-        height: 45px;
-        width: 133px;
+        height: 50px;
+        width: 170px;
         box-sizing: border-box;
       }
       .google-play-badge{
-        height: 45px;
-        width: 133px;
+        height: 50px;
+        width: 170px;
         box-sizing: border-box;
       }
     }
@@ -293,19 +315,14 @@
 }
 
 .smartphone_img>figure img{
-  position: absolute;
+  // position: absolute;
   height: 390px;
   width: 440px;
   bottom: 400px;
-  left: 640px;
-  box-sizing: border-box;
+  margin-left: 600px;
+  z-index: 2;
+  // box-sizing: border-box;
 }
-
-
-
-
-
-
 
 .recommend{
   max-width: 1020px;
@@ -317,11 +334,6 @@
 .center_box{
   position: relative;
 }
-
-/* .ad_box{
-  height: 390px;
-  max-width: 100%;
-} */
 
 .popular_recommend{
   padding: 56px 0px 30px;
@@ -455,57 +467,58 @@
   margin: 0;
   overflow: hidden;
   z-index: 0;
-}
-
-.style_card figcaption{
-  box-sizing: border-box;
-  color: #222;
-  font-size: 14px;
-  width: 100%;
-  height: 64px;
-  line-height: 1.4em;
-  padding: 0 12px;
-  white-space: normal;
-  word-break: break-word;
-  -webkit-box-align: center;
-  align-items: center;
-  display: flex;
-  position: relative;
-}
-
-.style_thumbnail{
-  height: 0;
-  overflow: hidden;
-  padding: 0 0 100%;
-  position: relative;
-  width: 100%;
-}
-.style_thumbnail img{
-  width: 188px;
-  height: 188px;
-  object-fit: cover;
-  vertical-align: top;
-  bottom: 0;
-  top: 0;
-  position: absolute;
-  z-index: 1;
-}
-
-.style_thumbnail span{
-  -webkit-box-align: center;
-  align-items: center;
-  background: rgba(0,0,0,.4);
-  border-radius: 0 14px 14px 0;
-  bottom: 8px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: inline-flex;
-  font-size: 17px;
-  height: 28px;
-  letter-spacing: .02em;
-  margin: 0;
-  padding: 0 12px;
-  position: absolute;
-  z-index: 2;
+  .style_thumbnail{
+    height: 0;
+    overflow: hidden;
+    padding: 0 0 100%;
+    position: relative;
+    width: 100%;
+    img{
+      width: 188px;
+      height: 188px;
+      object-fit: cover;
+      vertical-align: top;
+      bottom: 0;
+      top: 0;
+      position: absolute;
+      z-index: 1;
+    }
+    span{
+      -webkit-box-align: center;
+      align-items: center;
+      background: rgba(0,0,0,.4);
+      border-radius: 0 14px 14px 0;
+      bottom: 8px;
+      box-sizing: border-box;
+      color: #ffffff;
+      display: inline-flex;
+      font-size: 17px;
+      height: 28px;
+      letter-spacing: .02em;
+      margin: 0;
+      padding: 0 12px;
+      position: absolute;
+      z-index: 2;
+    }
+  }
+  figcaption{
+    box-sizing: border-box;
+    width: 100%;
+    height: 64px;
+    line-height: 1.4em;
+    padding: 0 12px;
+    white-space: normal;
+    word-break: break-word;
+    span{
+      margin-top: 10px;
+      text-align: left;
+      color: #222;
+      font-size: 14px;
+      height: 2.8em;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+    }
+  }
 }
 
