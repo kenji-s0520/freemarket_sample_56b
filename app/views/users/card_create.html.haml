@@ -28,17 +28,66 @@
             %span.formrequire
               必須
           .create__main__year-month
-            %input{type:"month",value:"",placeholder:"半角数字のみ"}
-            月
-            %input{type:"year",value:"",placeholder:"半角数字のみ"}
-            年
+            %select{name:"month"}
+              %option
+                01
+              %option
+                02
+              %option
+                03
+              %option
+                04
+              %option
+                05
+              %option
+                06
+              %option
+                07
+              %option
+                08
+              %option
+                09
+              %option
+                10
+              %option
+                11
+              %option
+                12
+            
+            %label{class:"year-month"}
+              月
+            %select{name:"month"}
+              %option
+                19
+              %option
+                20
+              %option
+                21
+              %option
+                22
+              %option
+                23
+              %option
+                24
+              %option
+                25
+              %option
+                26
+              %option
+                27
+              %option
+                28
+              %option
+                29
+            %label{class:"year-month"}
+              年
           .create__main__message
             %label
               セキュリティコード
             %span.formrequire
               必須
           .create__main__form
-            %input{type:"text",value:"",placeholder:"カード背面4桁もしくは3桁の番号"}
+            %input{type:"text",value:"",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"4"}
           .create__main__card-backside{onclick:"ShowCardBackside()"}
             %i.fas.fa-question-circle
             カード裏面の番号とは
@@ -51,5 +100,7 @@
           #addbutton.create__main__button
             %button.create-add
               追加する
+        %i#yajirushi1.fas.fa-chevron-down
+        %i#yajirushi2.fas.fa-chevron-down
   = render :partial => "sidebar"
 = render :partial => "footer"

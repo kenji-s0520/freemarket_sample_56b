@@ -17,19 +17,19 @@
     }}
   &__main {
     box-sizing: border-box;
-    padding:0px 40px 64px;
+    padding:18px 40px 64px;
     height:512px;
     margin:auto;
     text-align: center;
     &__message {
       height:16px;
       width:347px;
-      margin:32px auto 0px;
+      margin:24px auto 0px;
       text-align: left;
     }
     &__image {
       font-size:16px;
-      margin:8px 0px 0px;
+      // margin:8px 0px 0px;
     }
     label {
     color:#333333;
@@ -42,7 +42,7 @@
       text-align: center;
       input {
         box-sizing: border-box;
-        margin:8px 0px 8px;
+        margin:8px 0px 0px;
         padding:10px 16px 8px;
         // margin:auto;
         width:343px;
@@ -58,25 +58,29 @@
     &__year-month {
       box-sizing:border-box;
       margin:auto;
-      width:347px;
+      width:343px;
       text-align: left;
       padding:10px 0px 8px;
-      input {
-        
+      select {
+        z-index:10;
+        box-sizing:border-box;
         width:131.5px;
         height:48px;
         border-radius: 4px;
         border-style:solid;
         border-color: rgb(204, 204, 204);
+        background-color: white;
         border-image: initial;
         outline: none;
         border-width: 1px;
+        padding:0px 16px;
+        font-size:13px;
       }
     }
     &__card-backside {
       width:347px;
       text-align: right;
-      margin:auto;
+      margin:8px auto;
       font-size:14px;
       color:#0099E8;
     }
@@ -134,4 +138,38 @@ i.fas.fa-caret-up.fa-2x::before {
 
 .hidden {
   display:none;
+}
+
+i.fas.fa-chevron-down::before {
+  color:  rgb(204, 204, 190);
+}
+
+.year-month {
+  color:#333333;
+  font-size:13px;
+  width:14px;
+  height:18px;
+}
+
+#yajirushi1 {
+  position: absolute;
+  // left:100px;
+  // bottom:700px;
+  top:270px;
+  left:447px;
+}
+
+#yajirushi2 {
+  position: absolute;
+  // left:100px;
+  // bottom:700px;
+  top:270px;
+  left:274px;
+}
+
+.year-month {
+  width:20px;
+  margin:5px;
+  text-align: center;
+  font-size:13px;
 }
