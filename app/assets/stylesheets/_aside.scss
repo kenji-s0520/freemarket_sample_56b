@@ -2,6 +2,10 @@ aside{
   height: 260px;
   width: auto;
 }
+.bottom_banner_pc{
+  width: 750px;
+  margin: 0 auto;
+}
 
 .bottom_banner{
   display: flex;
@@ -11,17 +15,10 @@ aside{
   height: 260px;
   width: 100%;
   position: relative;
-  &_pc {
-    display: block;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-  }
     &_pc_block{
       color: #ffffff;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
       position: absolute;
-      left: 330px;
       top: 50px;
   }
     &_pc_icon{
@@ -42,7 +39,7 @@ aside{
   position: relative;
   height: 260px;
   width: 300px;
-  left: 790px;
+  left: 460px;
 }
 
 .marcari_icon_pc{
