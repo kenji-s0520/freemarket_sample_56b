@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit]
   get '/users/info' => 'users#info'
 
-  get '/items/show' => 'items#items'
+  resources :items, only: [:show]
 
 end

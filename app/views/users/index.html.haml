@@ -1,4 +1,4 @@
-= render :partial => "header"
+= render partial: "header"
 %main.main_contents
   .main
     .upper
@@ -37,6 +37,6 @@
           #past_transaction_contents.tab_contents
             = image_tag "/images/mercari_icon.png", class: "mercari_icon"
             %p 過去に取引した商品がありません
-  = render :partial => "sidebar"
-= render :partial => "footer"
-= render :partial => "users/sell_btn"
+  = render partial: "sidebar"
+= render partial: "footer"
+= render partial: "users/sell_btn"
