@@ -56,14 +56,16 @@
       設定
     %ul.header_set
       %li
-        プロフィール
-        %i.fas.fa-chevron-right
+        = link_to "/users/:id/edit/",class: "side_bar_name" do
+          = "プロフィール"
+          %i.fas.fa-chevron-right
       %li
         発送元・お届け先住所変更
         %i.fas.fa-chevron-right
       %li
-        支払い方法
-        %i.fas.fa-chevron-right
+        = link_to "/users/:id/card/", class: "side_bar_name" do
+          = "支払い方法"
+          %i.fas.fa-chevron-right
       %li
         メール/パスワード
         %i.fas.fa-chevron-right
