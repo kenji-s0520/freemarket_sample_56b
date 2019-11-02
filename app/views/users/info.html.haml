@@ -1,7 +1,7 @@
-= render :partial => "header"
+= render partial: "header"
 %main.main_contents
   .main
-    .upper
+    .upper2
       %h2.information
         本人情報の登録
       %form.user_info
@@ -96,5 +96,6 @@
           = link_to "https://www.mercari.com/jp/help_center/article/423/", class: "text_right2" do
             = "本人情報の登録について"
             %i.fas.fa-angle-right
-  = render :partial => "sidebar"
-= render :partial => "footer"
+  = render partial: "sidebar"
+= render partial: "footer"
+= render partial: "users/sell_btn"
