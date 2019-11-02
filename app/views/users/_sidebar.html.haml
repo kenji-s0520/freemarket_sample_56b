@@ -2,8 +2,9 @@
   .side_bar_name
     %ul.header_lists
       %li
-        マイページ
-        %i.fas.fa-chevron-right
+        = link_to "/users/", class: "side_bar_name" do
+          = "マイページ"
+          %i.fas.fa-chevron-right
       %li
         お知らせ
         %i.fas.fa-chevron-right
