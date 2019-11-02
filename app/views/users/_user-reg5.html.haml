@@ -1,0 +1,52 @@
+%html
+  %head
+  -#   %meta{:content => "text/html; charset=utf-8", "http-eqiv" => "Content-Type"}/
+  -#   %title 会員情報入力 -メルカリ スマホで
+  -#   %script src='https://www.google.com/recaptcha/api.js'
+  -#   <!-- recaptchaの記載 -->
+  %script{src: 'https://www.google.com/recaptcha/api.js'}
+  %body
+  .user-information
+    .header
+      %h1
+        %a{ href: 'https://www.mercari.com/jp/'}
+          %img{src: 'assets/logo.svg', alt: 'mercari-logo'}
+      %nav.process-bar
+        %ol.process-sub-bar
+          .status
+            %li.current 会員情報
+            %span
+          .status
+            %li.after 電話番号確認
+            %span
+          .status
+            %li.after お届け先住所入力
+            %span 
+          .status
+            %li.after 支払い方法
+            %span
+          .status
+            %li.after 完了
+            %span 
+    .main
+      %h1.top-head 会員登録完了
+      .form-main
+        .main-section
+
+          .user-warning
+            ありがとうございます。
+          %br
+            会員登録が完了しました。
+          %br
+          %button.submit-btn{type:"submit",name:"submit",onclick:"location.href='/index.html'"}メルカリを始める
+        %img.adv{src: 'assets/adv.png', alt: 'adv'}
+      
+    .footer
+      %a{ href: 'https://www.mercari.com/jp/privacy/'}プライバシーポリシー
+      %a{ href: 'https://www.mercari.com/jp/tos/'}メルカリ利用規約
+      %a{ href: 'https://www.mercari.com/jp/tokutei/'}特定商取引に関する表記
+      %br
+      %img{src: 'assets/logo-gray.svg', alt: 'mercari-logo'}
+      %br
+      %p © 2019 Mercari
+      
