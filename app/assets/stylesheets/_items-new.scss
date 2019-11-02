@@ -23,12 +23,13 @@
  $link-color: #0099e8;
  $bordar-color: #ccc;
  $dark: #888;
-
+ 
  html{
    width: 100%;
  }
 
  body {
+   height: 100%;
    position: relative;
    min-height: 100%;
    background: $gray;
@@ -46,7 +47,6 @@
      margin-top: 40px;
      width:185px;
      height: 49px;
-     // line-height:49px;
    }
  }
 
@@ -110,11 +110,11 @@
    line-height: 1.5;
    cursor: pointer;
    outline: none;
-     -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
-     -moz-appearance: none;	/* ベンダープレフィックス(Firefox用) */
-     appearance: none;	/* 標準のスタイルを無効にする */
-     &:focus{
-       border: 1px solid $link-color ;
+   -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
+   -moz-appearance: none;	/* ベンダープレフィックス(Firefox用) */
+   appearance: none;	/* 標準のスタイルを無効にする */
+    &:focus{
+    border: 1px solid $link-color ;
      }
    }
    &__title{
@@ -131,7 +131,6 @@
    &__image{
      border-bottom: solid 1px $gray;
      padding: 40px;
-     width:620px;
      & p{
        margin-top: 8px;
        line-height: 1.5;
@@ -140,7 +139,7 @@
      &_drop-box{
        position: relative;
        display: block;
-       height: 80px;
+       height: 162px;
        background: $gray;
        margin: 16px auto 0;
        border: 1px dashed $bordar-color;
@@ -168,8 +167,8 @@
      border-bottom: solid 1px $gray;
      &_name{
        &_input{
-       width: 94.5%;
-       height: 28px;
+       width: 100%;
+       height: 48px;
        padding: 10px 16px 8px;
        margin: 8px auto 0;
        border-radius: 4px;
@@ -186,21 +185,6 @@
      }
      &_description{
        margin-top: 40px;
-      //  &__input{
-      //    overflow: auto;
-      //    width: 96%;
-      //    min-height: 104px;
-      //    padding: 10px;
-      //    margin-top: 8px;
-      //    border: 1px solid $bordar-color;
-      //    background: $white;
-      //    font-size: 15.8px;
-      //    outline-style: none;
-      //    line-height: 1.55;
-      //    &:focus{
-      //      border: 1px solid $link-color ;
-      //    }
-      //  }
      }
    }
    &__item-about{
@@ -398,7 +382,6 @@
  .confirm-info__footer{
    width: 456px;
    margin: 0 auto;
-   height: 140px;
    padding: 40px 0;
    text-align: center;
      li {
@@ -459,6 +442,8 @@
  .explanation{
   overflow: auto;
   width: 100%;
+  height: 142px;
+  max-width: 100%;
   min-height: 104px;
   padding: 10px;
   margin-top: 8px;
@@ -467,6 +452,7 @@
   font-size: 15.8px;
   outline-style: none;
   line-height: 1.55;
+  resize: both;
   &:focus{
     border: 1px solid $link-color ;
   }
