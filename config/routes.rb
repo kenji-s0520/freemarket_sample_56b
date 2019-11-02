@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get '/users/info' => 'users#info'
   get 'users/:id/card' => 'users#card'
   get '/users/:id/card/create' => 'users#card_create'
+  
+  #コンフリクト
   get '/users/user_reg4'
-
   root to: "groups#user-login"
   root to: "users#_user-reg5"
 

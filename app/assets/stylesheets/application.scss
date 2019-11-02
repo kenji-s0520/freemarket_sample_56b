@@ -1,3 +1,4 @@
+//  #コンフリクト
  @import "reset";
  @import "header";
  @import "footer";
@@ -23,6 +24,7 @@
  *= require_tree .
  *= require_self
  */
+
 
  @import "./reset";
  @import "./header";
