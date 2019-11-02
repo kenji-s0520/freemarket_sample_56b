@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :edit]
   get '/users/info' => 'users#info'
+
+  resources :items, only: [:show]
+
 end

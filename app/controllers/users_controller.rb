@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def info
   end
-  
+
   def edit
   end
 end
