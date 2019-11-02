@@ -1,0 +1,25 @@
+%html
+  %head
+  -#   %meta{:content => "text/html; charset=utf-8", "http-eqiv" => "Content-Type"}/
+  -#   %title 会員情報入力 -メルカリ スマホで
+  -#   %script src='https://www.google.com/recaptcha/api.js'
+  -#   <!-- recaptchaの記載 -->
+  %script{src: 'https://www.google.com/recaptcha/api.js'}
+  %body
+  .user-information
+    = render :partial => "header-reg"
+    .main-reg
+      .form-main
+      %h1.top-head 会員登録完了
+      .main-section
+
+        .user-warning
+        ありがとうございます。
+        %br
+          会員登録が完了しました。
+        %br
+        %button.submit-btn{type:"submit",name:"submit",onclick:"location.href='/index.html'"}メルカリを始める
+        %img.adv{src: 'assets/adv.png', alt: 'adv'}
+      
+    = render :partial => "footer-reg"
+      
