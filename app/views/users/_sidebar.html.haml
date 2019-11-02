@@ -2,8 +2,9 @@
   .side_bar_name
     %ul.header_lists
       %li
-        マイページ
-        %i.fas.fa-chevron-right
+        = link_to "/users/", class: "side_bar_name" do
+          = "マイページ"
+          %i.fas.fa-chevron-right
       %li
         お知らせ
         %i.fas.fa-chevron-right
@@ -47,7 +48,7 @@
       メルペイ
     %ul.header_merpay
       %li
-        売上・申込申請
+        売上・振込申請
         %i.fas.fa-chevron-right
       %li
         ポイント
@@ -56,14 +57,16 @@
       設定
     %ul.header_set
       %li
-        プロフィール
-        %i.fas.fa-chevron-right
+        = link_to "/users/:id/edit/",class: "side_bar_name" do
+          = "プロフィール"
+          %i.fas.fa-chevron-right
       %li
         発送元・お届け先住所変更
         %i.fas.fa-chevron-right
       %li
-        支払い方法
-        %i.fas.fa-chevron-right
+        = link_to "/users/:id/card/", class: "side_bar_name" do
+          = "支払い方法"
+          %i.fas.fa-chevron-right
       %li
         メール/パスワード
         %i.fas.fa-chevron-right

@@ -5,7 +5,14 @@ class UsersController < ApplicationController
 
   def info
   end
+
+  def card
+  end
+
+  def card_create
+  end
   
   def edit
   end
+  
 end

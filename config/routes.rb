@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :edit]
   get '/users/info' => 'users#info'
-  resources :items
+  get 'users/:id/card' => 'users#card'
+  get '/users/:id/card/create' => 'users#card_create'
+
+  resources :items, only: [:show, :new]
 end

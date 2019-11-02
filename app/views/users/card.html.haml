@@ -1,0 +1,23 @@
+= render :partial => "header"
+%main.main_contents
+  .main
+    .upper
+      .card
+        .card__header
+          %h2
+            支払い方法
+        .card__main
+          .card__main__message
+            %h3
+              クレジットカード一覧
+          .card__main__button
+            =link_to "/users/:id/card/create", class:"card-add" do
+              %i.far.fa-credit-card
+              クレジットカードを追加する
+          .card-main__inf
+            =link_to "https://www.mercari.com/jp/help_center/category/6/", class:"card-information" do
+              支払い方法について
+              %i.fas.fa-chevron-right.yajirushi
+  = render :partial => "sidebar"
+= render :partial => "footer"
+= render :partial => "sell_btn"
