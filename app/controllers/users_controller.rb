@@ -14,5 +14,9 @@ class UsersController < ApplicationController
   
   def edit
   end
-  
+
+  def user_reg
+    
+  end
+
 end
