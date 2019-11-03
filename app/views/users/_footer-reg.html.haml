@@ -1,8 +1,14 @@
-.footer
-  %a{ href: 'https://www.mercari.com/jp/privacy/'}プライバシーポリシー
-  %a{ href: 'https://www.mercari.com/jp/tos/'}メルカリ利用規約
-  %a{ href: 'https://www.mercari.com/jp/tokutei/'}特定商取引に関する表記
-  %br
-  %img{src: 'assets/logo-gray.svg', alt: 'mercari-logo'}
-  %br
-  %p © 2019 Mercari
+   %footer.footer-reg
+      %nav
+        %ul.clearfix
+          %li
+            %a{:href => "<privacy>"} プライバシーポリシー
+          %li
+            %a{:href => "<>"} メルカリ利用規約
+          %li
+            %a{:href => "<>"} 特定商取引に関する表記
+      .footer-reg-logo
+        %a{:href => "https://www.mercari.com/jp/"}
+          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994", :width => "80"}/
+        %p
+          %small © 2019 Mercari

@@ -1,19 +1,21 @@
+
 %html
   %head
   -#   %meta{:content => "text/html; charset=utf-8", "http-eqiv" => "Content-Type"}/
   -#   %title 会員情報入力 -メルカリ スマホで
   -#   %script src='https://www.google.com/recaptcha/api.js'
   -#   <!-- recaptchaの記載 -->
+    %a{href="https://use.fontawesome.com/releases/v5.0.6/js/all.js"}
   %script{src: 'https://www.google.com/recaptcha/api.js'}
-  %body
-  .user-information
-    .header
+  
+  .single1
+    .single-header1
       %h1
-        %a{ href: 'https://www.mercari.com/jp/'}
-          %img{src: 'assets/logo.svg', alt: 'mercari-logo'}
+        %a{href: "https://トップページ/"}
+          %img.mercari-icon-reg{alt: "mercari",src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994"}/
       %nav.process-bar
         %ol.process-sub-bar
-          .status
+          .status1
             %li.current 会員情報
             %span
           .status
@@ -25,8 +27,8 @@
           .status
             %li.after 支払い方法
             %span
-          .status
-            %li.after 完了
+          .status2
+            %li.end 完了
             %span 
     .main-reg
       %h1.top-head 会員情報入力
@@ -35,22 +37,22 @@
           %form{:action => "/", :method => "post"}
           .form-top
             %label.nickname ニックネーム
-            %label.form-necessary 必須
+            %span.form-necessary 必須
             %br
             %input{name:"nickname" ,placeholder:"例) メルカリ太郎"}
           .form
             %label.email メールアドレス
-            %label.form-necessary 必須
+            %span.form-necessary 必須
             %br
             %input{name:"email", placeholder:"PC・携帯どちらでも可"}
           .form
             %label.password パスワード
-            %label.form-necessary 必須
+            %span.form-necessary 必須
             %br
             %input{type:"password" ,placeholder:"7文字以上"}
           .form
             %label.password パスワード(確認)
-            %label.form-necessary 必須
+            %span.form-necessary 必須
             %br
             %input{type:"password" ,placeholder:"7文字以上"}
           .form
@@ -60,33 +62,39 @@
             他のお客さまに公開されることはありません。
           .form
             %label.name お名前(全角)
-            %label.form-necessary 必須
-            %input{name:"family-name" ,placeholder:"例)山田"}
-            %input{name:"first-name" ,placeholder:"例)彩"}
-            %br
+            %span.form-necessary 必須
+            .form-inline
+              %input{name:"family-name" ,placeholder:"例)山田"}
+              %input{name:"first-name" ,placeholder:"例)彩"}
           .form
             %label.name-kana お名前(カナ)
-            %label.form-necessary 必須
-            %input{name:"family-name" ,placeholder:"例)ヤマダ"}
-            %input{name:"first-name" ,placeholder:"例)アヤ"}
+            %span.form-necessary 必須
+            .form-inline
+              %input{name:"family-name" ,placeholder:"例)ヤマダ"}
+              %input{name:"first-name" ,placeholder:"例)アヤ"}
+          .form-reg
+            %label.birth 生年月日
+            %span.form-necessary 必須
             %br
-          .form
-            %label 生年月日
-            %label.form-necessary 必須
-            %br
-            %select.year{name:"year"}
-              %option{value:""}--
-            %select.month{name:"month"}
-              %option{value:""}--
-            %select.day{name:"day"}
-              %option{value:""}--
-              
+            .birth-reg
+              %i.fas.fa-chevron-down
+              %select.year{name:"year"}
+                %option{value:""}--
+              %span 年
+              %i.fas.fa-chevron-down
+              %select.month{name:"month"}
+                %option{value:""}--
+              %span 月
+              %i.fas.fa-chevron-down
+              %select.day{name:"day"}
+                %option{value:""}--
+              %span 日
           %br
           .user-warning
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           %br
           .reCAPTCHA
-            %img{src: 'assets/reCAPTCHA.png', alt: 'reCAPTCHA'}
+            recaptchaの機能をあとで実装
           %br
           .user-rule
             「次へ進む」のボタンを押すことにより、
@@ -98,14 +106,20 @@
           .form-group-caution
             %a{ href: 'https://www.mercari.com/jp/help_center'}本人情報の登録について
       
-    .footer
-      %a{ href: 'https://www.mercari.com/jp/privacy/'}プライバシーポリシー
-      %a{ href: 'https://www.mercari.com/jp/tos/'}メルカリ利用規約
-      %a{ href: 'https://www.mercari.com/jp/tokutei/'}特定商取引に関する表記
-      %br
-      %img{src: 'assets/logo-gray.svg', alt: 'mercari-logo'}
-      %br
-      %p © 2019 Mercari
+    %footer.footer-reg
+      %nav
+        %ul.clearfix
+          %li
+            %a{:href => "<privacy>"} プライバシーポリシー
+          %li
+            %a{:href => "<>"} メルカリ利用規約
+          %li
+            %a{:href => "<>"} 特定商取引に関する表記
+      .footer-reg-logo
+        %a{:href => "https://www.mercari.com/jp/"}
+          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994", :width => "80"}/
+        %p
+          %small © 2019 Mercari
 
       
 

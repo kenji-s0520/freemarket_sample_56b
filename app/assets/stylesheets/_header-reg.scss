@@ -2,27 +2,36 @@
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
   text-align: center;
   background:rgb(245, 245, 245);
-  img {
+  h1{
     display: inline-block;
     margin-top: 11px;
     margin-right: 0px;
     margin-bottom: 12px;
     margin-left: 0px;
-    width: 120px;
-    height: 33px;
-    line-height: 33px;
+    img{
+      width: 120px;
+      height: 33px;
+      margin-right: 8px;
+      line-height: 33px;
+    }
   }
-  nav.process-bar {
-    ol.process-sub-bar{
+  nav.process-bar{
+   ol.process-sub-bar{
     display:flex;
     position: relative;
+    padding-top: 16px;
+    padding-right: 0px;
+    padding-bottom: 16px;
+    padding-left: 0px;
+    color:red;
     .status{
     width:100%;
     position: relative;
-    min-width: 40px;
     width: 12px;
+    color:red;
     }
     li.current{
+      min-width: 40px;
       font-size:12px;
       list-style:none;
       position: relative;
@@ -43,10 +52,8 @@
       z-index: -1;
       display: block;
       content: '';
-      
       height: 2px;
       background-color: red;
-      
     }
     span{
       background: #ea352d;
