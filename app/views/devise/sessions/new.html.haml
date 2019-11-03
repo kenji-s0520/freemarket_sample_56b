@@ -1,0 +1,17 @@
+= render :partial => "users/header"
+= render "devise/shared/links"
+.snslogin
+  .snslogin__facebooklogin
+    Facebookでログイン
+  .snslogin__googlelogin
+    Googleでログイン
+#loginmain.create__main
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .create__main__form.form
+      = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"メールアドレス"
+    .create__main__form.form
+      = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード"
+    #addbutton.create__main__button
+      %button.create-add.login
+        = f.submit "ログイン",id:"login"
+= render :partial => "users/footer"
