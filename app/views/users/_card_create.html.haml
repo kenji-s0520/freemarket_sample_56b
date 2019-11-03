@@ -8,7 +8,7 @@
         .create__main__message
           %label
             カード番号
-          %span.formrequire
+          %span.formrequire1
             必須
         .create__main__form
           %input{type:"text",value:"",placeholder:"半角数字のみ"}
@@ -23,7 +23,7 @@
         .create__main__message
           %label
             有効期限
-          %span.formrequire
+          %span.formrequire1
             必須
         .create__main__year-month
           %select{name:"month"}
@@ -51,7 +51,6 @@
               11
             %option
               12
-            
           %label{class:"year-month"}
             月
           %select{name:"month"}
@@ -82,7 +81,7 @@
         .create__main__message
           %label
             セキュリティコード
-          %span.formrequire
+          %span.formrequire1
             必須
         .create__main__form
           %input{type:"text",value:"",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"4"}
