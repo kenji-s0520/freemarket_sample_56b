@@ -2,8 +2,10 @@
 = render "devise/shared/links"
 .snslogin
   .snslogin__facebooklogin
+    = image_tag "snslogo/facebook.png",width:"26",height:"26",margin:"8px 0px 0px",class:"facebookicon"
     Facebookでログイン
   .snslogin__googlelogin
+    = image_tag "snslogo/google.png",width:"26",height:"26",margin:"8px 0px 0px",class:"googleicon"
     Googleでログイン
 #loginmain.create__main
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
