@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   #コンフリクト
   get '/users/user_reg3'
+  get '/users/user_reg4'
 
   resources :items, only: [:show]
 end
