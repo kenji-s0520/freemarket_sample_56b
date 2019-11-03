@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   get '/users/:id/card/create' => 'users#card_create'
   
   #コンフリクト
-  get '/users/user_reg4'
-  root to: "groups#user-login"
-  root to: "users#_user-reg5"
+  get '/users/user_reg3'
 
   resources :items, only: [:show]
 end

@@ -26,15 +26,26 @@
       width:347px;
       margin:24px auto 0px;
       text-align: left;
+      span.formrequire1 {
+        box-sizing: border-box;
+        font-size:10px;
+        background-color:#ea352d;
+        width:32px;
+        height:21px;
+        padding:5px;
+        margin-left:8px;
+        border-radius: 2px;
+      }
+      label {
+        color:#333333;
+        font-size:14px;    
+        font-weight:bold;
+        }
     }
     &__image {
       font-size:16px;
     }
-    label {
-    color:#333333;
-    font-size:14px;    
-    font-weight:bold;
-    }
+    
     &__form {
       box-sizing:border-box;
       margin:auto;
@@ -87,16 +98,7 @@
       width:343px;
       text-align: left;
     }
-      span.formrequire {
-        box-sizing: border-box;
-        font-size:12px;
-        background-color:#ea352d;
-        width:32px;
-        height:19px;
-        padding:3.5px;
-        margin-left:8px;
-        border-radius: 2px;
-      }
+      
     &__button {
     text-align: center;
     padding:24px 0px;
