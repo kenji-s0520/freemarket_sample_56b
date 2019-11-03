@@ -19,4 +19,7 @@ class UsersController < ApplicationController
     
   end
 
+  def user_reg3
+  end
+  
 end
