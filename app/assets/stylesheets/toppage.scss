@@ -221,12 +221,14 @@
   position: relative;
   max-width: 1280px;
   max-height: 390px;
+  object-fit: cover;
   .slick-dots {
     text-align: center;
     bottom: 15px;
     li {
       display: inline-block;
       font-size: 20px !important;
+      vertical-align: bottom;
       button{
         position: relative;
         &:before{
@@ -243,20 +245,19 @@
     position: absolute;
     top: 50%;
     z-index: 3;
-    .prev{
-      margin-left: 60px;
-      width: 0;
-      height: 0;
-      border-left: 0 solid;
-    }
-    .next{
-      margin-right: 60px;
-      width: 0;
-      height: 0;
-      border-right: 0 solid;
-    }
+    left: 60px;
+  }
+  .slideArrow2{
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    right: 0;
+    width: 31px;
+    height: 46px;
+    margin-right: 60px;
   }
 }
+
 .campgoods_img{
   ul{
     .CampCampain{
@@ -271,12 +272,14 @@
   background-image: image-url("top-banner-main.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
+  height: 66vh;
+  object-fit: cover;
   &_text{
     position: absolute;
     height: 330px;
     width: 860px;
-    padding: 20px 40px;
+    // padding: 20px 40px;
     margin-left: 180px;
     margin-top: 20px;
     color: #383c3c;
@@ -315,13 +318,11 @@
 }
 
 .smartphone_img>figure img{
-  // position: absolute;
   height: 390px;
   width: 440px;
   bottom: 400px;
   margin-left: 600px;
   z-index: 2;
-  // box-sizing: border-box;
 }
 
 .recommend{
