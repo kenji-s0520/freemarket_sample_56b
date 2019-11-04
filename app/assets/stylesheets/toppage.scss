@@ -229,6 +229,7 @@
     z-index: 3;
     left: 60px;
     box-sizing: border-box;
+    cursor : pointer;
   }
   .slideArrow2{
     position: absolute;
@@ -239,6 +240,7 @@
     height: 46px;
     margin-right: 60px;
     box-sizing: border-box;
+    cursor : pointer;
   }
 }
 .slick-dots {
