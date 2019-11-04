@@ -1,0 +1,16 @@
+.single1
+  .single-header-top
+    %h1
+      %a{href: "https://トップページ/"}
+        %img.mercari-icon-reg{alt: "mercari",src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994"}/
+  .main-reg
+    %h1.top-head 新規会員登録
+    .main-section
+      .send-buttons
+        %button.submit-btn-mail{type:"submit",name:"submit",onclick:"location.href='/index.html'"}メールアドレスで登録する
+        %i.fas.icon-facebook
+        %br
+        %button.submit-btn-fb{type:"submit",name:"submit",onclick:"location.href='/index.html'"}Facebookで登録する
+        %br
+        %button.submit-btn-google{type:"submit",name:"submit",onclick:"location.href='/index.html'"}Googleで登録する
+  = render :partial => "footerreg"

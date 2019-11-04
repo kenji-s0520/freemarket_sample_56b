@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/users/user_reg3'
   get '/users/user_reg4'
   get '/users/user_reg5'
+  get '/users/user_reg_top'
   resources :items, only: [:show]
 end
