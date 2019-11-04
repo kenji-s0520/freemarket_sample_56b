@@ -1,9 +1,12 @@
 class ItemsController < ApplicationController
   
   #mishima
-  before_action :authenticate_user!,except: [:index,:show]
+  before_action :authenticate_user!,except: [:index,:show,:toppage]
   
   def new
+  end
+
+  def toppage
   end
 
   def show
