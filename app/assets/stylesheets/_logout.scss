@@ -13,7 +13,7 @@ html {
   display: block;
 }
 
-.al, ah, area, button, input3, label, select, textarea, [tabindex] {
+.al, ah, area, button, input, label, select, textarea, [tabindex] {
   touch-action: manipulation;
 }
 
@@ -103,6 +103,12 @@ img {
 
 :selection {
   color: #b3d4fc;
+}
+
+.form-group {
+  width: 328px;
+  height: 48px;
+  display: inline-block;
 }
 
 body {
@@ -202,10 +208,10 @@ body {
         // }
       // form {
       .login-form-inner {
-        .form-group {
-          width: 328px;
-          height: 48px;
-          display: inline-block;
+        // .form-group {
+        //   width: 328px;
+        //   height: 48px;
+        //   display: inline-block;
           .login-input-text-m {
             width: 291px;
             height: 47px;
@@ -220,7 +226,7 @@ body {
             line-height: 1.5;
             font-size: 14px;
           }
-        }
+        // }
         .form-group-pass {
           width: 328px;
           height: 48px;
@@ -253,7 +259,7 @@ body {
             top: 100px;
           }
         }
-        input3 {
+        input {
           text-rendering: auto;
           letter-spacing: normal;
           word-spacing: normal;
