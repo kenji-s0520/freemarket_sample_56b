@@ -7,9 +7,6 @@
     padding-right: 16px;
     padding-bottom: 40px;
     padding-left: 16px;
-  i.fas.icon-facebook{
-    width:10px;
-  }
   .submit-btn-mail{
   margin-left:180px;
   background-color:#ea352d;;
@@ -21,6 +18,12 @@
   width: 47%;
   border:none;
   border-radius: 5px 5px 5px 5px ;
+  }
+  i {
+    position:relative;
+    right:300px;
+    top:5px;
+    color:white;
   }
   .submit-btn-fb{
   margin-left:180px;
@@ -34,6 +37,11 @@
   border:none;
   border-radius: 5px 5px 5px 5px ;
   }
+  .facebookicon2 {
+    position:relative;
+    right:300px;
+    top:6px;
+  }
   .submit-btn-google{
   margin-left:180px;
   background-color:white;
@@ -45,5 +53,10 @@
   width: 47%;
   border-color:#888;
   border-radius: 5px 5px 5px 5px ;
+  }
+  .googleicon2 {
+    position:relative;
+    right:300px;
+    top:6px;
   }
 }

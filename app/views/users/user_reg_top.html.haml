@@ -8,9 +8,11 @@
     .main-section
       .send-buttons
         %button.submit-btn-mail{type:"submit",name:"submit",onclick:"location.href='/index.html'"}メールアドレスで登録する
-        %i.fas.icon-facebook
+        %i.far.fa-envelope
         %br
         %button.submit-btn-fb{type:"submit",name:"submit",onclick:"location.href='/index.html'"}Facebookで登録する
+        = image_tag "snslogo/facebook.png",width:"26",height:"26",margin:"8px 0px 0px",class:"facebookicon2"
         %br
         %button.submit-btn-google{type:"submit",name:"submit",onclick:"location.href='/index.html'"}Googleで登録する
+        = image_tag "snslogo/google.png",width:"26",height:"26",margin:"8px",class:"googleicon2"
   = render :partial => "footerreg"
