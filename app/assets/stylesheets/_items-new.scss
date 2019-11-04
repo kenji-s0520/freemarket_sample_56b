@@ -295,7 +295,7 @@
             border: 1px solid #ccc;
             background: #fff;
             line-height: 1.5;
-            font-size: 16px;
+            font-size: 15px;
             background: $white;
             outline-style: none;
 
@@ -429,15 +429,18 @@
    content:".";
  }
 
- .icon-cheveron-down {
+ .sell.fas.fa-chevron-down {
   position: absolute;
-  right: 8px;
+  left: 368px;
   top: 66%;
   z-index: 2;
   color: $dark;
-  font-size: 30px;
+  font-size: 20px;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
+  &::before{
+    color: $dark;
+  }
  } 
 
  .explanation{
