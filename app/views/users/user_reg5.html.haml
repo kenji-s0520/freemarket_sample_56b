@@ -1,18 +1,48 @@
-= render :partial => "header-reg"
-    .main-reg
-      %h1.top-head 電話番号の確認
-      .main-section
-        %form{:action => "/", :method => "post"}
-        .form-top
-          %label.nickname 携帯電話の番号
-          %br
-            %input{name:"nickname" ,placeholder:"携帯の番号を入力"}
-          %br
-            本人確認のため、携帯電話のSMS(ショートメッセージサービスを利用して認証を行います。)
-          %button.submit-btn{type:"submit",name:"submit",onclick:"location.href='/index.html'"}SMSを送信する
-          %br
-          ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-          .form-group-caution
-            %a{ href: 'https://www.mercari.com/jp/help_center'}電話番号の確認が必要な理由
-
-= render :partial => "footer-reg"
+.single1
+  .single-header1
+    %h1
+      %a{href: "https://トップページ/"}
+        %img.mercari-icon-reg{alt: "mercari",src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994"}/
+    %nav.process-bar
+      %ol.process-sub-bar
+        .status1
+          %li.current 会員情報
+          %span
+        .status
+          %li.after 電話番号確認
+          %span
+        .status
+          %li.after お届け先住所入力
+          %span 
+        .status
+          %li.after 支払い方法
+          %span
+        .status2
+          %li.end 完了
+          %span 
+  .main-reg
+    %h1.top-head 会員登録完了
+    .main-section
+      .end-comment
+        ありがとうございます。
+        %br
+        会員登録が完了いたしました。
+      %button.submit-btn5{type:"submit",name:"submit",onclick:"location.href='/index.html'"}メルカリを始める
+      
+      %aside.bottom_banner
+        .bottom_banner_pc
+          .bottom_banner_pc_block
+            %h2 スマホでかんたんフリマアプリ
+            %p 今すぐ無料ダウンロード！
+            .bottom_banner_pc_icon
+              %figure
+                = image_tag "/images/mercari_icon.png", class: "marcari_icon_pc"
+              %ul.app_icon
+                %li
+                = link_to image_tag("/images/AppStore.png",  class: "AppStore"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+                %li
+                = link_to image_tag("/images/google-play-badge.png", class: "google-play-badge"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+          %figure
+            = image_tag "/images/download_content_pc.png"
+  = render :partial => "footerreg"
+  
