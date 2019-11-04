@@ -23,8 +23,8 @@ $(function() {
     cenrterMode: true,
     centerPadding: 0,
     adaptiveheight: true,
-    prevArrow: '<img src="carousel-prev.png" class="slideArrow prev">',
-    nextArrow: '<img src="carousel-next.png" class="slideArrow2 next">',
+    prevArrow: '<img src="images/carousel-prev.png" class="slideArrow prev">',
+    nextArrow: '<img src="images/carousel-next.png" class="slideArrow2 next">',
     autoplay: true,
     autoplaySpeed: 3000,
   });
