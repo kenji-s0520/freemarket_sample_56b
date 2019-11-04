@@ -17,7 +17,8 @@
 .top {
   width: 1020px;
   height: 296px;
-  margin: 0px 210px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 10px;
 }
 
@@ -66,22 +67,18 @@
 }
 
 .jobs {
-  width: 48px;
   height: 14px;
 }
 
 .press {
-  width: 83.53px;
   height: 14px;
 }
 
 .blog {
-  width: 59.53px;
   height: 14px;
 }
 
 .guidelines {
-  width: 167.17px;
   height: 14px;
 }
 
@@ -101,14 +98,22 @@ path {
   width: 28.79px;
   height: 24.84px;
 }
+.twitter {
+  
+  width: 26px;
+  height: 26px;
+  color: #FFFFFF;
+}
 
 .facebook {
+
   width: 26px;
   height: 26px;
   color: #FFFFFF;
 }
 
 .fa-twitter{
+ 
   font-size: 2.5em;
   width: 26px;
   height: 26px;
@@ -248,7 +253,6 @@ path {
 }
 
 .n {
-  width: 72.05px;
   height: 16px;
   margin-top: 16px;
   text-decoration: none;
@@ -262,7 +266,8 @@ path {
 .bottom {
   width: 1020px;
   height: 33px;
-  margin: 30px 190px 20px 210px;
+  margin: auto;
+  padding-top: 20px;
 }
 
 .logo {
@@ -282,5 +287,4 @@ span {
   color: #FFFFFF;
   text-align: center;
   display: inline-block;
-  float: left;
 }

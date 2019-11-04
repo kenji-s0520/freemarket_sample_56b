@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit]
   root to: "items#toppage"
   get 'index' => 'items#toppage'
-
+  get '/users/info' => 'users#info'
+  get 'users/:id/card' => 'users#card'
+  get '/users/:id/card/create' => 'users#card_create'
+  resources :items, only: [:show]
 end

@@ -22,7 +22,7 @@ h4{
 }
 
 figure{
-  margin: 0 0;
+  margin: 0 auto;
 }
 
 .main_contents{
@@ -200,12 +200,13 @@ input[name="tab_item2"]{
 .lower{
   margin: 40px 0 40px;
   background: #fafafa;
-  ul{
-    height: 52px;
+  h2{
+    height: 80px;
     text-align: left;
     font-size: 16px;
-    line-height: 52px;
-    padding: 20px;
+    line-height: 80px;
+    padding: 0 20px 20px 20px;
+    font-weight: 600;
   }
 }
 
