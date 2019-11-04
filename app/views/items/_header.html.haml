@@ -2,7 +2,7 @@
   .menu_bar
     .headup
       .mercarilogo 
-        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"
+        =link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"),""
       %form.form{action: ""}
         %input.search_form{name: "keyword", placeholder:  "何かお探しですか？", type: "text", value: ""}/
         %button.search_button
@@ -20,6 +20,8 @@
               %p ブランドから探す
       .user_page_links
         .sign_up
-          %a.sign_up_link{href: "/jp/signup/"} 新規会員登録
+          = link_to "/jp/signup/", class: "sign_up_link" do
+            %p 新規会員登録
         .sign_in
-          %a.sign_in_link{href: "/jp/login/?login_callback=%2Fjp%2F"} ログイン
+          =link_to "/jp/login/?login_callback=%2Fjp%2F", class: "sign_in_link" do
+            %p ログイン

@@ -42,12 +42,12 @@
         .new_items
           .category_name{name: "scroll-1"}
             %h3._new レディース新着アイテム
-            .more_items{href: "/jp/category/1/"}
-              もっと見る
+            = link_to "/jp/category/1/", class: "more_items" do
+              %p もっと見る
           .__new_items
             .item_img_grid
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -55,7 +55,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -63,7 +63,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -71,7 +71,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -79,7 +79,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -87,7 +87,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style:"visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -95,7 +95,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -103,7 +103,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -111,7 +111,7 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
@@ -119,11 +119,11 @@
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
               %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                %a.style_link{href: ""}
+                = link_to "", class: "style_link" do
                   %figure.style_card
                     .style_thumbnail
                       %span{"aria-label" => "Price"} ¥2,500
                       %img{alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"", :src => "https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772"}/
                     %figcaption
                       %span しまむら　にこちゃん　ファーバッグ
-    = render partial: "users/footer"
+  = render partial: "users/footer"
