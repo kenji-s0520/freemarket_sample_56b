@@ -22,16 +22,6 @@ a {
 }
 
 button {
-  width: 329px;
-  height: 48px;
-  display: inline-block;
-  font-family: 'icon-font';
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  font-family: 'icon-font';
   overflow: visible;
   text-rendering: auto;
   letter-spacing: normal;
@@ -64,12 +54,6 @@ img {
 
 .btn-sns {
   position: relative;
-
-}
-
-.btn-sns-facebook {
-  background: #385185;
-  color: #fff;
 }
 
 .btn-default {
@@ -82,13 +66,6 @@ img {
   text-align: center;
   font-family: Meiryo;
   cursor: pointer;
-}
-
-.btn-sns-google {
-  margin: 16px 0 0;
-  background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
-  border: #979797 solid 1px;
-  color: #333;
 }
 
 .input-default3 {
@@ -186,20 +163,44 @@ body {
         padding: 32px 64px;
       }
         button {
-          // #facebook-login {
-          
-          // }
-          
-          // .btn-sns-facebook {
-          //   background: #385185;
-          //   color: #fff;
-          // }
+          .facebook-login {
+            width: 329px;
+            height: 48px;
+            display: inline-block;
+            font-family: 'icon-font';
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            font-family: 'icon-font';
+            .btn-default {
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 13px;
+              border: 1px solid transparent;
+              transition: all ease-out .3s;
+              text-align: center;
+              font-family: Meiryo;
+              cursor: pointer;
+            .btn-sns {
+              position: relative;
+            }
+            .btn-sns-facebook {
+              background: #385185;
+              color: #fff;
+
+            }
+            }
+          }
         }
         // .google-login {
         //   width: 329px;
         //   height: 48px;
         //   margin-top: 16px;
         // }
+      
       // form {
       .login-form-inner {
         .form-group {
