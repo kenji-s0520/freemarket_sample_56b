@@ -1,8 +1,7 @@
 .single1
   .single-header1
     %h1
-      %a{href: "https://トップページ/"}
-        %img.mercari-icon-reg{alt: "mercari",src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994"}/
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon-reg" ,alt:"mercari"),""  
     %nav.process-bar
       %ol.process-sub-bar
         .status1
@@ -36,6 +35,7 @@
         .confirm-reg2
           ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .caution2
-          %a{ href: 'https://www.mercari.com/jp/help_center'}電話番号の確認が必要な理由
+          = link_to "https://www.mercari.com/jp/help_center", class: "confirm-reg2" do
+            = "電話番号の確認が必要な理由"
           %i.fas.fa-chevron-right
   = render :partial => "footerreg"

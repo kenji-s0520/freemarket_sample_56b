@@ -282,7 +282,7 @@ body{
           margin-top: 24px;
           text-align: center;
           font-size:14px;
-          a{
+          .confirm-reg0{
             text-decoration: none ;
             color:#0099e8;
           }
@@ -302,11 +302,8 @@ body{
           }
         .form-group-caution{
           margin-top: 24px;
-          margin-right: 0px;
-          margin-bottom: 0px;
-          margin-left: 0px;
-          text-align: right;
-          a{
+          width:120%;
+          .confirm-reg{
           text-decoration: none ;
           color:#0099e8;
         }
