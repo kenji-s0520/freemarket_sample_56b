@@ -103,7 +103,6 @@ aside{
   width: 1440px;
   height: 389px;
   background-color: #222222;
-  /* padding: 0px 20px 10px; */
 }
 
 .top {
@@ -136,7 +135,6 @@ aside{
   height: 22px;
   color: #FFFFFF;
   font-size: 14px;
-  /* letter-spacing: 1px; */
 }
 
 .content {
@@ -152,7 +150,6 @@ aside{
   margin-top: 16px;
   list-style: none;
   font-size: 10px;
-  /* letter-spacing: 1px; */
   text-align: left;
   text-decoration: none;
 }
@@ -235,7 +232,6 @@ svg{
   margin-top: 16px;
   list-style: none;
   font-size: 10px;
-  /* letter-spacing: 1px; */
   text-align: left;
   text-decoration: none;
 }
@@ -252,7 +248,6 @@ svg{
   height: 22px;
   color: #FFFFFF;
   font-size: 14px;
-  /* letter-spacing: 1px; */
   text-align: left;
 }
 
@@ -270,7 +265,6 @@ svg{
   height: 22px;
   color: #FFFFFF;
   font-size: 14px;
-  /* letter-spacing: 1px; */
   text-align: left;
 }
 
@@ -301,11 +295,9 @@ svg{
 
 .liT {
   width: 189.32px;
-  /* height: 14px; */
   margin: 16px 0px 0px;
   list-style: none;
   font-size: 10px;
-  /* letter-spacing: 1px; */
   text-align: left;
   text-decoration: none;
 }
@@ -320,15 +312,12 @@ svg{
 
 .country {
   width: 72.05px;
-  /* height: 22px; */
   color: #FFFFFF;
   font-size: 14px;
-  /* letter-spacing: 1px; */
   text-align: left;
 }
 
 .c {
-  /* width: 72.05px; */
   height: 48px;
   padding: 0px;
   margin: 0px;
@@ -340,7 +329,6 @@ svg{
   margin-top: 16px;
   list-style: none;
   font-size: 10px;
-  /* letter-spacing: 1px; */
   text-align: left;
 }
 
