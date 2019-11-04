@@ -222,13 +222,16 @@
   max-width: 1280px;
   max-height: 390px;
   object-fit: cover;
+  box-sizing: border-box;
   .slick-dots {
     text-align: center;
     bottom: 15px;
+    box-sizing: border-box;
     li {
       display: inline-block;
       font-size: 20px !important;
       vertical-align: bottom;
+      box-sizing: border-box;
       button{
         position: relative;
         &:before{
@@ -237,6 +240,7 @@
           color: #fff !important;
           z-index: 2;
           position: absolute;
+          box-sizing: border-box;
         }
       }
     }
@@ -246,6 +250,7 @@
     top: 50%;
     z-index: 3;
     left: 60px;
+    box-sizing: border-box;
   }
   .slideArrow2{
     position: absolute;
@@ -255,15 +260,21 @@
     width: 31px;
     height: 46px;
     margin-right: 60px;
+    box-sizing: border-box;
   }
 }
-
+.slick-dotted{
+  .slick-slider {
+    margin-bottom: 0;
+  }
+}
 .campgoods_img{
   ul{
     .CampCampain{
       width: 100%; 
       height: 390px;
       object-fit: cover;
+      box-sizing: border-box;
     }
   }
 }
@@ -275,6 +286,7 @@
   width: 100%;
   height: 66vh;
   object-fit: cover;
+  box-sizing: border-box;
   &_text{
     position: absolute;
     height: 330px;
@@ -284,6 +296,7 @@
     margin-top: 20px;
     color: #383c3c;
     z-index: 2;
+    box-sizing: border-box;
     h2{
       font-size: 60px;
       font-weight: 600;
@@ -291,6 +304,7 @@
       width: 780px;
       height: 168px;
       margin-bottom: 16px;
+      box-sizing: border-box;
     }
     p{
       font-size: 18px;
@@ -298,11 +312,13 @@
       line-height: 1.7777;
       width: 780px;
       height: 67px;
+      box-sizing: border-box;
     }
     ul.app_icon{
       width: 780px;
       height: 50px;
       display: flex;
+      box-sizing: border-box;
       .AppStore{
         height: 50px;
         width: 170px;
@@ -323,6 +339,7 @@
   bottom: 400px;
   margin-left: 600px;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .recommend{
