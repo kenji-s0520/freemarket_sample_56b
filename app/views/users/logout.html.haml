@@ -32,8 +32,7 @@
             %button.login-submit.btn-default.btn-red{type: "submit"} ログイン
             %input{name: "login_callback", type: "hidden", value: "https://www.mercari.com/jp/logout/"}/
             %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
-            .af
-              %a{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
+            %a.af{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
       %form#login_form_facebook{action: "/jp/login/", method: "POST", novalidate: "novalidate"}
         %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
         %input{name: "nickname", type: "hidden", value: ""}/
