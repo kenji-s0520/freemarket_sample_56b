@@ -288,14 +288,14 @@
     position: absolute;
     height: 330px;
     width: 860px;
-    margin-left: 180px;
+    margin-left: 250px;
     margin-top: 20px;
     color: #383c3c;
     z-index: 2;
     box-sizing: border-box;
     h2{
-      font-size: 60px;
-      font-weight: 600;
+      font-size: 58px;
+      font-weight: 550;
       line-height: 1.4;
       width: 780px;
       height: 168px;
@@ -310,23 +310,26 @@
       height: 67px;
       box-sizing: border-box;
     }
-    ul.app_icon{
-      width: 780px;
-      height: 50px;
-      display: flex;
-      box-sizing: border-box;
-      .AppStore{
-        height: 50px;
-        width: 170px;
-        box-sizing: border-box;
-      }
-      .google-play-badge{
-        height: 50px;
-        width: 170px;
-        box-sizing: border-box;
-      }
-    }
   } 
+}
+
+ul.app_icon{
+  // width: 780px;
+  // height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  // box-sizing: border-box;
+  .AppStore{
+    height: 50px;
+    width: 170px;
+    box-sizing: border-box;
+  }
+  .google-play-badge{
+    height: 50px;
+    width: 170px;
+    box-sizing: border-box;
+  }
 }
 
 .smartphone_img>figure img{
