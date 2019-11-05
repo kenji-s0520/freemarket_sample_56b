@@ -202,35 +202,10 @@ body {
           margin: 40px 0 0;
         }
       }
-      // .login-form-inner {
-      //   width: 328px;
-      //   height: 116px;
-      //   padding: 32px 64px;
-      // }
-        // button {
-          // #facebook-login {
-          
-          // }
-          
-          // .btn-sns-facebook {
-          //   background: #385185;
-          //   color: #fff;
-          // }
-        // }
-        // .google-login {
-        //   width: 329px;
-        //   height: 48px;
-        //   margin-top: 16px;
-        // }
-      // form {
       .login-form-inner {
         width: 328px;
         height: 116px;
         padding: 32px 64px;
-        // .form-group {
-        //   width: 328px;
-        //   height: 48px;
-        //   display: inline-block;
           .login-input-text-m {
             width: 291px;
             height: 27px;
@@ -244,7 +219,6 @@ body {
             line-height: 1.5;
             font-size: 14px;
           }
-        // }
         .form-group-pass {
           width: 328px;
           height: 48px;
@@ -274,16 +248,8 @@ body {
         }
         button {
           .login-submit {
-            // position:fixed;
             margin: 48px 0 40px;
-            // display: block;
           }
-          // .btn-red {
-          //   background: #ea352d;
-          //   border: 1px solid #ea352d;
-          //   color: #fff;
-          //   top: 100px;
-          // }
         }
         input {
           text-rendering: auto;
@@ -297,7 +263,6 @@ body {
           font: 400 11px system-ui;
         }
       }
-      // }
     }
   footer {
     background-color: #f5f5f5;
