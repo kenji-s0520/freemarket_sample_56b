@@ -313,23 +313,28 @@
   } 
 }
 
-ul.app_icon{
-  // width: 780px;
-  // height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  // box-sizing: border-box;
+.app_icon{
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: flex-start;
+  text-align: left;
+  height: 50px;
+  width: 420px;
+  box-sizing: border-box;
   .AppStore{
     height: 50px;
     width: 170px;
     box-sizing: border-box;
+    margin-left: -15px;
+    margin-top: -10px;
   }
   .google-play-badge{
     height: 50px;
     width: 170px;
     box-sizing: border-box;
-  }
+    margin-left: 0;
+    margin-top: -10px;
+}
 }
 
 .smartphone_img>figure img{
