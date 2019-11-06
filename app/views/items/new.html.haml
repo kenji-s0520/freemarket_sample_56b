@@ -2,8 +2,7 @@
   .single-container
     %header.single-header
       %h1
-        %a{href: "https://トップページ/"}
-          %img.mercari-icon{alt: "mercari",src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994"}/
+        = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon" ,alt:"mercari"),""
     %main
       %section.items-contents
         .items-contents__title
@@ -13,27 +12,27 @@
             %h3 出品画像
             %span 必須
             %p 最大10枚までアップロードできます
-            .items-contents__image_drop-box
-              %input.items-contents__image_drop-box_file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
-              %pre.items-contents__image_drop-box_click
+            .items-contents__image--drop-box
+              %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
+              %pre.items-contents__image--drop-box--click
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
 
           .items-contents__item-info
-            .items-contents__item-info_name
+            .items-contents__item-info--name
               %h4 商品名
               %span 必須
               %div
-                %input.items-contents__item-info_name_input{placeholder: "商品名（必須 40文字まで)",value: ""}/
-            .items-contents__item-info_description
+                %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}/
+            .items-contents__item-info--description
               %h4 商品の説明
               %span 必須
               %div
                 %textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5", class: "explanation"}
           .items-contents__item-about.clearfix
-            .items-contents__item-about_head 商品の詳細
-            .items-contents__item-about_box
-              .items-contents__item-about_box_category
+            .items-contents__item-about--head 商品の詳細
+            .items-contents__item-about--box
+              .items-contents__item-about--box--category
                 %h4 カテゴリー
                 %span 必須
                 %i.sell.fas.fa-chevron-down
@@ -53,7 +52,7 @@
                   %option{value: "1318"} 自動車・オートバイ
                   %option{value: "10"} その他
               
-              .items-contents__item-about_box_condition
+              .items-contents__item-about--box--condition
                 %h4 商品の状態
                 %span 必須
                 %i.sell.fas.fa-chevron-down
@@ -67,10 +66,10 @@
                   %option{value: "6"} 全体的に状態が悪い
         
           .items-contents__shipping.clearfix
-            %h3.items-contents__shipping_head 配送について
-            %a.form-question{href:"/jp/help_center/article/68/",target: "_blank"} ?
-            .items-contents__shipping_box
-              .items-contents__shipping_box_charge
+            %h3.items-contents__shipping--head 配送について
+            =link_to '?', "/jp/help_center/article/68/", {class: "form-question"}
+            .items-contents__shipping--box
+              .items-contents__shipping--box--charge
                 %h4 配送料の負担
                 %span 必須
                 %i.sell.fas.fa-chevron-down
@@ -79,7 +78,7 @@
                   %option{value: "2"} 送料込み(出品者負担)
                   %option{value: "1"} 着払い(購入者負担)
 
-              .items-contents__shipping_box_method
+              .items-contents__shipping--box--method
                 %h4 配送の方法
                 %span 必須
                 %i.sell.fas.fa-chevron-down
@@ -88,7 +87,7 @@
                   %option{value: "2"} 送料込み(出品者負担)
                   %option{value: "1"} 着払い(購入者負担)
 
-              .items-contents__shipping_box_ship-from-region
+              .items-contents__shipping--box--ship-from-region
                 %h4 発送元の地域
                 %span 必須
                 %i.sell.fas.fa-chevron-down
@@ -143,7 +142,7 @@
                   %option{value: "47"} 沖縄県
                   %option{value: "99"} 未定
 
-              .items-contents__shipping_box_date
+              .items-contents__shipping--box--date
                 %h4 発送までの日数
                 %span.form-require 必須
                 %i.sell.fas.fa-chevron-down
@@ -154,56 +153,54 @@
                   %option{value: "3"} 4~7日で発送
 
           .items-contents__price.clearfix
-            %h3.items-contents__price_head 販売価格(300〜9,999,999)
-            %a.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"}?
-            .items-contents__price_box
+            %h3.items-contents__price--head 販売価格(300〜9,999,999)
+            =link_to '?', "/jp/help_center/article/68/", {class: "form-question"}
+            .items-contents__price--box
               %ul
-                %li.items-contents__price_box_list_top
-                  .items-contents__price_box_list_top_label.clearfix
+                %li.items-contents__price--box--list_top
+                  .items-contents__price--box--list_top--label.clearfix
                     %label 
                       価格 
                       %span.need_icon 必須 
-                    .items-contents__price_box_list_top_right
+                    .items-contents__price--box--list_top--right
                       ¥
-                      %div.items-contents__price_box_list_top_right_space
-                        %input.items-contents__price_box_list_top_right_input{:placeholder => "例）300", :value => ""}/
-                %li.items-contents__price_box_list_center.clearfix
-                  .items-contents__price_box_list_center_text 販売手数料（10%）
-                  .items-contents__price_box_list_center_sales -
-                %li.items-contents__price_box_list_under.clearfix
+                      %div.items-contents__price--box--list_top--right--space
+                        %input.items-contents__price--box--list_top--right--input{placeholder: "例）300",value: ""}/
+                %li.items-contents__price--box--list_center.clearfix
+                  .items-contents__price--box--list_center--text 販売手数料（10%）
+                  .items-contents__price--box--list_center--sales -
+                %li.items-contents__price--box--list_under.clearfix
                   %label.profit 
                     販売利益
-                    .items-contents__price_box_list_under_sales -
+                    .items-contents__price--box--list_under_sales -
         
           .items-contents__submit
-            %a 禁止されている出品
+            =link_to '禁止されている出品', 'http://www.google.co.jp/'
             、
-            %a 行為
+            =link_to '行為', 'http://www.google.co.jp/'   
             を必ずご確認ください。
             %br
             またブランド品でシリアルナンバー等がある場合はご記載ください。
-            %a 偽ブランドの販売
+            =link_to '偽ブランドの販売', 'http://www.google.co.jp/'   
             は犯罪であり処罰される可能性があります。
             %br
             また、出品をもちまして
-            %a 加盟店規約
+            =link_to '加盟店規約', 'http://www.google.co.jp/'
             に同意したことになります。
 
-            %button.items-contents__submit_go-btn{:type => "submit"} 出品する
-            .items-contents__submit_back-btn もどる
+            %button.items-contents__submit--go-btn{type: "submit"} 出品する
+            .items-contents__submit--back-btn もどる
 
     %footer.confirm-info__footer
       %nav
         %ul.clearfix
           %li
-            %a{:href => "<privacy>"} プライバシーポリシー
+            =link_to 'プライバシーポリシー', 'http://www.google.co.jp/' 
           %li
-            %a{:href => "<>"} メルカリ利用規約
+            =link_to 'メルカリ利用規約', 'http://www.google.co.jp/' 
           %li
-            %a{:href => "<>"} 特定商取引に関する表記
-      .confirm-info__footer-logo
-        %a{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994", :width => "80"}/
-        %p
-          %small © 2019 Mercari
+            =link_to '特定商取引に関する表記', 'http://www.google.co.jp/' 
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994", height: "65",width: "80", alt: "Mercari",class: "single-footer-logo")
+      %p
+        %small © 2019 Mercari
 
