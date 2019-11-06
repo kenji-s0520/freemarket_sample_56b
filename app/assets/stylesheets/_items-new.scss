@@ -43,11 +43,15 @@
    height: 128px;
    width:100%;
    text-align: center;
-   .mercari-icon{
+   & h1{
+    display: inline-block;
+    text-align: center;
+   }
+ }
+ .mercari-icon{
      margin-top: 40px;
      width:185px;
      height: 49px;
-   }
  }
 
  main {
@@ -136,7 +140,7 @@
        line-height: 1.5;
        font-size: 14px;
      }
-     &_drop-box{
+     &--drop-box{
        position: relative;
        display: block;
        height: 162px;
@@ -145,13 +149,13 @@
        border: 1px dashed $bordar-color;
        padding: 40px;
        cursor: pointer;
-       &_file{
+       &--file{
          width: 100%;
          margin-left: 0;
          width: 620px;
          padding: 40px; 
        }
-       &_click{
+       &--click{
          position: absolute;
          top: 36%;
          left: 16px;
@@ -165,8 +169,8 @@
    &__item-info{
      padding: 40px;
      border-bottom: solid 1px $gray;
-     &_name{
-       &_input{
+     &--name{
+       &--input{
        width: 100%;
        height: 48px;
        padding: 10px 16px 8px;
@@ -183,26 +187,26 @@
          }
        }
      }
-     &_description{
+     &--description{
        margin-top: 40px;
      }
    }
    &__item-about{
      padding: 40px;
      border-bottom: solid 1px $gray;
-     &_head{
+     &--head{
        float: left;
        color: $dark;
        font-size: 14px;
        font-weight: 600;
      }
-     &_box{
+     &--box{
        width: 400px;
        float: right;
-       &_category{
+       &--category{
          position: relative;
        }
-       &_condition{
+       &--condition{
          position: relative;
          margin-top: 40px;
        }
@@ -212,7 +216,7 @@
      padding: 40px;
      border-bottom: solid 1px $gray;
      border-top: solid 1px $gray;
-     &_head{
+     &--head{
        float: left;
        color: $dark;
      }
@@ -222,22 +226,22 @@
      & a{
        color: $white;
      }
-     &_box{
+     &--box{
        width: 400px;
        float: right;
-       &_charge{
+       &--charge{
          position: relative;
        }
-       &_method{
+       &--method{
          position: relative;
          margin-top: 40px;
          display: none;
        }
-       &_ship-from-region{
+       &--ship-from-region{
          position: relative;
          margin-top: 40px;
        }
-       &_date{
+       &--date{
          position: relative;
          margin-top: 40px;
        }
@@ -247,7 +251,7 @@
    &__price{
      padding: 40px;
      border-bottom: solid 1px $gray;
-     &_head{
+     &--head{
        float: left;
        color: $dark;
      }
@@ -257,15 +261,15 @@
      & a{
        color: $white;
      }
-     &_box{
+     &--box{
        width: 400px;
        float: right;
        & ul{
          list-style: none;
        }
-       &_list_top{
+       &--list_top{
          padding: 0 0 24px;
-         &_label{
+         &--label{
            border: 0;
            & label{
              display: inline-block;
@@ -274,7 +278,7 @@
              font-weight: 600;
            }
          }
-         &_right{
+         &--right{
            width: 50%;
            height: 48px;
            float: right;
@@ -283,11 +287,11 @@
              display: inline-block;
              margin-right: 10px;
            }
-           &_space{
+           &--space{
              display: inline-block;
              margin: 0 0 0 5%;
            }
-           &_input{
+           &--input{
             width: 160px;
             height: 48px;
             padding: 10px 16px 8px;
@@ -305,27 +309,21 @@
        }
      }
    }
-       &_list_center{
+       &--list_center{
          padding: 24px 0;
          border-top: solid 1px #ccc;
-         &_text{
+         &--text{
            float:left;
            display: inline-block;
            font-size: 14px;
          }
-         &_sales{
+         &--sales{
            display: inline-block;
            float: right;
-           &_under{
-           display: inline-block;
-           float: right;
-           font-weight: 600;
-           font-size: 34px;
-           }
          }
        }
 
-       &_list_under{
+       &--list_under{
          padding: 28px 0;
          border-top: 1px solid #ccc;
          & label{
@@ -337,25 +335,13 @@
            font-size: 28px;
          }
        }
-       &_input{
-         height: 48px;
-         padding: 10px 16px 8px;
-         border-radius: 4px;
-         border: 1px solid #ccc;
-         background: $white;
-         line-height: 1.5;
-         font-size: 16px;
-         float: right;
-       }
      }
    }
 
    &__submit{
      padding: 40px;
-     & a{
-       line-height: 1.5;
-     }
-     &_go-btn{
+     line-height: 1.5;
+     &--go-btn{
        width: 100%;
        display: block;
        text-align: center;
@@ -365,7 +351,7 @@
        line-height: 48px;
        font-size: 14px;
      }
-     &_back-btn{
+     &--back-btn{
        width: 45%;
        text-align: center;
        margin: 24px auto 0;
@@ -398,14 +384,15 @@
          }
        }
      }
-     &-logo{
-       width: 80px;
-       height: 65px;
-       margin: 40px auto 0;
-     }
      p {
        margin: 8px 0 0;
      }
+ }
+
+ .single-footer-logo{
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
  }
 
  .form-question{
@@ -435,7 +422,7 @@
   top: 66%;
   z-index: 2;
   color: $dark;
-  font-size: 20px;
+  font-size: 18px;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   &::before{
