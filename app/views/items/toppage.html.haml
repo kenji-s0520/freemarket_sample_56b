@@ -1,0 +1,129 @@
+= render partial: "header"
+.top_base
+  %header.header
+  .slider
+    .campgoods_img
+      %ul
+        %li
+        =link_to image_tag("top-banner-camp.jpg",class: "CampCampain"),""
+    .smartphone_img
+      .smartphone_img_text
+        %h2 
+          スマホで かんたん
+          %br
+          フリマアプリ
+        %p 
+          メルカリはスマホカメラからすぐに出品できる
+          %br
+          購入時も安心な独自システムのアプリです
+        %ul.app_icon
+          %li
+          = link_to image_tag("AppStore.png", class: "AppStore"),"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+          %li
+          = link_to image_tag("google-play-badge.png", class: "google-play-badge"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+      %figure
+        = image_tag "top-banner-main-device.png"
+
+  .recommend
+    .center_box
+      .popular_recommend
+        %h2.popular_category 人気のカテゴリー
+        .categories
+          %ul.categories2
+            %li.categories3
+              %a.categories4 レディース
+            %li.categories3
+              %a.categories4 メンズ
+            %li.categories3
+              %a.categories4 家電・スマホ・カメラ
+            %li.categories3
+              %a.categories4 おもちゃ・ホビー・グッズ
+      .new_items
+        .category_name{name: "scroll-1"}
+          %h3._new レディース新着アイテム
+          = link_to "/jp/category/1/", class: "more_items" do
+            %p もっと見る
+        .__new_items
+          .item_img_grid
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style:"visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+            %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+              = link_to "", class: "style_link" do
+                %figure.style_card
+                  .style_thumbnail
+                    %span{"aria-label" => "Price"} ¥2,500
+                    = image_tag("https://static.mercdn.net/thumb/photos/m84794205111_1.jpg?1518949772", alt: "Thumbnail of \"しまむら　にこちゃん　ファーバッグ\"")
+                  %figcaption
+                    %span しまむら　にこちゃん　ファーバッグ
+= render partial: "users/footer"
+= render partial: "users/sell_btn"

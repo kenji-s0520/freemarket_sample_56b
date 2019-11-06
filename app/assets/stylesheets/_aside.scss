@@ -13,7 +13,7 @@ aside{
   background-position: center;
   background-size: cover;
   height: 260px;
-  width: 100%;
+  width: auto;
   position: relative;
     &_pc_block{
       color: #ffffff;
@@ -37,7 +37,7 @@ aside{
 
 .bottom_banner_pc>figure img{
   position: relative;
-  height: 260px;
+  height: 260px;;
   width: 300px;
   left: 460px;
 }
