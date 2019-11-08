@@ -218,10 +218,11 @@
   display: flex;
   align-items: center;
   position: relative;
-  max-width: 1500px;
+  max-width: 100%;
   height: 360px;
   object-fit: cover;
   box-sizing: border-box;
+  margin: 0 auto;
   .slideArrow{
     position: absolute;
     top: 50%;
@@ -267,11 +268,12 @@
 .campgoods_img{
   ul{
     .CampCampain{
-      margin: 0;
+      margin: 0 auto;
       width: 100%; 
       height: 390px;
       object-fit: cover;
       box-sizing: border-box;
+      align-items: center;
     }
   }
 }
@@ -280,22 +282,26 @@
   background-image: image-url("top-banner-main.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 66vh;
   object-fit: cover;
   box-sizing: border-box;
+  margin: 0 auto;
   &_text{
     position: absolute;
     height: 330px;
-    width: 860px;
-    margin-left: 180px;
-    margin-top: 20px;
+    // width: 100%;
+    // margin-left: 250px;
+    // margin-right: 250px;
+    // margin-top: 20px;
     color: #383c3c;
     z-index: 2;
     box-sizing: border-box;
+    margin: 20px 350px 0 350px;
     h2{
-      font-size: 60px;
-      font-weight: 600;
+      font-size: 58px;
+      font-weight: 550;
       line-height: 1.4;
       width: 780px;
       height: 168px;
@@ -310,30 +316,35 @@
       height: 67px;
       box-sizing: border-box;
     }
-    ul.app_icon{
-      width: 780px;
-      height: 50px;
-      display: flex;
-      box-sizing: border-box;
-      .AppStore{
-        height: 50px;
-        width: 170px;
-        box-sizing: border-box;
-      }
-      .google-play-badge{
-        height: 50px;
-        width: 170px;
-        box-sizing: border-box;
-      }
-    }
   } 
+}
+
+.app_icon{
+  text-align: left;
+  height: 50px;
+  width: 420px;
+  box-sizing: border-box;
+  .AppStore1{
+    height: 50px;
+    width: 170px;
+    box-sizing: border-box;
+    margin-left: -15px;
+    margin-top: -10px;
+  }
+  .google-play-badge1{
+    height: 50px;
+    width: 170px;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-top: -10px;
+}
 }
 
 .smartphone_img>figure img{
   height: 390px;
   width: 440px;
   bottom: 400px;
-  margin-left: 600px;
+  margin: 0 40% 0 50%;
   z-index: 2;
   box-sizing: border-box;
 }
