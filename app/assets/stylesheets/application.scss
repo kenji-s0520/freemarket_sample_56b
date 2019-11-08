@@ -35,6 +35,10 @@
  @import "login";
  @import "breadcrumbs";
  @import "breadcrumbs_bottom";
+ @import "items";
+ @import "login";
+ @import "./deviseview";
+ @import "toppage";
 //  * This is a manifest file that'll be compiled into application.css, which will include all the files
 //  * listed below.
 //  *
@@ -64,14 +68,3 @@
  *= require_tree .
  *= require_self
  */
-
- @import "./reset";
- @import "./header";
- @import "./footer";
- @import "./side_bar";
- @import "./aside";
- @import "./users";
- @import "./info";
- @import "./edit";
- @import "./card-registration";
- @import "./deviseview";
