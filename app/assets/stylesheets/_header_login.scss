@@ -1,9 +1,9 @@
-.header{
+.header_login{
   background-color: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
   margin: 0px auto;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  // box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   position: relative;
   z-index: 3;
   display: block;
@@ -222,48 +222,5 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-}
-
-.user_page_links{
-  display: flex;
-  box-sizing: border-box;
-}
-
-.sign_up{
-  text-align: center;
-}
-
-.sign_up_link{
-  background-color: rgb(234, 53, 45);
-  color: rgb(255, 255, 255);
-  display: block;
-  font-size: 14px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(234, 53, 45);
-  border-image: initial;
-  border-radius: 4px;
-  padding: 8px 10px;
-  text-decoration: none;
-}
-
-.sign_in{
-  text-align: center;
-  margin-left: 11px;
-}
-
-.sign_in_link{
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 149, 238);
-  display: block;
-  font-size: 14px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(0, 149, 238);
-  border-image: initial;
-  border-radius: 4px;
-  padding: 8px 10px;
-  transition: all 0.3s ease-out 0s;
-  text-decoration: none;
   margin-bottom: 10px;
 }
