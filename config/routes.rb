@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'users/card' => 'users#card'
   get '/users/card/create' => 'users#card_create'
   get '/users/logout' => 'users#log_out'
-  get '/users/user_reg'
+  get '/users/user_reg' => 'users#user_reg'
   get '/users/user_reg2'
   get '/users/user_reg3'
   get '/users/user_reg4'
