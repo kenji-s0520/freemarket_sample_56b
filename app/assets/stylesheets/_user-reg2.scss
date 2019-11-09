@@ -5,10 +5,12 @@
 .input-phone{
   margin-top:8px;
   margin-left:200px;
+  height:48px;
+  width: 343px;
   input{
-    height:40px;
-    width: 58%;
-    height: 28px;
+    box-sizing: border-box;
+    height:48px;
+    width: 343px;
     padding-top: 10px;
     padding-right: 16px;
     padding-bottom: 8px;
@@ -19,8 +21,8 @@
     line-height: 1.5;
     font-size: 16px;
     outline-width:1px;
-  }
-}
+    
+}}
 .confirm-reg{
   margin-left:200px;
   width: 50%;
