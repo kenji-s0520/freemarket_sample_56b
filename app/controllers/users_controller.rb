@@ -30,4 +30,9 @@ class UsersController < ApplicationController
   def user_reg5
   end
   
+  def log_out
+  end
+
+  def login
+  end
 end
