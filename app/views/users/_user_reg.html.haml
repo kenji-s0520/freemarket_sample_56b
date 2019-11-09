@@ -100,11 +100,11 @@
               = "利用規約"
             に同意したものとみなします
 
-          %button.submit-btn{type:"submit",name:"submit",onclick:"location.href='/index.html'"}次へ進む
+          %button.submit-btn{type:"submit",name:"submit",onclick:"location.href='/users/user_reg2'"}次へ進む
           -# あとでリンク先を設定
           .form-group-caution
             = link_to "https://www.mercari.com/jp/help_center", class: "confirm-reg" do
               = "本人情報の登録について"
-            %i.fas.fa-chevron-right.user
-    = render :partial => "footerreg"
+            %i.fas.fa-chevron-right
+    = render :partial => "/users/footerreg"
 
