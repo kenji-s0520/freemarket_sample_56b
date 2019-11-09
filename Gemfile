@@ -76,3 +76,5 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'active_hash'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
