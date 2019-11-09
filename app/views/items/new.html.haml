@@ -1,0 +1,125 @@
+%body
+  .single-container
+    %header.single-header
+      %h1
+        = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon" ,alt:"mercari"),""
+    %main
+      %section.items-contents
+        .items-contents__title
+          %h2 商品の情報を入力
+        %form
+          .items-contents__image
+            %h3 出品画像
+            %span 必須
+            %p 最大10枚までアップロードできます
+            .items-contents__image--drop-box
+              %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
+              %pre.items-contents__image--drop-box--click
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+
+          .items-contents__item-info
+            .items-contents__item-info--name
+              %h4 商品名
+              %span 必須
+              %div
+                %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}/
+            .items-contents__item-info--description
+              %h4 商品の説明
+              %span 必須
+              %div
+                %textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "explanation"}
+          .items-contents__item-about.clearfix
+            .items-contents__item-about--head 商品の詳細
+            .items-contents__item-about--box
+              .items-contents__item-about--box--category
+                %h4 カテゴリー
+                %span 必須
+                %i.sell.fas.fa-chevron-down
+                = form_for '' do |f|
+                  = f.collection_select :category_id, Category.all, :id, :name, prompt: "---"
+              
+              .items-contents__item-about--box--condition
+                %h4 商品の状態
+                %span 必須
+                %i.sell.fas.fa-chevron-down
+                = form_for '' do |f|
+                  = f.collection_select :state_of_items_id, State_of_items.all, :id, :name, prompt: "---"
+        
+          .items-contents__shipping.clearfix
+            %h3.items-contents__shipping--head 配送について
+            =link_to '?', "/jp/help_center/article/68/", {class: "form-question"}
+            .items-contents__shipping--box
+              .items-contents__shipping--box--charge
+                %h4 配送料の負担
+                %span 必須
+                %i.sell.fas.fa-chevron-down
+                = form_for '' do |f|
+                  = f.collection_select :shipping_method_id, Shipping_method.all, :id, :name, prompt: "---"
+
+              .items-contents__shipping--box--ship-from-region
+                %h4 発送元の地域
+                %span 必須
+                %i.sell.fas.fa-chevron-down
+                = form_for '' do |f|
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
+
+              .items-contents__shipping--box--date
+                %h4 発送までの日数
+                %span.form-require 必須
+                %i.sell.fas.fa-chevron-down
+                = form_for '' do |f|
+                  = f.collection_select :the_number_of_the_days_to_ship_id, The_number_of_the_days_to_ship.all, :id, :name, prompt: "---"
+
+          .items-contents__price.clearfix
+            %h3.items-contents__price--head 販売価格(300〜9,999,999)
+            =link_to '?', "/jp/help_center/article/68/", {class: "form-question"}
+            .items-contents__price--box
+              %ul
+                %li.items-contents__price--box--list_top
+                  .items-contents__price--box--list_top--label.clearfix
+                    %label 
+                      価格 
+                      %span.need_icon 必須 
+                    .items-contents__price--box--list_top--right
+                      ¥
+                      %div.items-contents__price--box--list_top--right--space
+                        %input.items-contents__price--box--list_top--right--input{placeholder: "例）300",value: ""}/
+                %li.items-contents__price--box--list_center.clearfix
+                  .items-contents__price--box--list_center--text 販売手数料（10%）
+                  .items-contents__price--box--list_center--sales -
+                %li.items-contents__price--box--list_under.clearfix
+                  %label.profit 
+                    販売利益
+                    .items-contents__price--box--list_under_sales -
+        
+          .items-contents__submit
+            =link_to '禁止されている出品', 'http://www.google.co.jp/'
+            、
+            =link_to '行為', 'http://www.google.co.jp/'   
+            を必ずご確認ください。
+            %br
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            =link_to '偽ブランドの販売', 'http://www.google.co.jp/'   
+            は犯罪であり処罰される可能性があります。
+            %br
+            また、出品をもちまして
+            =link_to '加盟店規約', 'http://www.google.co.jp/'
+            に同意したことになります。
+
+            %button.items-contents__submit--go-btn{type: "submit"} 出品する
+            .items-contents__submit--back-btn もどる
+
+    %footer.confirm-info__footer
+      %nav
+        %ul.clearfix
+          %li
+            =link_to 'プライバシーポリシー', 'http://www.google.co.jp/' 
+          %li
+            =link_to 'メルカリ利用規約', 'http://www.google.co.jp/' 
+          %li
+            =link_to '特定商取引に関する表記', 'http://www.google.co.jp/' 
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994", height: "65",width: "80", alt: "Mercari",class: "single-footer-logo")
+      %p
+        %small © 2019 Mercari
+
