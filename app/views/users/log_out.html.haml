@@ -1,4 +1,4 @@
-= render :partial => "header"
+= render partial: "header"
 %main.main_contents
   .main
     .upper
@@ -6,6 +6,6 @@
         #addbutton.create__main__button
           %button.create-add
             ログアウト  
-  = render :partial => "sidebar"
-= render :partial => "footer"
-= render :partial => "sell_btn"
+  = render partial: "sidebar"
+= render partial: "footer"
+= render partial: "sell_btn"
