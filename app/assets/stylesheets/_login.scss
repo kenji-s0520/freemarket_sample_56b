@@ -73,7 +73,6 @@ button {
 
 .btn-default {
   display: block;
-  // width: 100%;
   line-height: 48px;
   font-size: 13px;
   border: 1px solid transparent;
@@ -84,7 +83,7 @@ button {
 }
 
 .btn-sns-google {
-  margin: 16px 0 0;
+  margin: 16px 0px;
   background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
   border: #979797 solid 1px;
   color: #333;
@@ -107,6 +106,7 @@ button {
 .form-group {
   width: 328px;
   height: 48px;
+  margin-top: 53px;
   display: inline-block;
 }
 
