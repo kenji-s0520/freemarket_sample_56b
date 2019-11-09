@@ -43,7 +43,7 @@ button {
   outline: 0;
 }
 
-img {
+.img3 {
   width: 185px;
   height: 49px;
   vertical-align: middle;
@@ -73,7 +73,7 @@ img {
 
 .btn-default {
   display: block;
-  width: 100%;
+  // width: 100%;
   line-height: 48px;
   font-size: 13px;
   border: 1px solid transparent;
@@ -171,8 +171,8 @@ body {
       margin: 0px 492px;
       background-color:#ffffff;
       .login-no-account {
-        width: 392px;
-        height: 64px;
+        // width: 392px;
+        // height: 64px;
         display: block;
         margin: 0;
         padding: 24px 32px 45px 32px;
@@ -218,6 +218,7 @@ body {
             background: #fff;
             line-height: 1.5;
             font-size: 14px;
+            box-sizing: content-box;
           }
         .form-group-pass {
           width: 328px;
@@ -275,7 +276,7 @@ body {
       }
     }
 
-  footer {
+  .footer3 {
     background-color: #f5f5f5;
     padding: 40px 0px;
     .single-footer {
@@ -297,10 +298,10 @@ body {
       margin: 0px 492px;
       display: block;
       ul.clearfix {
-        width: 460px;
-        height: 12px;
-        font: 66.66667%;
-        text-align: center;
+        // width: 460px;
+        // height: 12px;
+        // font: 66.66667%;
+        // text-align: center;
         li {
           width: 119.41px;
           height: 12px;
