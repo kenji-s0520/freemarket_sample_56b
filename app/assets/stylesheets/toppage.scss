@@ -33,6 +33,7 @@
 }
 
 .mercarillogo{
+  
   -webkit-box-align: center;
     align-items: center;
     display: flex;
@@ -42,6 +43,7 @@
 }
 
 .logo_img{
+  margin-top: 0;
   margin-right: 45px; 
   height: 36px;
 }
@@ -112,12 +114,12 @@
 }
 
 .search_category{
+  font-size: 15px;
   padding-left: 0px;
   cursor: pointer;
   height: 44px;
   position: relative;
   z-index: 3;
-  padding: 0px 10px;
   box-sizing: border-box;
 }
 
@@ -143,12 +145,13 @@
 }
 
 .search_brand{
+  font-size: 15px;
   cursor: pointer;
   height: 44px;
   position: relative;
   padding-right: 0px;
   z-index: 3;
-  padding: 0px 10px;
+  padding: 0px 20px;
 }
 
 .search_brand_link{
