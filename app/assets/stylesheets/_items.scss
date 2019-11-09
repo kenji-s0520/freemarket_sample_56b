@@ -1,16 +1,20 @@
 .main_item{
   width: 700px;
-  height: 100%;
+  // height: 100%;
   margin: 40px auto 0;
   padding: 24px 40px 40px;
   background: #ffffff;
   h1{
     font-size: 24px;
+    height: 33px;
     text-align: center;
     word-wrap: break-word;
     line-height: 1.4;
     color: #333333;
     font-weight: bold;
+    margin-top: 0;
+    display: block;
+    width: auto;
   }
 }
 .item_main_content{
@@ -214,7 +218,10 @@
   display: flex;
 }
 .item_button_left{
-  button{
+  .like_botton{
+    font-family: inherit;
+    width: 93px;
+    height: 28px;
     outline-width: 0;
     font-size: 14px;
     border-radius: 40px;
