@@ -78,5 +78,6 @@
         電話番号の確認
         %i.fas.fa-chevron-right
       %li
-        ログアウト
-        %i.fas.fa-chevron-right
+        = link_to "/users/logout", class: "side_bar_name" do
+          = "ログアウト"
+          %i.fas.fa-chevron-right
