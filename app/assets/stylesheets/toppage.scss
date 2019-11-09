@@ -103,7 +103,7 @@
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  margin-top: 8px;
+  // margin-top: 8px;
   box-sizing: border-box;
 }
 
@@ -114,6 +114,7 @@
 }
 
 .search_category{
+  margin-top: 8px;
   font-size: 15px;
   padding-left: 0px;
   cursor: pointer;
@@ -145,6 +146,7 @@
 }
 
 .search_brand{
+  margin-top: 8px;
   font-size: 15px;
   cursor: pointer;
   height: 44px;
@@ -198,6 +200,7 @@
 }
 
 .sign_in{
+  margin-top: 8px;
   text-align: center;
   margin-left: 11px;
 }

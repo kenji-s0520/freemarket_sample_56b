@@ -126,7 +126,7 @@
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  margin-top: 8px;
+  // margin-top: 8px;
   box-sizing: border-box;
 }
 .search{
@@ -216,6 +216,7 @@
   color: #4eb4f8;
 }
 .user_links{
+  margin-top: 0;
   display: flex;
   box-sizing: border-box;
   justify-content: center;
@@ -229,6 +230,7 @@
 }
 
 .sign_up{
+  margin-top: 8px;
   text-align: center;
 }
 
