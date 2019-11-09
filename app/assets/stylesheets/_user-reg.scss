@@ -163,7 +163,8 @@ body{
             display:flex;
             input{
             margin-right:8px;
-            }
+            width:165.5px;  
+          }
         }
       }
         .nickname{
@@ -180,9 +181,9 @@ body{
         }
         input{
           display:flex;
-          width: 90%;
+          width: 343px;
           margin: 8px 0 0;
-          height: 28px;
+          height: 48px;
           padding-top: 10px;
           padding-right: 16px;
           padding-bottom: 8px;
@@ -347,3 +348,7 @@ body{
     }
   } 
 
+  i.fas.fa-chevron-right::before {
+    position:relative;
+    left:375px;
+  }
