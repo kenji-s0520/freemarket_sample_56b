@@ -1,0 +1,21 @@
+.breadcrumbs{
+  z-index: 10;
+  height: 49px;
+  border-top: 1px solid #eee;
+  -webkit-box-shadow: 0 3px 2px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 2px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  &-list{
+    color: #333;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    font-size: 14px;
+  }
+  span{
+    color: #333;
+  }
+}
+.breadcrumbs span:last-child{
+  font-weight: 600;
+}

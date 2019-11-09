@@ -52,7 +52,15 @@ a{
 .form_group{
   width: 100%;
   margin: 40px 0 0;
-  
+  .fa-chevron-down{
+    position: relative;
+    top: 55px;
+    left: 430px;
+    z-index: 3;
+    color: #888;
+    font-size: 20px;
+    transform: translate(0, -50%);
+  }
 }
 label{
   font-size: 14px;
@@ -99,15 +107,6 @@ select{
   border: 1px solid #ccc;
   line-height: 1.5;
   cursor: pointer;
-}
-.fa-chevron-down{
-  position: relative;
-  top: 55px;
-  left: 430px;
-  z-index: 3;
-  color: #888;
-  font-size: 20px;
-  transform: translate(0, -50%);
 }
 .register_button{
   margin: 40px 0 0;
