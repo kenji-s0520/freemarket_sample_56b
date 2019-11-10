@@ -10,7 +10,7 @@
   }
   &_name li{
     font-size: 14px;
-    min-height: 42px;
+    min-height: 48px;
     display: block;
     border-top:  #9F99A3;
     border-left:  #9F99A3;
@@ -20,7 +20,7 @@
     padding: 3px 16px;
     color: #333;
     height: 40px;
-    width: 260px; 
+    width: 280px; 
     margin: 0px;
     line-height: 40px;
     margin: 1px;
@@ -33,7 +33,7 @@
     background-color: rgb(249, 249, 249);
     margin: 1px;
   }
-  .fa-chevron-right {
+  .side {
     float: right;
     margin-right: 5px;
     margin-top: 12px;
@@ -55,4 +55,5 @@ a{
   font-weight: bold;
   margin-top: 40px;
   margin-bottom: 10px;
+  font-size: 16px;
 }

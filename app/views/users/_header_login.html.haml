@@ -1,0 +1,38 @@
+%header.header_login
+  .menu_bar
+    .headup
+      .mercarilogo 
+        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"
+      %form.form{action: ""}
+        %input.search_form{name: "keyword", placeholder:  "何かお探しですか？", type: "text", value: ""}/
+        %button.search_button
+          %svg.button_a{"aria-hidden" =>"true", height: "16", viewbox: "0 0 16 16", width: "16"}
+            %path{d: "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", fill:  "currentColor", "fill-rule"=>"nonzero"}
+    .headdown
+      .search
+        .search_category
+          = link_to "/jp/category/", class: "category_icon_link" do
+            %i.fas.fa-list-ul
+              %p カテゴリーから探す
+        .search_brand
+          = link_to "/jp/bland/", class: "brand_icon_link" do
+            %i.fas.fa-tag
+              %p ブランドから探す
+      .user_page_links
+        %ul.user_links
+          %li.like
+          = link_to "/jp/like/", class: "like" do
+            %i.far.fa-heart
+            いいね！一覧
+          %li.notice
+          = link_to "/jp/notification/", class: "notification" do
+            %i.far.fa-bell
+            お知らせ
+          %li.todo
+          = link_to "/jp/todo/", class: "todoing" do
+            %i.fas.fa-check
+            やることリスト
+          %li.mypage
+          = link_to "/users/", class: "mypage_font" do
+            = image_tag("/images/member_photo_noimage.png", class: "mypage_img")
+            = "マイページ"
