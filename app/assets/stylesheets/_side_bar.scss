@@ -41,7 +41,7 @@
   }
 }
 .side_bar{
-  li:hover .fa-chevron-right{
+  li:hover .fa-chevron-right.side{
     color: #333;
     transform: translate(5px);
     transition: all 0.4s;
