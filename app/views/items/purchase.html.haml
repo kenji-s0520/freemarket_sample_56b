@@ -1,0 +1,67 @@
+%body
+.singlecontainer
+  %header.singleheader
+    %h1
+      = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2317089198", class: "mercarilogo_buy", width: "185px"),"https://www.mercari.com/jp/"
+  .main-base
+    .single-head
+      %h2.lsingle-head
+        購入内容の確認
+      .buy-content-item
+        .buy-content-innerspace
+          %h3.bitem-image
+            = image_tag('https://static.mercdn.net/thumb/photos/m63788069284_1.jpg?1567470545', class:'', src:'https://static.mercdn.net/thumb/photos/m63788069284_1.jpg?1567470545', width: "64px")
+          %p.bitem-name
+            ANAYI アナイ スタンドカラーコート トレンチコート
+          %form.buy-forma
+            %p.buy-pricea
+              ¥2,700
+              %span.shipping-fee
+                送料込み
+            %ul.buy-point-nothave
+              %li.ac-parent
+                .ac-toggle
+                  ポイントはありません
+            %ul.buy-priceb
+              %li.buy-you-pay
+                .buy-price-cell
+                  支払い金額
+                .buy-price-cella
+                  %span.priceb
+                    ¥2,700
+            %p.has-errortext
+              配送先と支払い方法の入力を完了してください。
+            %button.btn-red
+              購入する
+      .buy-content-userinfo
+        .buy-content-innerspace
+          %h3.adres
+            配送先
+          %address.buy-userinfo-text
+            〒520-○○○○
+            %br
+            滋賀県大津市〇〇町〇ー〇
+            %br
+            川端康成
+          %ul.buy-userinfo-fix
+            = link_to "", class: "userinfo-fix" do
+              %span.changea
+                変更する
+                .icon-arrow-righta
+                  /
+      .buy-content-userinfo-b
+        .buy-content-innerspace
+          %h3.payb
+            支払い方法
+          %p.userinfo-text
+            ************0911
+            %br
+            11/22
+          %figure.cardbrand
+            = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?210491352", width: "49", height: "15", alt: "visa")
+          %ul.buy-userinfo-fix
+            = link_to "", class: "userinfo-fix" do
+              %span.changea
+                変更する
+                .icon-arrow-righta
+                  /
