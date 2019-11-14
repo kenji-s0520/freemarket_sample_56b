@@ -78,4 +78,6 @@ gem 'jquery-rails'
 gem 'active_hash'
 gem 'gretel'
 
-gem "devise"
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
