@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_11_14_090603) do
 
-    t.string "ship_from_region", null: false
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "uid"
     t.string "provider"
