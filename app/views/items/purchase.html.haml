@@ -42,12 +42,12 @@
             %br
             滋賀県大津市〇〇町〇ー〇
             %br
-            川端康成
+            川端 康成
           %ul.buy-userinfo-fix
             = link_to "", class: "userinfo-fix" do
               %span.changea
                 変更する
-                .icon-arrow-righta
+                %i.fas.fa-chevron-right
                   /
       .buy-content-userinfo-b
         .buy-content-innerspace
@@ -63,5 +63,21 @@
             = link_to "", class: "userinfo-fix" do
               %span.changea
                 変更する
-                .icon-arrow-righta
+                %i.fas.fa-chevron-right
                   /
+  .singlefooter
+    %ul.clear-fixa
+      %li.policy1
+        = link_to "https://www.mercari.com/jp/privacy/", class: "policy" do
+          プライバシーポリシー
+      %li.policy2
+        = link_to "https://www.mercari.com/jp/tos/", class: "policy" do
+          メルカリ利用規約
+      %li.policy3
+        = link_to "https://www.mercari.com/jp/tokutei/", class: "policy" do
+          特定商取引に関する表記
+    .singlefooter-logo
+      =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?210491352", width: "80", height: "65", class: "graylogo"), "https://www.mercari.com/jp/"
+    %p.smalname
+      %small
+        ©︎ 2019 Mercari

@@ -247,12 +247,12 @@
     .changea{
       vertical-align: middle;
       color: #0099e8;
-      .icon-arrow-righta{
+      fas.fa-chevron-right{
         vertical-align: middle;
         margin: 0 0 0 8px;
         font-size: 10px;
         display: inline-block;
-        font-family: 'icon-font';
+        font-family: 'FontAwesome';
         speak: none;
         font-style: normal;
         font-weight: 400;
@@ -314,25 +314,95 @@
       .changea{
         vertical-align: middle;
         color: #0099e8;
-        .icon-arrow-righta{
+        fas.fa-chevron-right{
           vertical-align: middle;
           margin: 0 0 0 8px;
           font-size: 10px;
+          font-weight: 200;
           display: inline-block;
-          font-family: 'icon-font';
-          speak: none;
-          font-style: normal;
-          font-weight: 400;
-          font-variant: normal;
-          text-transform: none;
-          line-height: 1;
-          -webkit-font-smoothing: antialiased;
-          content: '\e005';
-          color: #0099e8;
-          border-style: solid;
-          border-width: 0;
+          font-family: 'FontAwesome';
         }
       }
+    }
+  }
+}
+.singlefooter{
+  width: 456px;
+  height: 140px;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 40px 0;
+  text-align: center;
+  .clear-fixa{
+    font-size: 0;
+    list-style: none;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    border-style: solid;
+    border-width: 0;
+    .policy1{
+      margin: 0;
+      display: inline-block;
+      font-size: 12px;
+      color: #333;
+      text-decoration: none;
+      touch-action: manipulation;
+      width: 119.41px;
+      .policy{
+        display: block;
+        color: #333;
+      }
+    }
+    .policy2{
+      font-size: 12px;
+      margin: 0 0 0 16px;
+      display: inline-block;
+      color: #333; 
+      text-decoration: none;
+      touch-action: manipulation;
+      .policy{
+        display: block;
+        color: #333;
+      }
+    }
+    .policy3{
+      font-size: 12px;
+      margin: 0 0 0 16px;
+      display: inline-block;
+      color: #333; 
+      text-decoration: none;
+      touch-action: manipulation;
+      .policy{
+        display: block;
+        color: #333;
+      }
+    }
+  }
+  .singlefooter-logo{
+    display: block;
+    color: #333;
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    text-decoration: none;
+    touch-action: manipulation;
+    .graylogo{
+      vertical-align: middle;
+      margin: 0;
+    }
+  }
+  .smalname{
+    margin: 8px 0 0;
+    .small{
+      font-size: 13px;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0
     }
   }
 }
