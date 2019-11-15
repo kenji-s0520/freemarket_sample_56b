@@ -10,17 +10,17 @@
   }
   &_name li{
     font-size: 14px;
-    min-height: 42px;
+    min-height: 48px;
     display: block;
     border-top:  #9F99A3;
     border-left:  #9F99A3;
     border-right: #9F99A3;
     border-bottom:  #9F99A3;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 3px 16px;
     color: #333;
     height: 40px;
-    width: 260px; 
+    width: 280px; 
     margin: 0px;
     line-height: 40px;
     margin: 1px;
@@ -30,10 +30,10 @@
     border-left: #BABABA;
     border-right: #BABABA;
     border-bottom: #BABABA;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(249, 249, 249);
     margin: 1px;
   }
-  .fa-chevron-right {
+  .side {
     float: right;
     margin-right: 5px;
     margin-top: 12px;
@@ -41,7 +41,7 @@
   }
 }
 .side_bar{
-  li:hover .fa-chevron-right{
+  li:hover .fa-chevron-right.side{
     color: #333;
     transform: translate(5px);
     transition: all 0.4s;
@@ -49,4 +49,11 @@
 }
 a{
   color: #333;
+}
+
+.side_bar_name h4{
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
