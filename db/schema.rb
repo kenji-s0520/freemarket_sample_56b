@@ -10,101 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_16_074718) do
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "code", null: false
-    t.string "prefectures", null: false
-    t.string "city_town", null: false
-    t.string "address_number", null: false
-    t.string "building"
-    t.string "room_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "buyers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "card_id", null: false
-    t.integer "customer_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_11_09_081804) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.text "description", null: false
+    t.string "description", null: false
     t.string "image", null: false
     t.integer "price", null: false
     t.string "size", null: false
-    t.integer "category_id", null: false
+    t.integer "category_id"
     t.integer "brand_id", null: false
     t.string "status", null: false
     t.string "ship_method", null: false
-    t.integer "ship_fee", null: false
+    t.string "ship_fee", null: false
     t.string "ship_person", null: false
     t.string "ship_area", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "seller", null: false
-    t.integer "buyer", null: false
-    t.string "ship_days"
-  end
-
-  create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.string "selling_items", null: false
-    t.string "sold_items", null: false
-    t.string "trading_items", null: false
-    t.string "bought_items", null: false
-    t.integer "balance", null: false
-    t.integer "point", null: false
-    t.string "birthday", null: false
-    t.integer "value"
-    t.string "phone_number", null: false
-    t.string "payment", null: false
-    t.string "identification", null: false
-    t.integer "evaluation"
-    t.text "introduction"
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
