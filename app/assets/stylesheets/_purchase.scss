@@ -227,35 +227,6 @@
     font-size: 14px;
     line-height: 1.4;
   }
-  .userinfo-fix{
-    width: 320px;
-    display: block;
-    text-align: right;
-    text-decoration: none;
-    touch-action: manipulation;
-    .changea{
-      vertical-align: middle;
-      color: #0099e8;
-      fas.fa-chevron-right{
-        vertical-align: middle;
-        margin: 0 0 0 8px;
-        font-size: 10px;
-        display: inline-block;
-        font-family: 'FontAwesome';
-        speak: none;
-        font-style: normal;
-        font-weight: 400;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        content: '\e005';
-        color: #0099e8;
-        border-style: solid;
-        border-width: 0;
-      }
-    }
-  }
 }
 .buy-content-userinfo-b{
   padding: 24px 12.5% 40px;
@@ -272,7 +243,7 @@
       font-size: 14px;
       font-weight: 600;
     }
-    .userinfo-text{
+    .userinfo-card{
       margin: 8px 0 0;
       font-size: 14px;
       line-height: 1.4;
@@ -284,40 +255,36 @@
       text-align: left;
       display: block;
     }
-    .buy-userinfo-text{
-      display: block;
-      text-align: left;
-      margin: 8px 0 0;
-      font-size: 14px;
-      line-height: 1.4;
-      margin: 8px 0 0;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .userinfo-fix{
-      width: 320px;
-      display: block;
-      text-align: right;
-      text-decoration: none;
-      touch-action: manipulation;
-      .changea{
-        vertical-align: middle;
-        color: #0099e8;
-        fas.fa-chevron-right{
-          vertical-align: middle;
-          margin: 0 0 0 8px;
-          font-size: 10px;
-          font-weight: 200;
-          display: inline-block;
-          font-family: 'FontAwesome';
-        }
-      }
-    }
   }
 }
+.userinfo-fix{
+  width: 320px;
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  touch-action: manipulation;
+  .changea{
+    vertical-align: middle;
+    color: #0099e8;
+  }
+}
+
+.change1{
+  float: right;
+  margin: 1px 0 0 8px;
+  font-size: 10px;
+  font-weight: 900;
+  // font-variant: normal;
+  // text-transform: none;
+  // line-height: 1;
+  color: #0099e8;
+  // border-style: solid;
+  // border-width: 0;
+}
+
 .singlefooter{
   width: 456px;
-  height: 140px;
+  height: 220px;
   margin: 0 auto;
   position: absolute;
   right: 0;
