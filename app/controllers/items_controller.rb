@@ -9,5 +9,8 @@ class ItemsController < ApplicationController
     render "items/items"
   end
   
+  def purchase
+  end
+
 end
 
