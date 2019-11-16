@@ -47,6 +47,7 @@
     text-align: center;
    }
  }
+
  .mercari-icon{
      margin-top: 40px;
      width:185px;
@@ -231,10 +232,9 @@
        &--charge{
          position: relative;
        }
-       &--method{
+       &--method,--ship-from-region,--date{
          position: relative;
          margin-top: 40px;
-         display: none;
        }
        &--ship-from-region{
          position: relative;
@@ -301,9 +301,12 @@
             font-size: 15px;
             background: $white;
             outline-style: none;
-
-           &::placeholder{
-         text-align: right;
+            text-align: right;
+            &:focus{
+              border: 1px solid $link-color ;
+              }
+       &::placeholder{
+            text-align: right;
          }
        }
      }
