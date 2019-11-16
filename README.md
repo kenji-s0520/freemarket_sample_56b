@@ -22,6 +22,7 @@
 |payment|string|null: false|
 |identification|string|null: false|
 |evaluation|integer||
+|intoroduction|text||
 
 ### Association
 - has_many :items
@@ -29,6 +30,7 @@
 - has_one :address
 - has_many :item_comments
 - has_many :trading_comments
+- has_many :cards             <!-- 追加 >
 
 ## addressテーブル
 |Column|Type|Options|
@@ -74,17 +76,21 @@
 |image|string|
 |price|integer|null: false|
 |size|string|null: false|
-|category_id|reference|null: false|
-|brand_id|reference|null: false|
+|category|references|null: false|      <!-- 変更 >
+|brand|references|null: false|         <!-- 変更 >
 |status|string|null: false|
 |ship_method|string|null: false|
 |ship_fee|string|null: false|
 |ship_person|string|null: false|
 |ship_area|string|null: false|
 |ship_days|string|null: false|
+|seller|references|null: false, foreign_key: true|    <!-- 追加 >
+|buyer|references|null: false, foreign_key: true|     <!-- 追加 >
 
 ### Association
 - belongs_to :user
+- belongs_to :seller       <!-- 追加 >
+- belongs_to :buyer         <!-- 追加 >
 - belongs_to :category
 - belongs_to :brand
 - has_many :likes
@@ -136,3 +142,33 @@
 ### Association
 - belongs_to :item
 - belongs_to :brand
+
+### buyersテーブル
+|column|Type|Option|      <!-- 追加 >
+|------|----|------|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+### sellerテーブル
+|column|Type|Option|    <!-- 追加 >
+|------|----|------|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+### cardsテーブル
+|column|Type|Option|          <!-- 追加 >
+|user_id|integer|null: false|
+|card_id|integer|null: false|
+|customer_id|integer|null: false|
+
+### Association
+- belongs_to :user
+- references :user, foreign_key: true, null: false
