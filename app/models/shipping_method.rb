@@ -1,6 +1,8 @@
-class Shipping_method < ActiveHash::Base
+class ShippingMethod < ActiveHash::Base
   self.data = [
-    {id: "1", name: '送料込み(出品者負担)'},
-    {id: "2", name: '着払い(購入者負担)'}
+    {id: "1", name: '未定'},
+    {id: "2", name: 'クロネコヤマト'},
+    {id: "3", name: 'ゆうパック'},
+    {id: "4", name: 'ゆうメール'}
   ]
 end

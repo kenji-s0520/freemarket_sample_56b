@@ -1,6 +1,6 @@
 %body
   .single-container
-    %header.single-header
+    %header.sellsingle-header
       %h1
         = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon" ,alt:"mercari"),""
     %main
@@ -37,14 +37,14 @@
                 %span 必須
                 %i.sell.fas.fa-chevron-down
                 = form_for '' do |f|
-                  = f.collection_select :category_id, Category.all, :id, :name, prompt: "---"
+                  = f.collection_select :sell_category_id, SellCategory.all, :id, :name, prompt: "---"
               
               .items-contents__item-about--box--condition
                 %h4 商品の状態
                 %span 必須
                 %i.sell.fas.fa-chevron-down
                 = form_for '' do |f|
-                  = f.collection_select :state_of_items_id, State_of_items.all, :id, :name, prompt: "---"
+                  = f.collection_select :state_of_items_id, StateOfItems.all, :id, :name, prompt: "---"
         
           .items-contents__shipping.clearfix
             %h3.items-contents__shipping--head 配送について
@@ -55,7 +55,14 @@
                 %span 必須
                 %i.sell.fas.fa-chevron-down
                 = form_for '' do |f|
-                  = f.collection_select :shipping_method_id, Shipping_method.all, :id, :name, prompt: "---"
+                  = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {prompt: "---"}, {class: 'items-shipping_charge'}
+
+              .items-contents__shipping--box--method
+                %h4 配送の方法
+                %span 必須
+                %i.sell.fas.fa-chevron-down
+                = form_for '' do |f|
+                  = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, prompt: "---"
 
               .items-contents__shipping--box--ship-from-region
                 %h4 発送元の地域
@@ -69,7 +76,7 @@
                 %span.form-require 必須
                 %i.sell.fas.fa-chevron-down
                 = form_for '' do |f|
-                  = f.collection_select :the_number_of_the_days_to_ship_id, The_number_of_the_days_to_ship.all, :id, :name, prompt: "---"
+                  = f.collection_select :the_number_of_the_days_to_ship_id, TheNumberOfTheDaysToShip.all, :id, :name, prompt: "---"
 
           .items-contents__price.clearfix
             %h3.items-contents__price--head 販売価格(300〜9,999,999)
@@ -83,8 +90,8 @@
                       %span.need_icon 必須 
                     .items-contents__price--box--list_top--right
                       ¥
-                      %div.items-contents__price--box--list_top--right--space
-                        %input.items-contents__price--box--list_top--right--input{placeholder: "例）300",value: ""}/
+                      .items-contents__price--box--list_top--right--space
+                        %input.items-contents__price--box--list_top--right--input{placeholder: "例）300"}/
                 %li.items-contents__price--box--list_center.clearfix
                   .items-contents__price--box--list_center--text 販売手数料（10%）
                   .items-contents__price--box--list_center--sales -

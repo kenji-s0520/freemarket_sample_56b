@@ -6,8 +6,8 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"}
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    "https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-    = stylesheet_link_tag    "https://i.icomoon.io/public/temp/ba288f3672/UntitledProject/style.css"
   %body
     = yield
