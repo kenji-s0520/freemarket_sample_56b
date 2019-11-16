@@ -37,3 +37,10 @@ $(function() {
     adaptiveheight: true,
   });
 });
+$(function() {
+  $('.cp_cssslider').slick({
+    cenrterMode: true,
+    centerPadding: 0,
+    adaptiveheight: true,
+  });
+});
