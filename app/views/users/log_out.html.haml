@@ -1,0 +1,13 @@
+= render partial: "header_login"
+- breadcrumb :log_out
+= render "layouts/breadcrumbs"
+%main.main_contents
+  .main
+    .upper
+      #log_out.create__main1
+        #addbutton.create__main__button
+          %button.create-add
+            ログアウト  
+  = render partial: "sidebar"
+= render partial: "footer"
+= render partial: "sell_btn"
