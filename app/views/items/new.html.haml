@@ -37,7 +37,7 @@
                 %span 必須
                 %i.sell.fas.fa-chevron-down
                 = form_for '' do |f|
-                  = f.collection_select :category_id, Category.all, :id, :name, prompt: "---"
+                  = f.collection_select :category2_id, Category2.all, :id, :name, prompt: "---"
               
               .items-contents__item-about--box--condition
                 %h4 商品の状態
