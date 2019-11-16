@@ -27,6 +27,21 @@ $dark: #888;
 html{
   width: 100%;
 }
+ .sellsingle-header{
+   height: 128px;
+   width:100%;
+   text-align: center;
+   & h1{
+    display: inline-block;
+    text-align: center;
+   }
+ }
+
+ .mercari-icon{
+     margin-top: 40px;
+     width:185px;
+     height: 49px;
+ }
 
 body {
   position: relative;
@@ -363,6 +378,211 @@ main {
     }
   }
 }
+     }
+   }
+   &__title{
+   text-align: center;
+   font-size: 22px;
+   font-weight: bold;
+   border-bottom: solid 1px $gray;
+   padding: 32px 16px;
+   line-height:1.5;
+     & h2{
+       font-weight: bold;
+     }
+   }
+   &__image{
+     border-bottom: solid 1px $gray;
+     padding: 40px;
+     & p{
+       margin-top: 8px;
+       line-height: 1.5;
+       font-size: 14px;
+     }
+     &--drop-box{
+       position: relative;
+       display: block;
+       height: 162px;
+       background: $gray;
+       margin: 16px auto 0;
+       border: 1px dashed $bordar-color;
+       padding: 40px;
+       cursor: pointer;
+       &--file{
+         width: 100%;
+         margin-left: 0;
+         width: 620px;
+         padding: 40px; 
+       }
+       &--click{
+         position: absolute;
+         top: 36%;
+         left: 16px;
+         right: 16px;
+         text-align: center;
+         font-size: 14px;
+         line-height: 1.5;
+       }
+     }
+   }
+   &__item-info{
+     padding: 40px;
+     border-bottom: solid 1px $gray;
+     &--name{
+       &--input{
+       width: 100%;
+       height: 48px;
+       padding: 10px 16px 8px;
+       margin: 8px auto 0;
+       border-radius: 4px;
+       border: 1px solid $bordar-color;
+       background: $white;
+       line-height: 1.5;
+       font-size: 16px;
+       outline-style: none;
+       background: #fff;
+         &:focus{
+           border: 1px solid $link-color ;
+         }
+       }
+     }
+     &--description{
+       margin-top: 40px;
+     }
+   }
+   &__item-about{
+     padding: 40px;
+     border-bottom: solid 1px $gray;
+     &--head{
+       float: left;
+       color: $dark;
+       font-size: 14px;
+       font-weight: 600;
+     }
+     &--box{
+       width: 400px;
+       float: right;
+       &--category{
+         position: relative;
+       }
+       &--condition{
+         position: relative;
+         margin-top: 40px;
+       }
+     }
+   }
+   &__shipping{
+     padding: 40px;
+     border-bottom: solid 1px $gray;
+     border-top: solid 1px $gray;
+     &--head{
+       float: left;
+       color: $dark;
+     }
+     & h3{
+       font-size: 14px;
+     }
+     & a{
+       color: $white;
+     }
+     &--box{
+       width: 400px;
+       float: right;
+       &--charge{
+         position: relative;
+       }
+       &--method,--ship-from-region,--date{
+         position: relative;
+         margin-top: 40px;
+       }
+       &--ship-from-region{
+         position: relative;
+         margin-top: 40px;
+       }
+       &--date{
+         position: relative;
+         margin-top: 40px;
+       }
+     }
+   }
+
+   &__price{
+     padding: 40px;
+     border-bottom: solid 1px $gray;
+     &--head{
+       float: left;
+       color: $dark;
+     }
+     & h3{
+       font-size: 14px;
+     }
+     & a{
+       color: $white;
+     }
+     &--box{
+       width: 400px;
+       float: right;
+       & ul{
+         list-style: none;
+       }
+       &--list_top{
+         padding: 0 0 24px;
+         &--label{
+           border: 0;
+           & label{
+             display: inline-block;
+             width: 200px;
+             line-height: 48px;
+             font-weight: 600;
+           }
+         }
+         &--right{
+           width: 50%;
+           height: 48px;
+           float: right;
+           text-align: right;
+           & p {
+             display: inline-block;
+             margin-right: 10px;
+           }
+           &--space{
+             display: inline-block;
+             margin: 0 0 0 5%;
+           }
+           &--input{
+            width: 160px;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 15px;
+            background: $white;
+            outline-style: none;
+            text-align: right;
+            &:focus{
+              border: 1px solid $link-color ;
+              }
+       &::placeholder{
+            text-align: right;
+         }
+       }
+     }
+   }
+       &--list_center{
+         padding: 24px 0;
+         border-top: solid 1px #ccc;
+         &--text{
+           float:left;
+           display: inline-block;
+           font-size: 14px;
+         }
+         &--sales{
+           display: inline-block;
+           float: right;
+         }
+       }
 
 .sell-form {
   border-top: 1px solid #eee;

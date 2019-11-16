@@ -1,3 +1,7 @@
+class Category < ApplicationRecord
+  has_many :items
+    has_ancestry
+    
 class SellCategory < ActiveHash::Base
   self.data = [
     {id: "1", name: 'レディース'},
@@ -15,4 +19,3 @@ class SellCategory < ActiveHash::Base
     {id: "10", name: 'その他'}
   ]
 end
-
