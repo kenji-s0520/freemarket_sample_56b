@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2019_11_16_074718) do
     t.string "image", null: false
     t.integer "price", null: false
     t.string "size", null: false
+    t.integer "category_id", null: false
+    t.integer "brand_id", null: false
     t.string "status", null: false
     t.string "ship_method", null: false
     t.integer "ship_fee", null: false
@@ -63,6 +65,8 @@ ActiveRecord::Schema.define(version: 2019_11_16_074718) do
     t.string "ship_area", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "seller", null: false
+    t.integer "buyer", null: false
     t.string "ship_days"
   end
 
