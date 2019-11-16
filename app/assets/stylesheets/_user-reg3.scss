@@ -1,7 +1,25 @@
-.clearfix2{
- margin-left:450px;
-}
-.footer-reg-logo2{
- margin-left:620px;
- margin-top:30px;
+.footer-reg2{
+  width: 100%;
+  text-align:center;
+  font-size:12px;
+  max-height:220px;
+  padding: 20px 40px;
+  background:rgb(245, 245, 245);
+  padding: 30px 0;
+  bottom: 0;
+  .clearfix2{
+      text-decoration: none ;
+      color:black;
+      margin:8px;
+  }
+  img {
+    max-width: 80px;
+    max-height: 65px;
+    height: auto;
+    vertical-align: bottom;
+    margin-top: 40px;
+  }
+  p  {
+    margin-top:8px;
+  }
 }
