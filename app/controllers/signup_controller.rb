@@ -6,6 +6,7 @@ class SignupController < ApplicationController
 
   def user_reg2 
     session[:nickname] = user_params[:nickname]
+  
   end
 
   def user_reg3

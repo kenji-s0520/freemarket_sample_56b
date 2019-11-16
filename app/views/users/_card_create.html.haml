@@ -5,97 +5,45 @@
         %h2
           クレジットカード情報入力
       .create__main
-        .create__main__message
-          %label
-            カード番号
-          %span.formrequire1
-            必須
-        .create__main__form
-          %input{type:"text",value:"",placeholder:"半角数字のみ"}
-        .create__main__image
-          = image_tag "cards/visa.svg",width:"49",height:"20"
-          = image_tag "cards/master-card.svg",width:"34",height:"20"
-          = image_tag "cards/saison-card.svg",width:"30",height:"20"
-          = image_tag "cards/jcb.svg",width:"32",height:"20"
-          = image_tag "cards/american_express.svg",width:"21",height:"20"
-          = image_tag "cards/dinersclub.svg",width:"32",height:"20"
-          = image_tag "cards/discover.svg",width:"32",height:"20"
-        .create__main__message
-          %label
-            有効期限
-          %span.formrequire1
-            必須
-        .create__main__year-month
-          %select{name:"month"}
-            %option
-              01
-            %option
-              02
-            %option
-              03
-            %option
-              04
-            %option
-              05
-            %option
-              06
-            %option
-              07
-            %option
-              08
-            %option
-              09
-            %option
-              10
-            %option
-              11
-            %option
-              12
-          %label{class:"year-month"}
-            月
-          %select{name:"month"}
-            %option
-              19
-            %option
-              20
-            %option
-              21
-            %option
-              22
-            %option
-              23
-            %option
-              24
-            %option
-              25
-            %option
-              26
-            %option
-              27
-            %option
-              28
-            %option
-              29
-          %label{class:"year-month"}
-            年
-        .create__main__message
-          %label
-            セキュリティコード
-          %span.formrequire1
-            必須
-        .create__main__form
-          %input{type:"text",value:"",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"4"}
-        .create__main__card-backside{onclick:"ShowCardBackside()"}
-          %i.fas.fa-question-circle
-          カード裏面の番号とは?
-        #backside.hidden
-          %div
-            %i.fas.fa-caret-up.fa-2x
-          .card.back.side.image
-            カードの裏面をご参照ください
-            = image_tag "card-backside.png",width:"240",height:"105",margin:"8px 0px 0px"
-        #addbutton.create__main__button
-          %button.create-add{onclick:"location.href='/users/user_reg5'"}
-            追加する
+        = form_with(model: User, local: true) do |f|
+          .create__main__message
+            =f.label :card,"カード番号"
+            %span.formrequire1
+              必須
+          .create__main__form
+            =f.text_field :card,value:"",placeholder:"半角数字のみ"
+          .create__main__image
+            = image_tag "cards/visa.svg",width:"49",height:"20"
+            = image_tag "cards/master-card.svg",width:"34",height:"20"
+            = image_tag "cards/saison-card.svg",width:"30",height:"20"
+            = image_tag "cards/jcb.svg",width:"32",height:"20"
+            = image_tag "cards/american_express.svg",width:"21",height:"20"
+            = image_tag "cards/dinersclub.svg",width:"32",height:"20"
+            = image_tag "cards/discover.svg",width:"32",height:"20"
+          .create__main__message
+            =f.label :card,"有効期限"
+            %span.formrequire1
+              必須
+          .create__main__year-month
+            =f.collection_select :month, Month.all,:id,:name,prompt:"---"
+            =f.label :month,"月",class:"year-month"
+            =f.collection_select :month, Year.all,:id,:name,prompt:"---"
+            =f.label :year,"年",class:"year-month"
+          .create__main__message
+            =f.label :code,"セキュリティコード"
+            %span.formrequire1
+              必須
+          .create__main__form
+            =f.text_field :code,value:"",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"4"
+          .create__main__card-backside{onclick:"ShowCardBackside()"}
+            %i.fas.fa-question-circle
+            カード裏面の番号とは?
+          #backside.hidden
+            %div
+              %i.fas.fa-caret-up.fa-2x
+            .card.back.side.image
+              カードの裏面をご参照ください
+              = image_tag "card-backside.png",width:"240",height:"105",margin:"8px 0px 0px"
+          =f.submit "追加する",id:"addbutton",class:"create__main__button"            # button.create-add{onclick:"location.href='/users/user_reg5'"}    
       %i#yajirushi1.fas.fa-chevron-down
       %i#yajirushi2.fas.fa-chevron-down
