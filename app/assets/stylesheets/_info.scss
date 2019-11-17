@@ -84,7 +84,7 @@ label{
   outline-width: 1px;
 }
 select{
-  -webkit-appearance: none;
+  // -webkit-appearance: none;
   outline-width: 1px;
 }
 .select-default{
@@ -121,6 +121,6 @@ select{
   cursor: pointer;
   text-align: center;
   border: 1px solid transparent;
-  -webkit-transition: all ease-out .3s;
+  // -webkit-transition: all ease-out .3s;
   transition: all ease-out .3s;
 }

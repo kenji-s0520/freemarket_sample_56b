@@ -32,7 +32,7 @@
       %h1.top-head 会員情報入力
       .form-main
         .main-section
-          = form_with(model: User, local: true,url:users_user_reg2_path,method: :get) do |f|
+          = form_with(model: @user, local: true,url:user_reg2_signup_index_path,method: :get) do |f|
             .form-top
               = f.label :nickname, "ニックネーム"
               %span.form-necessary 必須

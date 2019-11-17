@@ -9,13 +9,16 @@ Rails.application.routes.draw do
   get 'users/card' => 'users#card'
   get '/users/card/create' => 'users#card_create'
   get '/users/logout' => 'users#log_out'
-  get '/users/user_reg' => 'users#user_reg'
-  get '/users/user_reg2'
-  get '/users/user_reg3'
-  get '/users/user_reg4'
-  get '/users/user_reg5'
-  get '/users/user_sign_up'
   get 'users/login' => 'users/login'
   get '/items/buy' => 'items#purchase'
   resources :items, only: [:show, :new]
+  resources :signup do  #mishima ユーザー新規登録ページ
+    collection do
+      get 'user_reg'
+      get 'user_reg2'
+      get 'user_reg3'
+      get 'user_reg4' 
+      get 'user_reg5'
+    end
+  end
 end

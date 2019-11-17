@@ -5,7 +5,7 @@
         %h2
           クレジットカード情報入力
       .create__main
-        = form_with(model: User, local: true,url:users_user_reg5_path,method: :get) do |f|
+        = form_with(model:User , local: true,url:users_user_reg5_path,method: :"") do |f|
           .create__main__message
             =f.label :card,"カード番号"
             %span.formrequire1
