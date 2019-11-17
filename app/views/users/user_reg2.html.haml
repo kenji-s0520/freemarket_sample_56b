@@ -22,7 +22,7 @@
   .main-reg
     %h1.top-head 電話番号の確認
     .main-section
-      = form_with(model: User,local:true) do |f|  # :action => "/", :method => "post"}
+      = form_with(model: User,local:true,url:users_user_reg3_path,method: :get) do |f|  # :action => "/", :method => "post"}
         .form-top
           =f.label :phonenumber, "携帯電話の番号",class:"phonelabel",margin:"auto",id:"reg2"
         %br

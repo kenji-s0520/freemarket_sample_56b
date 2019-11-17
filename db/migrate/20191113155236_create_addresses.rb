@@ -7,7 +7,6 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :address_number,   null:false
       t.string :building
       t.string :room_number
-
       t.timestamps
     end
   end

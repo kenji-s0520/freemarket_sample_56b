@@ -10,7 +10,7 @@
         = link_to "https://www.mercari.com/jp/help_center/article/495/", class: "text_right1" do
           = "本人確認書類のアップロードについて"
           %i.fas.fa-angle-right
-      = form_with(model: User, local: true) do |f|
+      = form_with(model: User, local: true,url:users_user_reg4_path,method: :get) do |f|
         .form_group
           = f.label :name,"お名前"
           %span.formrequire1
@@ -29,11 +29,11 @@
             必須
           =f.text_field :code ,placeholder:"例) 123-4567",class:"input-default"    #%input.input-default{name: "zip_code", placeholder: "例) 123-4567", type: "text"}
         .form_group
-          =f.label :prefecture,"都道府県"
+          =f.label :prefectures,"都道府県"
           %span.formrequire1
             必須
           %i.fas.fa-chevron-down
-          =f.collection_select :prefecture, Prefecture.all,:id,:name,prompt:"---"   # %select.select-default{name: "pref_name"}
+          =f.collection_select :prefectures, Prefecture.all,:id,:name,prompt:"---"   # %select.select-default{name: "pref_name"}
         .form_group
           =f.label :city_town,"市町村"   #%label{for: "city"} 市区町村
           %span.formrequire1

@@ -33,7 +33,7 @@ class SignupController < ApplicationController
         :birthday,
         :phone_number,
         :code,
-        :prefecture,
+        :prefectures,
         :city_town,
         :address_number,
         :bulding,
