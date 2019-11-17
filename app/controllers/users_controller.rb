@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!,except: [:user_sign_up,:user_reg,:user_reg2,:user_reg3,:user_reg4,:user_reg5]
 
   def index
   end
