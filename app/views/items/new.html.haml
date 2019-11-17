@@ -15,10 +15,17 @@
             .items-contents__image--drop-box
               
               = form_for @item, html: {id:'new_item'}, url: new_item_path do |f|
+                -# .item__images__container
+                -#   .item__images__container__preview
+                -#     %ul
+                -# .item__images__container__guide
+                -#   .have__image--0
                 .item__images__container
                   .item__images__container__preview
-                    %ul
+                    / 以下のulタグの下に、Jsからli要素を挿入することでプレビューを実現します。
+                  %ul
                 .item__images__container__guide
+                  / ドラッグ&ドロップエリアをプレビューによって変動させたい場合以下のようなclassを作成し、プレビュー画像の数によってclassを変える。
                   .have__image--0
                     %h5 ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
 

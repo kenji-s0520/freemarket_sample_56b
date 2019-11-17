@@ -41,4 +41,36 @@ $('.item__images__container__guide').on('drop',function(event){
     fileReader.readAsDataURL(files[i]);
   }
 });
-
+// div配下のaタグがクリックされた際に、イベントを発生させる。
+$(document).on('click','.item__images__container__preview a', function(){
+  // index関数を利用して、クリックされたaタグが、div内で何番目のものか特定する。
+  var index = $(".item__images__container__preview a").index(this);
+  // クリックされたaタグの順番から、削除すべき画像を特定し、配列から削除する。
+  files_array.splice(index - 1, 1);
+  // クリックされたaタグが含まれるli要素をHTMLから削除する。
+  $(this).parent().parent().parent().remove();
+});
+// submitボタンが押された際のイベント
+$('#new_item').on('submit', function(e){
+  e.preventDefault();
+  // そのほかのform情報を以下の記述でformDataに追加
+  var formData = new FormData($(this).get(0));
+  // ドラッグアンドドロップで、取得したファイルをformDataに入れる。
+  files_array.forEach(function(file){
+   formData.append("image[images][]" , file)
+  });
+  $.ajax({
+    url:         '/items',
+    type:        "POST",
+    data:        formData,
+    contentType: false,
+    processData: false,
+    dataType:   'json',
+  })
+  .done(function(data){
+    alert('出品に成功しました！');
+  })
+  .fail(function(XMLHttpRequest, textStatus, errorThrown){
+    alert('出品に失敗しました！');
+  });
+});
