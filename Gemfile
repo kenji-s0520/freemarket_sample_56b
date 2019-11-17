@@ -79,3 +79,4 @@ gem 'active_hash'
 gem 'gretel'
 gem 'devise'
 gem 'ancestry'
+gem "dropzonejs-rails"
