@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get 'users/login' => 'users/login'
   get '/users/buy' => 'items#purchase'
   resources :items, only: [:show, :new]
-  resources :images, only: [:create]
+  resources :images, only: [:new, :create]
 end

@@ -11,12 +11,13 @@
 // about supported directives.
 //
 
+//= require jquery
+-//= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
-//= require_tree
-//= require jquery
-//= require jquery_ujs
 //= require dropzone
+//= require_tree
+
 $(function() {
   $('.slider').slick({
     dots: true,

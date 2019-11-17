@@ -87,6 +87,17 @@
      font-weight: 600;
      font-size: 14px;
    }
+   & h5{
+     position: absolute;
+     top: 35%;
+     left: 16px;
+     right: 16px;
+     font-size: 14px;
+     font-weight: bold;
+     text-align: center;
+     line-height: 1.5;
+
+   }
    & a{
      color: $link-color;
      &:hover{

@@ -13,31 +13,14 @@
             %span 必須
             %p 最大10枚までアップロードできます
             .items-contents__image--drop-box
-              -# %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
-              -# %pre.items-contents__image--drop-box--click
-              -# = form_for(Image.new, html: {multipart: true, class: "dropzone"}) do |f|
-              -#   .items-contents__image--drop-box
-              -#     = f.file_field :file_name, multiple: true
-              -#   ドラッグアンドドロップ
-              -#   またはクリックしてファイルをアップロード
-
-              -# :javascript
-              -#   $(function() {
-              -#     // disable auto discover
-              -#     Dropzone.autoDiscover = false;
-
-              -#     $(".dropzone").dropzone({
-              -#       maxFilesize: 1,
-              -#       addRemoveLinks: true
-              -#     });
-              -#   });
-              = form_for @item, html: {id:'new_item'} do |f|
+              
+              = form_for @item, html: {id:'new_item'}, url: new_item_path do |f|
                 .item__images__container
                   .item__images__container__preview
                     %ul
                 .item__images__container__guide
                   .have__image--0
-                    %h5 ドラッグ&ドロップ<br>でファイルをアップロード
+                    %h5 ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
 
 
           .items-contents__item-info

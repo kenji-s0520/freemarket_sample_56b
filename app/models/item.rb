@@ -7,5 +7,5 @@ class Item < ApplicationRecord
   has_many :likes
   has_many :trading_comments
   has_many :item_comments
-  
+  mount_uploader :file_name, PictureUploader
 end
