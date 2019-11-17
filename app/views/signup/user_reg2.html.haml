@@ -24,10 +24,10 @@
     .main-section
       = form_with(model: @user,local:true,url:signup_index_path,method: :post) do |f|  # :action => "/", :method => "post"}
         .form-top
-          =f.label :phonenumber, "携帯電話の番号",class:"phonelabel",margin:"auto",id:"reg2"
+          =f.label :phone_number, "携帯電話の番号",class:"phonelabel",margin:"auto",id:"reg2"
         %br
         .input-phone
-          =f.text_field :phonenumber,placeholder:"携帯の番号を入力"
+          =f.text_field :phone_number,placeholder:"携帯の番号を入力"
         .confirm-reg
           本人確認のため、携帯電話のSMS(ショートメッセージサービスを利用して認証を行います。)
         =f.submit "SMSを送信する",id:"button",class:"submit-btn2" #button.submit-btn2{type:"submit",name:"submit",onclick:"location.href='/users/user_reg3'"}SMSを送信する
