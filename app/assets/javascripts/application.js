@@ -17,7 +17,6 @@
 //= require activestorage
 //= require dropzone
 //= require_tree
-
 $(function() {
   $('.slider').slick({
     dots: true,
