@@ -88,3 +88,5 @@ gem 'devise'
 gem 'ancestry'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'payjp'
+gem 'payjp'
+gem 'dotenv-rails'

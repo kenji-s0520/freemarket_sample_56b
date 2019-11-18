@@ -114,6 +114,10 @@ GEM
       html2haml
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     erubis (2.7.0)
     excon (0.68.0)
@@ -372,6 +376,7 @@ DEPENDENCIES
   erb2haml
   factory_bot_rails
   faker
+  dotenv-rails
   fog-aws
   font-awesome-rails
   gretel
