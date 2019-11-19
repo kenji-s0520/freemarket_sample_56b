@@ -82,3 +82,6 @@
       %small
 
         ©︎ 2019 Mercari
+
+= form_tag(action: :purchase, method: :post) do
+  %script{type:"text/javascript",src:"https://checkout.pay.jp/",class:"payjp-button"}
