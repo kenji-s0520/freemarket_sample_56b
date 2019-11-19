@@ -17,79 +17,7 @@
     width: auto;
   }
 }
-.item_main_content{
-  margin: 16px 0 0;
-  .item_photo{
-    background: #fafafa;
-    float: left;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 375px;
-  }
-  .phot_drag{
-    position: relative;
-  }
-  .stage_photo{
-    position: relative;
-    overflow: hidden;
-  }
-  img{
-    background: rgba(0,0,0,0);
-    height: 300px;
-    width: 300px;
-  }
-}
 
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  }
-  .cp_cssslider {
-  width: 300px;
-  padding-top: 200px; /* 画像の高さ */
-  position: relative;
-  margin: 2em auto;
-  text-align: center;
-  }
-  .cp_cssslider > img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.5s;
-  border-radius: 3px;
-  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.3);
-  }
-  .cp_cssslider input[name='cp_switch'] {
-  display: none;
-  }
-  /* サムネイル */
-  .cp_cssslider label {
-  margin: 110px 0 0 0;
-  border: 2px solid #ffffff;
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  opacity: 0.6;
-  border-radius: 3px;
-  }
-  .cp_cssslider label:hover {
-  opacity: 0.9;
-  }
-  .cp_cssslider label img {
-  display: block;
-  width: 90px;
-  height: 90px;
-  border-radius: 2px;
-  }
-  .cp_cssslider input[name='cp_switch']:checked + label {
-  opacity: 1;
-  }
-  .cp_cssslider input[name='cp_switch'] ~ img {
-  opacity: 0;
-  }
-  .cp_cssslider input[name='cp_switch']:checked + label + img {
-  opacity: 1;
-  }
   .item_detail_table{
     float: right;
     max-width: 300px;
