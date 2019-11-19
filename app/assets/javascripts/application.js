@@ -32,13 +32,8 @@ $(function() {
 
 $(function() {
   $('.cp_cssslider').slick({
-    cenrterMode: true,
-    centerPadding: 0,
-    adaptiveheight: true,
-  });
-});
-$(function() {
-  $('.cp_cssslider').slick({
+    dots: true,
+    dotsClass: 'image-dots',
     cenrterMode: true,
     centerPadding: 0,
     adaptiveheight: true,
