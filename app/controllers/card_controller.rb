@@ -1,5 +1,6 @@
 class CardController < ApplicationController
   require "payjp"
+
   before_action :set_card
 
 def new
@@ -34,5 +35,6 @@ private
 def set_card
   @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
 end
+
 
 end
