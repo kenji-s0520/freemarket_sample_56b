@@ -5,7 +5,4 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand
   has_many :likes
-  has_many :trading_comments
-  has_many :item_comments
-  
 end

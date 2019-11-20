@@ -16,5 +16,10 @@ Rails.application.routes.draw do
   get '/users/user_sign_up'
   get 'users/login' => 'users/login'
   get '/users/buy' => 'items#purchase'
-  resources :items, only: [:show, :new]
+  resources :items, only: [:show, :new] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
 end
