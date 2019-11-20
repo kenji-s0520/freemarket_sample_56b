@@ -7,7 +7,7 @@
       %section.items-contents
         .items-contents__title
           %h2 商品の情報を入力
-        %form
+        = form_for '' do |f|
           .items-contents__image
             %h3 出品画像
             %span 必須
@@ -22,8 +22,7 @@
             .items-contents__item-info--name
               %h4 商品名
               %span 必須
-              %div
-                %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}/
+              %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}
             .items-contents__item-info--description
               %h4 商品の説明
               %span 必須
@@ -35,16 +34,25 @@
               .items-contents__item-about--box--category
                 %h4 カテゴリー
                 %span 必須
+                %i.sell.fas.fa-chevron-down 
+                = f.select :category, @category_parent_array, {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
+              
+              .items-contents__item-about--box--size
+                %h4 サイズ
+                %span.nini 任意
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :sell_category_id, SellCategory.all, :id, :name, prompt: "---"
+                = f.collection_select :category_size, CategorySize.all, :id, :name, prompt: "---"
+              
+              .items-contents__item-about--box--brand
+                %h4 ブランド
+                %span.nini 任意
+                %input.items-contents__item-info--name--input{placeholder: "例）シャネル",value: ""}
               
               .items-contents__item-about--box--condition
                 %h4 商品の状態
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :state_of_items_id, StateOfItems.all, :id, :name, prompt: "---"
+                = f.collection_select :state_of_items_id, StateOfItems.all, :id, :name, prompt: "---"
         
           .items-contents__shipping.clearfix
             %h3.items-contents__shipping--head 配送について
@@ -54,29 +62,25 @@
                 %h4 配送料の負担
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {prompt: "---"}, {class: 'items-shipping_charge'}
+                = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {prompt: "---"}, {class: 'items-shipping_charge'}
 
               .items-contents__shipping--box--method
                 %h4 配送の方法
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, prompt: "---"
+                = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, prompt: "---"
 
               .items-contents__shipping--box--ship-from-region
                 %h4 発送元の地域
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
 
               .items-contents__shipping--box--date
                 %h4 発送までの日数
                 %span.form-require 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :the_number_of_the_days_to_ship_id, TheNumberOfTheDaysToShip.all, :id, :name, prompt: "---"
+                = f.collection_select :the_number_of_the_days_to_ship_id, TheNumberOfTheDaysToShip.all, :id, :name, prompt: "---"
 
           .items-contents__price.clearfix
             %h3.items-contents__price--head 販売価格(300〜9,999,999)
