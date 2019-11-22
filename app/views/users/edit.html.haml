@@ -10,7 +10,7 @@
             プロフィール
         .profile-edit__user
           = image_tag("/images/member_photo_noimage.png")
-          %input{type:"text",value:"",placeholder:"例)AYA☆セール中"}
+          %input{type:"text",value:current_user.nickname,placeholder:"例)AYA☆セール中"}
         .profile_edit__text
           %textarea{name:"introduction",placeholder:"例)こんにちは☆ご覧いただきありがとうございます！",cols:"50",rows:"5"}
         .profile_edit__footer
