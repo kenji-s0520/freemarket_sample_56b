@@ -5,7 +5,7 @@
         %h2
           クレジットカード情報入力
       .create__main
-        = form_with(model:User , local: true,url:users_user_reg5_path,method: :"") do |f|
+        = form_with(model:User , local: true,url:"/signup/user_reg5",method: :"get") do |f|
           .create__main__message
             =f.label :card,"カード番号"
             %span.formrequire1
@@ -25,9 +25,9 @@
             %span.formrequire1
               必須
           .create__main__year-month
-            =f.collection_select :month, Month.all,:id,:name,prompt:"---"
+            =f.collection_select :month, Month.all,:id,:name
             =f.label :month,"月",class:"year-month"
-            =f.collection_select :month, Year.all,:id,:name,prompt:"---"
+            =f.collection_select :month, Year.all,:id,:name
             =f.label :year,"年",class:"year-month"
           .create__main__message
             =f.label :code,"セキュリティコード"

@@ -84,6 +84,7 @@
         border-width: 1px;
         padding:0px 16px;
         font-size:13px;
+        -webkit-appearance: none;
       }
     }
     &__card-backside {
@@ -156,12 +157,13 @@ i.fas.fa-chevron-down::before {
   position: absolute;
   top:270px;
   left:447px;
+  
 }
 
 #yajirushi2 {
   position: absolute;
   top:270px;
-  left:274px;
+  left:280px;
 }
 
 .year-month {
@@ -185,4 +187,13 @@ span.formrequire1 {
 i.fas.fa-chevron-right.yajirushi::before {
   position:relative;
   left:135px;
+}
+
+#addbutton {
+  background-color: #ea352d;
+  color:white;
+  width:329px;
+  height:48px;
+  text-align: center;
+  padding:5px;
 }
