@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       get 'user_reg3'
       get 'user_reg4' 
       get 'user_reg5'
+      get 'done'
+      post 'address_create'
     end
   end
 end

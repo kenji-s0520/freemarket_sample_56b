@@ -1,5 +1,6 @@
+#mishima
 class SignupController < ApplicationController
-  before_action :authenticate_user!,except: [:user_reg,:user_reg2,:user_reg3,:user_reg4,:user_reg5,:create]
+  before_action :authenticate_user!,except: [:user_reg,:user_reg2,:user_reg3,:user_reg4,:user_reg5,:create,:done,:address_create]
 
   def user_reg 
     @user = User.new
@@ -14,11 +15,12 @@ class SignupController < ApplicationController
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
-    session[:birthday] = user_params[:birthday]  
+    session[:birthday] = birthday_join
     @user = User.new
   end
 
   def user_reg3
+    @address = Address.new
   end
 
   def user_reg4
@@ -38,23 +40,36 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
       birthday: session[:birthday],
-      phone_number: session[:phone_number]
+      phone_number: user_params[:phone_number]
     )
     if @user.save
       session[:id] = @user.id
-      redirect_to new_signup_path
-    # else
-    #   render '/signup/registration'
+      redirect_to done_signup_index_path
     end
   end
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
+    redirect_to user_reg3_signup_index_path
+  end
+  def address_create
+    @address = Address.new(
+      # user_id: current_user.id,
+      code: address_params[:code],
+      prefectures: address_params[:prefectures],
+      city_town: address_params[:city_town],
+      address_number: address_params[:address_number],
+      building: address_params[:building],
+      room_for_number: address_params[:room_for_number]
+    )
+    if @address.save
+      redirect_to user_reg4_signup_index_path
+    end
   end
   private
-   # 許可するキーを設定します
     def user_params
       params.require(:user).permit(
+        :user,
         :nickname, 
         :email, 
         :password, 
@@ -64,13 +79,35 @@ class SignupController < ApplicationController
         :last_name_kana, 
         :first_name_kana, 
         :birthday,
-        :phone_number,
+        :phone_number
+      )
+    end
+
+    def address_params
+      params.require(:address).permit(
+        :last_name, 
+        :first_name, 
+        :last_name_kana, 
+        :first_name_kana, 
         :code,
         :prefectures,
         :city_town,
         :address_number,
-        :bulding,
-        :room_phone_number
+        :building,
+        :room_for_number
       )
+    end
+
+    def birthday_join
+      # パラメータ取得
+      date = params[:user][:birthday]
+  
+      # ブランク時のエラー回避のため、ブランクだったら何もしない
+      # 年月日別々できたものを結合して新しいDate型変数を作って返す
+      if date["birthday(1i)"].empty? && date["birthday(2i)"].empty? && date["birthday(3i)"].empty?
+        return
+      end
+      Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
+  
     end
 end
