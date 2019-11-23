@@ -159,22 +159,34 @@
        border: 1px dashed $bordar-color;
        padding: 40px;
        cursor: pointer;
-       &--file{
-         width: 100%;
-         margin-left: 0;
-         width: 620px;
-         padding: 40px; 
-       }
-       &--click{
-         position: absolute;
-         top: 36%;
-         left: 16px;
-         right: 16px;
-         text-align: center;
-         font-size: 14px;
-         line-height: 1.5;
-       }
+      //  &--file{
+      //    width: 100%;
+      //    margin-left: 0;
+      //    width: 620px;
+      //    padding: 40px; 
+      //  }
+      //  &--click{
+      //    position: absolute;
+      //    top: 36%;
+      //    left: 16px;
+      //    right: 16px;
+      //    text-align: center;
+      //    font-size: 14px;
+      //    line-height: 1.5;
+      //  }
      }
+   }
+   .item__images__container__preview{
+    width: 100%;
+    margin-left: 0;
+    height: 110px;
+    
+   }
+   .item__images__container__guide{
+    width: 100%;
+    margin-left: 0;
+    height: 110px;
+    
    }
    &__item-info{
      padding: 40px;

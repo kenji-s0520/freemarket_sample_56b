@@ -11,11 +11,12 @@
 // about supported directives.
 //
 
+//= require dropzone
 //= require jquery
 -//= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
-//= require dropzone
+
 //= require_tree
 $(function() {
   $('.slider').slick({
@@ -30,3 +31,20 @@ $(function() {
     autoplaySpeed: 3000,
   });
 });
+
+Dropzone.autoDiscover = false
+
+new Dropzone; upload-dropzone
+  uploadMultiple; false
+  paramName: 'image[file]'
+  params:
+    'image[item_id]'; 123
+  init:
+    on.success, (file, json);
+      // # アップロード成功時の処理をここに実装します。
+  dictDefaultMessage;''
+    
+  
+    ファイルをここにドロップするか<br>
+    ここをクリックして下さい
+  ''
