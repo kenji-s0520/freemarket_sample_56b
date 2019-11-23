@@ -1,6 +1,6 @@
 .main_item{
-  width: 700px;
-  // height: 100%;
+  width: 620px;
+  height: 100%;
   margin: 40px auto 0;
   padding: 24px 40px 40px;
   background: #ffffff;
@@ -12,13 +12,15 @@
     line-height: 1.4;
     color: #333333;
     font-weight: bold;
-    margin-top: 0;
+    margin: 0 0 16px 0;
     display: block;
     width: auto;
   }
 }
 .item_main_content{
-  margin: 16px 0 0;
+  margin: 0 auto;
+  width: 620px;
+  height: 420px;
   .item_photo{
     background: #fafafa;
     float: left;
@@ -28,7 +30,6 @@
     margin: 0 auto;
   }
 }
-
 .cp_cssslider {
   position: relative;
   margin: 0 auto;
@@ -42,7 +43,6 @@
     display: inline-block;
   }
 }
-
 .image-dots{
   text-align: center;
   li{
@@ -55,7 +55,6 @@
     }
   }
 }
-
 .slick-slide.slick-current.slick-active{
   opacity: 1;
 }
