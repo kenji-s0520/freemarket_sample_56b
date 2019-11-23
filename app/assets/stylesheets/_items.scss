@@ -17,42 +17,84 @@
     width: auto;
   }
 }
-
-  .item_detail_table{
-    float: right;
+.item_main_content{
+  margin: 16px 0 0;
+  .item_photo{
+    background: #fafafa;
+    float: left;
+    min-width: 300px;
     max-width: 300px;
-    height: 420px;
+    height: 375px;
     margin: 0 auto;
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #f5f5f5;
-    th{
-      font-size: 14px;
-      padding: 8px;
-      width: 39%;
-      text-align: left;
-      font-weight: 400;
-      border: 1px solid #f5f5f5;
-      background: #fafafa;
-    }
-    td{
-      font-size: 14px;
-      padding: 8px;
-      width: 61%;
-      border: 1px solid #f5f5f5;
-      background: #fff;
-      
-    }
-    a{
-      font-size: 14px;
-      color: #2772ce;
-    }
-    span{
-      font-weight: 500;
-      font-size: 14px;
-      color: #2772ce;
+  }
+}
+// *, *:before, *:after {
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   }
+
+.cp_cssslider {
+  display: inline-block;
+  min-width: 300px;
+  max-width: 300px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  li{
+    min-width: 300px;
+    max-width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    object-fit: cover;
+    display: inline-block;
+  }
+}
+
+.image-dots{
+  li{
+    button{
+      position: relative;
+      &:before{
+        box-sizing: border-box;
+      }
     }
   }
+}
+.item_detail_table{
+  float: right;
+  max-width: 300px;
+  height: 420px;
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+  th{
+    font-size: 14px;
+    padding: 8px;
+    width: 39%;
+    text-align: left;
+    font-weight: 400;
+    border: 1px solid #f5f5f5;
+    background: #fafafa;
+  }
+  td{
+    font-size: 14px;
+    padding: 8px;
+    width: 61%;
+    border: 1px solid #f5f5f5;
+    background: #fff;
+    
+  }
+  a{
+    font-size: 14px;
+    color: #2772ce;
+  }
+  span{
+    font-weight: 500;
+    font-size: 14px;
+    color: #2772ce;
+  }
+}
 .item_user_ratings:first-child{
   margin: 0;
 }
