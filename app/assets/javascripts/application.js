@@ -45,4 +45,7 @@ $(function() {
   $( '.image-dots' ).on( 'mouseenter', 'li', function() {
     $( this ).click();
   } );
+  $( '.image-dots' ).on( 'click', 'li', function(e) {
+    e.preventDefault();
+  } );
 });
