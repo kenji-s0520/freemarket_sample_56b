@@ -5,18 +5,19 @@
     .item_main_content
       .item_photo
         .cp_cssslider
-          %input#photo1{checked: "checked", name: "cp_switch", type: "radio"}/
-          %label{for: "photo1"}
-            = image_tag "/images/apple_watch.png"
-          = image_tag "/images/apple_watch.png"
-          %input#photo2{name: "cp_switch", type: "radio"}/
-          %label{for: "photo2"}
-            = image_tag "/images/apple_watch2.png"
-          = image_tag "/images/apple_watch2.png"
-          %input#photo3{name: "cp_switch", type: "radio"}/
-          %label{for: "photo3"}
-            = image_tag "/images/apple_watch3.png"
-          = image_tag "/images/apple_watch3.png"
+          %li.cp_slider1
+            %label{for: "photo1"}
+              = image_tag("/images/apple_watch.png", width: "300px")
+          %li.cp_slider2
+            %label{for: "photo2"}
+              = image_tag("/images/apple_watch2.png", width: "300px")
+          %li.cp_slider3
+            %label{for: "photo3"}
+              = image_tag("/images/apple_watch3.png", width: "300px")
+          %li.cp_slider4
+        .image-dots
+          .image-dot
+            .image-dot-inner
       %table.item_detail_table
         %tbody
           %tr
