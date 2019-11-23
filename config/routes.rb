@@ -23,6 +23,10 @@ Rails.application.routes.draw do
       get 'end'
       get 'done'
       post 'address_create'
+  resources :card, only: [:new, :show, :create] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'delete', to: 'card#delete'
     end
   end
 end
