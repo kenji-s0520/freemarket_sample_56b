@@ -31,7 +31,7 @@
     .main-reg
       %h1.top-head 会員情報入力
       .form-main
-        .main-section
+        .main-section                       
           = form_with(model: @user, local: true,url:"user_reg2",method: :get) do |f|      #mishima 新規登録 form_withの記述を追加
             .form-top
               = f.label :nickname, "ニックネーム"
@@ -80,12 +80,7 @@
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
             %br
             .reCAPTCHA
-              .form-group-captcha
-                .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-                  %div{style: "width: 304px; height: 78px;"}
-                    %div
-                      %iframe{:frameborder => "0", :height => "78", :name => "a-6dw27b11n2be", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=66WEle60vY1w2WveBS-1ZMFs&size=normal&cb=ycflxoxf04ux", :width => "304"}
-                  %textarea#g-recaptcha-response.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+              =recaptcha_tags
             %br
             .user-rule
               「次へ進む」のボタンを押すことにより、

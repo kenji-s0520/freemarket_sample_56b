@@ -361,4 +361,34 @@ body {
 #addbutton {
   margin:auto;
   padding:15px;
+  position:relative;
+  bottom:-18px;
+}
+
+input#user_email.login-input-text-m.input-default3 {
+  position:relative;
+  right:66px;
+  bottom:50px;
+}
+
+input#user_password.login-input-text-p.input-default3 {
+  position:relative;
+  right:66px;
+  bottom:50px;
+}
+
+#rec.form-group-captcha {
+  position:relative;
+  right:55px;
+  // bottom:50px;
+}
+
+.login-submit.btn-default.btn-red {
+  height:43px;
+  width:331px;
+  text-align: center;
+  position:relative;
+  top:0px;
+  right:70px;
+  bottom:50px;
 }
