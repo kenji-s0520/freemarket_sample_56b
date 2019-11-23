@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     render "items/items"
   end
   
-  def purchase
+  def buy
   end
 
 end
