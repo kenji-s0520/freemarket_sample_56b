@@ -84,3 +84,4 @@ gem 'active_hash'
 gem 'gretel'
 gem 'devise'
 gem 'ancestry'
+gem "recaptcha", require: "recaptcha/rails"

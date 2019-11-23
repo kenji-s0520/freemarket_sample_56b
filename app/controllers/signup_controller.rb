@@ -4,6 +4,8 @@ class SignupController < ApplicationController
 
   def user_reg 
     @user = User.new
+    if verify_recaptcha
+    end
   end
 
   def user_reg2 
