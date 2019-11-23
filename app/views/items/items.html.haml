@@ -5,19 +5,27 @@
     .item_main_content
       .item_photo
         .cp_cssslider
-          %li.cp_slider1
+          %li
             %label{for: "photo1"}
               = image_tag("/images/apple_watch.png", width: "300px")
-          %li.cp_slider2
+          %li
             %label{for: "photo2"}
               = image_tag("/images/apple_watch2.png", width: "300px")
-          %li.cp_slider3
+          %li
             %label{for: "photo3"}
               = image_tag("/images/apple_watch3.png", width: "300px")
-          %li.cp_slider4
+          %li
         .image-dots
-          .image-dot
-            .image-dot-inner
+          %li
+            %a{ href: 'index.html'}
+              = image_tag("/images/apple_watch.png", width: "60px")
+          %li
+            %a{ href: 'index.html'}
+              = image_tag("/images/apple_watch2.png", width: "60px")
+          %li
+            %a{ href: 'index.html'}
+              = image_tag("/images/apple_watch3.png", width: "60px")
+          %li
       %table.item_detail_table
         %tbody
           %tr

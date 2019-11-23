@@ -29,39 +29,20 @@ $(function() {
     autoplaySpeed: 3000,
   });
 });
-
 $(function() {
   $('.cp_cssslider').slick({
     cenrterMode: true,
     centerPadding: 0,
     adaptiveheight: true,
+    arrows: false,
+    asNavFor: '.image-dots'
   });
-});
-$(function() {
-  $('.cp_cssslider').slick({
-    cenrterMode: true,
-    centerPadding: 0,
-    adaptiveheight: true,
-  });
-});
-$(function() {
-  $('.cp_cssslider').slick({
-    dots: true,
-    dotsClass: 'image-dots',
-    cenrterMode: true,
-    centerPadding: 0,
-    adaptiveheight: true,
-    mouseover: true,
-    customPaging: function(slick,index) {
-      // スライダーのインデックス番号に対応した画像のsrcを取得
-      var targetImage = slick.$slides.eq(index).find('img').attr('src');
-      // slick-dots > li　の中に上記で取得した画像を設定
-      return '<img src=" ' + targetImage + ' "/>';
-  });
-});
-
-$(function() {
   $('.image-dots').slick({
-
-  })
-})
+    asNavFor: '.cp_cssslider',
+    slidesToShow: 4,
+    focusOnSelect: true
+  });
+  $( '.image-dots' ).on( 'mouseenter', 'li', function() {
+    $( this ).click();
+  } );
+});
