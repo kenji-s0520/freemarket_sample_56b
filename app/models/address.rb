@@ -1,7 +1,7 @@
 class Address < ApplicationRecord
   belongs_to :user
   
-  #mishima 新規登録時のvalidation
+  #mishima 新規登録  登録時のvalidationを追加
   validates :user_id, presence: true
   validates :code, presence: true
   validates :prefectures, presence: true
