@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users   #mishima
+  devise_for :users   #mishima  新規登録  deviseを導入
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   resources :users, only: [:index, :edit]
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'users/login' => 'users/login'
   get '/items/buy' => 'items#purchase'
   resources :items, only: [:show, :new]
-  resources :signup do  #mishima ユーザー新規登録ページ
+  resources :signup do  #mishima 新規登録  ユーザー新規登録ページの遷移の記述
     collection do
       get 'user_reg'
       get 'user_reg2'

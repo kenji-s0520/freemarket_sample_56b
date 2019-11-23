@@ -1,4 +1,4 @@
-#mishima
+#mishima 新規登録     画面遷移の記述を追加
 class SignupController < ApplicationController
   before_action :authenticate_user!,except: [:user_reg,:user_reg2,:user_reg3,:user_reg4,:user_reg5,:create,:done,:address_create]
 
@@ -45,6 +45,8 @@ class SignupController < ApplicationController
     if @user.save
       session[:id] = @user.id
       redirect_to done_signup_index_path
+    else
+      redirect_to user_reg_signup_index_path
     end
   end
 
@@ -64,6 +66,8 @@ class SignupController < ApplicationController
     )
     if @address.save
       redirect_to user_reg4_signup_index_path
+    else
+      redirect_to user_reg3_signup_index_path
     end
   end
   private
@@ -85,10 +89,6 @@ class SignupController < ApplicationController
 
     def address_params
       params.require(:address).permit(
-        :last_name, 
-        :first_name, 
-        :last_name_kana, 
-        :first_name_kana, 
         :code,
         :prefectures,
         :city_town,
@@ -99,12 +99,8 @@ class SignupController < ApplicationController
     end
 
     def birthday_join
-      # パラメータ取得
       date = params[:user][:birthday]
-  
-      # ブランク時のエラー回避のため、ブランクだったら何もしない
-      # 年月日別々できたものを結合して新しいDate型変数を作って返す
-      if date["birthday(1i)"].empty? && date["birthday(2i)"].empty? && date["birthday(3i)"].empty?
+        if date["birthday(1i)"].empty? && date["birthday(2i)"].empty? && date["birthday(3i)"].empty?
         return
       end
       Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
