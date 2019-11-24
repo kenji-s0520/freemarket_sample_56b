@@ -29,4 +29,10 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+  resources :items, only: [:purchase] do
+    collection do
+      get 'purchase', to: 'items#buy'
+      post 'pay', to: 'items#buy'
+    end
+  end
 end

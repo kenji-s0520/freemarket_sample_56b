@@ -31,11 +31,8 @@
                     ¥52,800
             %p.has-errortext
               配送先と支払い方法の入力を完了してください。
-            %button.btn-red
-
-            %script{type:"text/javascript" ,src:"https://checkout.pay.jp/" ,class:"payjp-button" ,data:{key:"pk_test_f862b447ef519adaf6a920fb"}} 
-
-              購入する
+            = form_tag(action: :buy, method: :post) do
+              %button.btn-red 購入する
       .buy-content-userinfo
         .buy-content-innerspace
           %h3.adres
