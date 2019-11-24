@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   get '/users/user_reg5'
   get '/users/user_sign_up'
   get 'users/login' => 'users/login'
-  get '/users/buy' => 'items#purchase'
+  get '/items/buy' => 'items#purchase'
   resources :items, only: [:show, :new]
 end
