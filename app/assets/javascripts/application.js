@@ -29,6 +29,7 @@ $(function() {
     autoplaySpeed: 3000,
   });
 });
+
 $(function() {
   $('.cp_cssslider').slick({
     cenrterMode: true,
