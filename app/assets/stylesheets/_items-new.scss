@@ -120,7 +120,7 @@
     border: 1px solid $link-color ;
      }
    }
-   &__title{
+   h2.sell-form__header{
    text-align: center;
    font-size: 22px;
    font-weight: bold;
@@ -131,15 +131,18 @@
        font-weight: bold;
      }
    }
-   &__image{
+   .sell-form-container{
      border-bottom: solid 1px $gray;
      padding: 40px;
      & p{
-       margin-top: 8px;
+      //  margin-top: 8px;
        line-height: 1.5;
        font-size: 14px;
      }
-     &--drop-box{
+     .sell-form-container__label{
+       font-size: 16px;
+     }
+     .dropzone-container.clearfix{
        position: relative;
        display: block;
        height: 162px;
@@ -148,21 +151,21 @@
        border: 1px dashed $bordar-color;
        padding: 40px;
        cursor: pointer;
-       &--file{
-         width: 100%;
-         margin-left: 0;
-         width: 620px;
-         padding: 40px; 
-       }
-       &--click{
-         position: absolute;
-         top: 36%;
-         left: 16px;
-         right: 16px;
-         text-align: center;
-         font-size: 14px;
-         line-height: 1.5;
-       }
+      //  &--file{
+      //    width: 100%;
+      //    margin-left: 0;
+      //    width: 620px;
+      //    padding: 40px; 
+      //  }
+      //  &--click{
+      //    position: absolute;
+      //    top: 36%;
+      //    left: 16px;
+      //    right: 16px;
+      //    text-align: center;
+      //    font-size: 14px;
+      //    line-height: 1.5;
+      //  }
      }
    }
    &__item-info{

@@ -6,17 +6,29 @@
     %main
       %section.items-contents
         .items-contents__title
-          %h2 商品の情報を入力
-        %form
-          .items-contents__image
-            %h3 出品画像
-            %span 必須
-            %p 最大10枚までアップロードできます
-            .items-contents__image--drop-box
-              %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
-              %pre.items-contents__image--drop-box--click
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
+
+
+        = form_for @user, html: {class: "sell-form dropzone", id: "item-dropzone"} do |f|
+          %h2.sell-form__header
+            商品情報を入力
+          .sell-form-container
+            %label.sell-form-container__label
+              出品画像
+            %span.sell-form-container__require
+              必須
+            = f.fields_for :product_images do |image|
+              .dropzone-container.clearfix
+                #preview
+                .dropzone-area
+                  = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    .input_area
+                      = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                    %p ここをクリックしてください
+                #preview2
+                .dropzone-area2
+                  = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    %p ここをクリックしてください
+                
 
           .items-contents__item-info
             .items-contents__item-info--name
