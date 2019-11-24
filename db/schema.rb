@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_24_041030) do
+
+ActiveRecord::Schema.define(version: 2019_11_24_052959) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code", null: false
@@ -53,10 +54,17 @@ ActiveRecord::Schema.define(version: 2019_11_24_041030) do
     t.string "ancestry"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.string "image", null: false
     t.integer "price", null: false
     t.string "size", null: false
     t.integer "category_id", null: false
@@ -73,20 +81,6 @@ ActiveRecord::Schema.define(version: 2019_11_24_041030) do
     t.string "ship_days"
   end
 
-
-  create_table "items_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "items_id", null: false
-    t.integer "brand_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item_id", null: false
-    t.integer "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -126,4 +120,5 @@ ActiveRecord::Schema.define(version: 2019_11_24_041030) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "images", "items"
 end
