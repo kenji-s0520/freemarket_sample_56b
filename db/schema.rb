@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 2019_11_24_052959) do
     t.string "ship_days"
   end
 
-
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "item_id", null: false
