@@ -2,13 +2,9 @@ class CardController < ApplicationController
   
   require "payjp"
 
-
-  before_action :set_card
-
-
-
   def new
-    card = Card.where(user_id: User.find(1))
+    card = Card.where(user_id: "1")
+    # あとでcurrent_user.idを追記
     redirect_to action: "show" if card.exists?
   end
 
@@ -19,9 +15,9 @@ class CardController < ApplicationController
     else
       customer = Payjp::Customer.create(
       card: params['payjp-token'],
-      metadata: {user_id: User.find(1)}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
-      @card = Card.new(user_id: User.find(1), customer_id: customer.id, card_id: customer.default_card)
+      ) 
+      @card = Card.new(user_id: "1", customer_id: customer.id, card_id: customer.default_card)
+      # あとでcurrent_user.idを追記
       if @card.save
         redirect_to action: "show"
       else
@@ -31,7 +27,8 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    card = Card.where(user_id: current_user.id).first
+    card = Card.where(user_id: "1").first
+    # あとでcurrent_user.idを追記
     if card.blank?
     else
       Payjp.api_key = 'pk_test_f862b447ef519adaf6a920fb'
@@ -43,17 +40,15 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: User.find(1)).first
+    card = Card.where(user_id: "1").first
+    # あとでcurrent_user.idを追記
     if card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = 'pk_test_f862b447ef519adaf6a920fb'
+      Payjp.api_key = 'sk_test_3c6c6f094d2e40b7a314b6c3'
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
-end
-
-
 end
 
