@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
       )
   redirect_to action: 'done' #完了画面に移動
   end
+  
 end
 
 def done
