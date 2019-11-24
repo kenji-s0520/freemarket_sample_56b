@@ -29,3 +29,24 @@ $(function() {
     autoplaySpeed: 3000,
   });
 });
+
+$(function() {
+  $('.cp_cssslider').slick({
+    cenrterMode: true,
+    centerPadding: 0,
+    adaptiveheight: true,
+    arrows: false,
+    asNavFor: '.image-dots'
+  });
+  $('.image-dots').slick({
+    asNavFor: '.cp_cssslider',
+    slidesToShow: 4,
+    focusOnSelect: true
+  });
+  $( '.image-dots' ).on( 'mouseenter', 'li', function() {
+    $( this ).click();
+  } );
+  $( '.image-dots' ).on( 'click', 'li', function(e) {
+    e.preventDefault();
+  } );
+});
