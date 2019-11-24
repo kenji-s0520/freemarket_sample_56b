@@ -4,7 +4,7 @@
     %h1.item_name Apple Watch
     .item_main_content
       .item_photo
-        %ul#cp_cssslider
+        .cp_cssslider
           %li
             %label{for: "photo1"}
               = image_tag("/images/apple_watch.png", width: "300px")
@@ -15,7 +15,7 @@
             %label{for: "photo3"}
               = image_tag("/images/apple_watch3.png", width: "300px")
           %li
-        %ul#image-dots
+        .image-dots
           %li
             %a{ href: 'index.html'}
               = image_tag("/images/apple_watch.png", width: "60px")
@@ -25,7 +25,6 @@
           %li
             %a{ href: 'index.html'}
               = image_tag("/images/apple_watch3.png", width: "60px")
-          %li
           %li
       %table.item_detail_table
         %tbody
