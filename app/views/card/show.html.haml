@@ -1,10 +1,8 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag('/card', method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+= render :partial => "users/header_login"
+- breadcrumb :card_create
+= render "layouts/breadcrumbs"
+%main.main_contents
+  = render :partial => "after_card"
+  = render :partial => "users/sidebar"
+= render :partial => "users/footer"
+= render :partial => "users/sell_btn"
