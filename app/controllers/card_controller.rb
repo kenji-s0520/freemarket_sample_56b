@@ -31,7 +31,7 @@ class CardController < ApplicationController
     # あとでcurrent_user.idを追記
     if card.blank?
     else
-      Payjp.api_key = 'pk_test_f862b447ef519adaf6a920fb'
+      Payjp.api_key = 'sk_test_3c6c6f094d2e40b7a314b6c3'
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
@@ -50,5 +50,6 @@ class CardController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
+  
 end
 
