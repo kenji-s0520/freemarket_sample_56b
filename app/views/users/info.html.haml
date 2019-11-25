@@ -16,13 +16,18 @@
             %i.fas.fa-angle-right
         .form_group
           %label お名前
-          %p ユーザーネーム
+          %p 
+            = current_user.last_name
+            = current_user.first_name
         .form_group
           %label お名前カナ
-          %p ユーザーネーム
+          %p 
+            = current_user.last_name_kana
+            = current_user.first_name_kana
         .form_group
           %label 生年月日
-          %p yyyy/mm/dd
+          %p 
+            = current_user.birthday
         .form_group
           %label 郵便番号
           %span.any 任意
