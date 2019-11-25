@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
-  before_action :authenticate_user!        #mishima devise
-  before_action :configure_permitted_parameters, if: :devise_controller?  #mishima devise
+  
+#mishima ユーザー新規登録 deviseの機能を追加
+  before_action :authenticate_user!        
+  before_action :configure_permitted_parameters, if: :devise_controller?
   
   private
   def configure_permitted_parameters

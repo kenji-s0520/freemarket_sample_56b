@@ -1,14 +1,16 @@
-#mishima 新規登録     画面遷移の記述を追加
+#mishima ユーザー新規登録 画面遷移の記述を追加
 class SignupController < ApplicationController
-  before_action :authenticate_user!,except: [:user_reg,:user_reg2,:user_reg3,:user_reg4,:user_reg5,:create,:done,:address_create]
+  before_action :authenticate_user!,except: [:user_reg,:user_reg2,:create,:done]
 
   def user_reg 
     @user = User.new
-    if verify_recaptcha
-    end
   end
 
   def user_reg2 
+    if verify_recaptcha 
+    else
+      redirect_to user_reg_signup_index_path
+    end
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
