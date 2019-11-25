@@ -7,20 +7,20 @@ class SignupController < ApplicationController
   end
 
   def user_reg2 
-    if verify_recaptcha 
+    if verify_recaptcha and user_params[:nickname].present? and user_params[:email].present? and user_params[:password].present? and user_params[:password_confirmation].present? and user_params[:last_name].present? and user_params[:first_name].present? and user_params[:last_name_kana].present? and user_params[:first_name_kana].present? and birthday_join
+      session[:nickname] = user_params[:nickname]
+      session[:email] = user_params[:email]
+      session[:password] = user_params[:password]
+      session[:password_confirmation] = user_params[:password_confirmation]
+      session[:last_name] = user_params[:last_name]
+      session[:first_name] = user_params[:first_name]
+      session[:last_name_kana] = user_params[:last_name_kana]
+      session[:first_name_kana] = user_params[:first_name_kana]
+      session[:birthday] = birthday_join
+      @user = User.new
     else
       redirect_to user_reg_signup_index_path
     end
-    session[:nickname] = user_params[:nickname]
-    session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
-    session[:password_confirmation] = user_params[:password_confirmation]
-    session[:last_name] = user_params[:last_name]
-    session[:first_name] = user_params[:first_name]
-    session[:last_name_kana] = user_params[:last_name_kana]
-    session[:first_name_kana] = user_params[:first_name_kana]
-    session[:birthday] = birthday_join
-    @user = User.new
   end
 
   def user_reg3

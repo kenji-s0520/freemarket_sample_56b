@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get 'users/login' => 'users/login'
   get '/items/buy' => 'items#purchase'
   resources :items, only: [:show, :new]
-  resources :signup do  #mishima 新規登録  ユーザー新規登録ページの遷移の記述
+  
+  #mishima ユーザー新規登録 ページのルーティングを記述
+  resources :signup do  
     collection do
       get 'user_reg'
       get 'user_reg2'

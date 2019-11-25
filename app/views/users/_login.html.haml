@@ -17,11 +17,12 @@
             = image_tag "/images/google.png", class: "google_png"
             Googleでログイン
           .login-form-inner
-            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|  #mishima  ログイン機能
+            -# mishima サインイン機能 form_forの記述を追加
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|  
               .form-group
-                =f.email_field :email,placeholder: "メールアドレス",class:"login-input-text-m input-default3"    #mishima  ログイン機能
+                =f.email_field :email,placeholder: "メールアドレス",class:"login-input-text-m input-default3"
               .form-group-pass
-                =f.password_field :password,class:"login-input-text-p input-default3",placeholder: "パスワード"  #mishima  ログイン機能
+                =f.password_field :password,class:"login-input-text-p input-default3",placeholder: "パスワード"
               #rec.form-group-captcha
                 =recaptcha_tags
               =f.submit "ログイン",class:"login-submit btn-default btn-red"
