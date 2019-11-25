@@ -22,6 +22,7 @@
   .main-reg
     %h1.top-head 電話番号の確認
     .main-section
+      -#mishima 新規登録 form_withの記述を追加
       = form_with(model: @user,local:true,url:signup_index_path,method: :post) do |f|  #mishima 新規登録 form_withの記述を追加
         .form-top
           =f.label :phone_number, "携帯電話の番号",class:"phonelabel",margin:"auto",id:"reg2"

@@ -33,6 +33,7 @@
               = link_to "https://www.mercari.com/jp/help_center/article/495/", class: "text_right1" do
                 = "本人確認書類のアップロードについて"
                 %i.fas.fa-angle-right
+            -#mishima 新規登録 form_withの記述を追加
             = form_with(model: @address, local: true,url:address_create_signup_index_path,method: :post)  do |f|      #mishima 新規登録 form_withの記述を追加
               .form_group
                 = f.label :name,"お名前"
@@ -56,7 +57,7 @@
                 %span.formrequire1
                   必須
                 %i.fas.fa-chevron-down
-                =f.collection_select :prefectures, Prefecture.all,:id,:name,prompt:"---"
+                =f.collection_select :prefectures, Prefecture.all,:name,:name,prompt:"---"
               .form_group
                 =f.label :city_town,"市町村"
                 %span.formrequire1
