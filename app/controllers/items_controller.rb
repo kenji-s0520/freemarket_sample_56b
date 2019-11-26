@@ -34,7 +34,24 @@ class ItemsController < ApplicationController
       )
   redirect_to action: 'done' #完了画面に移動
   end
-  
+
+  def done
+  end
+
+  private
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def item_params
+    params.require(:item).permit(
+      :name,
+      :text,
+      :price,
+    ).merge(user_id: "1")
+    # あとでcurrent_user_idに変更
+  end
+
 end
 
 def done
