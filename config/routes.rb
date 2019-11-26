@@ -23,16 +23,20 @@ Rails.application.routes.draw do
       get 'end'
       get 'done'
       post 'address_create'
+
+  resources :items do
+    collection do
+      get  'items/:id'=>  'items#purchase', as: 'purchase'
+      post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
+      get  'done'=>      'items#done', as: 'done'
+    end
+  end
+
+  resources :items, only: [:show, :new,]
   resources :card, only: [:new, :show, :create] do
     collection do
       post 'show', to: 'card#show'
       post 'delete', to: 'card#delete'
-    end
-  end
-  resources :items, only: [:purchase] do
-    collection do
-      get 'purchase', to: 'items#buy'
-      post 'pay', to: 'items#buy'
     end
   end
 end
