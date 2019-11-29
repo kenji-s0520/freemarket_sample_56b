@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_150754) do
+ActiveRecord::Schema.define(version: 2019_11_16_210737) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code", null: false
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_150754) do
     t.string "city_town", null: false
     t.string "address_number", null: false
     t.string "building"
-    t.string "room_for_number"
+    t.string "room_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,7 +87,17 @@ ActiveRecord::Schema.define(version: 2019_11_20_150754) do
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
+    t.string "selling_items", null: false
+    t.string "sold_items", null: false
+    t.string "trading_items", null: false
+    t.string "bought_items", null: false
+    t.integer "balance", null: false
+    t.integer "point", null: false
+    t.string "birthday", null: false
     t.integer "value"
+    t.string "phone_number", null: false
+    t.string "payment", null: false
+    t.string "identification", null: false
     t.integer "evaluation"
     t.text "introduction"
     t.string "reset_password_token"
@@ -95,16 +105,6 @@ ActiveRecord::Schema.define(version: 2019_11_20_150754) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password"
-    t.string "password_confirmation"
-    t.string "identification"
-    t.integer "balance"
-    t.integer "point"
-    t.date "birthday"
-    t.string "payment"
-    t.string "phone_number"
-    t.string "uid"
-    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
