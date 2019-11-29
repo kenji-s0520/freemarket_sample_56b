@@ -88,13 +88,13 @@ ActiveRecord::Schema.define(version: 2019_11_24_052959) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.string "nickname", default: ""
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kana", null: false
+    t.string "last_name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name_kana", default: "", null: false
+    t.string "first_name_kana", default: "", null: false
     t.integer "value"
     t.integer "evaluation"
     t.text "introduction"
@@ -111,8 +111,11 @@ ActiveRecord::Schema.define(version: 2019_11_24_052959) do
     t.date "birthday"
     t.string "payment"
     t.string "phone_number"
-    t.string "uid"
     t.string "provider"
+    t.string "uid"
+    t.string "image"
+    t.string "name"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
