@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_11_30_093249) do
 ActiveRecord::Schema.define(version: 2019_11_20_150754) do
+ActiveRecord::Schema.define(version: 2019_11_16_210737) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code", null: false
@@ -19,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_150754) do
     t.string "city_town", null: false
     t.string "address_number", null: false
     t.string "building"
-    t.string "room_for_number"
+    t.string "room_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -106,7 +107,17 @@ ActiveRecord::Schema.define(version: 2019_11_09_081804) do
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
+    t.string "selling_items", null: false
+    t.string "sold_items", null: false
+    t.string "trading_items", null: false
+    t.string "bought_items", null: false
+    t.integer "balance", null: false
+    t.integer "point", null: false
+    t.string "birthday", null: false
     t.integer "value"
+    t.string "phone_number", null: false
+    t.string "payment", null: false
+    t.string "identification", null: false
     t.integer "evaluation"
     t.text "introduction"
     t.string "reset_password_token"

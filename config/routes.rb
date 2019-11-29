@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       post 'address_create'
   get '/users/buy' => 'items#purchase'
 
+  post '/items/new' => 'items#create'
   resources :items, only: [:show, :new] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }

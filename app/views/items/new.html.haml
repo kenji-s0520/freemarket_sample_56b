@@ -22,14 +22,11 @@
             .items-contents__item-info--name
               %h4 商品名
               %span 必須
-              = f.text_field :name, class: "items-contents__item-info--name--input", placeholder: "商品名（必須 40文字まで)", value: "#{@item.name}"
-              -# %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}
+              = f.text_field :name, class: "items-contents__item-info--name--input", placeholder: "商品名（必須 40文字まで)"
             .items-contents__item-info--description
               %h4 商品の説明
               %span 必須
-              = f.text_area :description, class: "explanation", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => 5, value: "#{@item.description}"
-              -# %div "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "explanation"
-              -#   %textarea{placeholder:}
+              = f.text_area :description, class: "explanation", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows:5
           .items-contents__item-about.clearfix
             .items-contents__item-about--head 商品の詳細
             .items-contents__item-about--box
@@ -37,27 +34,24 @@
                 %h4 カテゴリー
                 %span 必須
                 %i.sell.fas.fa-chevron-down 
-                = f.select :category, @category_parent_array, {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
-              
+                = f.select :category_id, @category_parent_array, {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
+                
               .items-contents__item-about--box--size
                 %h4 サイズ
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                -# = f.collection_select :size, CategorySize.all, :id, :name, prompt: "---"
-                = f.select :size, ['XXS以下','XS(SS)','S','M','L','XL(LL)','２XL(3L)','3XL(4L)','4XL(5L)以上','FREE SIZE','なし'],prompt: "---", value: "#{@item.size}"
+                = f.select :size, ['XXS以下','XS(SS)','S','M','L','XL(LL)','２XL(3L)','3XL(4L)','4XL(5L)以上','FREE SIZE','なし'],prompt: "---"
               
               .items-contents__item-about--box--brand
                 %h4 ブランド
                 %span.nini 任意
-                = f.text_area :brand, class: "items-contents__item-info--name--input", placeholder: "例）シャネル", value: ""
-                -# %input.items-contents__item-info--name--input{placeholder: "例）シャネル",value: ""}
-              
+                = f.text_area :brand_id, class: "items-contents__item-info--name--input", placeholder: "例）シャネル"
+
               .items-contents__item-about--box--condition
                 %h4 商品の状態
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                -# = f.collection_select :status, StateOfItems.all, :id, :name, prompt: "---"
-                = f.select :status, ['新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い'],prompt: "---", value: "#{@item.status}"
+                = f.select :status, ['新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い'],prompt: "---"
 
           .items-contents__shipping.clearfix
             %h3.items-contents__shipping--head 配送について
@@ -67,28 +61,25 @@
                 %h4 配送料の負担
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                -# = f.collection_select :ship_person, ShippingCharge.all, :id, :name, {prompt: "---"}, {class: 'items-shipping_charge'}
                 = f.select :ship_person, ['送料込み(出品者負担)','着払い(購入者負担)'],{prompt: "---"},{class: 'items-shipping_charge'}
 
               .items-contents__shipping--box--method
                 %h4 配送の方法
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                -# = f.collection_select :ship_method, ShippingMethod.all, :id, :name, prompt: "---"
                 = f.select :ship_method, [],{prompt: "---"}, {class: 'add-items-shipping_method'}
 
               .items-contents__shipping--box--ship-from-region
                 %h4 発送元の地域
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = f.select :ship_area, @prefectures.map{|t| [t.name]}, prompt:"---", value:"#{@item.ship_area}"
+                = f.select :ship_area, @prefectures.map{|t| [t.name]}, prompt:"---"
 
               .items-contents__shipping--box--date
                 %h4 発送までの日数
                 %span.form-require 必須
                 %i.sell.fas.fa-chevron-down
-                -# = f.collection_select :ship_days, TheNumberOfTheDaysToShip.all, :id, :name, prompt: "---"
-                = f.select :ship_days,["1~2日で発送","2~3日で発送","4~7日で発送"],prompt: "---", value: "#{@item.ship_days}"
+                = f.select :ship_days,["1~2日で発送","2~3日で発送","4~7日で発送"],prompt: "---"
 
           .items-contents__price.clearfix
             %h3.items-contents__price--head 販売価格(300〜9,999,999)
@@ -103,8 +94,7 @@
                     .items-contents__price--box--list_top--right
                       ¥
                       .items-contents__price--box--list_top--right--space
-                        = f.text_field :price, class: "items-contents__price--box--list_top--right--input", :placeholder =>"例）300", value: "#{@item.price}"
-                        -# %input.items-contents__price--box--list_top--right--input{placeholder: "例）300"}/
+                        = f.text_field :price, class: "items-contents__price--box--list_top--right--input", placeholder:"例）300"
                 %li.items-contents__price--box--list_center.clearfix
                   .items-contents__price--box--list_center--text 販売手数料（10%）
                   .items-contents__price--box--list_center--sales -
@@ -126,7 +116,7 @@
             また、出品をもちまして
             =link_to '加盟店規約', ''
             に同意したことになります。
-            = f.submit("出品する", class: "items-contents__submit--go-btn")
+            = f.submit("出品する", class: "items-contents__submit--go-btn", id:"opener")
             .items-contents__submit--back-btn もどる
 
     %footer.confirm-info__footer
@@ -142,3 +132,4 @@
       %p
         %small © 2019 Mercari
 
+#dialog{:style => "display:none;", :title => ""} 登録されました！

@@ -10,7 +10,8 @@ class ItemsController < ApplicationController
       Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
       end
-    # @category_parents = Category.all.order("ancestry ASC,id ASC").limit(13)
+    @item = Item.new
+    @prefectures = Prefecture.all
   end
 
   def toppage
@@ -23,7 +24,16 @@ class ItemsController < ApplicationController
   #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
-  
+
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to index_url 
+    else
+      render :new
+    end
+  end
+
   def index
   end
 
@@ -33,5 +43,11 @@ class ItemsController < ApplicationController
   
   def buy
   end
-end
 
+  private
+    
+  def item_params
+    params.require(:@item).permit(:name,:description,:category_id,:size,:brand_id,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price)
+  end
+
+end
