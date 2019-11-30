@@ -12,7 +12,7 @@
         .login-form-inner
           %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
             %i.fab.fa-facebook-square
-            Facebookでログイン
+            = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path 
           %button#google-login.btn-default.btn-sns.btn-sns-google
             = image_tag "/images/google.png", class: "google_png"
             Googleでログイン
