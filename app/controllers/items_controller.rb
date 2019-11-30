@@ -38,19 +38,18 @@ class ItemsController < ApplicationController
   def done
   end
 
-  private
-  def set_item
-    @item = Item.find(params[:id])
+  def pay
+    card = Card.where(user_id: "1").first
+    #あとでcurrent_user.idに変更する。
+    Payjp.api_key = 'sk_test_3c6c6f094d2e40b7a314b6c3'
+    Payjp::Charge.create(
+    @items = Items.find("1"), #支払金額を入力（itemテーブル等に紐づけても良い）
+    :customer => card.customer_id, #顧客ID
+    :currency => 'jpy', #日本円
+  )
+  redirect_to action: 'done' #完了画面に移動
   end
-
-  def item_params
-    params.require(:item).permit(
-      :name,
-      :text,
-      :price,
-    ).merge(user_id: "1")
-    # あとでcurrent_user_idに変更
-  end
+end
 
 end
 
