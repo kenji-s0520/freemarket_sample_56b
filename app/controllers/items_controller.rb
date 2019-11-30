@@ -51,6 +51,10 @@ class ItemsController < ApplicationController
   end
 end
 
+def done
+end
+
+
 end
 
 def done
