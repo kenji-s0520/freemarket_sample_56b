@@ -1,6 +1,6 @@
 #mishima ユーザー新規登録 画面遷移の記述を追加
 class SignupController < ApplicationController
-  before_action :authenticate_user!,except: [:user_reg,:user_reg2,:create,:done]
+  before_action :authenticate_user!,except: [:user_reg,:user_reg2,:create,:done,:user_reg3,:user_reg4,:user_reg5]
 
   def user_reg 
     @user = User.new
@@ -58,6 +58,7 @@ class SignupController < ApplicationController
     sign_in User.find(session[:id]) unless user_signed_in?
     redirect_to user_reg3_signup_index_path
   end
+  
   def address_create
     @address = Address.new(
       user_id: current_user.id,
