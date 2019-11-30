@@ -17,19 +17,20 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def buy
-    card = Card.find(user_id: "1").first
+    card = Card.find_by(user_id: "1")
     # cardの定義を行う
     if card.blank?
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-      @items = Items.find(params[id:"1"])
+      @items = Item.find_by(params[id:"1"])
+      card = current_user.credit_card
       Payjp.api_key = 'sk_test_3c6c6f094d2e40b7a314b6c3'
+      # secret.ymlか環境変数に入れる
       Payjp::Charge.create(
       amount: @items.price, #支払金額
       customer: card.customer_id, #顧客ID
       currency: 'jpy', #日本円
-      card: params['payjp-token']
       )
   redirect_to action: 'done' #完了画面に移動
   end
