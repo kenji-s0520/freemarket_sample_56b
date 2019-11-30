@@ -17,30 +17,6 @@
             = image_tag "/images/google.png", class: "google_png"
             = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
         %form{action: "https://www.mercari.com/jp/login/", method: "POST", novalidate: "novalidate"}
-          .login-form-inner
-            -# mishima サインイン機能 form_forの記述を追加
-            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|  
-              .form-group
-                =f.email_field :email,placeholder: "メールアドレス",class:"login-input-text-m input-default3"
-              .form-group-pass
-                =f.password_field :password,class:"login-input-text-p input-default3",placeholder: "パスワード"
-              #rec.form-group-captcha
-                =recaptcha_tags
-              =f.submit "ログイン",class:"login-submit btn-default btn-red"
-            %input{name: "login_callback", type: "hidden", value: "https://www.mercari.com/jp/logout/"}/
-            %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
-            = link_to "パスワードをお忘れの方", "", class: "af"
-      %form#login_form_facebook{action: "/jp/login/", method: "POST", novalidate: "novalidate"}
-        %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
-        %input{name: "nickname", type: "hidden", value: ""}/
-        %input{name: "email",type: "hidden",value: ""}/
-        %input{name: "facebook_user_id", type: "hidden", value: ""}/
-        %input{name: "facebook_access_token", type: "hidden", value: ""}/
-        %input{name: "login_type", type: "hidden", value: "facebook"}/
-        %input{name: "login_callback", type: "hidden", value: "https://www.mercari.com/jp/logout/"}/
-      %form#login_form_google{action: "/jp/login/", method: "POST", novalidate: "novalidate"}
-        %input{name: "__csrf_value",type: "hidden",value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
-        %input{name: "nickname",type: "hidden",value: ""}/
         %input{name: "email",type: "hidden",value: ""}/
         %input{name: "google_user_id",type: "hidden",value: ""}/
         %input{name: "google_access_token",type: "hidden",value: ""}/
