@@ -40,7 +40,7 @@
 |city_town|string|null: false|
 |address_number|string|null: false|
 |building|string||
-|room_phone_number|string||
+|room_for_number|string||
 
 ### Association
 - belongs_to :user
