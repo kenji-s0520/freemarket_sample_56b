@@ -1,6 +1,10 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  before_action :authenticate_user!,except: [:passthru]
   def facebook
     callback_from :facebook
+  end
+
+  def passthru
   end
 
   private
