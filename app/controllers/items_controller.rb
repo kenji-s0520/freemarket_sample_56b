@@ -13,8 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.find_by(id:"1").id
     @itemname = Item.find_by(id: @item).name
     @itemprice = Item.find_by(id: @item).price
-    # @itemtext = Item.find_by(id: @item).description
-    # binding.pry
+    @itemtext = Item.find_by(id: @item).description
     @user_id = Seller.find_by(item_id: @item).user_id
     @user = User.find_by(id: @user_id).nickname
     render "items/items"

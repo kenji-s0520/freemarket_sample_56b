@@ -84,17 +84,7 @@
     = link_to "購入画面に進む", "/items/buy", class: "item_buy_btn"
     .item_description.f1
       %p.item_description_inner
-        -# = @itemtext
-        -# 新品未使用品：Apple社のAppleWatchになります。
-        
-        -# タイプ：AppleWatchシリーズ４４４ミリ
-        -# 状態：新品未使用
-        -# 使用感：なし
-        -# 付属品：充電器
-        
-        -# AppleWatchシリーズの人気作になります。ベルトの付け替えによって、スーツスタイルやカジュアルな普段使いのどちらでも装着できて便利なデザインとなっています。
-        
-        -# 新品未使用品にはなりますが、あくまで自宅保管されていたということをご理解のうえご購入いただければと思います。
+        = @itemtext
     .item_button_container
       .item_button_left
         %button{name: "like!", type: "button", class: "like_botton"} ♡いいね！0
