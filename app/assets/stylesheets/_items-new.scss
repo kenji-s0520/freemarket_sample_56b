@@ -10,8 +10,6 @@
   * files in this directory. Styles in this file should be added after the last require_* statement.
   * It is generally better to create a new file per style scope.
   *
-  *= require_tree .
-  *= require_self
   */
 
 @import "./reset";
@@ -164,7 +162,16 @@
          line-height: 1.5;
        }
      }
-   }
+     .item__images__container__guide{
+      position: relative;
+      display: block;
+      height: 162px;
+      background: $gray;
+      margin: 16px auto 0;
+      border: 1px dashed $bordar-color;
+      padding: 40px;
+    }
+  }
    &__item-info{
      padding: 40px;
      border-bottom: solid 1px $gray;
@@ -189,6 +196,9 @@
      &--description{
        margin-top: 40px;
      }
+     span{
+       margin-top: 40px;
+     }
    }
    &__item-about{
      padding: 40px;
@@ -209,6 +219,9 @@
          position: relative;
          margin-top: 40px;
        }
+     }
+     span{
+       margin-top: 40px;
      }
    }
    &__shipping{
@@ -244,6 +257,9 @@
          position: relative;
          margin-top: 40px;
        }
+     }
+     span{
+       margin-top: 40px;
      }
    }
 
@@ -291,9 +307,9 @@
              margin: 0 0 0 5%;
            }
            &--input{
-            width: 160px;
-            height: 48px;
-            padding: 10px 16px 8px;
+            width: 140px;
+            height: 34px;
+            padding: 10px 10px 8px 10px;
             border-radius: 4px;
             border: 1px solid #ccc;
             background: #fff;
@@ -418,7 +434,7 @@
  .sell.fas.fa-chevron-down {
   position: absolute;
   left: 368px;
-  top: 66%;
+  top: 80%;
   z-index: 2;
   color: $dark;
   font-size: 18px;
@@ -454,4 +470,9 @@
 
  .profit {
   display: inline;
+ }
+
+ li img{
+   height: 100px;
+   width: 100px;
  }

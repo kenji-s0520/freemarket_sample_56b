@@ -7,28 +7,33 @@
       %section.items-contents
         .items-contents__title
           %h2 商品の情報を入力
-        %form
-          .items-contents__image
-            %h3 出品画像
-            %span 必須
-            %p 最大10枚までアップロードできます
-            .items-contents__image--drop-box
-              %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
-              %pre.items-contents__image--drop-box--click
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
+          %form
+        = form_with(model: @item, local: true, url: items_path) do |f|
+          = f.fields_for :images do |img|  
+            .items-contents__image
+              %h3 出品画像
+              %span 必須
+              %p 最大10枚までアップロードできます
+              .items-contents__image--drop-box
+              = img.label :url, for: "image_file_field" do
+                = img.file_field :image
+                -# %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
+                -# %pre.items-contents__image--drop-box--click
+                -#   ドラッグアンドドロップ
+                -#   またはクリックしてファイルをアップロード
 
           .items-contents__item-info
             .items-contents__item-info--name
               %h4 商品名
               %span 必須
-              %div
-                %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}/
+              -# %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}/
+              = f.text_field :name, class: 'items-contents__item-info--name--input', placeholder: '商品名（必須 40文字まで)'
             .items-contents__item-info--description
               %h4 商品の説明
               %span 必須
-              %div
-                %textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "explanation"}
+
+              -# %textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "explanation"}
+              = f.text_area :description, class: 'explanation', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', rows: '5'
           .items-contents__item-about.clearfix
             .items-contents__item-about--head 商品の詳細
             .items-contents__item-about--box
@@ -36,15 +41,15 @@
                 %h4 カテゴリー
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :category2_id, Category2.all, :id, :name, prompt: "---"
+                -# = form_for '' do |f|
+                = f.collection_select :category_id, Category2.all, :id, :name, prompt: "---"
               
               .items-contents__item-about--box--condition
                 %h4 商品の状態
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :state_of_items_id, State_of_items.all, :id, :name, prompt: "---"
+                -# = form_for '' do |f|
+                = f.collection_select :status, State_of_items.all, :id, :name, prompt: "---"
         
           .items-contents__shipping.clearfix
             %h3.items-contents__shipping--head 配送について
@@ -54,22 +59,22 @@
                 %h4 配送料の負担
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :shipping_method_id, Shipping_method.all, :id, :name, prompt: "---"
+                -# = form_for '' do |f|
+                = f.collection_select :ship_fee, Shipping_method.all, :id, :name, prompt: "---"
 
               .items-contents__shipping--box--ship-from-region
                 %h4 発送元の地域
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
+                -# = form_for '' do |f|
+                = f.collection_select :ship_area, Prefecture.all, :id, :name, prompt: "---"
 
               .items-contents__shipping--box--date
                 %h4 発送までの日数
                 %span.form-require 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :the_number_of_the_days_to_ship_id, The_number_of_the_days_to_ship.all, :id, :name, prompt: "---"
+                -# = form_for '' do |f|
+                = f.collection_select :ship_days, The_number_of_the_days_to_ship.all, :id, :name, prompt: "---"
 
           .items-contents__price.clearfix
             %h3.items-contents__price--head 販売価格(300〜9,999,999)
@@ -84,7 +89,8 @@
                     .items-contents__price--box--list_top--right
                       ¥
                       %div.items-contents__price--box--list_top--right--space
-                        %input.items-contents__price--box--list_top--right--input{placeholder: "例）300",value: ""}/
+                        -# %input.items-contents__price--box--list_top--right--input{placeholder: "例）300",value: ""}/
+                        = f.text_field :price, class: "items-contents__price--box--list_top--right--input", placeholder: "例）300"
                 %li.items-contents__price--box--list_center.clearfix
                   .items-contents__price--box--list_center--text 販売手数料（10%）
                   .items-contents__price--box--list_center--sales -
@@ -107,7 +113,7 @@
             =link_to '加盟店規約', 'http://www.google.co.jp/'
             に同意したことになります。
 
-            %button.items-contents__submit--go-btn{type: "submit"} 出品する
+            = f.submit "出品する", class: "items-contents__submit--go-btn"
             .items-contents__submit--back-btn もどる
 
     %footer.confirm-info__footer
