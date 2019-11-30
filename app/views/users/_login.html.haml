@@ -15,7 +15,8 @@
             = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
           %button#google-login.btn-default.btn-sns.btn-sns-google
             = image_tag "/images/google.png", class: "google_png"
-            Googleでログイン
+            = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
+        %form{action: "https://www.mercari.com/jp/login/", method: "POST", novalidate: "novalidate"}
           .login-form-inner
             -# mishima サインイン機能 form_forの記述を追加
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|  

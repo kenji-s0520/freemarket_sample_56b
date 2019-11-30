@@ -1,7 +1,12 @@
+#yamashita sns認証 コールバック処理の実装
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  before_action :authenticate_user!,except: [:passthru]
+  before_action :authenticate_user!, except: [:passthru]
   def facebook
-    callback_from :facebook
+    callback_from(:facebook)
+  end
+
+  def google_oauth2
+    callback_from(:google)
   end
 
   def passthru
