@@ -11,6 +11,10 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by(id:"1").id
+    @itemname = Item.find_by(id: @item).name
+    @itemprice = Item.find_by(id: @item).price
+    # @itemtext = Item.find_by(id: @item).description
+    # binding.pry
     @user_id = Seller.find_by(item_id: @item).user_id
     @user = User.find_by(id: @user_id).nickname
     render "items/items"

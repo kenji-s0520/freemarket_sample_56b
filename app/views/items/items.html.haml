@@ -1,7 +1,8 @@
 %main.main_contents_item
   = render partial: "users/header"
   .main_item
-    %h1.item_name Apple Watch
+    %h1.item_name 
+      = @itemname
     .item_main_content
       .item_photo
         .cp_cssslider
@@ -32,7 +33,7 @@
             %th 出品者
             %td
               = link_to "/users" do
-                = @user.nickname
+                = @user
               %div
                 .item_user_ratings
                   %i.fas.fa-laugh
@@ -75,22 +76,25 @@
             %th 発送日の目安
             %td ３〜４日で発送
     .item_price_box.text_center
-      %span.item_price.bold ¥52,800
+      %span.item_price.bold
+        ¥
+        = @itemprice
       %span.item_tax (税込)
       %span.item_shipping_fee 送料込み
     = link_to "購入画面に進む", "/items/buy", class: "item_buy_btn"
     .item_description.f1
       %p.item_description_inner
-        新品未使用品：Apple社のAppleWatchになります。
+        -# = @itemtext
+        -# 新品未使用品：Apple社のAppleWatchになります。
         
-        タイプ：AppleWatchシリーズ４４４ミリ
-        状態：新品未使用
-        使用感：なし
-        付属品：充電器
+        -# タイプ：AppleWatchシリーズ４４４ミリ
+        -# 状態：新品未使用
+        -# 使用感：なし
+        -# 付属品：充電器
         
-        AppleWatchシリーズの人気作になります。ベルトの付け替えによって、スーツスタイルやカジュアルな普段使いのどちらでも装着できて便利なデザインとなっています。
+        -# AppleWatchシリーズの人気作になります。ベルトの付け替えによって、スーツスタイルやカジュアルな普段使いのどちらでも装着できて便利なデザインとなっています。
         
-        新品未使用品にはなりますが、あくまで自宅保管されていたということをご理解のうえご購入いただければと思います。
+        -# 新品未使用品にはなりますが、あくまで自宅保管されていたということをご理解のうえご購入いただければと思います。
     .item_button_container
       .item_button_left
         %button{name: "like!", type: "button", class: "like_botton"} ♡いいね！0
