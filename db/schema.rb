@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_11_30_093249) do
     t.string "code", null: false
     t.string "prefectures", null: false
     t.string "city_town", null: false
-    t.string "address_number", default: "", null: false
+    t.string "address_number", null: false
     t.string "building"
     t.string "room_for_number"
     t.datetime "created_at", null: false

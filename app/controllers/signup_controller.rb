@@ -61,7 +61,7 @@ class SignupController < ApplicationController
   
   def address_create
     @address = Address.new(
-      user_id: current_user.id,
+      user_id:current_user.id,
       code: address_params[:code],
       prefectures: address_params[:prefectures],
       city_town: address_params[:city_town],
@@ -93,6 +93,7 @@ class SignupController < ApplicationController
 
     def address_params
       params.require(:address).permit(
+        :user_id,
         :code,
         :prefectures,
         :city_town,
