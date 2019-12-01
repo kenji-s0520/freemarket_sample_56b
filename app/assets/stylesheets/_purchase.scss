@@ -178,6 +178,22 @@
         }
       }
     }
+    form{
+      margin: 8px 0 0;
+      border: 1px solid #888;
+      background: #ea352d;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      transition: all ease-out .3s;
+      text-align: center;
+      font-weight: 600;
+      outline: 0;
+      touch-action: manipulation;
+      -webkit-appearance: button;
+      overflow: visible;
+    }
     .has-errortext{
       margin: 8px 0 0;
       line-height: 1.5;

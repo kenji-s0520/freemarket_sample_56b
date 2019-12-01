@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
       # カード情報が登録されていなかったら登録画面に遷移する
     else
       @items = Item.find_by(params[id:"1"])
-      card = current_user.credit_card
       Payjp.api_key = 'sk_test_3c6c6f094d2e40b7a314b6c3'
       # secret.ymlか環境変数に入れる
       Payjp::Charge.create(
