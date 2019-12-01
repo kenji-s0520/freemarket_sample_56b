@@ -31,13 +31,13 @@
           =f.text_field :phone_number,placeholder:"携帯の番号を入力"
         .confirm-reg
           本人確認のため、携帯電話のSMS(ショートメッセージサービスを利用して認証を行います。)
-        =f.submit "SMSを送信する",id:"button",class:"submit-btn2" #button.submit-btn2{type:"submit",name:"submit",onclick:"location.href='/users/user_reg3'"}SMSを送信する
+        =f.submit "SMSを送信する",id:"button",class:"submit-btn2"
         %br
         .confirm-reg2
           ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .caution2
           %i.fas.fa-chevron-right
-          = link_to "https://www.mercari.com/jp/help_center", class: "confirm-reg2" do
+          = link_to "", class: "confirm-reg2" do
             = "電話番号の確認が必要な理由"
           %i.fas.fa-chevron-right
   = render partial:"/users/footerreg"
