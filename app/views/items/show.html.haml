@@ -77,7 +77,8 @@
       %span.item_price.bold ¥52,800
       %span.item_tax (税込)
       %span.item_shipping_fee 送料込み
-    = link_to "購入画面に進む", "/items/buy", class: "item_buy_btn"
+    = link_to "購入画面に進む", purchase_item_path, class: "item_buy_btn"
+    -# id毎に変遷するように記載する氏家
     .item_description.f1
       %p.item_description_inner
         新品未使用品：Apple社のAppleWatchになります。
