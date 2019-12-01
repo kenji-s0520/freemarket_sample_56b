@@ -15,8 +15,9 @@
         いいね！一覧
         %i.fas.fa-chevron-right.side
       %li
-        出品する
-        %i.fas.fa-chevron-right.side
+        = link_to "/items/new", class: "side_bar_name" do
+          = "出品する"
+          %i.fas.fa-chevron-right.side
       %li
         出品した商品-出品中
         %i.fas.fa-chevron-right.side
