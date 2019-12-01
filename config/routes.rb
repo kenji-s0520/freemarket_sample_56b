@@ -25,4 +25,7 @@ Rails.application.routes.draw do
       post 'address_create'
     end
   end
+  get 'items/new' => 'items#new'
+  resources :items, only: [:show, :new, :create]
+    resources :item
 end
