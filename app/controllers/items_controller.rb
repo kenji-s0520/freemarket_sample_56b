@@ -7,10 +7,12 @@ class ItemsController < ApplicationController
   end
 
   def toppage
+    @items = Item.order("created_at DESC").limit(10)
   end
 
   def show
     render "items/items"
+    @item = Item.find(params[:id])
   end
   
   def buy
