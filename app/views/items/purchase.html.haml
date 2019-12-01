@@ -32,8 +32,8 @@
                     ¥52,800
             %p.has-errortext
               配送先と支払い方法の入力を完了してください。
-            = form_tag(action: :buy, method: :post) do
-              購入する
+            = form_tag buy_item_path(@item), method: :post do
+              = submit_tag '購入する'
               -# %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_f862b447ef519adaf6a920fb"}
       .buy-content-userinfo
         .buy-content-innerspace

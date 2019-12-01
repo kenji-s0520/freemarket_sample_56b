@@ -16,8 +16,9 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def purchase
-    @items = Item.find_by(params[:items_id])
+    @item = Item.find(params[:id])
   end
+  
 
   def buy
     card = Card.find_by(user_id: "1")
