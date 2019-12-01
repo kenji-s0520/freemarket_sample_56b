@@ -24,13 +24,22 @@ Rails.application.routes.draw do
       get 'done'
       post 'address_create'
 
+#   resources :items, only: [:show, :new, :purchase, :buy]do
+#     collection do
+#       get 'purchase', to: 'items#ipurchase'
+#       post 'buy', to: 'items#buy'
+#       get 'done', to: 'items#done'
+#     end
+# end
+
   resources :items, only: [:show, :new, :purchase, :buy]do
-    collection do
-      get 'purchase', to: 'items#ipurchase'
-      post 'buy', to: 'items#buy'
-      get 'done', to: 'items#done'
+    member do
+      get :purchase
+      post :buy
+      get :done
     end
 end
+
 
   resources :card, only: [:new, :show, :create] do
     collection do

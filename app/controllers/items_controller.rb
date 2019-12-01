@@ -10,11 +10,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-    render "items/items"
+    
   end
   
   
   require 'payjp'
+
+  def purchase
+    @items = Item.find_by(params[id:"1"])
+  end
 
   def buy
     card = Card.find_by(user_id: "1")
@@ -58,7 +62,6 @@ end
 
 def done
 end
-
 
 end
 
