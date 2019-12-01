@@ -110,14 +110,14 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
-    erb2haml (0.1.5)
-      html2haml
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.9.0)
     erubis (2.7.0)
     excon (0.68.0)
@@ -216,11 +216,6 @@ GEM
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    pry (0.12.2)
-      coderay (~> 1.1.0)
-      method_source (~> 0.9.0)
-    pry-rails (0.3.9)
-      pry (>= 0.10.4)
     payjp (0.0.7)
       rest-client (~> 2.0)
     pry (0.12.2)
@@ -272,6 +267,11 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.9.0)
       rspec-support (~> 3.9.0)
     rspec-expectations (3.9.0)
@@ -290,12 +290,6 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
     ruby-vips (2.0.16)
-    rest-client (2.1.0)
-      http-accept (>= 1.7.0, < 2.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
-    ruby-vips (2.0.15)
       ffi (~> 1.9)
     ruby_dep (1.5.0)
     ruby_parser (3.14.1)
@@ -378,10 +372,10 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   erb2haml
   factory_bot_rails
   faker
-  dotenv-rails
   fog-aws
   font-awesome-rails
   gretel
@@ -391,7 +385,6 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mini_magick
   mysql2 (>= 0.3.18, < 0.6.0)
-  pry-rails
   payjp
   pry-rails
   puma (~> 3.11)
