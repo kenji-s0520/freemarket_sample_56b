@@ -26,7 +26,7 @@
       .form-main
         .main-section                       
           -# mishima 新規登録 form_withの記述を追加
-          = form_with(model: @user, local: true,url:"user_reg2",method: :get) do |f|      
+          = form_with(model: @user, local: true,url:"/signup/phone_number",method: :get) do |f|      
             .form-top
               = f.label :nickname, "ニックネーム"
               %span.form-necessary 必須
@@ -86,5 +86,5 @@
             = link_to "https://www.mercari.com/jp/help_center", class: "confirm-reg" do
               = "本人情報の登録について"
             %i.fas.fa-chevron-right
-    = render :partial => "/users/footerreg"
+    = render partial:"/users/footerreg"
 

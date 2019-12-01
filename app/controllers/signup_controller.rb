@@ -1,12 +1,12 @@
 #mishima ユーザー新規登録 画面遷移の記述を追加
 class SignupController < ApplicationController
-  before_action :authenticate_user!,except: [:user_reg,:user_reg2,:create,:done,:user_reg3,:user_reg4,:user_reg5]
+  before_action :authenticate_user!,except: [:member_information,:phone_number,:create,:done,]
 
-  def user_reg 
+  def member_information
     @user = User.new
   end
 
-  def user_reg2 
+  def phone_number
     if verify_recaptcha and user_params[:nickname].present? and user_params[:email].present? and user_params[:password].present? and user_params[:password_confirmation].present? and user_params[:last_name].present? and user_params[:first_name].present? and user_params[:last_name_kana].present? and user_params[:first_name_kana].present? and birthday_join
       session[:nickname] = user_params[:nickname]
       session[:email] = user_params[:email]
@@ -19,18 +19,18 @@ class SignupController < ApplicationController
       session[:birthday] = birthday_join
       @user = User.new
     else
-      redirect_to user_reg_signup_index_path
+      redirect_to member_information_signup_index_path
     end
   end
 
-  def user_reg3
+  def address
     @address = Address.new
   end
 
-  def user_reg4
+  def card_information
   end
 
-  def user_reg5
+  def end
   end
 
   def create
@@ -50,13 +50,13 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      redirect_to user_reg_signup_index_path
+      redirect_to member_information_signup_index_path
     end
   end
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
-    redirect_to user_reg3_signup_index_path
+    redirect_to address_signup_index_path
   end
   
   def address_create
@@ -70,9 +70,9 @@ class SignupController < ApplicationController
       room_for_number: address_params[:room_for_number]
     )
     if @address.save
-      redirect_to user_reg4_signup_index_path
+      redirect_to card_information_signup_index_path
     else
-      redirect_to user_reg3_signup_index_path
+      redirect_to address_signup_index_path
     end
   end
   private

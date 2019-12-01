@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   #mishima ユーザー新規登録 ページのルーティングを記述
   resources :signup do  
     collection do
-      get 'user_reg'
-      get 'user_reg2'
-      get 'user_reg3'
-      get 'user_reg4' 
-      get 'user_reg5'
+      get 'member_information'
+      get 'phone_number'
+      get 'address'
+      get 'card_information' 
+      get 'end'
       get 'done'
       post 'address_create'
     end

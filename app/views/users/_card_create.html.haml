@@ -6,7 +6,7 @@
           クレジットカード情報入力
       .create__main
         -#mishima ユーザー新規登録 form_withの記述を追加
-        = form_with(model:User , local: true,url:"/signup/user_reg5",method: :"get") do |f|   #mishima 新規登録 form_withの記述を追加
+        = form_with(model:User , local: true,url:"/signup/end",method: :"get") do |f|
           .create__main__message
             =f.label :card,"カード番号"
             %span.formrequire1
