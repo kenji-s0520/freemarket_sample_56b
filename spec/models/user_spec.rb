@@ -31,7 +31,7 @@ describe User do
   #emailが重複した場合、登録できない
     it "is invalid with a duplicate email" do
       user = create(:user)
-      another_user = build(:user,email:user.email)
+      another_user = build(:user,phone_number:"11111114532")
       another_user.valid?
       expect(another_user.errors[:email]).to include("has already been taken")
     end
@@ -153,7 +153,7 @@ describe User do
   #phone_numberが重複した場合、登録できない
     it "is invalid with a duplicate phone_number" do
       user = create(:user)
-      another_user = build(:user,phone_number: user.phone_number)
+      another_user = build(:user,email:"mk038432@gmail.com")
       another_user.valid?
       expect(another_user.errors[:phone_number]).to include("has already been taken")
     end

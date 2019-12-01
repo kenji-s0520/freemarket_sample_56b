@@ -3,61 +3,67 @@ require 'rails_helper'
 
   describe SignupController do
 
-#user_reg
+#member_information
 
-  #user_regのビューが表示されるか
-    describe 'GET #user_reg' do
-      it "renders the :user_reg template" do
-        get :user_reg    
-        expect(response).to render_template :user_reg
+  #member_informationのビューが表示されるか
+    describe 'GET #member_information' do
+      it "renders the :member_information template" do
+        get :member_information    
+        expect(response).to render_template :member_information
       end
     end
     
-#user_reg2
+#phone_number
   
-  #user_reg2のビューが表示されるか
-      describe 'GET #user_reg2' do
-        it "renders the :user_reg2 template" do
-          get :user_reg2,params:{user:{"nickname"=>"みしま", "email"=>"mkwkswwdaf@outlook.jp", "password"=>"1111111", "password_confirmation"=>"1111111", "last_name"=>"三島", "first_name"=>"将暉", "last_name_kana"=>"ミシマ", "first_name_kana"=>"コウダイ","birthday"=>{"birthday(1i)"=>"1995","birthday(2i)"=>"08","birthday(3i)"=>"29"}}}
-          expect(response).to render_template :user_reg2
+  #phone_numberのビューが表示されるか
+      describe 'GET #phone_number' do
+        it "renders the :phone_number template" do
+          get :phone_number,params:{user:{"nickname"=>"みしま", "email"=>"mkwkswwdaf@outlook.jp", "password"=>"1111111", "password_confirmation"=>"1111111", "last_name"=>"三島", "first_name"=>"将暉", "last_name_kana"=>"ミシマ", "first_name_kana"=>"コウダイ","birthday"=>{"birthday(1i)"=>"1995","birthday(2i)"=>"08","birthday(3i)"=>"29"}}}
+          expect(response).to render_template :phone_number
         end
     end
 
-  #user_regの入力フォームに値が入っていない場合、user_regにリダイレクトされるか
-      describe 'GET #user_reg2' do
-        it "redirect_to user_reg without params is nothing" do
-          get :user_reg2,params:{user:{"nickname"=>"", "email"=>"mkwkswwdaf@outlook.jp", "password"=>"1111111", "password_confirmation"=>"1111111", "last_name"=>"三島", "first_name"=>"将暉", "last_name_kana"=>"ミシマ", "first_name_kana"=>"コウダイ","birthday"=>{"birthday(1i)"=>"1995","birthday(2i)"=>"08","birthday(3i)"=>"29"}}}
-          expect(response).to redirect_to "/signup/user_reg"
+  #member_informationの入力フォームに値が入っていない場合、member_informationにリダイレクトされるか
+      describe 'GET #phone_number' do
+        it "redirect_to member_information without params is nothing" do
+          get :phone_number,params:{user:{"nickname"=>"", "email"=>"mkwkswwdaf@outlook.jp", "password"=>"1111111", "password_confirmation"=>"1111111", "last_name"=>"三島", "first_name"=>"将暉", "last_name_kana"=>"ミシマ", "first_name_kana"=>"コウダイ","birthday"=>{"birthday(1i)"=>"1995","birthday(2i)"=>"08","birthday(3i)"=>"29"}}}
+          expect(response).to redirect_to "/signup/member_information"
         end
       end
      
-#user_reg3
+#address
 
-  #user_reg3のビューが表示されるか
-    describe 'GET #user_reg3' do
-      it "renders the :user_reg3 template" do
-        get :user_reg3
-        expect(response).to render_template :user_reg3
+  #addressのビューが表示されるか
+    describe 'GET #address' do
+      it "renders the :address template" do
+        user = create(:user)
+        sign_in user
+        get :address
+        expect(response).to render_template :address
       end
   end
 
-#user_reg4
+#card_information
 
-  #user_reg4のビューが表示されるか
-  describe 'GET #user_reg4' do
-    it "renders the :user_reg4 template" do
-      get :user_reg4
-      expect(response).to render_template :user_reg4
+  #card_informationのビューが表示されるか
+  describe 'GET #card_information' do
+    it "renders the :card_information template" do
+      user = create(:user)
+        sign_in user
+      get :card_information
+      expect(response).to render_template :card_information
     end
 end
 
-#user_reg5
+#end
 
-  #user_reg5のビューが表示されるか
-  describe 'GET #user_reg5' do
-    it "renders the :user_reg5 template" do
-      get :user_reg5
-      expect(response).to render_template :user_reg5
+  #endのビューが表示されるか
+  describe 'GET #end' do
+    it "renders the :end template" do
+      user = create(:user)
+        sign_in user
+      get :end
+      expect(response).to render_template :end
     end
 end
 
@@ -95,41 +101,41 @@ end
         session[:birthday] = "1995-08-29"
         session[:phone_number] = "09079141620"
         post :create,params:{user:{"phone_number"=>"12344678901"}}
-        expect(response).to redirect_to user_reg_signup_index_path
+        expect(response).to redirect_to member_information_signup_index_path
       end
     end
 
 #done
 
-  #doneアクションが実行されて、user_reg3アクションが発動されるか
+  #doneアクションが実行されて、addressアクションが実行されるか
     describe 'GET #done' do
-      it "user login and redirect to user_reg3" do
+      it "user login and redirect to address" do
         user = create(:user)
         session[:id]= user.id
         get :done
-        expect(response).to redirect_to user_reg3_signup_index_path
+        expect(response).to redirect_to address_signup_index_path
       end
     end
 
 #address_create
   
-  #address_createアクションが実行されてuser_reg4アクションにリダイレクトするか
+  #address_createアクションが実行されてcard_informationアクションにリダイレクトするか
     describe 'POST #address_create' do
-      it "excusion addres_create and user_reg4 action" do
+      it "excusion addres_create and card_information action" do
         user = create(:user)
         sign_in user
         post :address_create,params:{address:{"code"=>"525-0051","prefectures"=>"岐阜県","city_town"=>"郡上市白鳥町白鳥","address_number"=>"437","building"=>"スチューデントヒロセ","room_for_number"=>"1615000000"}}
-        expect(response).to redirect_to user_reg4_signup_index_path
+        expect(response).to redirect_to card_information_signup_index_path
       end
     end
 
-  #address_createアクションが実行されて,params情報が不足していた場合、user_reg3アクションにリダイレクトする
+  #address_createアクションが実行されて,params情報が不足していた場合、addressアクションにリダイレクトする
     describe 'POST #address_create' do
-      it "excusion addres_create and user_reg3 action" do
+      it "excusion addres_create and address action" do
         user = create(:user)
         sign_in user
         post :address_create,params:{address:{"code"=>"","prefectures"=>"岐阜県","city_town"=>"郡上市白鳥町白鳥","address_number"=>"437","building"=>"スチューデントヒロセ","room_for_number"=>"1615000000"}}
-        expect(response).to redirect_to user_reg3_signup_index_path
+        expect(response).to redirect_to address_signup_index_path
       end
     end
 end
