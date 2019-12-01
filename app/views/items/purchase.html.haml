@@ -34,7 +34,6 @@
               配送先と支払い方法の入力を完了してください。
             = form_tag buy_item_path(@item), method: :post do
               = submit_tag '購入する'
-              -# %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_f862b447ef519adaf6a920fb"}
       .buy-content-userinfo
         .buy-content-innerspace
           %h3.adres
@@ -60,11 +59,9 @@
             11/22
           %figure.cardbrand
             = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?210491352", width: "49", height: "15", alt: "visa")
-          %ul.buy-userinfo-fix
-            = link_to "", class: "userinfo-fix" do
-              %span.changea
-                変更する
-                %i.fas.fa-chevron-right.change1
+          
+          = link_to "変更する", delete_card_index_path, class: "chongeb"
+          %i.fas.fa-chevron-right.change1
   .singlefooter
     %ul.clear-fixa
       %li.policy1
