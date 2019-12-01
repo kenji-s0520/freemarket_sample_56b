@@ -6,7 +6,7 @@
     .upper
       .mypage_name
         = image_tag "/images/member_photo_noimage.png", class: "border_radius"
-        = link_to "ユーザーネーム", "evaluation.html"
+        = link_to current_user.nickname, "evaluation.html"
         %ul
           評価
           %span.math 0

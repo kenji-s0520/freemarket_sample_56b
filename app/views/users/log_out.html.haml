@@ -6,7 +6,8 @@
     .upper
       #log_out.create__main1
         #addbutton.create__main__button
-          %button.create-add
+          -# #mishima ユーザー新規登録 ログアウト機能を追加
+          = link_to destroy_user_session_path,id:"logoutbutton8",method: :delete do
             ログアウト  
   = render partial: "sidebar"
 = render partial: "footer"

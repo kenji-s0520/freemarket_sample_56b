@@ -2,7 +2,8 @@
   .menu_bar
     .headup
       .mercarilogo 
-        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"
+        =link_to root_path do
+          =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari")
       %form.form{action: ""}
         %input.search_form{name: "keyword", placeholder:  "何かお探しですか？", type: "text", value: ""}/
         %button.search_button
@@ -18,21 +19,30 @@
           = link_to "/jp/bland/", class: "brand_icon_link" do
             %i.fas.fa-tag
               %p ブランドから探す
-      .user_page_links
-        %ul.user_links
-          %li.like
-          = link_to "/jp/like/", class: "like" do
-            %i.far.fa-heart
-            いいね！一覧
-          %li.notice
-          = link_to "/jp/notification/", class: "notification" do
-            %i.far.fa-bell
-            お知らせ
-          %li.todo
-          = link_to "/jp/todo/", class: "todoing" do
-            %i.fas.fa-check
-            やることリスト
-          %li.mypage
-          = link_to "/jp/mypage/", class: "mypage_font" do
-            = image_tag("/images/member_photo_noimage.png", class: "mypage_img")
-            = "マイページ"
+      -if user_signed_in?   #mishima ユーザー新規登録 ログイン時のビュー
+        .user_page_links
+          %ul.user_links
+            %li.like
+            = link_to "/jp/like/", class: "like" do
+              %i.far.fa-heart
+              いいね！一覧
+            %li.notice
+            = link_to "/jp/notification/", class: "notification" do
+              %i.far.fa-bell
+              お知らせ
+            %li.todo
+            = link_to "/jp/todo/", class: "todoing" do
+              %i.fas.fa-check
+              やることリスト
+            %li.mypage
+            = link_to users_path, class: "mypage_font" do
+              = image_tag("/images/member_photo_noimage.png", class: "mypage_img")
+              = "マイページ"
+      - else      #mishima ユーザー新規登録 未ログイン時のビュー
+        .user_page_links
+          .sign_up
+            = link_to new_user_registration_path, class: "sign_up_link" do
+              %p 新規会員登録
+          .sign_in
+            =link_to new_user_session_path, class: "sign_in_link" do
+              %p ログイン

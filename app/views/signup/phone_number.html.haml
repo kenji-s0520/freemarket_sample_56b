@@ -1,7 +1,7 @@
 .single1
   .single-header1
     %h1
-      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon-reg" ,alt:"mercari"),""  
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon-reg" ,alt:"mercari"),root_path 
     %nav.process-bar
       %ol.process-sub-bar
         .status1
@@ -22,15 +22,16 @@
   .main-reg
     %h1.top-head 電話番号の確認
     .main-section
-      %form{:action => "/", :method => "post"}
-      .form-top
-        %label.phonenumber 携帯電話の番号
+      -#mishima 新規登録 form_withの記述を追加
+      = form_with(model: @user,local:true,url:signup_index_path,method: :post) do |f|  #mishima 新規登録 form_withの記述を追加
+        .form-top
+          =f.label :phone_number, "携帯電話の番号",class:"phonelabel",margin:"auto",id:"reg2"
         %br
         .input-phone
-          %input{name:"phonenumber" ,placeholder:"携帯の番号を入力"}
+          =f.text_field :phone_number,placeholder:"携帯の番号を入力"
         .confirm-reg
           本人確認のため、携帯電話のSMS(ショートメッセージサービスを利用して認証を行います。)
-        %button.submit-btn2{type:"submit",name:"submit",onclick:"location.href='/index.html'"}SMSを送信する
+        =f.submit "SMSを送信する",id:"button",class:"submit-btn2" #button.submit-btn2{type:"submit",name:"submit",onclick:"location.href='/users/user_reg3'"}SMSを送信する
         %br
         .confirm-reg2
           ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
@@ -38,6 +39,5 @@
           %i.fas.fa-chevron-right
           = link_to "https://www.mercari.com/jp/help_center", class: "confirm-reg2" do
             = "電話番号の確認が必要な理由"
-           
-
-  = render :partial => "footerreg"
+          %i.fas.fa-chevron-right
+  = render partial:"/users/footerreg"

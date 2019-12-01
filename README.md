@@ -37,11 +37,10 @@
 |-----|----|-------|
 |code|string|null: false|
 |Prefectures|string|null: false|
-|city|string|null: false|
-|town|string|null: false|
+|city_town|string|null: false|
 |address_number|string|null: false|
 |building|string||
-|room_number|string||
+|room_for_number|string||
 
 ### Association
 - belongs_to :user

@@ -1,0 +1,96 @@
+form#new_user.new_user {
+  text-align: center;
+  margin: auto;
+}
+
+#login {
+  background-color: #ea352d;
+  color:white;
+  border:none;
+}
+form#new_user.new_user {
+  height:406px;
+}
+.new-user {
+  background-color: white;
+  text-align: center;
+  height:144px;
+  width:456px;
+  margin:auto;
+  box-sizing: border-box;
+  padding:40px 60px;
+  border-bottom: solid #f1f1f1;
+  &__message {
+    font-size: 14px;
+  }
+  &__button {
+    border-style:none;
+    box-sizing: border-box;
+    margin:4px auto 0px;
+    background-color: #0099E8;
+    height:42px;
+    width:328px;
+    a {
+    font-size:14px;
+    line-height: 42px;
+    color:white;  
+  }
+  }
+}
+#loginmain{
+  background-color: white;
+  width:456px;
+  height:406px;
+  position:relative;
+  bottom:20px;
+}
+
+.snslogin {
+  box-sizing: border-box;
+  margin:auto;
+  position:relative;
+  bottom:20px;
+  width:456px;
+  height:181px;
+  background-color: white;
+  text-align: center;
+  padding:32px 64px;
+  &__facebooklogin {
+  width:328px;
+  height:50px;
+  background-color: #385185;
+  border-style:solid 1px;
+  border-image:initial;
+  border-color:#979797;
+  color:white;
+  font-size: 14px;
+}
+  &__googlelogin  {
+  width:328px;
+  height:50px;
+  background-color: #FFFFFF;
+  border:solid 1px;
+  border-image:initial;
+  border-color:#979797;
+  margin:16px 0px 0px;  
+  color:#333333;
+  font-size: 14px;
+  text-align: center;
+  p {
+  
+  }
+}
+}
+
+.facebookicon {
+  position:relative;
+  right:65px;
+  top:4px;
+}
+
+.googleicon {
+  position:relative;
+  right:75px;
+  top:4px;
+  line-height: 50px;
+}

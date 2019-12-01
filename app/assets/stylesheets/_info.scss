@@ -1,5 +1,4 @@
 body{
-  // height: 100%;
   width: 100%;
   background: #f1f1f1;
 }
@@ -84,7 +83,6 @@ label{
   outline-width: 1px;
 }
 select{
-  -webkit-appearance: none;
   outline-width: 1px;
 }
 .select-default{
@@ -121,6 +119,5 @@ select{
   cursor: pointer;
   text-align: center;
   border: 1px solid transparent;
-  -webkit-transition: all ease-out .3s;
   transition: all ease-out .3s;
 }
