@@ -7,20 +7,21 @@
       %section.items-contents
         .items-contents__title
           %h2 商品の情報を入力
-        
+
+        -# = img.label :url, for: ".items-contents__image--drop-box" do
+        -# = img.file_field :image
+          -# ドラッグアンドドロップ
+          -# またはクリックしてファイルをアップロード
+
         = form_with(model: @items,local: true,url: items_new_path) do |f|
-          =f.fields_for :images do |img|
-            .items-contents__image
-              %h3 出品画像
-              %span 必須
-              %p 最大10枚までアップロードできます
-              .items-contents__image--drop-box
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
-              = img.label :url, for: ".items-contents__image--drop-box" do
-                = img.file_field :image
-                -# %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
-                -# %pre.items-contents__image--drop-box--click
+          .items-contents__image
+            %h3 出品画像
+            %span 必須
+            %p 最大10枚までアップロードできます
+            =f.fields_for :images do |img|
+              .items-contents__image--drop-box  
+                = img.label :image, :class => "item-contents__image_drop-box_label", :id => "droparea"
+                = img.file_field :image, :class => "item-contents__image_drop-box_click"
                   
           .items-contents__item-info
             .items-contents__item-info--name
@@ -38,7 +39,7 @@
                 %h4 カテゴリー
                 %span 必須
                 %i.sell.fas.fa-chevron-down 
-                = f.select :category_id, @category_parent_array, {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
+                = f.select :a , @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
                 
               .items-contents__item-about--box--size
                 %h4 サイズ
@@ -49,7 +50,8 @@
               .items-contents__item-about--box--brand
                 %h4 ブランド
                 %span.nini 任意
-                = f.text_area :brand_id, class: "items-contents__item-info--name--input", placeholder: "例）シャネル"
+                %i.sell.fas.fa-chevron-down
+                = f.select :brand_id,[['シャネル',1],['ナイキ',2],['ルイ　ヴィトン',3],['シュプリーム',4],['アディダス',5],['その他',6]],{prompt: "---"}, {class: "items-contents__item-info--name--input", placeholder: "例）シャネル",}
 
               .items-contents__item-about--box--condition
                 %h4 商品の状態

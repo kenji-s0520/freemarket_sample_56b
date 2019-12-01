@@ -29,7 +29,6 @@ class ItemsController < ApplicationController
   def create
     @items = Item.new(item_params)
     if @items.save
-      # redirect_to index_url 
     else
       @items.images.build
       render :new
