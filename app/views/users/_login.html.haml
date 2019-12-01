@@ -2,8 +2,8 @@
   .single-container_login
     %header.single-header
       %h1#logomer
-        %a.registration{href: "https://www.mercari.com/jp/"}
-          %img{alt: "mercari", src: "http://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994"}/
+        .registration
+          =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994" ,alt:"mercari"),root_path
     %main.single-main
       .login-panel
         .login-no-account
@@ -28,7 +28,7 @@
               =f.submit "ログイン",class:"login-submit btn-default btn-red"
             %input{name: "login_callback", type: "hidden", value: "https://www.mercari.com/jp/logout/"}/
             %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
-            = link_to "パスワードをお忘れの方", "https://www.mercari.com/jp/password/reset/start/", class: "af"
+            = link_to "パスワードをお忘れの方", "", class: "af"
       %form#login_form_facebook{action: "/jp/login/", method: "POST", novalidate: "novalidate"}
         %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
         %input{name: "nickname", type: "hidden", value: ""}/
@@ -51,12 +51,12 @@
       %nav
         %ul.clearfix
           %li
-            = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+            = link_to "プライバシーポリシー", ""
           %li
-            = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+            = link_to "メルカリ利用規約", ""
           %li
-            = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/", class: "lir"
-      %a.single-footer-logo{href: "https://www.mercari.com/jp/"}
+            = link_to "特定商取引に関する表記", "", class: "lir"
+      %a.single-footer-logo{href: ""}
         %img.mercari{alt: "mercari",height: "65",src: "http://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994",width: "80"}/
       %p
         %small © 2019 Mercari

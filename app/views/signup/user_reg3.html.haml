@@ -1,7 +1,7 @@
-.single1
+#reg3.single1
   .single-header1
     %h1
-      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon-reg" ,alt:"mercari"),"" 
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon-reg" ,alt:"mercari"),root_path
     %nav.process-bar
       %ol.process-sub-bar
         .status1
@@ -86,11 +86,13 @@
                   %i.fas.fa-angle-right
 %footer.footer-reg2
   .clearfix2
-    %a{:href => "<>"} プライバシーポリシー
-    %a{:href => "<>"} メルカリ利用規約
-    %a{:href => "<>"} 特定商取引に関する表記
+    =link_to "" do
+      プライバシーポリシー
+    =link_to "" do
+      メルカリ利用規約
+    =link_to "" do
+      特定商取引に関する表記
   .footer-reg-logo2
-    %a{:href => "https://www.mercari.com/jp/"}
-      %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994", :width => "80"}/
+    =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994",alt:"mercari",height:"65",width:"80"),""
     %p
       %small © 2019 Mercari

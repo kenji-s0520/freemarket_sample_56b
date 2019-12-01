@@ -1,16 +1,9 @@
 %html
   %head
-  -#   %meta{:content => "text/html; charset=utf-8", "http-eqiv" => "Content-Type"}/
-  -#   %title 会員情報入力 -メルカリ スマホで
-  -#   %script src='https://www.google.com/recaptcha/api.js'
-  -#   <!-- recaptchaの記載 -->
-    %a{href="https://use.fontawesome.com/releases/v5.0.6/js/all.js"}
-  %script{src: 'https://www.google.com/recaptcha/api.js'}
-  
   .single1
     .single-header1
       %h1
-        = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon-reg" ,alt:"mercari"),"" 
+        = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", class: "mercari-icon-reg" ,alt:"mercari"),root_path 
       %nav.process-bar
         %ol.process-sub-bar
           .status1
