@@ -10,7 +10,8 @@ class ItemsController < ApplicationController
       Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
       end
-    @item = Item.new
+    @items = Item.new
+    @items.images.build
     @prefectures = Prefecture.all
   end
 
@@ -26,10 +27,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to index_url 
+    @items = Item.new(item_params)
+    if @items.save
+      # redirect_to index_url 
     else
+      @items.images.build
       render :new
     end
   end
@@ -47,7 +49,7 @@ class ItemsController < ApplicationController
   private
     
   def item_params
-    params.require(:@item).permit(:name,:description,:category_id,:size,:brand_id,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price)
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand_id,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image])
   end
 
 end
