@@ -2,38 +2,25 @@
   = render partial: "users/header"
   .main_item
     %h1.item_name 
-      = @itemname
+      = @item.name
     .item_main_content
       .item_photo
         .cp_cssslider
-
-          - @image.each do |img1|
+          - @images.each do |img1|
             %li
-              %label{for: "photo2"}
-                = image_tag("{#@image}", width: "300px")
-          -# %li
-          -#   %label{for: "photo3"}
-          -#     = image_tag("/images/apple_watch3.png", width: "300px")
-          -# %li
+              = image_tag(img1.image, width: "300px")
         .image-dots
-          -# - @image.each do |image|
-          -#   %li
-          -#     %a{ href: 'index.html'}
-          -#       = image_tag("/images/#{image}", width: "60px")
-          -# %li
-          -#   %a{ href: 'index.html'}
-          -#     = image_tag("/images/apple_watch2.png", width: "60px")
-          -# %li
-          -#   %a{ href: 'index.html'}
-          -#     = image_tag("/images/apple_watch3.png", width: "60px")
-          -# %li
+          - @images.each do |img1|
+            %li
+              %a{ href: 'index.html'}
+                = image_tag(img1.image, width: "60px")
       %table.item_detail_table
         %tbody
           %tr
             %th 出品者
             %td
               = link_to "/users" do
-                = @user
+                = @user.nickname
               %div
                 .item_user_ratings
                   %i.fas.fa-laugh
@@ -78,14 +65,13 @@
     .item_price_box.text_center
       %span.item_price.bold
         ¥
-        = @itemprice
+        = @item.price
       %span.item_tax (税込)
       %span.item_shipping_fee 送料込み
     = link_to "購入画面に進む", "/items/buy", class: "item_buy_btn"
     .item_description.f1
       %p.item_description_inner
-        = @itemtext
-
+        = @item.description
     .item_button_container
       .item_button_left
         %button{name: "like!", type: "button", class: "like_botton"} ♡いいね！0

@@ -11,20 +11,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find_by(id:"1").id
-    @itemname = Item.find_by(id: @item).name
-    @itemprice = Item.find_by(id: @item).price
-    @itemtext = Item.find_by(id: @item).description
-    @images = Image.where(id: @item)
-    
-    @image = []
-    @images.each do |img|
-      image = img.image
-      @image << image
-    end
-
+    @item = Item.find_by(id:"1")
+    @images = Image.where(item_id: @item)
     @user_id = Seller.find_by(item_id: @item).user_id
-    @user = User.find_by(id: @user_id).nickname
+    @user = User.find_by(id: @user_id)
     render "items/items"
   end
   
