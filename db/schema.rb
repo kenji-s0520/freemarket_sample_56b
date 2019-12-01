@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_16_210737) do
+ActiveRecord::Schema.define(version: 2019_12_01_031350) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code", null: false
@@ -52,23 +52,27 @@ ActiveRecord::Schema.define(version: 2019_11_16_210737) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.string "image", null: false
     t.integer "price", null: false
     t.string "size", null: false
     t.integer "category_id", null: false
     t.integer "brand_id", null: false
     t.string "status", null: false
     t.string "ship_method", null: false
-    t.integer "ship_fee", null: false
     t.string "ship_person", null: false
     t.string "ship_area", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "seller", null: false
-    t.integer "buyer", null: false
     t.string "ship_days"
   end
 
@@ -109,4 +113,5 @@ ActiveRecord::Schema.define(version: 2019_11_16_210737) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "items"
 end
