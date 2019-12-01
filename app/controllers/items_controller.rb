@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   def show
   end
   
-  
+  # ujiie 購入機能に必要なアクションを追記
   require 'payjp'
 
   def purchase
