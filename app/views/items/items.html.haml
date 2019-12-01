@@ -6,27 +6,27 @@
     .item_main_content
       .item_photo
         .cp_cssslider
-          %li
-            %label{for: "photo1"}
-              = image_tag("/images/apple_watch.png", width: "300px")
-          %li
-            %label{for: "photo2"}
-              = image_tag("/images/apple_watch2.png", width: "300px")
-          %li
-            %label{for: "photo3"}
-              = image_tag("/images/apple_watch3.png", width: "300px")
-          %li
+
+          - @image.each do |img1|
+            %li
+              %label{for: "photo2"}
+                = image_tag("{#@image}", width: "300px")
+          -# %li
+          -#   %label{for: "photo3"}
+          -#     = image_tag("/images/apple_watch3.png", width: "300px")
+          -# %li
         .image-dots
-          %li
-            %a{ href: 'index.html'}
-              = image_tag("/images/apple_watch.png", width: "60px")
-          %li
-            %a{ href: 'index.html'}
-              = image_tag("/images/apple_watch2.png", width: "60px")
-          %li
-            %a{ href: 'index.html'}
-              = image_tag("/images/apple_watch3.png", width: "60px")
-          %li
+          -# - @image.each do |image|
+          -#   %li
+          -#     %a{ href: 'index.html'}
+          -#       = image_tag("/images/#{image}", width: "60px")
+          -# %li
+          -#   %a{ href: 'index.html'}
+          -#     = image_tag("/images/apple_watch2.png", width: "60px")
+          -# %li
+          -#   %a{ href: 'index.html'}
+          -#     = image_tag("/images/apple_watch3.png", width: "60px")
+          -# %li
       %table.item_detail_table
         %tbody
           %tr
@@ -130,7 +130,9 @@
   .user_items_profile
     %section
       %h2.user_item_profile
-        = link_to "" "ユーザーさんのその他の出品"
+        = link_to "" do
+          = @user 
+          さんのその他の出品
       .items_box_content
         %section.items_box
           = link_to "" do

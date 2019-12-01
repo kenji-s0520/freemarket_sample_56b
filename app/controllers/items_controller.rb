@@ -15,6 +15,14 @@ class ItemsController < ApplicationController
     @itemname = Item.find_by(id: @item).name
     @itemprice = Item.find_by(id: @item).price
     @itemtext = Item.find_by(id: @item).description
+    @images = Image.where(id: @item)
+    
+    @image = []
+    @images.each do |img|
+      image = img.image
+      @image << image
+    end
+
     @user_id = Seller.find_by(item_id: @item).user_id
     @user = User.find_by(id: @user_id).nickname
     render "items/items"
