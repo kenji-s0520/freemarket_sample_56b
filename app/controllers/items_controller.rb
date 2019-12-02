@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
     else
       @items = Item.find_by(params[id:"1"])
       # Payjp.api_key = 'sk_test_3c6c6f094d2e40b7a314b6c3'
+      Payjp.api_key= ENV['PAYJP_ACCESS_KEY']
       Payjp::Charge.create(
       amount: @items.price, #支払金額
       customer: card.customer_id, #顧客ID
