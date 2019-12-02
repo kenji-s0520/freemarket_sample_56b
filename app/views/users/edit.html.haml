@@ -8,13 +8,13 @@
         .profile-edit__header
           %h2
             プロフィール
-        .profile-edit__user
-          = image_tag("/images/member_photo_noimage.png")
-          %input{type:"text",value:current_user.nickname,placeholder:"例)AYA☆セール中"}
-        .profile_edit__text
-          %textarea{name:"introduction",placeholder:"例)こんにちは☆ご覧いただきありがとうございます！",cols:"50",rows:"5"}
-        .profile_edit__footer
-          %input{type:"submit",class:"change",value:"変更する"}
-  = render :partial => "sidebar"
-= render :partial => "footer"
-= render :partial => "sell_btn"
+          = form_with(model: @user,local:true,url:users_path,method: :post) do |f|
+            .profile-edit__user
+              = image_tag("/images/member_photo_noimage.png")
+              =f.text_field :nickname,value:@user.nickname,placeholder:"例)AYA☆セール中"
+            .profile_edit__text
+              =f.text_field :introduction,placeholder:"例)こんにちは☆ご覧いただきありがとうございます！",cols:"50",rows:"5",padding:"0",value:@user.introduction,id:"user_introduction"
+            =f.submit "変更する",class:"change"
+  = render partial:"sidebar"
+= render partial:"footer"
+= render partial:"sell_btn"
