@@ -164,20 +164,20 @@ main {
       border: 1px dashed $bordar-color;
       padding: 40px;
       cursor: pointer;
-      &--file{
-        width: 100%;
-        margin-left: 0;
-        width: 620px;
-        padding: 40px; 
-      }
       &--click{
+        cursor: pointer;
         position: absolute;
-        top: 36%;
+        font-weight: 550;
+        top: 37%;
         left: 16px;
         right: 16px;
         text-align: center;
         font-size: 14px;
         line-height: 1.5;
+      }
+      &--file{
+        // display: none;
+        cursor: pointer;
       }
     }
   }
