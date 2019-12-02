@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users   #mishima  新規登録  deviseを導入
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-  resources :users, only: [:index, :edit]
+  resources :users, only: [:index, :edit,:create]
   root to: "items#toppage"
   get 'index' => 'items#toppage'
   get '/users/info' => 'users#info'

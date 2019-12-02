@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+  @user = current_user
   end
   
   def log_out
@@ -24,5 +25,8 @@ class UsersController < ApplicationController
   def logout
   end
   
+  def create
+  end
+
   
   end
