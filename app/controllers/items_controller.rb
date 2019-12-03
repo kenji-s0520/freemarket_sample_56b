@@ -10,11 +10,16 @@ class ItemsController < ApplicationController
   def toppage
   end
 
+  def toppage
+    @items = Item.order("created_at DESC").limit(10)
+  end
+
   def show
     @item = Item.find_by(id:"1")
     @images = Image.where(item_id: @item)
     @user_id = Seller.find_by(item_id: @item).user_id
     @user = User.find_by(id: @user_id)
+    @items = Item.order("created_at DESC").limit(6)
     render "items/items"
   end
   
