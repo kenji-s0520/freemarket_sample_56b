@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def toppage
-    @items = Item.order("created_at DESC").limit(10)
   end
 
   def show
