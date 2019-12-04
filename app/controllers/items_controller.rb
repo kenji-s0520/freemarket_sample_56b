@@ -26,10 +26,10 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-      @items = Item.find_by(params[id:"1"])
+      @item = Item.find(params[:id])
       Payjp.api_key= ENV['PAYJP_ACCESS_KEY']
       Payjp::Charge.create(
-      amount: @items.price, #支払金額
+      amount: @item.price, #支払金額
       customer: card.customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
