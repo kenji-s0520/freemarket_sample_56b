@@ -386,6 +386,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   dotenv-rails
+  factory_bot_rails
   fog-aws
   font-awesome-rails
   gretel
