@@ -1,0 +1,205 @@
+%main.main_contents_item
+  = render partial: "users/header"
+  .main_item
+    %h1.item_name Apple Watch
+    .item_main_content
+      .item_photo
+        .cp_cssslider
+          %li
+            %label{for: "photo1"}
+              = image_tag("/images/apple_watch.png", width: "300px")
+          %li
+            %label{for: "photo2"}
+              = image_tag("/images/apple_watch2.png", width: "300px")
+          %li
+            %label{for: "photo3"}
+              = image_tag("/images/apple_watch3.png", width: "300px")
+          %li
+        .image-dots
+          %li
+            %a{ href: 'index.html'}
+              = image_tag("/images/apple_watch.png", width: "60px")
+          %li
+            %a{ href: 'index.html'}
+              = image_tag("/images/apple_watch2.png", width: "60px")
+          %li
+            %a{ href: 'index.html'}
+              = image_tag("/images/apple_watch3.png", width: "60px")
+          %li
+      %table.item_detail_table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              = link_to "ユーザー", "/users"
+              %div
+                .item_user_ratings
+                  %i.fas.fa-laugh
+                  %span 0
+                .item_user_ratings
+                  %i.fas.fa-meh
+                  %span 0
+                .item_user_ratings
+                  %i.fas.fa-frown
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              = link_to "", class: "" do
+                %p メンズ
+              = link_to "", class: "icon_right" do
+                %i.fas.fa-chevron-right.item
+                  %span 時計
+              = link_to "", class: "icon_right" do
+                %i.fas.fa-chevron-right.item
+                  %span 腕時計（ブランド）
+          %tr
+            %th ブランド
+            %td
+              = link_to "Apple", ""
+          %tr
+            %th 商品の状態
+            %td 新品未使用
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 配送の方法
+            %td 佐川急便
+          %tr
+            %th 配送元地域
+            %td
+              = link_to "都道府県", ""
+          %tr
+            %th 発送日の目安
+            %td ３〜４日で発送
+    .item_price_box.text_center
+      %span.item_price.bold ¥52,800
+      %span.item_tax (税込)
+      %span.item_shipping_fee 送料込み
+    = link_to "購入画面に進む", purchase_item_path(:items_id => @item), class: "item_buy_btn"
+    -# id毎に変遷するように記載する氏家
+    .item_description.f1
+      %p.item_description_inner
+        新品未使用品：Apple社のAppleWatchになります。
+        
+        タイプ：AppleWatchシリーズ４４４ミリ
+        状態：新品未使用
+        使用感：なし
+        付属品：充電器
+        
+        AppleWatchシリーズの人気作になります。ベルトの付け替えによって、スーツスタイルやカジュアルな普段使いのどちらでも装着できて便利なデザインとなっています。
+        
+        新品未使用品にはなりますが、あくまで自宅保管されていたということをご理解のうえご購入いただければと思います。
+    .item_button_container
+      .item_button_left
+        %button{name: "like!", type: "button", class: "like_botton"} ♡いいね！0
+        = link_to "", class: "item_button" do
+          %i.far.fa-flag
+            %span 不適切な商品の報告
+      .item_button_right
+        = link_to "https://www.mercari.com/jp/safe/description/", class: "key_lock", target: "_blank" do
+          %i.fas.fa-lock
+            %span あんしん・あんぜんへの取り組み
+  .item_detail_message
+    .message_contenter
+      .message_content
+        %form.message_form{action: "", method: "POST"}
+          %input{name: "", type: "hidden", value: ""}/
+          %p 相手のことを考えて丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{name: "", type: "hidden", value: ""}/
+          %input{name: "", type: "hidden", value: ""}/
+          %textarea.textarea_default{name: "body", type: "text", value: ""}
+          %button.message_submit{type: "submit"}
+            %span コメントする
+  %ul.item_link_prev_next
+    %li.item_prev
+      = link_to "", class: "prev" do
+        %i.fas.fa-chevron-left
+          %span prev
+    %li.item_next
+      = link_to "", class: "next" do
+        %span next
+        %i.fas.fa-chevron-right
+  .item_social_box
+    %ul.social_box
+      %li
+        = link_to "https://www.facebook.com/mercarijp/", class: "share-btn", target: "_blank" do
+          %i.fab.fa-facebook-square
+      %li
+        = link_to "https://twitter.com/mercari_jp/", class: "share-btn", target: "_blank" do
+          %i.fab.fa-twitter
+      %li
+        = link_to "https://www.pinterest.jp/", class: "share-btn", target: "_blank" do
+          %i.fab.fa-pinterest
+  .user_items_profile
+    %section
+      %h2.user_item_profile
+        = link_to "" "ユーザーさんのその他の出品"
+      .items_box_content
+        %section.items_box
+          = link_to "" do
+            %figure.items_box_photo
+              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
+            .items_box_body
+              %h3.items_box_name
+                モンスターハンターワールド アイスボーン 未開封です
+              .items_box_num
+                .items_box_price ¥4,000
+      .items_box_content
+        %section.items_box
+          = link_to "" do
+            %figure.items_box_photo
+              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
+            .items_box_body
+              %h3.items_box_name
+                モンスターハンターワールド アイスボーン 未開封です
+              .items_box_num
+                .items_box_price ¥4,000
+      .items_box_content
+        %section.items_box
+          = link_to "" do
+            %figure.items_box_photo
+              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
+            .items_box_body
+              %h3.items_box_name
+                モンスターハンターワールド アイスボーン 未開封です
+              .items_box_num
+                .items_box_price ¥4,000
+  .user_items_profile
+    %section
+      %h2.user_item_profile
+        = link_to "" "プレイステーション４の家庭用ソフトのその他の商品"
+      .items_box_content
+        %section.items_box
+          = link_to "" do
+            %figure.items_box_photo
+              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
+            .items_box_body
+              %h3.items_box_name
+                モンスターハンターワールド アイスボーン 未開封です
+              .items_box_num
+                .items_box_price ¥4,000
+      .items_box_content
+        %section.items_box
+          = link_to "" do
+            %figure.items_box_photo
+              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
+            .items_box_body
+              %h3.items_box_name
+                モンスターハンターワールド アイスボーン 未開封です
+              .items_box_num
+                .items_box_price ¥4,000
+      .items_box_content
+        %section.items_box
+          = link_to "" do
+            %figure.items_box_photo
+              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
+            .items_box_body
+              %h3.items_box_name
+                モンスターハンターワールド アイスボーン 未開封です
+              .items_box_num
+                .items_box_price ¥4,000
+  - breadcrumb :items
+  = render "layouts/breadcrumbs_bottom"
+  = render partial: "users/footer"
