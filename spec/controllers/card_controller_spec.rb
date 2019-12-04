@@ -1,4 +1,4 @@
-#ujiie ユーザー新規登録 card_controllerのテスト
+#ujiie  card_controllerのテスト
 require 'rails_helper'
 
   describe CardController do
@@ -32,5 +32,16 @@ require 'rails_helper'
   expect(response).to redirect_to new_card_path
   end
 end
+
+#delete
+  #カードが削除できるか
+  describe 'GET #delete' do
+    it "redirect_to  new" do
+      user = create(:user)
+      sign_in user
+      get :delete
+      expect(response).to have_http_status "302"
+    end
+  end
 
 end
