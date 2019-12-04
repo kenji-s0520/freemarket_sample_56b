@@ -2,7 +2,7 @@
 FactoryBot.define do
   factory :card do
     user
-    card_id                {"car_ddde181e9c4302c2d75d059be96e"}
-    customer_id              {"cus_f1820e830bf1b4a9ed3d2859690b"}
+    card_id                {"car_0b4e38753881d83d01e5945734e7"}
+    customer_id              {"cus_70bbf7ef2a1d80bebefe2588ead5"}
   end
 end
