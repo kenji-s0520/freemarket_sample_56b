@@ -77,7 +77,7 @@
       %span.item_price.bold ¥52,800
       %span.item_tax (税込)
       %span.item_shipping_fee 送料込み
-    = link_to "購入画面に進む", purchase_item_path(:items_id => @item), class: "item_buy_btn"
+    = link_to "購入画面に進む", purchase_item_path(items_id: @item), class: "item_buy_btn"
     -# id毎に変遷するように記載する氏家
     .item_description.f1
       %p.item_description_inner
@@ -98,7 +98,7 @@
           %i.far.fa-flag
             %span 不適切な商品の報告
       .item_button_right
-        = link_to "https://www.mercari.com/jp/safe/description/", class: "key_lock", target: "_blank" do
+        = link_to "", class: "key_lock", target: "_blank" do
           %i.fas.fa-lock
             %span あんしん・あんぜんへの取り組み
   .item_detail_message
