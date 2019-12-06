@@ -13,11 +13,12 @@
             %h3
               クレジットカード一覧
           .card__main__button
-            =link_to new_card_path class:"card-add" do
+            =link_to new_card_path ,class:"card-add" do
+              -#  prefixに変更　氏家
               %i.far.fa-credit-card
               クレジットカードを追加する
           .card-main__inf
-            =link_to "https://www.mercari.com/jp/help_center/category/6/", class:"card-information" do
+            =link_to "", class:"card-information" do
               支払い方法について
               %i.fas.fa-chevron-right.yajirushi
   = render partial: "sidebar"
