@@ -1,7 +1,6 @@
 #mishima ユーザー新規登録 Userモデルのテスト用のサンプルを作成
 FactoryBot.define do
   factory :user do
-    id                    {"1"}
     nickname              {"masaki"}
     email                 {"mk0829345@outlook.jp"}
     password              {"1111111"}

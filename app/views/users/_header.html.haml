@@ -12,26 +12,26 @@
     .headdown
       .search
         .search_category
-          = link_to "/jp/category/", class: "category_icon_link" do
+          = link_to "", class: "category_icon_link" do
             %i.fas.fa-list-ul
               %p カテゴリーから探す
         .search_brand
-          = link_to "/jp/bland/", class: "brand_icon_link" do
+          = link_to "", class: "brand_icon_link" do
             %i.fas.fa-tag
               %p ブランドから探す
       -if user_signed_in?   #mishima ユーザー新規登録 ログイン時のビュー
         .user_page_links
           %ul.user_links
             %li.like
-            = link_to "/jp/like/", class: "like" do
+            = link_to "", class: "like" do
               %i.far.fa-heart
               いいね！一覧
             %li.notice
-            = link_to "/jp/notification/", class: "notification" do
+            = link_to "", class: "notification" do
               %i.far.fa-bell
               お知らせ
             %li.todo
-            = link_to "/jp/todo/", class: "todoing" do
+            = link_to "", class: "todoing" do
               %i.fas.fa-check
               やることリスト
             %li.mypage
