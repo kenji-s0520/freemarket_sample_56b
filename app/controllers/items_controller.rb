@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   
 
   def buy
-    card = Card.find_by(user_id: current_user.id)
+    card = current_user.card
     if card.blank?
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
