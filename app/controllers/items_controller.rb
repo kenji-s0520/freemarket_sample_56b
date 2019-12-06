@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   
   #mishima ユーザー新規登録 deviseの機能を追加
   before_action :authenticate_user!,except: [:index,:show,:toppage]
+  before_action :set_item,except: [:new,:toppage,:show,:done]
   
   def new
   end
@@ -16,7 +17,6 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def purchase
-    @item = Item.find(params[:id])
   end
   
 
@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-      @item = Item.find(params[:id])
       Payjp.api_key= ENV['PAYJP_ACCESS_KEY']
       Payjp::Charge.create(
       amount: @item.price, #支払金額
@@ -38,6 +37,12 @@ class ItemsController < ApplicationController
 end
 
   def done
+  end
+
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
