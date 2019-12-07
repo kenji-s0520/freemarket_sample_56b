@@ -12,10 +12,10 @@
         .login-form-inner
           %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
             %i.fab.fa-facebook-square
-            Facebookでログイン
+            = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class: "falo"
           %button#google-login.btn-default.btn-sns.btn-sns-google
             = image_tag "/images/google.png", class: "google_png"
-            Googleでログイン
+            = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
           .login-form-inner
             -# mishima サインイン機能 form_forの記述を追加
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|  
@@ -29,24 +29,6 @@
             %input{name: "login_callback", type: "hidden", value: "https://www.mercari.com/jp/logout/"}/
             %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
             = link_to "パスワードをお忘れの方", "", class: "af"
-      %form#login_form_facebook{action: "/jp/login/", method: "POST", novalidate: "novalidate"}
-        %input{name: "__csrf_value", type: "hidden", value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
-        %input{name: "nickname", type: "hidden", value: ""}/
-        %input{name: "email",type: "hidden",value: ""}/
-        %input{name: "facebook_user_id", type: "hidden", value: ""}/
-        %input{name: "facebook_access_token", type: "hidden", value: ""}/
-        %input{name: "login_type", type: "hidden", value: "facebook"}/
-        %input{name: "login_callback", type: "hidden", value: "https://www.mercari.com/jp/logout/"}/
-      %form#login_form_google{action: "/jp/login/", method: "POST", novalidate: "novalidate"}
-        %input{name: "__csrf_value",type: "hidden",value: "26ea89e1dd87375f77e99d4df50841c563e9272145a02f50b086dddd1b02c5217c560682ac2d4e59a19aa0dc489633f22fcac3a893b3bd292e042ae86e24c075e"}/
-        %input{name: "nickname",type: "hidden",value: ""}/
-        %input{name: "email",type: "hidden",value: ""}/
-        %input{name: "google_user_id",type: "hidden",value: ""}/
-        %input{name: "google_access_token",type: "hidden",value: ""}/
-        %input{name: "login_type",type: "hidden",value: "google"}/
-        %input{name: "login_callback",type: "hidden",value: "https://www.mercari.com/jp/logout/"}/
-      %input#google_client_id{type: "hidden", value: "238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com"}/
-      %input#facebook_app_id{type: "hidden", value: "466308336793848"}/
     .footer3.single-footer
       %nav
         %ul.clearfix
