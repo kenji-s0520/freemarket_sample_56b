@@ -87,3 +87,7 @@ gem 'gretel'
 gem 'devise'
 gem 'ancestry'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'payjp'
+gem 'dotenv-rails'
+
+gem 'pry-rails'
