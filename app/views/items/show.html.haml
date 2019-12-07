@@ -8,19 +8,20 @@
         .cp_cssslider
           - @images.each do |img1|
             %li
-              -# = image_tag(img1.image, width: "300px")
+              = image_tag(@item.images[0].image.url)
         .image-dots
           - @images.each do |img1|
             %li
               = link_to 'index.html' do
-                -# = image_tag(img1.image, width: "60px")
+                = image_tag(@item.images[0].image.url)
       %table.item_detail_table
         %tbody
           %tr
             %th 出品者
             %td
               = link_to "/users" do
-                = @user.nickname
+                -# = @user.nickname
+                = User.find("1").nickname
               %div
                 .item_user_ratings
                   %i.fas.fa-laugh
@@ -118,14 +119,15 @@
     %section
       %h2.user_item_profile
         = link_to "" do
-          = @user.nickname 
+          -# = @user.nickname 
+          = User.find("1").nickname
           さんのその他の出品
       .items_box_content
         %section.items_box
           - @items.each do |item|
             = link_to item_path(item.id) do
               %figure.items_box_photo
-                -# = image_tag item.images.image.url
+                = image_tag item.images[0].image.url
               .items_box_body
                 %figcaption
                   %span.items_box_name
