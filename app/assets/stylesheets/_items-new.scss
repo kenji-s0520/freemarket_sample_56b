@@ -279,7 +279,6 @@ main {
           }
         }
         &--right{
-          width: 50%;
           height: 48px;
           float: right;
           text-align: right;
@@ -436,7 +435,7 @@ transform: translate(0, -50%);
 #fas{
 position: absolute;
 left: 368px;
-top: 105px;
+top: 153px;
 font-size: 18px;
 -webkit-transform: translate(0, -50%);
 transform: translate(0, -50%);
@@ -448,7 +447,7 @@ transform: translate(0, -50%);
 #fas2{
 position: absolute;
 left: 368px;
-top: 160px;
+top: 208px;
 font-size: 18px;
 -webkit-transform: translate(0, -50%);
 transform: translate(0, -50%);

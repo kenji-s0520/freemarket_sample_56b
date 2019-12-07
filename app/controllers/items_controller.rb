@@ -5,12 +5,9 @@ class ItemsController < ApplicationController
   before_action :set_item,except: [:new,:toppage,:create,:show,:done,:get_category_children,:get_category_grandchildren]
 
   def new
-    #セレクトボックスの初期値設定
-    @category_parent_array = ["---"]
-    #データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
+    #セレクトボックスの初期値設定  
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    @category_parent_array.unshift("---")
     @items = Item.new
     @items.images.build
     @prefectures = Prefecture.all
@@ -36,11 +33,8 @@ class ItemsController < ApplicationController
     if @items.save  
     else
       @prefectures = Prefecture.all
-      @category_parent_array = ["---"]
-       #データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+      @category_parent_array.unshift("---")
       render :new
     end
   end
