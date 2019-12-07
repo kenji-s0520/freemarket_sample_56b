@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get '/users/logout' => 'users#log_out'
   get 'users/login' => 'users/login'
   get '/items/buy' => 'items#purchase'
-  get 'items/new' => 'items#new'
   resources :items, only: [:show, :new, :create]
     resources :item
   
