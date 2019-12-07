@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get '/users/card/create' => 'users#card_create'
   get '/users/logout' => 'users#log_out'
   get 'users/login' => 'users/login'
-  
+  get '/items/buy' => 'items#purchase'
+  resources :items, only: [:show, :new, :create]
+    resources :item
   
   #mishima ユーザー新規登録 ページのルーティングを記述
   resources :signup do  

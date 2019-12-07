@@ -110,6 +110,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    dropzonejs-rails (0.8.4)
+      rails (> 3.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
@@ -127,6 +129,11 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
     faker (2.7.0)
       i18n (>= 1.6, < 1.8)
     ffi (1.11.2)
@@ -372,9 +379,11 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  dropzonejs-rails
   dotenv-rails
   erb2haml
   factory_bot_rails
+  factory_girl_rails
   faker
   fog-aws
   font-awesome-rails

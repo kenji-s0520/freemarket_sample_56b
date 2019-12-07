@@ -7,10 +7,14 @@ class ItemsController < ApplicationController
   def new
   end
 
+  # sakaguchi トップページにDBからデータを取り出す記述を追加
   def toppage
+    @items = Item.order("created_at DESC").limit(10)
   end
 
+  # sakaguchi トップページの商品をクリックしたら商品に詳細ページに飛ぶ記述を追加
   def show
+    @item = Item.find(params[:id])
   end
   
   # ujiie 購入機能に必要なアクションを追記
@@ -45,5 +49,6 @@ end
     @item = Item.find(params[:id])
   end
 
+  def create    
+  end    
 end
-
