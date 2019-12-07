@@ -8,12 +8,12 @@
         .cp_cssslider
           - @images.each do |img1|
             %li
-              = image_tag(img1.image, width: "300px")
+              -# = image_tag(img1.image, width: "300px")
         .image-dots
           - @images.each do |img1|
             %li
-              %a{ href: 'index.html'}
-                = image_tag(img1.image, width: "60px")
+              = link_to 'index.html' do
+                -# = image_tag(img1.image, width: "60px")
       %table.item_detail_table
         %tbody
           %tr
