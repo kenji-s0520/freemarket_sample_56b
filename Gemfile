@@ -87,7 +87,6 @@ gem 'gretel'
 gem 'devise'
 gem 'ancestry'
 gem "recaptcha", require: "recaptcha/rails"
-gem 'ancestry'
 gem 'dropzonejs-rails'
 gem 'payjp'
 gem 'dotenv-rails'
