@@ -38,25 +38,4 @@ $(function() {
       $(".items-contents__shipping--box--method").hide();
     }
   });
-
-  // $(".add-items-shipping_method").on("change", function(){
-  //   var select2 = $(".add-items-shipping_method").val();
-
-  //   if(select2 != '---'){
-  //     $(".items-shipping_charge").on("change", function(){
-  //       $('select#area option:first-child').remove();
-  //     });
-  //   }
-  // });
 })
-
-// $(function() {
-//   $(".items-shipping_charge").on("change", function(){
-//     var select = $(".items-shipping_charge").val();
-//     if(select == "1" || select == "2"){
-//       $(".items-contents__shipping--box--method").show()
-//     }else{
-//       $(".items-contents__shipping--box--method").hide();
-//     }
-//   });
-// })
