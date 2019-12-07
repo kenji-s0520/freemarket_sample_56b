@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     user_id = Seller.find_by(item_id: @item).user_id
     @user = User.find_by(id: user_id)
     @items = Item.order("created_at DESC").limit(6)
-    render "items/items"
+    # render "items/items"
   end
   
   # ujiie 購入機能に必要なアクションを追記
