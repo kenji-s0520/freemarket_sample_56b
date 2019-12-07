@@ -40,7 +40,7 @@ end
 
 
 # 商品詳細の下段に表示
-crumb :items do
-  link "AppleWatch", item_path
+crumb :items do |item|
+  link "item.name", item_path
   parent :root
 end

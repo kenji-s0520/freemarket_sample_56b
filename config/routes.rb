@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get '/users/logout' => 'users#log_out'
   get 'users/login' => 'users/login'
   get '/items/buy' => 'items#purchase'
-  resources :items, only: [:show, :new]
+  resources :items, only: [:show, :new, :create]
+    resources :item
   
   #mishima ユーザー新規登録 ページのルーティングを記述
   resources :signup do  
@@ -25,4 +26,19 @@ Rails.application.routes.draw do
       post 'address_create'
     end
   end
+  resources :items, only: [:show, :new, :purchase, :buy]do
+    member do
+      get :purchase
+      post :buy
+      get :done
+    end
+end
+
+  resources :card, only: [:new, :show, :create] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
 end
