@@ -2,8 +2,7 @@ class Item < ApplicationRecord
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
   validates :category_id, presence: true
-  validates :size, presense: true
-  validates :brand_id, null:true
+  validates :size, presence: true
   validates :status, presence: true
   validates :ship_person, presence: true
   validates :ship_method, presence: true
@@ -13,8 +12,5 @@ class Item < ApplicationRecord
   
   has_many :images
   accepts_nested_attributes_for :images
-  
-  
-  
-  
+
 end
