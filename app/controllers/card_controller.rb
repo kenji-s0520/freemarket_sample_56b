@@ -3,6 +3,9 @@ class CardController < ApplicationController
 #  ujiie card登録・削除に必要なcontrollerを作成 
   require "payjp"
 
+  def card
+  end
+
   def new
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?

@@ -1,4 +1,4 @@
-= render partial: "header_login"
+= render partial: "users/header_login"
 - breadcrumb :card
 = render "layouts/breadcrumbs"
 %main.main_contents
@@ -21,6 +21,6 @@
             =link_to "", class:"card-information" do
               支払い方法について
               %i.fas.fa-chevron-right.yajirushi
-  = render partial: "sidebar"
-= render partial: "footer"
-= render partial: "sell_btn"
+  = render partial: "users/sidebar"
+= render partial: "users/footer"
+= render partial: "users/sell_btn"

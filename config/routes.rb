@@ -38,6 +38,7 @@ end
     collection do
       post 'show', to: 'card#show'
       post 'delete', to: 'card#delete'
+      get  'card', to: 'card#card'
     end
   end
 
