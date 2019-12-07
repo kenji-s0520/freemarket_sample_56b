@@ -1,4 +1,4 @@
-= render :partial => "header_login"
+= render partial: "header_login"
 - breadcrumb :card
 = render "layouts/breadcrumbs"
 %main.main_contents
@@ -14,13 +14,13 @@
               クレジットカード一覧
           .card__main__button
             =link_to new_card_path ,class:"card-add" do
-              //氏家(変更)
+              -#  prefixに変更　氏家
               %i.far.fa-credit-card
               クレジットカードを追加する
           .card-main__inf
             =link_to "", class:"card-information" do
               支払い方法について
               %i.fas.fa-chevron-right.yajirushi
-  = render :partial => "sidebar"
-= render :partial => "footer"
-= render :partial => "sell_btn"
+  = render partial: "sidebar"
+= render partial: "footer"
+= render partial: "sell_btn"

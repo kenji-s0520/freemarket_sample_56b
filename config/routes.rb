@@ -26,4 +26,19 @@ Rails.application.routes.draw do
       post 'address_create'
     end
   end
+  resources :items, only: [:show, :new, :purchase, :buy]do
+    member do
+      get :purchase
+      post :buy
+      get :done
+    end
+end
+
+  resources :card, only: [:new, :show, :create] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
 end
