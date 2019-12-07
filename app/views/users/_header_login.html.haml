@@ -2,7 +2,8 @@
   .menu_bar
     .headup
       .mercarilogo 
-        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"
+        =link_to root_path do
+          =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo_img", alt: "Mercari"
       %form.form{action: ""}
         %input.search_form{name: "keyword", placeholder:  "何かお探しですか？", type: "text", value: ""}/
         %button.search_button
