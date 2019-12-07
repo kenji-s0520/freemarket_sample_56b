@@ -54,6 +54,15 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def purchase
+    @item = Item.find(params[:id])
+    @images = Image.where(item_id: @item)
+    # binding.pry
+    user_id = Seller.find_by(item_id: @item)
+    @user = User.find_by(id: user_id)
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
   end
     
  
@@ -64,7 +73,7 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-      Payjp.api_key= ENV['PAYJP_ACCESS_KEY']
+      Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
       Payjp::Charge.create(
       amount: @item.price, #支払金額
       customer: card.customer_id, #顧客ID
