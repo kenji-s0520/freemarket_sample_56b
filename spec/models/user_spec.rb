@@ -19,7 +19,6 @@ describe User do
       expect(user.errors[:nickname]).to include("can't be blank")
     end
 
-#emailカラム    
     
   #emailが入っていないと登録できない
     it "is invalid without a email" do

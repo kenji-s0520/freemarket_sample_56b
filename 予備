@@ -1,8 +1,0 @@
-<button id="facebook-login" class="btn-default btn-sns btn-sns-facebook">
-  <i class="icon-facebook"></i>
-  Facebookでログイン
-</button>
-<button class="btn-default btn-sns btn-sns-google" id="google-login">
-  <i class="fab fa-google"></i>
-  Googleでログイン
-</button>
