@@ -108,10 +108,10 @@ ActiveRecord::Schema.define(version: 2019_11_30_093249) do
     t.date "birthday"
     t.string "payment"
     t.string "phone_number"
-    t.string "name"
-    t.string "image"
     t.string "uid"
     t.string "provider"
+    t.string "name"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
