@@ -7,15 +7,6 @@
       %section.items-contents
         .items-contents__title
           %h2 商品の情報を入力
-
-          - if @items.errors.any?
-            -# #error_explanation
-            -#   %h2
-            -#     = @items.errors.count
-            -#     件のエラーがあります。
-            -#   %ul
-            -#     - @items.errors.full_messages.each do |msg|
-            -#       %li= msg
    
         = form_with(model: @items,local: true,url: items_path) do |f|
           .items-contents__image
@@ -37,7 +28,8 @@
               %h4 商品名
               %span 必須
               = f.text_field :name, class: "items-contents__item-info--name--input", placeholder: "商品名（必須 40文字まで)"
-              %p{class: 'error'}=@items.errors.messages[:name][0]
+              - if @items.errors.any?
+                %p{class: 'error'}=@items.errors.messages[:name][0]
 
             .items-contents__item-info--description
               %h4 商品の説明

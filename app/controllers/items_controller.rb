@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   #mishima ユーザー新規登録 deviseの機能を追加
   before_action :authenticate_user!,except: [:index,:show,:toppage]
-  before_action :set_item,except: [:new,:toppage,:show,:done]
+  before_action :set_item,except: [:new,:toppage,:create,:show,:done,:get_category_children,:get_category_grandchildren]
 
   def new
     #セレクトボックスの初期値設定
