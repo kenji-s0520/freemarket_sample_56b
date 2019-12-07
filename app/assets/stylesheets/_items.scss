@@ -377,16 +377,25 @@ background: #f5f5f5;
   height: 100%;
 }
 .items_box{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 20px;
+  display: grid;
+  float: left;
   width: 220px;
   margin: 0 20px 20px 0;
-  a{
-    display: block;
-    color: #333;
-  }
-  .items_box_photo img{
+  // a{
+  //   display: block;
+  //   color: #333;
+  // }
+  .items_box_photo{
     width: 220px;
     height: 220px;
   }
+}
+.items_box:after{
+  display: block;
+  content: '';
+  clear: both;
 }
 .items_box_body{
   background: #ffffff;
@@ -395,7 +404,8 @@ background: #f5f5f5;
 }
 .items_box_name {
   overflow: hidden;
-  position: relative;
+  display: inline-block;
+  text-align: left;
   font-weight: 400;
   height: 3em;
   line-height: 1.5;

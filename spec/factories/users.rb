@@ -11,7 +11,6 @@ FactoryBot.define do
     first_name_kana       {"マサキ"}
     birthday              {"1995-08-29"}
     phone_number          {"12345678912"}
-  
     
   end
 end

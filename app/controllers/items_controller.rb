@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
-  
+
   #mishima ユーザー新規登録 deviseの機能を追加
   before_action :authenticate_user!,except: [:index,:show,:toppage]
   before_action :set_item,except: [:new,:toppage,:show,:done]
-  
+
   def new
   end
 
@@ -15,6 +15,11 @@ class ItemsController < ApplicationController
   # sakaguchi トップページの商品をクリックしたら商品に詳細ページに飛ぶ記述を追加
   def show
     @item = Item.find(params[:id])
+    @images = Image.where(item_id: @item)
+    user_id = Seller.find_by(item_id: @item)
+    @user = User.find_by(id: user_id)
+    @items = Item.order("created_at DESC").limit(6)
+    # render "items/items"
   end
   
   # ujiie 購入機能に必要なアクションを追記

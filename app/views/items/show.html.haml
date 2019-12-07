@@ -1,37 +1,26 @@
 %main.main_contents_item
   = render partial: "users/header"
   .main_item
-    %h1.item_name Apple Watch
+    %h1.item_name 
+      = @item.name
     .item_main_content
       .item_photo
         .cp_cssslider
-          %li
-            %label{for: "photo1"}
-              = image_tag("/images/apple_watch.png", width: "300px")
-          %li
-            %label{for: "photo2"}
-              = image_tag("/images/apple_watch2.png", width: "300px")
-          %li
-            %label{for: "photo3"}
-              = image_tag("/images/apple_watch3.png", width: "300px")
-          %li
+          - @images.each do |img1|
+            %li
+              -# = image_tag(img1.image, width: "300px")
         .image-dots
-          %li
-            = link_to "index.html" do
-              = image_tag("/images/apple_watch.png", width: "60px")
-          %li
-            = link_to "index.html" do
-              = image_tag("/images/apple_watch2.png", width: "60px")
-          %li
-            = link_to "index.html" do
-              = image_tag("/images/apple_watch3.png", width: "60px")
-          %li
+          - @images.each do |img1|
+            %li
+              = link_to 'index.html' do
+                -# = image_tag(img1.image, width: "60px")
       %table.item_detail_table
         %tbody
           %tr
             %th 出品者
             %td
-              = link_to "ユーザー", "/users"
+              = link_to "/users" do
+                = @user.nickname
               %div
                 .item_user_ratings
                   %i.fas.fa-laugh
@@ -74,23 +63,16 @@
             %th 発送日の目安
             %td ３〜４日で発送
     .item_price_box.text_center
-      %span.item_price.bold ¥52,800
+      %span.item_price.bold
+        ¥
+        = @item.price
       %span.item_tax (税込)
       %span.item_shipping_fee 送料込み
     = link_to "購入画面に進む", purchase_item_path(items_id: @item), class: "item_buy_btn"
     -# id毎に変遷するように記載する氏家
     .item_description.f1
       %p.item_description_inner
-        新品未使用品：Apple社のAppleWatchになります。
-        
-        タイプ：AppleWatchシリーズ４４４ミリ
-        状態：新品未使用
-        使用感：なし
-        付属品：充電器
-        
-        AppleWatchシリーズの人気作になります。ベルトの付け替えによって、スーツスタイルやカジュアルな普段使いのどちらでも装着できて便利なデザインとなっています。
-        
-        新品未使用品にはなりますが、あくまで自宅保管されていたということをご理解のうえご購入いただければと思います。
+        = @item.description
     .item_button_container
       .item_button_left
         %button{name: "like!", type: "button", class: "like_botton"} ♡いいね！0
@@ -135,71 +117,22 @@
   .user_items_profile
     %section
       %h2.user_item_profile
-        = link_to "" "ユーザーさんのその他の出品"
+        = link_to "" do
+          = @user.nickname 
+          さんのその他の出品
       .items_box_content
         %section.items_box
-          = link_to "" do
-            %figure.items_box_photo
-              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
-            .items_box_body
-              %h3.items_box_name
-                モンスターハンターワールド アイスボーン 未開封です
-              .items_box_num
-                .items_box_price ¥4,000
-      .items_box_content
-        %section.items_box
-          = link_to "" do
-            %figure.items_box_photo
-              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
-            .items_box_body
-              %h3.items_box_name
-                モンスターハンターワールド アイスボーン 未開封です
-              .items_box_num
-                .items_box_price ¥4,000
-      .items_box_content
-        %section.items_box
-          = link_to "" do
-            %figure.items_box_photo
-              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
-            .items_box_body
-              %h3.items_box_name
-                モンスターハンターワールド アイスボーン 未開封です
-              .items_box_num
-                .items_box_price ¥4,000
-  .user_items_profile
-    %section
-      %h2.user_item_profile
-        = link_to "" "プレイステーション４の家庭用ソフトのその他の商品"
-      .items_box_content
-        %section.items_box
-          = link_to "" do
-            %figure.items_box_photo
-              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
-            .items_box_body
-              %h3.items_box_name
-                モンスターハンターワールド アイスボーン 未開封です
-              .items_box_num
-                .items_box_price ¥4,000
-      .items_box_content
-        %section.items_box
-          = link_to "" do
-            %figure.items_box_photo
-              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
-            .items_box_body
-              %h3.items_box_name
-                モンスターハンターワールド アイスボーン 未開封です
-              .items_box_num
-                .items_box_price ¥4,000
-      .items_box_content
-        %section.items_box
-          = link_to "" do
-            %figure.items_box_photo
-              = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
-            .items_box_body
-              %h3.items_box_name
-                モンスターハンターワールド アイスボーン 未開封です
-              .items_box_num
-                .items_box_price ¥4,000
+          - @items.each do |item|
+            = link_to item_path(item.id) do
+              %figure.items_box_photo
+                -# = image_tag item.images.image.url
+              .items_box_body
+                %figcaption
+                  %span.items_box_name
+                    = item.name
+                .items_box_price
+                  = "¥#{item.price.to_s(:price)}"
+  
   - breadcrumb :items
   = render "layouts/breadcrumbs_bottom"
   = render partial: "users/footer"
