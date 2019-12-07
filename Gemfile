@@ -90,5 +90,4 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'dropzonejs-rails'
 gem 'payjp'
 gem 'dotenv-rails'
-
 gem 'pry-rails'
