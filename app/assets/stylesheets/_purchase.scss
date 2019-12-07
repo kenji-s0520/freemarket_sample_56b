@@ -178,18 +178,11 @@
         }
       }
     }
-    .has-errortext{
-      margin: 8px 0 0;
-      line-height: 1.5;
-      color: #ea352d;
-      font-size: 14px;
-    }
-    .btn-red{
+    .pay_submit{
       margin: 8px 0 0;
       border: 1px solid #888;
-      background: #888;
-      color: #fff;
-      cursor: not-allowed;
+      background: #ea352d;
+      color:white;
       display: block;
       width: 100%;
       line-height: 48px;
@@ -201,6 +194,15 @@
       touch-action: manipulation;
       -webkit-appearance: button;
       overflow: visible;
+      border:none;
+    }
+    
+    // formボタンに対応するscssを追記　氏家
+    .has-errortext{
+      margin: 8px 0 0;
+      line-height: 1.5;
+      color: #ea352d;
+      font-size: 14px;
     }
   }
 }
@@ -267,6 +269,11 @@
     vertical-align: middle;
     color: #0099e8;
   }
+}
+
+.chongeb{
+  margin-left:250px;
+  color: #0099e8;
 }
 
 .change1{

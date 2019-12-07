@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_one :address
   has_many :item_comments
   has_many :trading_comments
-  has_many :cards
+  has_one :card
   
   #mishima ユーザー新規登録 カラムにvalidationを追加
   validates :nickname, presence: true
