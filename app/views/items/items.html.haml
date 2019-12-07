@@ -131,42 +131,6 @@
                     = item.name
                 .items_box_price
                   = "¥#{item.price.to_s(:price)}"
-  -# uezuki(after category_table)
-  -# .user_items_profile
-  -#   %section
-  -#     %h2.user_item_profile
-  -#       = link_to "" do
-  -#         = @categories.id.name 
-  -#         のその他の出品
-  -#    .items_box_content
-  -#       %section.items_box
-  -#         - @items.each do |item|
-  -#           = link_to item_path(item.id) do
-  -#             %figure.items_box_photo
-  -#               -# = image_tag item.images.image.url
-  -#             .items_box_body
-  -#               %figcaption
-  -#                 %span.items_box_name
-  -#                   = item.name
-  -#               .items_box_price
-  -#                 = "¥#{item.price.to_s(:price)}"
-
-
-  -# .user_items_profile
-  -#   %section
-  -#     %h2.user_item_profile
-  -#       = link_to "" "プレイステーション４の家庭用ソフトのその他の商品"
-  -#     .items_box_content
-  -#       %section.items_box
-  -#         = link_to "" do
-  -#           %figure.items_box_photo
-  -#             = image_tag '/images/game.jpeg', alt: 'モンスターハンターワールド アイスボーン 未開封です', height: '', width: '', class: 'lazyloaded'
-  -#           .items_box_body
-  -#             %h3.items_box_name
-  -#               モンスターハンターワールド アイスボーン 未開封です
-  -#             .items_box_num
-  -#               .items_box_price ¥4,000
-  
   
   - breadcrumb :items
   = render "layouts/breadcrumbs_bottom"
