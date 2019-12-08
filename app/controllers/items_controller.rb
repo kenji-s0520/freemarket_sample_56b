@@ -46,10 +46,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = Image.where(item_id: @item)
-    user_id = Seller.find_by(item_id: @item)
-    @user = User.find_by(id: user_id)
+    @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
-    # render "items/items"
   end
   
   # ujiie 購入機能に必要なアクションを追記
@@ -82,7 +80,7 @@ end
   private
   
   def item_params
-    params.require(:item).permit(:name,:description,:category_id,:size,:brand_id,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image])
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand_id,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
   end
 
   def set_item
