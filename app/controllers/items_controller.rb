@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
+    
   end
   
   # ujiie 購入機能に必要なアクションを追記
@@ -79,11 +80,18 @@ class ItemsController < ApplicationController
       customer: card.customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
+      @item.buyer_id = current_user.id
+      @item.save
   redirect_to action: 'done' #完了画面に移動
   end
 end
 
   def done
+    # @image = Image.where(item_id: @item.id).limit(1)
+    
+  end
+
+  def edit
   end
 
   private

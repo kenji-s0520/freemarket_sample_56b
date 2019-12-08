@@ -14,7 +14,7 @@
             %li
               = link_to 'index.html' do
                 = image_tag(@item.images[0].image.url)
-      - if @item.buyer.present?
+      - if @item.buyer_id.present?
         .sold-item
         .sold2
           %p SOLD
@@ -25,7 +25,7 @@
             %td
               = link_to "/users" do
                 -# = @user.nickname
-                = @item.seller.nickname
+                -# = @item.seller_id.nickname
               %div
                 .item_user_ratings
                   %i.fas.fa-laugh
@@ -73,10 +73,11 @@
         = @item.price
       %span.item_tax (税込)
       %span.item_shipping_fee 送料込み
-    - if @item.buyer.present?
+    - if @item.buyer_id.present?
       .sold-out-btn
         売り切れました
-    - elsif @item.seller == current_user
+    - elsif @item.seller_id == current_user.id
+      
       = link_to "商品編集画面へ進む", edit_item_path(items_id: @item), class: "item_buy_btn"
     - else
       = link_to "購入画面に進む", purchase_item_path(items_id: @item), class: "item_buy_btn"
