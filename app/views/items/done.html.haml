@@ -15,10 +15,12 @@
         .single-main__main2__kannryou1
           購入が完了しました
         .single-main__main2__kannryou2
-          =image_tag "",width:"200px",height:"200px"
+          = image_tag @item.images[0].image.url,width:"200px",height:"200px"
         .single-main__main2__kannryou3
-          商品名
+          =@item.name
       .single-main__main3
         .single-main__main3__souryou1
-          金額
+          %span.item_price.bold
+            ¥
+            = @item.price
           送料込み
