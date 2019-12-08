@@ -49,8 +49,7 @@ class ItemsController < ApplicationController
   def show
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
-    @items = Item.order("created_at DESC").limit(6)
-
+    @items = Item.where(seller_id:@user.id).order("created_at DESC").limit(6)
     @category = Category.find(@item.category_id)
   end
   
