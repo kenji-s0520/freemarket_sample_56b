@@ -6,7 +6,7 @@ FactoryBot.define do
     size        {"小"}
     status       {"生まれたて"}
     category_id  {"1"}
-    brand_id     {"2"}
+    brand        {"その他"}
     ship_method  {"a"}
     ship_person  {"大"}
     ship_area    {"29"}
