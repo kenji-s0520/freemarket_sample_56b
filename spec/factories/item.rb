@@ -4,7 +4,7 @@
 #     name              {"スタンスミス"}
 #     description       {"黒の25.5cmで、アディダススタンスミスモデルです！ほとんど未使用です！"}
 #     category_id       {"249"}
-#     brand_id          {"アディダス"}
+#     brand             {"アディダス"}
 #     size              {"別途記載"}
 #     status            {"未使用に近い"}
 #     ship_person       {"着払い(購入者負担)"}

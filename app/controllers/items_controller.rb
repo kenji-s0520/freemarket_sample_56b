@@ -80,7 +80,7 @@ end
   private
   
   def item_params
-    params.require(:item).permit(:name,:description,:category_id,:size,:brand_id,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
   end
 
   def set_item
