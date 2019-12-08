@@ -1,14 +1,16 @@
 class Item < ApplicationRecord
-  validates :name, presence: true, length: { maximum: 40 }
-  validates :description, presence: true, length: { maximum: 1000 }
-  validates :category_id, presence: true
-  validates :size, presence: true
-  validates :status, presence: true
-  validates :ship_person, presence: true
-  validates :ship_method, presence: true
-  validates :ship_area, presence: true
-  validates :ship_days, presence: true
-  validates :price, presence: true
+  # belongs_to :user
+  # belongs_to :seller
+  # belongs_to :buyer
+  # belongs_to :category
+  # belongs_to :brand
+  # has_many :likes
+  # has_many :trading_comments
+  # has_many :item_comments
+   has_many :images, dependent: :destroy
+   accepts_nested_attributes_for :images
+   belongs_to :seller, class_name: "User"
+   belongs_to :buyer, class_name: "User"
   
   has_many :images
   accepts_nested_attributes_for :images

@@ -493,25 +493,23 @@ display: inline;
   z-index: 3;
 }
 
-.dialog-header {
-  height: 80px;
-  margin: auto;
-  z-index: 3;
-  & h3 {
-    font-weight: bold;
-    text-align: center;
-    margin: 33px auto;
-    padding: auto;
-    line-height: 1.5;
-    font-size:1.2em;
-  }
+ .sold-item{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 100px 0 0;
+  border-color: #ea352d transparent transparent transparent;
+  z-index: 2;
+  position: absolute;
+  margin: 8px 0 0 0
 }
-
-.dialog-body {
-  padding: 40px;
-  height: 207px;
-  line-height: 1.5;
-  border-top: 1px solid #eee;
+.sold2 p{
+  color:white;
+  font-weight: bold;
+  font-size: 20px;
+  bottom: 2515px;
+  right: 970px;
+  transform: rotate(-45deg);
   z-index: 3;
 }
 
