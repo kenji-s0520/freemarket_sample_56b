@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   #mishima ユーザー新規登録 deviseの機能を追加
-  before_action :authenticate_user!,except: [:index,:show,:toppage]
+  before_action :authenticate_user!,except: [:index,:toppage]
   before_action :set_item,except: [:new,:toppage,:create,:get_category_children,:get_category_grandchildren]
 
   def new
@@ -44,11 +44,9 @@ class ItemsController < ApplicationController
   end
 
   def index
-    # @items = Item.new
   end
 
   def show
-    # @item = Item.find(params[:id])
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
@@ -94,7 +92,6 @@ end
 end
 
   def done
-  
   end
 
   private
