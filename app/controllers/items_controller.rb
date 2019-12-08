@@ -83,6 +83,8 @@ class ItemsController < ApplicationController
 end
 
   def done
+    @item = Item.find(params[:id])
+    @images = Image.where(item_id: @item.id).limit(1)
   end
 
   private

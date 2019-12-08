@@ -40,9 +40,20 @@ a{
 }
 
 .single-main__main3 {
-
+  width:1440px;
+  height:128px;
+  box-sizing: border-box;
+  padding:100px;
   &__souryou1 {
-
+    span{
+      color: #333;}
+    .item_price{
+      margin: 0 16px 0 0;
+      font-size: 50px;
+    }
+    .bold{
+      font-weight: 600;
+    }
     
   }
 }
