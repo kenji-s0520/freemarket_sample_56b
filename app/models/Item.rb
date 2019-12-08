@@ -9,6 +9,9 @@ class Item < ApplicationRecord
   validates :ship_area, presence: true
   validates :ship_days, presence: true
   validates :price, presence: true
+
+   has_many :images, dependent: :destroy
+   accepts_nested_attributes_for :images
   
   has_many :images
   accepts_nested_attributes_for :images

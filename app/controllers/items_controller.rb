@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.new
+    # @items = Item.new
   end
 
   def show
@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
+
     @category = Category.find(@item.category_id)
   end
   
@@ -59,6 +60,14 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def purchase
+    @item = Item.find(params[:id])
+    @images = Image.where(item_id: @item)
+    user_id = Seller.find_by(item_id: @item)
+    @user = User.find_by(id: user_id)
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
   end
     
  
@@ -69,18 +78,22 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-      # @item.update(buyer_id:curretnt_user.id) #mishima itemのbuyer_idに購入者のuser_idを保存
-      Payjp.api_key= ENV['PAYJP_ACCESS_KEY']
+
+      Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
       Payjp::Charge.create(
       amount: @item.price, #支払金額
       customer: card.customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
+      @item.buyer_id = current_user.id
+      @item.save
   redirect_to action: 'done' #完了画面に移動
   end
 end
 
   def done
+    @item = Item.find(params[:id])
+    @images = Image.where(item_id: @item.id).limit(1)
   end
 
   private
