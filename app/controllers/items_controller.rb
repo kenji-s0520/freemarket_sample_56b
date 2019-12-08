@@ -11,6 +11,10 @@ class ItemsController < ApplicationController
     @items = Item.new
     @items.images.build
     @prefectures = Prefecture.all
+    sell1=Item.last(1)
+    sell1.each do |sell|
+    @sell = sell.id+1
+    end
   end
 
   # sakaguchi トップページにDBからデータを取り出す記述を追加
@@ -48,6 +52,8 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
+    @category = Category.find(@item.category_id)
+    # @brand = Brand.find(@item.bran_id).name if @item.brand_id?
   end
   
   # ujiie 購入機能に必要なアクションを追記
