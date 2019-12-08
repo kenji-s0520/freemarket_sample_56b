@@ -144,8 +144,8 @@
                 %h3 出品が完了しました
                 .dialog-body
                   あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
-                  =link_to '続けて出品する', 'http://3.114.220.76/items/new', class: "dialog-sell-btn"
-                  =link_to '商品ページへ行ってシェアする',item_path(params[:id]),class: "dialog-sell-link"
+                  =link_to '続けて出品する', 'items/new', class: "dialog-sell-btn"
+                  =link_to '商品ページへ行ってシェアする',item_path(Item.last(1)),class: "dialog-sell-link"
 
             #fadeLayer
 
