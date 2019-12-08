@@ -1,4 +1,26 @@
-.done
- 購入ありがとうございます。
- %br
- = link_to "トップページに戻る",root_path
+%body
+  .single-container_login
+    %header.single-header
+      %h1#logomer
+        .registration
+          =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994" ,alt:"mercari"),root_path
+    %main.single-main
+      .single-main__main1
+        .single-main__main1__hassou1
+          %i.far.fa-clock
+          発送をお待ちください
+        .single-main__main1__hassou2
+          出品者からの発送通知をお待ちください
+      .single-main__main2
+        .single-main__main2__kannryou1
+          購入が完了しました
+        .single-main__main2__kannryou2
+          = image_tag @item.images[0].image.url,width:"200px",height:"200px"
+        .single-main__main2__kannryou3
+          =@item.name
+      .single-main__main3
+        .single-main__main3__souryou1
+          %span.item_price.bold
+            ¥
+            = @item.price
+          送料込み
