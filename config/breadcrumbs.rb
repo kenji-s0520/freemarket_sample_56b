@@ -40,7 +40,7 @@ end
 
 
 # 商品詳細の下段に表示
-crumb :items do |item|
-  link "item.name", item_path
-  parent :root
-end
+# crumb :items do |item|
+#   link "#{item.name[0].item.url}", item_path
+#   parent :root
+# end

@@ -49,7 +49,7 @@
             - @items.each do |item|
               = link_to item_path(item.id) do
                 %figure.style_card
-                  - unless item.present?
+                  - if item.buyer.present?
                     .item-sold
                     .sold
                       %p SOLD
