@@ -78,7 +78,6 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-
       Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
       Payjp::Charge.create(
       amount: @item.price, #支払金額
@@ -92,8 +91,7 @@ class ItemsController < ApplicationController
 end
 
   def done
-    @item = Item.find(params[:id])
-    @images = Image.where(item_id: @item.id).limit(1)
+  
   end
 
   private
