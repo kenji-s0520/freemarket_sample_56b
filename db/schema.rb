@@ -75,10 +75,9 @@ ActiveRecord::Schema.define(version: 2019_12_08_072200) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ship_days"
-    t.integer "brand_id"
+    t.string "brand"
     t.bigint "buyer_id"
     t.bigint "seller_id"
-    t.string "brand"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
