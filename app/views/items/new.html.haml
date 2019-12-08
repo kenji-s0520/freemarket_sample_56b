@@ -21,10 +21,8 @@
                     %br
                     またはクリックしてファイルをアップロード
                   = img.file_field :image, class:"items-contents__image--drop-box--file",id:"img_click"
-                  - if @item.image.present?
-                    = image_tag @item.image, id: :img_prv
                   
-                  
+
 
           .items-contents__item-info
             .items-contents__item-info--name
