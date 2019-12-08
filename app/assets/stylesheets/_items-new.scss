@@ -504,10 +504,11 @@ display: inline;
   margin: 8px 0 0 0
 }
 .sold2 p{
+  position: absolute;
   color:white;
   font-weight: bold;
   font-size: 20px;
-  bottom: 2515px;
+  bottom: 2130px;
   right: 970px;
   transform: rotate(-45deg);
   z-index: 3;
