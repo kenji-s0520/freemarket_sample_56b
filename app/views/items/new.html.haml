@@ -57,8 +57,8 @@
                 %h4 ブランド
                 %span.nini 任意
                 %i.sell.fas.fa-chevron-down
-                = f.select :brand_id,[['シャネル',1],['ナイキ',2],['ルイ　ヴィトン',3],['シュプリーム',4],['アディダス',5],['その他',6]],{prompt: "---"}, {class: "items-contents__item-info--name--input", placeholder: "例）シャネル",}
-                %p{class: 'error'}=@items.errors.messages[:brand_id][0]
+                = f.select :brand,['シャネル','ナイキ','ルイ　ヴィトン','シュプリーム','アディダス','その他'],{prompt: "---"}, {class: "items-contents__item-info--name--input", placeholder: "例）シャネル",}
+                %p{class: 'error'}=@items.errors.messages[:brand][0]
 
               .items-contents__item-about--box--condition
                 %h4 商品の状態
