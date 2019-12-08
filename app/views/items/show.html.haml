@@ -34,34 +34,46 @@
           %tr
             %th カテゴリー
             %td
-              = link_to "", class: "" do
-                %p メンズ
-              = link_to "", class: "icon_right" do
-                %i.fas.fa-chevron-right.item
-                  %span 時計
-              = link_to "", class: "icon_right" do
-                %i.fas.fa-chevron-right.item
-                  %span 腕時計（ブランド）
+              .cate1
+                = link_to "", class: "" do
+                  = @category.root.name
+              .cate2
+                = link_to "", class: "icon_right" do
+                  %i.fas.fa-chevron-right.item
+                  = @category.parent.name
+                  %span 
+              .cate3
+                = link_to "", class: "icon_right" do
+                  %i.fas.fa-chevron-right.item
+                  = @category.name
+                  %span
           %tr
             %th ブランド
             %td
-              = link_to "Apple", ""
+              = link_to "",class:""
+              -if @item.brand.present?
+                =@item.brand
           %tr
             %th 商品の状態
-            %td 新品未使用
+            %td 
+              =@item.status
           %tr
             %th 配送料の負担
-            %td 送料込み（出品者負担）
+            %td 
+              =@item.ship_person
           %tr
             %th 配送の方法
-            %td 佐川急便
+            %td 
+              =@item.ship_method
           %tr
             %th 配送元地域
             %td
-              = link_to "都道府県", ""
+              = link_to "" do
+                =@item.ship_area
           %tr
             %th 発送日の目安
-            %td ３〜４日で発送
+            %td 
+              =@item.ship_days
     .item_price_box.text_center
       %span.item_price.bold
         ¥
