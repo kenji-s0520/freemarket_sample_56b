@@ -9,3 +9,8 @@ one: {}
 #
 two: {}
 # column: value
+one:
+  image: MyString
+
+two:
+  image: MyString
