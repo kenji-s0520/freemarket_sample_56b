@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   #mishima ユーザー新規登録 deviseの機能を追加
   before_action :authenticate_user!,except: [:index,:show,:toppage]
-  before_action :set_item,except: [:new,:toppage,:create,:show,:done,:get_category_children,:get_category_grandchildren]
+  before_action :set_item,except: [:new,:toppage,:create,:get_category_children,:get_category_grandchildren]
 
   def new
     #セレクトボックスの初期値設定  
@@ -53,7 +53,6 @@ class ItemsController < ApplicationController
     @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
     @category = Category.find(@item.category_id)
-    # @brand = Brand.find(@item.bran_id).name if @item.brand_id?
   end
   
   # ujiie 購入機能に必要なアクションを追記
@@ -70,7 +69,7 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-      @item.update(buyer_id:curretnt_user.id) #mishima itemのbuyer_idに購入者のuser_idを保存
+      # @item.update(buyer_id:curretnt_user.id) #mishima itemのbuyer_idに購入者のuser_idを保存
       Payjp.api_key= ENV['PAYJP_ACCESS_KEY']
       Payjp::Charge.create(
       amount: @item.price, #支払金額
