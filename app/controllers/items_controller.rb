@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    # @item = Item.find(params[:id])
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
@@ -70,6 +70,7 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
+      @item.update(buyer_id:curretnt_user.id) #mishima itemのbuyer_idに購入者のuser_idを保存
       Payjp.api_key= ENV['PAYJP_ACCESS_KEY']
       Payjp::Charge.create(
       amount: @item.price, #支払金額
