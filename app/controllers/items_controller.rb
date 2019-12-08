@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.new
+    # @items = Item.new
   end
 
   def show
@@ -56,6 +56,7 @@ class ItemsController < ApplicationController
   def purchase
     @item = Item.find(params[:id])
     @images = Image.where(item_id: @item)
+    # binding.pry
     user_id = Seller.find_by(item_id: @item)
     @user = User.find_by(id: user_id)
     card = Card.where(user_id: current_user.id).first
@@ -83,8 +84,6 @@ class ItemsController < ApplicationController
 end
 
   def done
-    @item = Item.find(params[:id])
-    @images = Image.where(item_id: @item.id).limit(1)
   end
 
   private
