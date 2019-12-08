@@ -1,4 +1,4 @@
 class Seller < ApplicationRecord
-  belongs_to :user
-  belongs_to :item, optional: true
+  # belongs_to :user
+  # belongs_to :item, optional: true
 end

@@ -7,45 +7,66 @@
       %section.items-contents
         .items-contents__title
           %h2 商品の情報を入力
-        %form
+   
+        = form_with(model: @items,local: true,url: items_path) do |f|
           .items-contents__image
             %h3 出品画像
             %span 必須
             %p 最大10枚までアップロードできます
-            .items-contents__image--drop-box
-              %input.items-contents__image--drop-box--file{multiple: "multiple",name: "image1",style: "display: none;",type: "file"}/
-              %pre.items-contents__image--drop-box--click
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
+            =f.fields_for :images do |img|
+              .items-contents__image--drop-box  
+                = img.label :url, for: "img_click" do
+                  .items-contents__image--drop-box--click
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+                  = img.file_field :image, class:"items-contents__image--drop-box--file",id:"img_click"
+                  
 
           .items-contents__item-info
             .items-contents__item-info--name
               %h4 商品名
               %span 必須
-              %div
-                %input.items-contents__item-info--name--input{placeholder: "商品名（必須 40文字まで)",value: ""}/
+              = f.text_field :name, class: "items-contents__item-info--name--input", placeholder: "商品名（必須 40文字まで)"
+              - if @items.errors.any?
+                %p{class: 'error'}=@items.errors.messages[:name][0]
+
             .items-contents__item-info--description
               %h4 商品の説明
               %span 必須
-              %div
-                %textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "explanation"}
+              = f.text_area :description, class: "explanation", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows:5
+              %p{class: 'error'}=@items.errors.messages[:description][0]
           .items-contents__item-about.clearfix
             .items-contents__item-about--head 商品の詳細
             .items-contents__item-about--box
               .items-contents__item-about--box--category
                 %h4 カテゴリー
                 %span 必須
+                %i.sell.fas.fa-chevron-down 
+                = f.select :none , @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
+                %p{class: 'error'}=@items.errors.messages[:categori_id][0]
+                
+              .items-contents__item-about--box--size
+                %h4 サイズ
+                %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :category2_id, Category2.all, :id, :name, prompt: "---"
+                = f.select :size, ['XXS以下','XS(SS)','S','M','L','XL(LL)','２XL(3L)','3XL(4L)','4XL(5L)以上','FREE SIZE','なし','別途記載'],prompt: "---"
+                %p{class: 'error'}=@items.errors.messages[:size][0]
               
+              .items-contents__item-about--box--brand
+                %h4 ブランド
+                %span.nini 任意
+                %i.sell.fas.fa-chevron-down
+                = f.select :brand,['シャネル','ナイキ','ルイ　ヴィトン','シュプリーム','アディダス','その他'],{prompt: "---"}, {class: "items-contents__item-info--name--input", placeholder: "例）シャネル",}
+                %p{class: 'error'}=@items.errors.messages[:brand][0]
+
               .items-contents__item-about--box--condition
                 %h4 商品の状態
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :state_of_items_id, State_of_items.all, :id, :name, prompt: "---"
-        
+                = f.select :status, ['新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い'],prompt: "---"
+                %p{class: 'error'}=@items.errors.messages[:status][0]
+
           .items-contents__shipping.clearfix
             %h3.items-contents__shipping--head 配送について
             =link_to '?', "/jp/help_center/article/68/", {class: "form-question"}
@@ -54,22 +75,30 @@
                 %h4 配送料の負担
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :shipping_method_id, Shipping_method.all, :id, :name, prompt: "---"
+                = f.select :ship_person, ['送料込み(出品者負担)','着払い(購入者負担)'],{prompt: "---"},{class: 'items-shipping_charge'}
+                %p{class: 'error'}=@items.errors.messages[:ship_person][0]
+
+              .items-contents__shipping--box--method
+                %h4 配送の方法
+                %span 必須
+                %i.sell.fas.fa-chevron-down
+                = f.select :ship_method, [],{prompt: "---"}, {class: 'add-items-shipping_method'}
+                %p{class: 'error'}=@items.errors.messages[:ship_method][0]
 
               .items-contents__shipping--box--ship-from-region
                 %h4 発送元の地域
                 %span 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
+                = f.select :ship_area, @prefectures.map{|t| [t.name]}, prompt:"---"
+                %p{class: 'error'}=@items.errors.messages[:ship_area][0]
+                
 
               .items-contents__shipping--box--date
                 %h4 発送までの日数
                 %span.form-require 必須
                 %i.sell.fas.fa-chevron-down
-                = form_for '' do |f|
-                  = f.collection_select :the_number_of_the_days_to_ship_id, The_number_of_the_days_to_ship.all, :id, :name, prompt: "---"
+                = f.select :ship_days,["1~2日で発送","2~3日で発送","4~7日で発送"],prompt: "---"
+                %p{class: 'error'}=@items.errors.messages[:ship_days][0]
 
           .items-contents__price.clearfix
             %h3.items-contents__price--head 販売価格(300〜9,999,999)
@@ -83,8 +112,9 @@
                       %span.need_icon 必須 
                     .items-contents__price--box--list_top--right
                       ¥
-                      %div.items-contents__price--box--list_top--right--space
-                        %input.items-contents__price--box--list_top--right--input{placeholder: "例）300",value: ""}/
+                      .items-contents__price--box--list_top--right--space
+                        = f.text_field :price, class: "items-contents__price--box--list_top--right--input", placeholder:"例）300"
+                      %p{class: 'error'}=@items.errors.messages[:ship_days][0]
                 %li.items-contents__price--box--list_center.clearfix
                   .items-contents__price--box--list_center--text 販売手数料（10%）
                   .items-contents__price--box--list_center--sales -
@@ -106,9 +136,18 @@
             また、出品をもちまして
             =link_to '加盟店規約', ''
             に同意したことになります。
-
-            %button.items-contents__submit--go-btn{type: "submit"} 出品する
+            = f.submit("出品する", class: "items-contents__submit--go-btn", id:"opener")
             .items-contents__submit--back-btn もどる
+            
+            #dialog{style: "display:none;"} 
+              .dialog-header
+                %h3 出品が完了しました
+                .dialog-body
+                  あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+                  =link_to '続けて出品する', 'http://localhost:3000/items/new', class: "dialog-sell-btn"
+                  =link_to '商品ページへ行ってシェアする', 'http://www.google.co.jp/',class: "dialog-sell-link"
+
+            #fadeLayer
 
     %footer.confirm-info__footer
       %nav

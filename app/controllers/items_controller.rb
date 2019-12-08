@@ -2,9 +2,15 @@ class ItemsController < ApplicationController
 
   #mishima ユーザー新規登録 deviseの機能を追加
   before_action :authenticate_user!,except: [:index,:show,:toppage]
-  before_action :set_item,except: [:new,:toppage,:show,:done]
+  before_action :set_item,except: [:new,:toppage,:create,:show,:done,:get_category_children,:get_category_grandchildren]
 
   def new
+    #セレクトボックスの初期値設定  
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    @category_parent_array.unshift("---")
+    @items = Item.new
+    @items.images.build
+    @prefectures = Prefecture.all
   end
 
   # sakaguchi トップページにDBからデータを取り出す記述を追加
@@ -12,15 +18,36 @@ class ItemsController < ApplicationController
     @items = Item.order("created_at DESC").limit(10)
   end
 
-  # sakaguchi トップページの商品をクリックしたら商品に詳細ページに飛ぶ記述を追加
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+  #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  def create
+    @items = Item.new(item_params)
+    if @items.save  
+    else
+      @prefectures = Prefecture.all
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+      @category_parent_array.unshift("---")
+      render :new
+    end
+  end
+
+  def index
+    # @items = Item.new
+  end
+
   def show
     @item = Item.find(params[:id])
-    @images = Image.where(item_id: @item.id)
-    user_id = Seller.find_by(item_id: @item)
-    @user = User.find_by(id: user_id)
-    
+    @images = Image.where(item_id: @item)
+    @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
-    # render "items/items"
   end
   
   # ujiie 購入機能に必要なアクションを追記
@@ -36,7 +63,8 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
   end
-  
+    
+ 
 
   def buy
     card = current_user.card
@@ -60,11 +88,12 @@ end
   end
 
   private
+  
+  def item_params
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
+  end
 
   def set_item
     @item = Item.find(params[:id])
   end
-
-  def create    
-  end    
 end

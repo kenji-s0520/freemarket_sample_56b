@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users   #mishima  新規登録  deviseを導入
+  #yamashita sns認証追記
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   resources :users, only: [:index, :edit]
@@ -11,8 +12,6 @@ Rails.application.routes.draw do
   get '/users/logout' => 'users#log_out'
   get 'users/login' => 'users/login'
   get '/items/buy' => 'items#purchase'
-  resources :items, only: [:show, :new, :create]
-    resources :item
   
   #mishima ユーザー新規登録 ページのルーティングを記述
   resources :signup do  
@@ -24,6 +23,15 @@ Rails.application.routes.draw do
       get 'end'
       get 'done'
       post 'address_create'
+    end
+  get '/users/buy' => 'items#purchase'
+  end
+
+  #yoshikawa 商品出品ページのルーティングを記述
+  resources :items, only: [:show, :new, :create] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
   resources :items, only: [:show, :new, :purchase, :buy]do
