@@ -17,6 +17,31 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    @category_parent_array.unshift("---")
+    @items = Item.new
+    @items.images.build
+    @prefectures = Prefecture.all
+    sell1=Item.last(1)
+    @category = Category.find(@item.category_id)
+    sell1.each do |sell|
+    @sell = sell.id+1
+    end
+  end
+
+  def update
+    binding.pry
+    if @item.update(item_params)
+    else
+      @prefectures = Prefecture.all
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+      @category_parent_array.unshift("---")
+      render :edit
+    end
+  end
+  
+
   # sakaguchi トップページにDBからデータを取り出す記述を追加
   def toppage
     @items = Item.order("created_at DESC").limit(10)
@@ -68,8 +93,7 @@ class ItemsController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     else
     end
-end
-    
+  end
  
 
   def buy

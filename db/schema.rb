@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2019_12_08_091440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ship_days"
-    t.integer "brand_id"
     t.string "brand"
     t.integer "buyer_id"
     t.integer "seller_id"

@@ -8,7 +8,7 @@
         .items-contents__title
           %h2 商品の情報を入力
    
-        = form_with(model: @items,local: true,url: items_path) do |f|
+        = form_with(model: @item,local: true,url: item_path,method: :put) do |f|
           .items-contents__image
             %h3 出品画像
             %span 必須
