@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @item.update(item_params)
     else
       @prefectures = Prefecture.all
@@ -58,7 +57,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @items = Item.new(item_params)
     if @items.save  
     else
