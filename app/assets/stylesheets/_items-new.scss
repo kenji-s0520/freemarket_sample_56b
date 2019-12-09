@@ -490,7 +490,7 @@ display: inline;
   border-width: 100px 100px 0 0;
   border-color: #ea352d transparent transparent transparent;
   z-index: 2;
-  position: absolute;
+  position: relative;
   margin: 8px 0 0 0
 }
 .sold2 p{
@@ -564,4 +564,14 @@ display: inline;
 .error {
   color: $red;
   font-size: 1em !important;
+}
+
+.cp_cssslider {
+  position:relative;
+  bottom:8px;
+}
+
+.image-dots {
+  position:relative;
+  bottom:8px;
 }
