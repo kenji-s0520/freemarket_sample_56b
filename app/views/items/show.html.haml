@@ -8,12 +8,12 @@
         .cp_cssslider
           - @images.each do |img1|
             %li
-              = image_tag(@item.images[0].image.url)
+              = image_tag(img1.image.url)
         .image-dots
           - @images.each do |img1|
             %li
               = link_to 'index.html' do
-                = image_tag(@item.images[0].image.url)
+                = image_tag(img1.image.url)
       - if @item.buyer_id.present?
         .sold-item
         .sold2
@@ -145,8 +145,7 @@
     %section
       %h2.user_item_profile
         = link_to "" do
-          -# = @user.nickname 
-          = User.find("1").nickname
+          = @user.nickname
           さんのその他の出品
       .items_box_content
         %section.items_box

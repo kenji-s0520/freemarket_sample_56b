@@ -2,7 +2,7 @@
 .singlecontainer
   %header.singleheader
     %h1
-      = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2317089198", class: "mercarilogo_buy", width: "185px"),"https://www.mercari.com/jp/"
+      = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2317089198", class: "mercarilogo_buy", width: "185px"),root_path
   .main-base
     .single-head
       %h2.lsingle-head
@@ -12,12 +12,10 @@
           %h3.bitem-image
             = image_tag(@item.images[0].image.url, width: "64px")
           %p.bitem-name
-            -# Apple Watch
             = @item.name
           .buy-forma
             -# formを削除@氏家
             %p.buy-pricea
-              -# ¥2,700
               = "¥#{@item.price}"
               %span.shipping-fee
                 送料込み
@@ -31,45 +29,57 @@
                   支払い金額
                 .buy-price-cella
                   %span.priceb
-                    -# ¥52,800
-                  = "¥#{@item.price}"
+                    = "¥#{@item.price}"
             %p.has-errortext
-              配送先と支払い方法の入力を完了してください。
-            = form_tag buy_item_path(@item), method: :post do
-              = submit_tag '購入する',class:"pay_submit"
+              -if current_user.address.present? && current_user.card.present?           
+                = form_tag buy_item_path(@item), method: :post do
+                  = submit_tag '購入する',class:"pay_submit"
+              -else
+                配送先と支払い方法の入力を完了してください。
       .buy-content-userinfo
         .buy-content-innerspace
           %h3.adres
             配送先
           %address.buy-userinfo-text
-            -# 〒520-○○○○
-            = current_user.address.code
-            %br
-            -# 滋賀県大津市〇〇町〇ー〇
-            = current_user.address.prefectures
-            = current_user.address.city_town
-            = current_user.address.address_number
-            %br
-            -# 川端 康成
-            = current_user.nickname
-          %ul.buy-userinfo-fix
-            = link_to "", class: "userinfo-fix" do
-              %span.changea
-                変更する
+            -if current_user.address.present?  
+              = current_user.address.code
+              %br
+              = current_user.address.prefectures
+              = current_user.address.city_town
+              = current_user.address.address_number 
+              %br
+              = current_user.last_name
+              = current_user.first_name
+              = link_to "", class: "userinfo-fix" do
+                %span.changea
+                  変更する
+                %i.fas.fa-chevron-right.change1
+            - else
+              %figure.cardbrand
+                未登録
+              = link_to address_signup_index_path, class: "userinfo-fix" do
+                %span.changea
+                  登録する
                 %i.fas.fa-chevron-right.change1
       .buy-content-userinfo-b
         .buy-content-innerspace
           %h3.payb
             支払い方法
           %p.userinfo-card
-            = "**** **** **** " + @default_card_information.last4
-            %br
-            11/22
-          %figure.cardbrand
-          - if params['payjp-token'].blank?
-            = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?210491352", width: "49", height: "15", alt: "visa")
-          = link_to "変更する", delete_card_index_path, class: "changeb"
-          %i.fas.fa-chevron-right.change1
+            -if current_user.card.present?
+              = "**** **** **** " + @default_card_information.last4
+              %br
+              - if params['payjp-token'].blank?
+                %figure.cardbrand
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?210491352", width: "49", height: "15", alt: "visa")
+              = link_to "変更する", delete_card_index_path, class: "changeb"
+              %i.fas.fa-chevron-right.change1
+            - else
+              %br
+              %figure.cardbrand
+                未登録
+              = link_to "登録する", card_information_signup_index_path, class: "changeb"
+              %i.fas.fa-chevron-right.change1 
   .singlefooter
     %ul.clear-fixa
       %li.policy1

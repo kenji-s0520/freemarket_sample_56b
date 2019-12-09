@@ -50,8 +50,7 @@ class ItemsController < ApplicationController
   def show
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
-    @items = Item.order("created_at DESC").limit(6)
-
+    @items = Item.where(seller_id:@user.id).order("created_at DESC").limit(6)
     @category = Category.find(@item.category_id)
   end
   
@@ -64,10 +63,13 @@ class ItemsController < ApplicationController
     user_id = Seller.find_by(item_id: @item)
     @user = User.find_by(id: user_id)
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
+    if card.present?
+      Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
-  end
+    else
+    end
+end
     
  
 
@@ -77,7 +79,6 @@ class ItemsController < ApplicationController
       redirect_to controller: "card", action: "new"
       # カード情報が登録されていなかったら登録画面に遷移する
     else
-
       Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
       Payjp::Charge.create(
       amount: @item.price, #支払金額
@@ -91,8 +92,6 @@ class ItemsController < ApplicationController
 end
 
   def done
-    @item = Item.find(params[:id])
-    @images = Image.where(item_id: @item.id).limit(1)
   end
 
   # sakaguchi 商品の削除機能
