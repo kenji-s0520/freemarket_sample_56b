@@ -88,7 +88,7 @@
       .sold-out-btn
         売り切れました
 
-    -# sakaguchi 出品者が詳細ページにいくと表示されるビューを変更
+      -# sakaguchi 出品者が詳細ページにいくと表示されるビューを変更
     - elsif user_signed_in? && @item.seller_id == current_user.id
       
       = link_to "商品編集画面へ進む", edit_item_path(items_id: @item), class: "item_buy_btn"
