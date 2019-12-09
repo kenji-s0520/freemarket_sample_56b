@@ -315,13 +315,11 @@ main {
         padding: 24px 0;
         border-top: solid 1px #ccc;
         &--text{
-          float:left;
           display: inline-block;
           font-size: 14px;
         }
         &--sales{
           display: inline-block;
-          float: right;
         }
       }
 
