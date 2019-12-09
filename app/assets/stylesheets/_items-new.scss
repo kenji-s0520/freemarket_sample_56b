@@ -490,14 +490,13 @@ display: inline;
   border-width: 100px 100px 0 0;
   border-color: #ea352d transparent transparent transparent;
   z-index: 2;
-  position: relative;
-  margin: 8px 0 0 0
+  position: absolute;
 }
 .sold2 p{
   color:white;
   font-weight: bold;
   font-size: 20px;
-  bottom: 2255px;
+  bottom: 2160px;
   right: 970px;
   transform: rotate(-45deg);
   z-index: 3;
