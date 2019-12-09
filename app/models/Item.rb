@@ -12,7 +12,14 @@ class Item < ApplicationRecord
 
    has_many :images, dependent: :destroy
    accepts_nested_attributes_for :images
-  
-  has_many :images
-  accepts_nested_attributes_for :images
+
+   
+   def reject_both_blank(attributes)
+    if attributes[:id]
+      attributes.merge!(_destroy: "1") if attributes[:face].blank? and attributes[:flip].blank?
+      !attributes[:face].blank? and attributes[:flip].blank?
+    else
+      attributes[:face].blank? and attributes[:flip].blank?
+    end
+  end
 end

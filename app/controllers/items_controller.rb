@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   #mishima ユーザー新規登録 deviseの機能を追加
-  before_action :authenticate_user!,except: [:index,:show,:toppage]
+  before_action :authenticate_user!,except: [:index,:toppage]
   before_action :set_item,except: [:new,:toppage,:create,:get_category_children,:get_category_grandchildren]
 
   def new
@@ -12,8 +12,12 @@ class ItemsController < ApplicationController
     @items.images.build
     @prefectures = Prefecture.all
     sell1=Item.last(1)
-    sell1.each do |sell|
-    @sell = sell.id+1
+    if sell1.present?
+      sell1.each do |sell|
+      @sell = sell.id+1
+      end
+      else
+      @sell = 1
     end
   end
 
@@ -54,6 +58,7 @@ class ItemsController < ApplicationController
     @items = Item.order("created_at DESC").limit(6)
 
     @category = Category.find(@item.category_id)
+    # end
   end
   
   # ujiie 購入機能に必要なアクションを追記
@@ -94,6 +99,12 @@ end
   def done
     @item = Item.find(params[:id])
     @images = Image.where(item_id: @item.id).limit(1)
+  end
+
+  def destroy
+      item = Item.find(params[:id])
+      item.destroy if item.seller_id == current_user.id
+      redirect_to root_path
   end
 
   private
