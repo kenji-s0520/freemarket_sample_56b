@@ -43,8 +43,8 @@
                 %h4 カテゴリー
                 %span 必須
                 %i.sell.fas.fa-chevron-down 
-                = f.select :none , @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
-                %p{class: 'error'}=@items.errors.messages[:categori_id][0]
+                = f.select :category_id, @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
+                %p{class: 'error'}=@items.errors.messages[:category_id][0]
                 
               .items-contents__item-about--box--size
                 %h4 サイズ
