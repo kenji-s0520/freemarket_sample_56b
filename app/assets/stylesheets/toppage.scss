@@ -566,5 +566,7 @@
   bottom: 310px;
   transform: rotate(-45deg);
   z-index: 3;
-  position: absolute;
+  position: relative;
+  bottom:24px;
+  right:14px;
 }
