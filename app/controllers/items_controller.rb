@@ -47,18 +47,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  def index
-    # @items = Item.new
-  end
-
   def show
-    # @item = Item.find(params[:id])
     @images = Image.where(item_id: @item)
     @user = User.find_by(id: @item.seller_id)
     @items = Item.order("created_at DESC").limit(6)
 
     @category = Category.find(@item.category_id)
-    # end
   end
   
   # ujiie 購入機能に必要なアクションを追記
@@ -101,6 +95,7 @@ end
     @images = Image.where(item_id: @item.id).limit(1)
   end
 
+  # sakaguchi 商品の削除機能
   def destroy
       item = Item.find(params[:id])
       item.destroy if item.seller_id == current_user.id
