@@ -15,7 +15,7 @@ var keisan = function(){
 };
 
 $(function() {
-  keisan();
   $(".items-contents__price--box--list_top--right--input").on('keyup', keisan);
+  keisan();
 });
 
