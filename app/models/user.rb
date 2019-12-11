@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   #yamashita :omniauthableと:omniauth_providers追加
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+         :recoverable, :rememberable, :validatable
 
   has_many :items
   has_many :likes
