@@ -5,7 +5,7 @@ class SignupController < ApplicationController
   def member_information
     @user = User.new
   end
-
+  
   def phone_number
     if verify_recaptcha and user_params[:nickname].present? and user_params[:email].present? and user_params[:password].present? and user_params[:password_confirmation].present? and user_params[:last_name].present? and user_params[:first_name].present? and user_params[:last_name_kana].present? and user_params[:first_name_kana].present? and birthday_join
       session[:nickname] = user_params[:nickname]
