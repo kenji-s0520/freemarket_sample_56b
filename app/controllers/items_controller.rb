@@ -12,8 +12,12 @@ class ItemsController < ApplicationController
     @items.images.build
     @prefectures = Prefecture.all
     sell1=Item.last(1)
-    sell1.each do |sell|
-    @sell = sell.id+1
+    if sell1.present?
+      sell1.each do |sell|
+      @sell = sell.id+1
+      end
+      else
+      @sell = 1
     end
   end
 
@@ -41,9 +45,6 @@ class ItemsController < ApplicationController
       @category_parent_array.unshift("---")
       render :new
     end
-  end
-
-  def index
   end
 
   def show
@@ -91,6 +92,19 @@ end
 end
 
   def done
+  end
+
+  # sakaguchi 商品の削除機能
+  def destroy
+      item = Item.find(params[:id])
+      item.seller_id == current_user.id
+      if item.destroy 
+        flash[:notice] = "商品を削除しました"
+        redirect_to root_path
+      else
+        flash[:alert] = "商品を削除できませんでした"
+        redirect_to 'show'
+      end
   end
 
   private

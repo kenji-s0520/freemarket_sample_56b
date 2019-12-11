@@ -450,3 +450,13 @@ background: #f5f5f5;
 .image-dots {
   outline:none;
 }
+.sold3 p {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  bottom: 55px;
+  left: 5px;
+  transform: rotate(-45deg);
+  z-index: 3;
+  position: absolute;
+}
