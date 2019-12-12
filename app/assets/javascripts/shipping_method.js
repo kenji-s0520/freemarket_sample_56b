@@ -1,5 +1,5 @@
 $(document).ready( function(){
-  $(function() {
+$(function() {
     $(".items-contents__shipping--box--method").hide();
   });
 })
