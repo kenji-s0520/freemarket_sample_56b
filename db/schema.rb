@@ -76,8 +76,11 @@ ActiveRecord::Schema.define(version: 2019_12_08_091440) do
     t.datetime "updated_at", null: false
     t.string "ship_days"
     t.string "brand"
-    t.integer "buyer_id"
-    t.integer "seller_id"
+    t.integer "brand_id"
+    t.bigint "buyer_id"
+    t.bigint "seller_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

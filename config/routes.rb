@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   end
 
   #yoshikawa 商品出品ページのルーティングを記述
-  resources :items, only: [:show, :new, :create, :edit, :destroy] do
+  post 'items/new' => 'items#create'
+  resources :items, only: [:show, :new, :edit, :destory] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }

@@ -8,28 +8,30 @@
         .items-contents__title
           %h2 商品の情報を入力
    
-        = form_with(model: @items,local: true,url: items_path) do |f|
+        = form_with(model: @items,local: true,url: '/items/new') do |f|
           .items-contents__image
             %h3 出品画像
             %span 必須
             %p 最大10枚までアップロードできます
+            
             =f.fields_for :images do |img|
-              .items-contents__image--drop-box  
+              .items-contents__image--drop-box
                 = img.label :url, for: "img_click" do
                   .items-contents__image--drop-box--click
                     ドラッグアンドドロップ
                     %br
                     またはクリックしてファイルをアップロード
                   = img.file_field :image, class:"items-contents__image--drop-box--file",id:"img_click"
-                  
+            
+            - if @items.errors.any?
+              %p{class: 'error'}=@items.errors.messages[:"images.image"][0]
 
           .items-contents__item-info
             .items-contents__item-info--name
               %h4 商品名
               %span 必須
               = f.text_field :name, class: "items-contents__item-info--name--input", placeholder: "商品名（必須 40文字まで)"
-              - if @items.errors.any?
-                %p{class: 'error'}=@items.errors.messages[:name][0]
+              %p{class: 'error'}=@items.errors.messages[:name][0]
 
             .items-contents__item-info--description
               %h4 商品の説明
@@ -114,7 +116,7 @@
                       ¥
                       .items-contents__price--box--list_top--right--space
                         = f.text_field :price, class: "items-contents__price--box--list_top--right--input", placeholder:"例）300"
-                      %p{class: 'error'}=@items.errors.messages[:ship_days][0]
+                  %p{class: 'error'}=@items.errors.messages[:ship_days][0]
                 %li.items-contents__price--box--list_center.clearfix
                   .items-contents__price--box--list_center--text 販売手数料（10%）
                   .items-contents__price--box--list_center--sales -
@@ -145,7 +147,7 @@
                 .dialog-body
                   あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
                   =link_to '続けて出品する', 'new', class: "dialog-sell-btn"
-                  =link_to '商品ページへ行ってシェアする',item_path(@sell),class: "dialog-sell-link"
+                  -# =link_to '商品ページへ行ってシェアする',item_path(@sell),class: "dialog-sell-link"
 
             #fadeLayer
 

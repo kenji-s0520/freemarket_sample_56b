@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
       sell1.each do |sell|
       @sell = sell.id+1
       end
-      else
+    else
       @sell = 1
     end
   end
@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
 
   def create
     @items = Item.new(item_params)
-    if @items.save  
+    if @items.save
     else
       @prefectures = Prefecture.all
       @category_parent_array = Category.where(ancestry: nil).pluck(:name)

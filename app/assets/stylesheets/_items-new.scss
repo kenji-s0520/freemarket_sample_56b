@@ -87,6 +87,7 @@ main {
     display: inline-block;
     font-weight: 600;
     font-size: 14px;
+    margin-top: 0px !important;
   }
   & a{
     color: $link-color;
@@ -279,6 +280,7 @@ main {
           }
         }
         &--right{
+          width: 200px;
           height: 48px;
           float: right;
           text-align: right;
@@ -421,7 +423,7 @@ main {
 i.sell.fas.fa-chevron-down {
 position: absolute;
 left: 368px;
-top: 95px;
+top: 58px;
 z-index: 2;
 color: $dark;
 font-size: 18px;
@@ -435,7 +437,7 @@ transform: translate(0, -50%);
 #fas{
 position: absolute;
 left: 368px;
-top: 153px;
+top: 113px;
 font-size: 18px;
 -webkit-transform: translate(0, -50%);
 transform: translate(0, -50%);
@@ -447,7 +449,7 @@ transform: translate(0, -50%);
 #fas2{
 position: absolute;
 left: 368px;
-top: 208px;
+top: 168px;
 font-size: 18px;
 -webkit-transform: translate(0, -50%);
 transform: translate(0, -50%);
