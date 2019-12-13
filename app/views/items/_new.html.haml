@@ -7,8 +7,7 @@
       %section.items-contents
         .items-contents__title
           %h2 商品の情報を入力
-   
-        = form_with(model: items,local: true,url: items_path) do |f|
+        = form_with(model: items,local: true) do |f|
           .items-contents__image
             %h3 出品画像
             %span 必須
@@ -21,8 +20,6 @@
                     %br
                     またはクリックしてファイルをアップロード
                   = img.file_field :image, class:"items-contents__image--drop-box--file",id:"img_click"
-                  
-
           .items-contents__item-info
             .items-contents__item-info--name
               %h4 商品名
@@ -39,13 +36,23 @@
           .items-contents__item-about.clearfix
             .items-contents__item-about--head 商品の詳細
             .items-contents__item-about--box
-              .items-contents__item-about--box--category
-                %h4 カテゴリー
-                %span 必須
-                %i.sell.fas.fa-chevron-down 
-                = f.select :none , @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
-                %p{class: 'error'}=@items.errors.messages[:categori_id][0]
-                
+              -if @category.present?
+                .items-contents__item-about--box--category
+                  %h4 カテゴリー
+                  %span 必須                
+                  %i.sell.fas.fa-chevron-down
+                  = f.select :none , options_for_select(@category_parent_array.map{|c|[c, {'data-category_id'=>c}]},@category_3) , {}, {class: 'items-contents__item-about--box', id: 'parent_category'}
+                  %i.sell.fas.fa-chevron-down
+                  = f.select :none,options_for_select(@category_children.map{|c|[c[:name], {'data-category_id'=>c}]},@category_2) , {}, {class: 'select-default', id: 'child_category'}
+                  %i.sell.fas.fa-chevron-down
+                  = f.select :category_id , options_for_select(@category_grandchildren.map{|c|[c[:name], {'data-category_id'=>c}]},@category_1) , {}, {class: 'select-default', id: "grandchild_category"}
+              -else
+                .items-contents__item-about--box--category
+                  %h4 カテゴリー
+                  %span 必須                
+                  %i.sell.fas.fa-chevron-down
+                  = f.select :none , @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
+                  %p{class: 'error'}=@items.errors.messages[:category_id][0]
               .items-contents__item-about--box--size
                 %h4 サイズ
                 %span 必須
@@ -117,12 +124,21 @@
                       %p{class: 'error'}=@items.errors.messages[:ship_days][0]
                 %li.items-contents__price--box--list_center.clearfix
                   .items-contents__price--box--list_center--text 販売手数料（10%）
-                  .items-contents__price--box--list_center--sales -
+                  .items-contents__price--box--list_center--sales
+                    -if items.price.present?
+                      ¥
+                      =(items.price * 0.1).to_i  
+                    -else
+                      - 
                 %li.items-contents__price--box--list_under.clearfix
                   %label.profit 
                     販売利益
-                    .items-contents__price--box--list_under_sales -
-        
+                    .items-contents__price--box--list_under_sales
+                      -if items.price.present?
+                        ¥
+                        =(items.price * 0.9).to_i  
+                      -else
+                        - 
           .items-contents__submit
             =link_to '禁止されている出品', ''
             、
