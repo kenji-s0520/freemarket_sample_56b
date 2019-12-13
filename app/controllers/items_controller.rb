@@ -29,11 +29,15 @@ class ItemsController < ApplicationController
     @prefectures = Prefecture.all
     sell1=Item.last(1)
     @category = Category.find(@item.category_id)
+    @category_1 = @category.name
+    @category_2 = @category.parent.name
+    @category_3 = @category.root.name    
+    @category_children = Category.find_by(name: @category_3, ancestry: nil).children
+    @category_grandchildren = Category.find_by(name:@category_2).children
     sell1.each do |sell|
     @sell = sell.id+1
     end
   end
-
   def update
     if @item.update(item_params)
     else
@@ -60,7 +64,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @items = Item.new(item_params)
     if @items.save  
     else
