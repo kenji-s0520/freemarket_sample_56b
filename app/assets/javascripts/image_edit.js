@@ -22,6 +22,7 @@ $(function(){
       $preview.append($('<img>').attr({
         src: e.target.result,
         width: "114px",
+        height: "114px",
         class: "preview",
         title: file.name
       }));
