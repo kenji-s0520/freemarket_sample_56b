@@ -12,8 +12,6 @@ $(function(){
   // ファイル読み込みが完了した際のイベント登録
   reader.onload = (function(file) {
     return function(e) {
-      //既存のプレビューを削除
-      // $preview.empty();
       
   // フォームの大きさを変更
     $(".items-contents__image--drop-box").removeClass().addClass("form1");
