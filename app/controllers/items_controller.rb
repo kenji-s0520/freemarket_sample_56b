@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   #mishima ユーザー新規登録 deviseの機能を追加
   before_action :authenticate_user!,except: [:index,:toppage]
-  before_action :set_item,except: [:new,:toppage,:create,:get_category_children,:get_category_grandchildren]
+  before_action :set_item,except: [:new,:toppage,:create,:get_category_children,:get_category_grandchildren,:update]
 
   def new
     #セレクトボックスの初期値設定  
@@ -30,21 +30,26 @@ class ItemsController < ApplicationController
     sell1=Item.last(1)
     @category = Category.find(@item.category_id)
     @category_1 = @category.name
-    @category_2 = @category.parent.name
-    @category_3 = @category.root.name    
-    @category_children = Category.find_by(name: @category_3, ancestry: nil).children
-    @category_grandchildren = Category.find_by(name:@category_2).children
+    @category_2 = @category.parent.id
+    @category_3 = @category.root.id  
+    @category_children = Category.where(ancestry: @category_3)
+    @category_grandchildren = Category.where(ancestry:"#{@category_3}/#{@category_2}")
     @sell = @item.id
   end
   def update
+    
+    @item = Item.find(params[:id])
     binding.pry
-    if @item.update(item_params)
+    if @item.update(edit_item_params)
+      redirect_to root_path
     else
-      @prefectures = Prefecture.all
-      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
-      @category_parent_array.unshift("---")
-      
+      redirect_to edit_item_path(@item.id)
     end
+      # else
+      # @prefectures = Prefecture.all
+      # @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+      # @category_parent_array.unshift("---")
+      
   end
 
   # sakaguchi トップページにDBからデータを取り出す記述を追加
@@ -144,7 +149,11 @@ end
   private
   
   def item_params
-    params.require(:item).permit(:id,:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:image]).merge(seller_id: current_user.id)
+  end
+
+  def edit_item_params
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:id, :image]).merge(seller_id: current_user.id)
   end
 
   def set_item

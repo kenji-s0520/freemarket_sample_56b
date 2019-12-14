@@ -20,6 +20,7 @@
                     %br
                     またはクリックしてファイルをアップロード
                   = img.file_field :image, class:"items-contents__image--drop-box--file",id:"img_click"
+                  = img.hidden_field :image_id,value:img.object.id
           .items-contents__item-info
             .items-contents__item-info--name
               %h4 商品名
@@ -35,21 +36,21 @@
               -if @category.present?
                 .items-contents__item-about--box--category
                   %h4 カテゴリー
-                  %span 必須                
+                  %span 必須
                   %i.sell.fas.fa-chevron-down
-                  = f.select :none,options_for_select(@category_parent_array.map{|c|[c, {'data-category_name'=>c}]},@category_3) , {}, {class: 'items-contents__item-about--box', id: 'parent_category'}
+                  = f.select :category_id,@category_parent_array,{selected:@category.root.name},{class: 'items-contents__item-about--box', id: 'parent_category'}
                 #children_wrapper.items-contents__item-about--box--category1
                   %i#fas.sell.fas.fa-chevron-down
-                  = f.select :none,options_for_select(@category_children.map{|c|[c[:name], {'data-category'=>c.id}]},@category_2) , {}, {class: 'items-contents__item-about--box--category1', id: 'child_category'}
+                  = f.select :category_id,options_for_select(@category_children.map{|c|[c[:name],c[:id], {'data-category'=>c[:id]}]},@category_2) , {}, {class: 'items-contents__item-about--box--category1', id: 'child_category'}
                 #grandchildren_wrapper.items-contents__item-about--box--category2
                   %i#fas2.sell.fas.fa-chevron-down
-                  = f.select :category_id , options_for_select(@category_grandchildren.map{|c|[c[:name], {'data-category'=>c.id}]},@category_1) , {}, {class: 'items-contents__item-about--box--category2', id: "grandchild_category"}
+                  = f.select :category_id , options_for_select(@category_grandchildren.map{|c|[c[:name],c[:id], {'data-category'=>c[:id]}]},@category_1) , {}, {class: 'items-contents__item-about--box--category2', id: "grandchild_category"}
               -else
                 .items-contents__item-about--box--category
                   %h4 カテゴリー
                   %span 必須                
                   %i.sell.fas.fa-chevron-down
-                  = f.select :none , @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
+                  = f.select :category_id , @category_parent_array , {}, {class: '.items-contents__item-about--box', id: 'parent_category'}
               .items-contents__item-about--box--size
                 %h4 サイズ
                 %span 必須
