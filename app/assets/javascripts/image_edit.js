@@ -13,7 +13,7 @@ $(function(){
   reader.onload = (function(file) {
     return function(e) {
       //既存のプレビューを削除
-      $preview.empty();
+      // $preview.empty();
       
   // フォームの大きさを変更
     $(".items-contents__image--drop-box").removeClass().addClass("form1");
