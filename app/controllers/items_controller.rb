@@ -19,6 +19,17 @@ class ItemsController < ApplicationController
       else
       @sell = 1
     end
+
+    # gon.item = @items
+    # gon.item_images = @items.item_images
+
+    # require 'base64'
+    # # require 'aws_sdk'
+
+    # gon.item_images_binarydatas = []
+    # @items.item_images.each do |img|
+    #   binary_data = File.read(img.image_url.file.file)
+    #   gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
   end
 
   # sakaguchi トップページにDBからデータを取り出す記述を追加
