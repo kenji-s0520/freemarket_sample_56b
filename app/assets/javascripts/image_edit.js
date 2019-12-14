@@ -3,7 +3,7 @@ $(function(){
   $('.items-contents__image--drop-box').on('change', 'input[type="file"]', function(e) {
     var file = e.target.files[0],
         reader = new FileReader(),
-        $preview = $(".items-contents__image--drop-box--file");
+        $preview = $(".items-contents__image--preview");
         t = this;
    // 画像ファイル以外の場合は何もしない
    if(file.type.indexOf("image") < 0){
@@ -14,13 +14,17 @@ $(function(){
     return function(e) {
       //既存のプレビューを削除
       $preview.empty();
+      
+  // フォームの大きさを変更
+    $(".items-contents__image--drop-box").removeClass().addClass("form1");
+
       // .prevewの領域の中にロードした画像を表示するimageタグを追加
-      $preview.append($('.items-contents__image--drop-box--file').attr({
-                src: e.target.result,
-                width: "114px",
-                class: "preview",
-                title: file.name
-            }));
+      $preview.append($('<img>').attr({
+        src: e.target.result,
+        width: "114px",
+        class: "preview",
+        title: file.name
+      }));
     };
   })(file);
 
