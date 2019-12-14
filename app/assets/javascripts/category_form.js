@@ -15,7 +15,7 @@ $(function(){
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='items-contents__item-about--box--category1' id= 'children_wrapper'>
-                          <select class="select-default" id="child_category">
+                          <select class="items-contents__item-about--box--category1" id="child_category">
                             <option value="0" data-category="0">---</option>
                             ${insertHTML}
                           <select>
@@ -28,14 +28,14 @@ $(function(){
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='items-contents__item-about--box--category2' id= 'grandchildren_wrapper'>
-                              <select class="select-default" id="grandchild_category" name="item[category_id]">
+                              <select class="items-contents__item-about--box--category2" id="grandchild_category" name="item[category_id]">
                                 <option value="0" data-category="0">---</option>
                                 ${insertHTML}
                               </select>
                               <i id='fas2' class='fas fa-chevron-down'></i>
                             </div>
                           </div>`;
-    $('.items-contents__item-about--box--category').append(grandchildSelectHtml);
+    $('.items-contents__item-about--box--category1').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
@@ -102,7 +102,6 @@ $(function(){
     }
     else{
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
-      $('.items-contents__item-about--box--category1').remove();
       $('.items-contents__item-about--box--category2').remove();
       $(".items-contents__item-about--box--size").hide();
       $(".items-contents__item-about--box--brand").hide();
@@ -119,8 +118,8 @@ $(function(){
     }
     else{
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
-      $('.items-contents__item-about--box--category__added1').remove();
-      $('.items-contents__item-about--box--category__added2').remove();
+      $('.items-contents__item-about--box--category1').remove();
+      $('.items-contents__item-about--box--category2').remove();
       $(".items-contents__item-about--box--size").hide();
       $(".items-contents__item-about--box--brand").hide();
     }
