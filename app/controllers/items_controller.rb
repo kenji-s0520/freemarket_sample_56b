@@ -37,11 +37,8 @@ class ItemsController < ApplicationController
     @sell = @item.id
   end
   def update
-    
     @item = Item.find(params[:id])
-    binding.pry
     if @item.update(edit_item_params)
-      redirect_to root_path
     else
       redirect_to edit_item_path(@item.id)
     end
