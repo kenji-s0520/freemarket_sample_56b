@@ -40,10 +40,10 @@
                   = f.select :none,options_for_select(@category_parent_array.map{|c|[c, {'data-category_name'=>c}]},@category_3) , {}, {class: 'items-contents__item-about--box', id: 'parent_category'}
                 #children_wrapper.items-contents__item-about--box--category1
                   %i.sell.fas.fa-chevron-down
-                  = f.select :none,options_for_select(@category_children.map{|c|[c[:name], {'data-category'=>c.id}]},@category_2) , {}, {class: 'items-contents__item-about--box--category1', id: 'child_category'}
+                  = f.select :none,options_for_select(@category_children.map{|c|[c[:name], {'data-category'=>c[:id]}]},@category_2) , {}, {class: 'items-contents__item-about--box--category1', id: 'child_category'}
                 #grandchildren_wrapper.items-contents__item-about--box--category2
                   %i.sell.fas.fa-chevron-down
-                  = f.select :category_id , options_for_select(@category_grandchildren.map{|c|[c[:name], {'data-category'=>c.id}]},@category_1) , {}, {class: 'items-contents__item-about--box--category2', id: "grandchild_category"}
+                  = f.select :category_id , options_for_select(@category_grandchildren.map{|c|[c[:name], {'data-category'=>c[:id]}]},@category_1) , {}, {class: 'items-contents__item-about--box--category2', id: "grandchild_category"}
               -else
                 .items-contents__item-about--box--category
                   %h4 カテゴリー
