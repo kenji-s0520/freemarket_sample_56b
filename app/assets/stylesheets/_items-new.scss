@@ -586,16 +586,16 @@ display: inline;
 
 .items-contents__image--preview{
     float: left;
-    // width: 114px;
     height: 164px;
     margin-top: 16px;
     background-color: $gray;
-    border: 1px $bordar-color;
+    border: 1px #aaa;
 }
 
 .items-contents__image--preview img{
   float:left;
   margin-top: 0;
+  z-index: 10;
 }
 
 .sell-upload-btns{
@@ -617,7 +617,7 @@ display: inline;
   background: #f5f5f5;
   color: #0099e8;
   text-decoration: none;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #aaa;
   display: inline-block;
   width: 50%;
   line-height: 44px;
