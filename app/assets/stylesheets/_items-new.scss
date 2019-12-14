@@ -140,14 +140,6 @@ main {
       line-height: 1.5;
       font-size: 14px;
     }
-    &--preview{
-      float: left;
-      // width: 114px;
-      height: 164px;
-      margin-top: 16px;
-      background-color: $gray;
-      border: 1px $bordar-color;
-    }
     &--drop-box{
       position: relative;
       display: block;
@@ -593,7 +585,12 @@ display: inline;
 }
 
 .items-contents__image--preview{
-
+    float: left;
+    // width: 114px;
+    height: 164px;
+    margin-top: 16px;
+    background-color: $gray;
+    border: 1px $bordar-color;
 }
 
 .preview {

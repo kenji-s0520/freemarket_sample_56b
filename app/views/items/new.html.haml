@@ -15,10 +15,10 @@
             %p 最大10枚までアップロードできます
             =f.fields_for :images do |img|
               .items-contents__image--preview
-                -if @images.present?
-                  .sell-upload-btns
-                    = link_to '編集', class: "editbtn"
-                    = link_to '削除', class: "deletebtn"
+                -# -if @images.present?
+                .sell-upload-btns
+                  = link_to '編集', class: "editbtn"
+                  = link_to '削除', class: "deletebtn"
               .items-contents__image--drop-box  
                 = img.label :url, for: "img_click" do
                   .items-contents__image--drop-box--click
