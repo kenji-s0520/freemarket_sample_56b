@@ -153,7 +153,8 @@ main {
         width: 100%;
         margin-left: 0;
         width: 620px;
-        // padding: 40px; 
+        padding: 15px;
+        outline: none;
         // display:none;
       }
       &--click{
@@ -580,6 +581,8 @@ display: inline;
   height: 160px;
   bottom: 5px;
   left: 10px;
+  display: none;
+  
 }
 #previewImage{
   position: relative;
@@ -588,8 +591,27 @@ display: inline;
   height: 120px;
   left: 5px;
   margin: 0;
+  background: #ffffff;
+}
+
+#edit {
+  position: absolute;
+  bottom: 1px;
+  left: 10px;
+  color: #0099e8;
+  background: #f5f5f5;
+  font-size: 17px;
+  display: none;
+  outline: none;
 }
 
 #clear {
+  position: absolute;
+  bottom: 1px;
+  left: 85px;
+  color: #0099e8;
+  background: #f5f5f5;
+  font-size: 17px;
   display: none;
+  outline: none;
 }
