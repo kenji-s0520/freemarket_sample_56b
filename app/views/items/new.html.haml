@@ -16,10 +16,8 @@
             =f.fields_for :images do |img|
               .items-contents__image--preview
                 %ul.sell-upload-btns
-                  = link_to class: "editbtn" do
-                    編集
-                  = link_to class: "deletebtn" do
-                    削除
+                  %input{class: "editbtn", value: "編集"}
+                  %input{class: "deletebtn", value: "削除"}
               .items-contents__image--drop-box  
                 = img.label :url, for: "img_click" do
                   .items-contents__image--drop-box--click
