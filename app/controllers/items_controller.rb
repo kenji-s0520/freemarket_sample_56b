@@ -63,6 +63,14 @@ class ItemsController < ApplicationController
     user_id = Seller.find_by(item_id: @item)
     @user = User.find_by(id: user_id)
     card = Card.where(user_id: current_user.id).first
+
+    # 氏家購入した物のlinkを直打ちしたらtoppageに飛ばす記載を追加
+    buyer_id = Item.find(params[:id])
+    if @item.buyer_id
+      redirect_to root_path
+    else
+    end
+
     if card.present?
       Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
       customer = Payjp::Customer.retrieve(card.customer_id)
