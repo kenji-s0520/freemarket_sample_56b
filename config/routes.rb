@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :signup do  
     collection do
       get 'member_information'
+      # get 'sns_member_information'
       get 'phone_number'
       get 'address'
       get 'card_information' 

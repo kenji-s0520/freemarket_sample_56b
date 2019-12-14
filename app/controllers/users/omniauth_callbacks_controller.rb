@@ -24,7 +24,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session[:user_id] = @user.id
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth'].except("extra")
-      redirect_to member_information_signup_index_path
+      # redirect_to sns_member_information_signup_index_path
+      redirect_to member_information_signup_index_pat
     end
   end
 
