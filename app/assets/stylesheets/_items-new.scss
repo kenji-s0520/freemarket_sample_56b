@@ -550,3 +550,40 @@ display: inline;
   color: $red;
   font-size: 1em !important;
 }
+
+.form1 {
+  width:500px;
+  height:164px;
+  position: relative;
+  display: block;
+  background: $gray;
+  border: 1px dashed $bordar-color;
+  float:right;
+}
+
+
+.items-contents__image--preview img{
+  width:114px;
+}
+
+.preview {
+  float:left;
+  margin-top: 0;
+  border: 1px $bordar-color;
+  padding-bottom: 50px;
+  background-color: $gray;
+  background-size: 164px;
+}
+
+.editbtn{
+  margin-top: 114px;
+  height: 50px;
+  float: left;
+}
+
+
+.deletebtn{
+  margin-top: 114px;
+  height: 50px;
+  float: right;
+}
