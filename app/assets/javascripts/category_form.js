@@ -110,49 +110,12 @@ $(function(){
     
     }
   });
-
-  // 孫カテゴリー選択後のイベント
-  $('.items-contents__item-about--box--category2').on('change', '#grandchild_category', function(){
-    console.log("上の孫")
-    var grandchildId = $('#grandchild_category option:selected').data('category'); //選択された子カテゴリーのidを取得
-    if (grandchildId != "0"){ //子カテゴリーが初期値でないことを確認
-      $(".items-contents__item-about--box--size").show();
-      $(".items-contents__item-about--box--brand").show();
-    }
-    else{
-      $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
-      $('.items-contents__item-about--box--category1').remove();
-      $('.items-contents__item-about--box--category2').remove();
-      $(".items-contents__item-about--box--size").hide();
-      $(".items-contents__item-about--box--brand").hide();
-    }
-  });
 });
-$(document).ready( function(){
-  $(function() {
-    $(".items-contents__item-about--box--size").hide();
-    $(".items-contents__item-about--box--brand").hide();
-  });
-})
-
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
-  }
-  // 子カテゴリーの表示作成
-  function appendChidrenBox(insertHTML){
-    var childSelectHtml = '';
-    childSelectHtml = `<div class='items-contents__item-about--box--category__added' id= 'children_wrapper'>
-                          <select class="select-default" id="child_category">
-                            <option value="0" data-category="0">---</option>
-                            ${insertHTML}
-                          <select>
-                          <i id='fas' class='fas fa-chevron-down'></i>
-                        </div>
-                      </div>`;
-    $('.items-contents__item-about--box--category').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
@@ -193,21 +156,6 @@ $(function(){
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
       })
-    }
-    else{
-      $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
-      $(".items-contents__item-about--box--size").hide();
-      $(".items-contents__item-about--box--brand").hide();
-    }
-  });
-
-  // 孫カテゴリー選択後のイベント
-  $('.items-contents__item-about--box--category').on('change', '#grandchild_category', function(){
-    console.log("下の孫")
-    var grandchildId = $('#grandchild_category option:selected').data('category'); //選択された子カテゴリーのidを取得
-    if (grandchildId != "0"){ //子カテゴリーが初期値でないことを確認
-      $(".items-contents__item-about--box--size").show();
-      $(".items-contents__item-about--box--brand").show();
     }
     else{
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
