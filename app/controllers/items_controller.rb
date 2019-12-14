@@ -34,17 +34,16 @@ class ItemsController < ApplicationController
     @category_3 = @category.root.name    
     @category_children = Category.find_by(name: @category_3, ancestry: nil).children
     @category_grandchildren = Category.find_by(name:@category_2).children
-    sell1.each do |sell|
-    @sell = sell.id+1
-    end
+    @sell = @item.id
   end
   def update
+    binding.pry
     if @item.update(item_params)
     else
       @prefectures = Prefecture.all
       @category_parent_array = Category.where(ancestry: nil).pluck(:name)
       @category_parent_array.unshift("---")
-      render :edit
+      
     end
   end
 
@@ -137,7 +136,7 @@ end
   private
   
   def item_params
-    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:id,:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
   end
 
   def set_item
