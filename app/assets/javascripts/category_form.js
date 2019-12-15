@@ -105,7 +105,6 @@ $(function(){
       $('.items-contents__item-about--box--category2').remove();
       $(".items-contents__item-about--box--size").hide();
       $(".items-contents__item-about--box--brand").hide();
-    
     }
   });
   $('.items-contents__item-about--box--category2').on('change', '#grandchild_category', function(){
@@ -113,8 +112,7 @@ $(function(){
     if (grandchildId != "0"){ //子カテゴリーが初期値でないことを確認
       $(".items-contents__item-about--box--size").show();
       $(".items-contents__item-about--box--brand").show();
-    }
-    else{
+    }else{
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
       $(".items-contents__item-about--box--size").hide();
       $(".items-contents__item-about--box--brand").hide();

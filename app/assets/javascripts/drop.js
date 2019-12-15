@@ -3,7 +3,6 @@ function imgPreView(event) {
   var reader = new FileReader();
   var preview = document.getElementById("preview");
   var previewImage = document.getElementById("previewImage");
-  
   if(previewImage != null) {
     preview.removeChild(previewImage);
   }
@@ -12,9 +11,7 @@ function imgPreView(event) {
     img.setAttribute("src", reader.result);
     img.setAttribute("id", "previewImage");
     preview.appendChild(img);
-    
   };
- 
   reader.readAsDataURL(file);
 }
 
@@ -29,9 +26,7 @@ $(function() {
     $('input[type=file]').val('');
     $(this).hide();
     previewImage.remove();
-    
     $("#edit").hide();
-  
   });
   $('#cleardefault').click(function() {
   $('#editdefault,#cleardefault,.fagggg').remove();
