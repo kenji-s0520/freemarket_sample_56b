@@ -61,7 +61,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     @items = Item.new(item_params)
     if @items.save  
     else
