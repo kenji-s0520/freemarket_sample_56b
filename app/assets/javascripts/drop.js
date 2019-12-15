@@ -7,7 +7,7 @@ function imgPreView(event) {
   if(previewImage != null) {
     preview.removeChild(previewImage);
   }
-  reader.onload = function(event) {
+  reader.onload = function() {
     var img = document.createElement("img");
     img.setAttribute("src", reader.result);
     img.setAttribute("id", "previewImage");
@@ -21,18 +21,19 @@ function imgPreView(event) {
 $(function() {
   // アップロードするファイルを選択
   $('input[type=file]').change(function() {
-    $('#clear').show();
-    $('#edit').show();
-    $('#preview').show();
+    $('#clear,#edit,#preview').show();
+    $('#editdefault,#cleardefault,#previewdefault').remove();
   });
-
-  // ユーザエージェント
-  var ua = navigator.userAgent;  
   
   $('#clear').click(function() {
     $('input[type=file]').val('');
     $(this).hide();
     previewImage.remove();
+    
     $("#edit").hide();
+  
   });
+  $('#cleardefault').click(function() {
+  $('#editdefault,#cleardefault,.fagggg').remove();
+  })
 });

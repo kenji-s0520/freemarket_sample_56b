@@ -584,7 +584,7 @@ display: inline;
   display: none;
   
 }
-#previewImage{
+#previewImage,#previewdefault{
   position: relative;
   top: 5px;
   width: 120px;
@@ -594,10 +594,10 @@ display: inline;
   background: #ffffff;
 }
 
-#edit {
+#edit{
   position: absolute;
-  bottom: 1px;
-  left: 10px;
+  bottom: 5px;
+  // left: 10px;
   color: #0099e8;
   background: #f5f5f5;
   font-size: 17px;
@@ -607,11 +607,25 @@ display: inline;
 
 #clear {
   position: absolute;
-  bottom: 1px;
-  left: 85px;
+  bottom: 5px;
+  left: 78px;
   color: #0099e8;
   background: #f5f5f5;
   font-size: 17px;
   display: none;
   outline: none;
+}
+
+.fagggg {
+  position:relative;
+  bottom:30px;
+  right:30px;
+}
+
+#editdefault,#cleardefault {
+  color: #0099e8;
+  background: #f5f5f5;
+  font-size: 17px;
+  position:relative;
+  bottom:20px;
 }
