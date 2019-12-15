@@ -68,7 +68,6 @@ class ItemsController < ApplicationController
   def create
     
     @items = Item.new(item_params)
-    binding.pry
     if @items.save  
     else
       @prefectures = Prefecture.all
