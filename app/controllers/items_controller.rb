@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @images = Image.where(item_id: @item)
+    @images = @item.images
     @category_parent_array = Category.where(ancestry: nil).pluck(:name)
     @category_parent_array.unshift("---")
     @items = Item.new
