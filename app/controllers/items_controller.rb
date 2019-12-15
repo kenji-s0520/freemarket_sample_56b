@@ -21,6 +21,29 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @images = @item.images
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    @category_parent_array.unshift("---")
+    @items = Item.new
+    @items.images.build
+    @prefectures = Prefecture.all
+    @category = Category.find(@item.category_id)
+    @category_1 = @category.name
+    @category_2 = @category.parent.id
+    @category_3 = @category.root.id  
+    @category_children = Category.where(ancestry: @category_3)
+    @category_grandchildren = Category.where(ancestry:"#{@category_3}/#{@category_2}")
+    @sell = @item.id
+  end
+  
+  def update
+    if !(@item.update(edit_item_params))
+      redirect_to edit_item_path(@item.id)
+    end
+
+  end
+
   # sakaguchi トップページにDBからデータを取り出す記述を追加
   def toppage
     @items = Item.order("created_at DESC").limit(10)
@@ -118,7 +141,11 @@ end
   private
   
   def item_params
-    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:item_id, :image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:image]).merge(seller_id: current_user.id)
+  end
+
+  def edit_item_params
+    params.require(:item).permit(:name,:description,:category_id,:size,:brand,:status,:ship_person,:ship_method,:ship_area,:ship_days,:price,images_attributes: [:id, :image]).merge(seller_id: current_user.id)
   end
 
   def set_item
