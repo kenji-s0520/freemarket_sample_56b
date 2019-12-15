@@ -14,14 +14,19 @@
             %span 必須
             %p 最大10枚までアップロードできます
             =f.fields_for :images do |img|
-              .items-contents__image--drop-box  
-                = img.label :url, for: "img_click" do
+              .items-contents__image--drop-box
+                #preview
+                  %input#edit{type: "button", value: "編集"}
+                  %input#clear{type: "button", value: "削除"}
+                = img.label :url, for: "preview" do
                   .items-contents__image--drop-box--click
                     ドラッグアンドドロップ
                     %br
                     またはクリックしてファイルをアップロード
-                  = img.file_field :image, class:"items-contents__image--drop-box--file",id:"img_click"
-                  
+              = img.file_field :image, class:"items-contents__image--drop-box--file", onChange:"imgPreView(event)"
+              
+              
+
 
           .items-contents__item-info
             .items-contents__item-info--name
