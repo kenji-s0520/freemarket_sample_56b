@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   #mishima ユーザー新規登録 deviseの機能を追加
   before_action :authenticate_user!,except: [:index,:toppage]
-  before_action :set_item,except: [:new,:toppage,:create,:get_category_children,:get_category_grandchildren,:update]
+  before_action :set_item,except: [:new,:toppage,:create,:get_category_children,:get_category_grandchildren]
 
   def new
     #セレクトボックスの初期値設定  
@@ -38,16 +38,11 @@ class ItemsController < ApplicationController
     @sell = @item.id
   end
   def update
-    @item = Item.find(params[:id])
     if @item.update(edit_item_params)
     else
       redirect_to edit_item_path(@item.id)
     end
-      # else
-      # @prefectures = Prefecture.all
-      # @category_parent_array = Category.where(ancestry: nil).pluck(:name)
-      # @category_parent_array.unshift("---")
-      
+
   end
 
   # sakaguchi トップページにDBからデータを取り出す記述を追加
