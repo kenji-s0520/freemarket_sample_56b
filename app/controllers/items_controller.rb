@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
     @items = Item.new
     @items.images.build
     @prefectures = Prefecture.all
-    sell1=Item.last(1)
     @category = Category.find(@item.category_id)
     @category_1 = @category.name
     @category_2 = @category.parent.id
