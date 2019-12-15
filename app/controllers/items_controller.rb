@@ -37,9 +37,9 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.where(ancestry:"#{@category_3}/#{@category_2}")
     @sell = @item.id
   end
+  
   def update
-    if @item.update(edit_item_params)
-    else
+    if !(@item.update(edit_item_params))
       redirect_to edit_item_path(@item.id)
     end
 
