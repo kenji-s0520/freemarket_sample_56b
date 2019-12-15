@@ -39,7 +39,6 @@ $(function(){
   }
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
-    console.log("上の親")
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
     if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
@@ -76,7 +75,6 @@ $(function(){
   });
   // 子カテゴリー選択後のイベント
   $('.items-contents__item-about--box--category1').on('change', '#child_category', function(){
-    console.log("上の子")
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
     if (childId != "0"){ //子カテゴリーが初期値でないことを確認
       $.ajax({
@@ -144,7 +142,6 @@ $(function(){
   }
   // 子カテゴリー選択後のイベント
   $('.items-contents__item-about--box--category').on('change', '#child_category', function(){
-    console.log("下の子")
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
     if (childId != "0"){ //子カテゴリーが初期値でないことを確認
       $.ajax({
