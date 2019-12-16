@@ -100,6 +100,12 @@ class ItemsController < ApplicationController
     else
     end
 
+    # 自分の出品した物を購入しようとしたらtoppageに飛ばす記載を追加
+    if @item.seller_id == current_user.id
+      redirect_to root_path
+    else
+    end
+
     if card.present?
       Payjp.api_key= "sk_test_3c6c6f094d2e40b7a314b6c3"
       customer = Payjp::Customer.retrieve(card.customer_id)
