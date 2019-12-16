@@ -32,7 +32,7 @@ class User < ApplicationRecord
     user = User.where(uid: auth.uid, provider: auth.provider).first
     unless user
       pass = Devise.friendly_token[0, 20]
-      user = User.create(
+      user = User.new(
         name:     auth.info.name,
         uid:      auth.uid,
         provider: auth.provider,
