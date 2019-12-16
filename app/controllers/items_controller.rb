@@ -35,6 +35,12 @@ class ItemsController < ApplicationController
     @category_children = Category.where(ancestry: @category_3)
     @category_grandchildren = Category.where(ancestry:"#{@category_3}/#{@category_2}")
     @sell = @item.id
+
+    # 氏家他人の編集した物のlinkを直打ちしたらtoppageに飛ばす記載を追加
+    if @item.seller_id != current_user.id
+      redirect_to root_path
+    else
+    end
   end
   
   def update
