@@ -1,5 +1,4 @@
-%html
-  %head
+%head
   .single1
     .single-header1
       %h1
@@ -25,5 +24,53 @@
       %h1.top-head 会員情報入力
       .form-main
         .main-section 
-    = render 'member_information', { signup: @user }
-      -# = render partial:'sns_member_information', { users/omniauth_callbacks: @user }
+          = form_with(model: @user, local: true,url:"/signup/phone_number",method: :get) do |f|      
+            .form-top
+              = f.label :nickname, "ニックネーム"
+              %span.form-necessary 必須
+              %br
+              =f.text_field :nickname
+            .form
+              = f.label :email, "メールアドレス"
+              %span.form-necessary 必須
+              %br
+              =f.password_field :password_confirmation
+              %br
+            .text-left-sub-head 本人確認      
+            %p.sub-head-text
+              安心・安全にご利用いただために、お客さまの本人情報の登録にご協力ください。
+              他のお客さまに公開されることはありません。
+            .form
+              =f.label :name, "お名前(全角)"
+              %span.form-necessary 必須
+            .form-inline
+              =f.text_field :last_name ,placeholder:"例)三島"
+              =f.text_field :first_name ,placeholder:"例)広大"
+            .form
+              =f.label :name, "お名前(カナ)"
+              %span.form-necessary 必須
+            .form-inline
+              =f.text_field :last_name_kana ,placeholder:"例)ミシマ"
+              =f.text_field :first_name_kana ,placeholder:"例)コウダイ"
+            .form-reg
+              =f.label :birthday, "生年月日"
+              %span.form-necessary 必須
+              %br
+            .form
+              != sprintf(f.date_select(:birthday, prefix:'user[birthday]',with_css_classes:'birth-reg', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+            %br
+            .user-warning
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+            %br
+            .user-rule
+              「次へ進む」のボタンを押すことにより、
+              = link_to "", class: "confirm-reg0" do
+                = "利用規約"
+              に同意したものとみなします
+            =f.submit "次へ進む",class:"submit-btn",id:"submitreg"
+          .form-group-caution
+            = link_to "", class: "confirm-reg" do
+              = "本人情報の登録について"
+            %i.fas.fa-chevron-right
+    = render partial:"/users/footerreg"
+
