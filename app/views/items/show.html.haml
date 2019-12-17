@@ -92,7 +92,7 @@
     - elsif user_signed_in? && @item.seller_id == current_user.id
       
       = link_to "商品編集画面へ進む", edit_item_path(@item.id), class: "item_buy_btn"
-      
+    
       = link_to "商品の出品を取り止める", "#{@item.id}", method: :delete, data: {confirm: "本当に取りやめますか？"}, class: "item_buy_btn"
     - else 
       = link_to "購入画面に進む", purchase_item_path(@item.id), class: "item_buy_btn"

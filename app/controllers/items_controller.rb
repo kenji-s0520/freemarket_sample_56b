@@ -128,14 +128,16 @@ end
   # sakaguchi 商品の削除機能
   def destroy
       item = Item.find(params[:id])
-      item.seller_id == current_user.id
-      if item.destroy 
-        flash[:notice] = "商品を削除しました"
+      if item.seller_id != current_user.id
         redirect_to root_path
+      elsif item.destroy 
+         flash[:notice] = "商品を削除しました"
+         redirect_to root_path
       else
         flash[:alert] = "商品を削除できませんでした"
-        redirect_to 'show'
+        redirect_to root_path
       end
+
   end
 
   private
