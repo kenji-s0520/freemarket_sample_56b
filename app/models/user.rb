@@ -27,22 +27,20 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validates :phone_number, presence: true,uniqueness: true
 
-  validates :nickname, presence: true, length: { maximum: 6 }
-
   #yamashita sns認証
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
-
     unless user
-      user = User.create(
-        nickname: auth.info.nickname,
+      pass = Devise.friendly_token[0, 20]
+      user = User.new(
+        name:     auth.info.name,
         uid:      auth.uid,
         provider: auth.provider,
         email:    auth.info.email,
-        password: Devise.friendly_token[0, 20],
-        first_name: '',
-        last_name: ''
+        password: pass,
+        password_confirmation: pass,
       )
+      # user.save!
     end
     user
   end  

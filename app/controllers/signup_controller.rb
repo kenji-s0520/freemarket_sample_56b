@@ -3,15 +3,28 @@ class SignupController < ApplicationController
   before_action :authenticate_user!,except: [:member_information,:phone_number,:create,:done,]
 
   def member_information
+    if session[:uid].present?
+    @user = User.new(
+    nickname:session[:name],
+    email:session[:email],
+    password:session[:password],
+    password_confirmation:session[:password_confirmation],
+    uid:session[:uid],
+    provider:session[:provider]
+    )
+    else
     @user = User.new
   end
-
+  end
+  
   def phone_number
-    if verify_recaptcha and user_params[:nickname].present? and user_params[:email].present? and user_params[:password].present? and user_params[:password_confirmation].present? and user_params[:last_name].present? and user_params[:first_name].present? and user_params[:last_name_kana].present? and user_params[:first_name_kana].present? and birthday_join
+    if user_params[:nickname].present? and user_params[:email].present? and user_params[:password].present? and user_params[:password_confirmation].present? and user_params[:last_name].present? and user_params[:first_name].present? and user_params[:last_name_kana].present? and user_params[:first_name_kana].present? and birthday_join
       session[:nickname] = user_params[:nickname]
       session[:email] = user_params[:email]
+      if !(session[:uid].present?)
       session[:password] = user_params[:password]
       session[:password_confirmation] = user_params[:password_confirmation]
+      end
       session[:last_name] = user_params[:last_name]
       session[:first_name] = user_params[:first_name]
       session[:last_name_kana] = user_params[:last_name_kana]
@@ -34,6 +47,7 @@ class SignupController < ApplicationController
   end
 
   def create
+    
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -44,8 +58,11 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
       birthday: session[:birthday],
-      phone_number: user_params[:phone_number]
+      phone_number: user_params[:phone_number],
+      uid: session[:uid],
+      provider: session[:provider]
     )
+
     if @user.save
       session[:id] = @user.id
       redirect_to done_signup_index_path

@@ -39,8 +39,14 @@
   }
   .facebookicon2 {
     position:relative;
-    right:300px;
-    top:6px;
+    right:439px;
+    top:-8px;
+  }
+  .fare {
+    position:relative;
+    right:225px;
+    top:-15px;
+    color: #fff;
   }
   .submit-btn-google{
   margin-left:180px;
@@ -51,12 +57,17 @@
   line-height: 48px;
   font-size: 14px;
   width: 47%;
-  border-color:#888;
+  border: #979797 solid 1px;
   border-radius: 5px 5px 5px 5px ;
   }
   .googleicon2 {
     position:relative;
-    right:300px;
-    top:6px;
+    right:428px;
+    top:-8px;
   }
+}
+.goore {
+  position:relative;
+  right:225px;
+  top:-15px;
 }

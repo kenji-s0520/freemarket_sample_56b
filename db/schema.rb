@@ -88,13 +88,13 @@ ActiveRecord::Schema.define(version: 2019_12_08_091440) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kana", null: false
+    t.string "last_name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name_kana", default: ""
+    t.string "first_name_kana", default: ""
     t.integer "value"
     t.integer "evaluation"
     t.text "introduction"
@@ -103,16 +103,16 @@ ActiveRecord::Schema.define(version: 2019_12_08_091440) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password"
-    t.string "password_confirmation"
+    t.string "password", default: "", null: false
+    t.string "password_confirmation", default: "", null: false
     t.string "identification"
     t.integer "balance"
     t.integer "point"
     t.date "birthday"
     t.string "payment"
     t.string "phone_number"
-    t.string "uid"
-    t.string "provider"
+    t.string "uid", default: "", null: false
+    t.string "provider", default: "", null: false
     t.string "name"
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true

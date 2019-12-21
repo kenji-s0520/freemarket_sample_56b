@@ -9,9 +9,11 @@
         %button.submit-btn-mail{type:"submit",name:"submit",onclick:"location.href='/signup/member_information'"}メールアドレスで登録する
         %i.far.fa-envelope
         %br
-        %button.submit-btn-fb{type:"submit",name:"submit",onclick:"location.href='/index.html'"}Facebookで登録する
+        %button.submit-btn-fb{type:"submit",name:"submit"}
+        = link_to "facebookで登録する", user_facebook_omniauth_authorize_path, class: "fare"
         = image_tag "snslogo/facebook.png",width:"26",height:"26",margin:"8px 0px 0px",class:"facebookicon2"
         %br
-        %button.submit-btn-google{type:"submit",name:"submit",onclick:"location.href='/index.html'"}Googleで登録する
+        %button.submit-btn-google{type:"submit",name:"submit"}
+        = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path, class: "goore"
         = image_tag "snslogo/google.png",width:"26",height:"26",margin:"8px",class:"googleicon2"
   = render partial:"/users/footerreg"
