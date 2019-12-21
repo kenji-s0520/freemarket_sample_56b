@@ -18,7 +18,7 @@ class SignupController < ApplicationController
   end
   
   def phone_number
-    if verify_recaptcha and user_params[:nickname].present? and user_params[:email].present? and user_params[:password].present? and user_params[:password_confirmation].present? and user_params[:last_name].present? and user_params[:first_name].present? and user_params[:last_name_kana].present? and user_params[:first_name_kana].present? and birthday_join
+    if verify_recaptcha and user_params[:nickname].present? and user_params[:email].present? and user_params[:last_name].present? and user_params[:first_name].present? and user_params[:last_name_kana].present? and user_params[:first_name_kana].present? and birthday_join
       session[:nickname] = user_params[:nickname]
       session[:email] = user_params[:email]
       if !(session[:uid].present?)
