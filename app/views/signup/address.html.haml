@@ -45,8 +45,8 @@
                 %label お名前カナ
                 %span.formrequire1
                   必須
-                =f.text_field :last_name_kana ,placeholder:"例)ミシマ",class:"input-default"   
-                =f.text_field :last_name_kana ,placeholder:"例)コウダイ",class:"input-default"
+                =f.text_field :last_name_kana ,placeholder:"例)ミシマ",class:"input-default",value:current_user.last_name_kana
+                =f.text_field :last_name_kana ,placeholder:"例)コウダイ",class:"input-default",value:current_user.first_name_kana
               .form_group
                 =f.label :code,"郵便番号"
                 %span.formrequire1

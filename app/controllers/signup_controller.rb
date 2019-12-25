@@ -37,7 +37,11 @@ class SignupController < ApplicationController
   end
 
   def address
+    if current_user.address.present?
+      @address=current_user.address
+    else
     @address = Address.new
+    end
   end
 
   def card_information
