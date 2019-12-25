@@ -23,4 +23,17 @@
             %span  
     .single1__ffff
       = render partial:"/card/card_create"
-      = render partial:"/users/footerreg"
+    %footer.footer-reg
+      %nav
+        %ul.clearfix
+          %li
+            %a{:href => ""} プライバシーポリシー
+          %li
+            %a{:href => ""} メルカリ利用規約
+          %li
+            %a{:href => ""} 特定商取引に関する表記
+      .footer-reg-logo
+        %a{:href => ""}
+          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994", :width => "80"}/
+        %p
+          %small © 2019 Mercari
