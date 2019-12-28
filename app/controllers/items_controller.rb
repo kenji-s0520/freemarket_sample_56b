@@ -140,6 +140,10 @@ end
 end
 
   def done
+    if @item.buyer_id != current_user.id
+      redirect_to root_path
+    else
+    end
   end
 
   # sakaguchi 商品の削除機能
